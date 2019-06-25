@@ -24,21 +24,23 @@ public class Exercise1 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         
         Scanner input = new Scanner(System.in);
-        String studentName;
-        String studentSurname;
-        String phone;
-        String email;
-        String courseName;
-        String department;
+        String studentName;     // Student name
+        String studentSurname;  // Student surname
+        String phone;           // Student phone
+        String email;           // Student email
+        String courseName;      // Course name
+        String department;      // Department name
         
         int courseID;
         int departmentID;
         
+        // ----------------------------------------- MySql Connection -----------------------------------------
         Class.forName("com.mysql.jdbc.Connection");
         Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/studentdatabase","root", "1234");
         
         System.out.println("Connected!");
         
+        // ----------------------------------------- Take inputs from user -----------------------------------------
         System.out.print("Enter student name: ");
         studentName = input.nextLine();
         System.out.print("Enter student surname: ");
@@ -52,9 +54,11 @@ public class Exercise1 {
         System.out.print("Enter department name: ");
         department = input.nextLine();
         
+        // ----------------------------------------- Create statement -----------------------------------------
         Statement stm = (Statement)con.createStatement();
         ResultSet rs;
         
+        // -------------------------------- Get courseID writing SQL statement --------------------------------
         if(courseName.equalsIgnoreCase("MATH")){
             rs = stm.executeQuery("SELECT courseID FROM Courses WHERE courseName = 'MATH'");
             rs.next();
@@ -78,19 +82,21 @@ public class Exercise1 {
             departmentID = rs.getInt("departmentID");
         }
         
+        // --------------------------------- Insert data to database -------------------------------------
         String query = "insert into student(studentName, studentSurname, studentPhone, studentEmail, courseID, departmentID)";
         query += "values(" + "'" +studentName+ "', " + "'" + studentSurname  + "', " + "'" + phone + "', " + "'" + email + "', " + courseID + ", " + departmentID + ")";
         
         int executeUpdate = stm.executeUpdate(query);
-        System.out.println("\nData recored to Student table! " + executeUpdate + "\n");
+        System.out.println("\nData recored to database (Student table)! " + executeUpdate + "\n");
         
-        
+        // -------------------------------- Get all records from database --------------------------------
         String select = "SELECT * FROM Student";
         rs = stm.executeQuery(select);
         
         System.out.println("Student ID\t" + "Student Name\t" + "\t" + "Student Surname\t\t" + "\t" + "Phone\t" + "\t\t" + "Email\t\t" + "\t" + "CourseID\t" + "\t" + "DepartmentID");
         System.out.println("----------\t" + "------------\t" + "\t" + "---------------\t\t" + "\t" + "-----\t\t" + "\t" + "-----\t\t" + "\t" + "--------\t" + "\t" + "------------");
         
+        // -------------------------------- Write datas to console --------------------------------
         while(rs.next()){
             System.out.println(rs.getString("studentID") + "\t\t" +
                                rs.getString("studentName") + "\t\t\t" +
@@ -101,6 +107,7 @@ public class Exercise1 {
                                rs.getInt("departmentID"));
         }
         
+        // -------------------------------- Get number of records --------------------------------
         String selectCount = "SELECT COUNT(studentID) FROM Student";
         rs = stm.executeQuery(selectCount);
         rs.next();
