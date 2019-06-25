@@ -81,14 +81,11 @@ public class Exercise1 {
         String query = "insert into student(studentName, studentSurname, studentPhone, studentEmail, courseID, departmentID)";
         query += "values(" + "'" +studentName+ "', " + "'" + studentSurname  + "', " + "'" + phone + "', " + "'" + email + "', " + courseID + ", " + departmentID + ")";
         
-        
         int executeUpdate = stm.executeUpdate(query);
-        
         System.out.println("\nData recored to Student table! " + executeUpdate + "\n");
         
-        String select = "SELECT * FROM Student";
-        String selectCount = "SELECT COUNT(studentID) FROM Student";
         
+        String select = "SELECT * FROM Student";
         rs = stm.executeQuery(select);
         
         System.out.println("Student ID\t" + "Student Name\t" + "\t" + "Student Surname\t\t" + "\t" + "Phone\t" + "\t\t" + "Email\t\t" + "\t" + "CourseID\t" + "\t" + "DepartmentID");
@@ -104,6 +101,7 @@ public class Exercise1 {
                                rs.getInt("departmentID"));
         }
         
+        String selectCount = "SELECT COUNT(studentID) FROM Student";
         rs = stm.executeQuery(selectCount);
         rs.next();
         int rowCount = rs.getInt(1);
