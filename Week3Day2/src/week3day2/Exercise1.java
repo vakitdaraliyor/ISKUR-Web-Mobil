@@ -42,7 +42,7 @@ public class Exercise1 {
         
         System.out.println("Connected!");
         
-        // ----------------------------------------- Take inputs from user -----------------------------------------
+        // --------------------------------------- Take inputs from user ---------------------------------------
         System.out.print("Enter student name: ");
         studentName = input.nextLine();
         System.out.print("Enter student surname: ");
