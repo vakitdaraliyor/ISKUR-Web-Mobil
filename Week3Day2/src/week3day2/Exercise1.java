@@ -35,6 +35,8 @@ public class Exercise1 {
         int departmentID;
         
         // ----------------------------------------- MySql Connection -----------------------------------------
+        // Database name is: studentdatabase
+        // If you connect your own database you should change it!
         Class.forName("com.mysql.jdbc.Connection");
         Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/studentdatabase","root", "1234");
         
