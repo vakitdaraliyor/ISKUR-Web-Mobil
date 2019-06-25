@@ -37,12 +37,12 @@ public class Exercise1 {
         Class.forName("com.mysql.jdbc.Connection");
         Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/studentdatabase","root", "1234");
         
-        System.out.println("Baglanti saglandi!");
+        System.out.println("Connected!");
         
         System.out.print("Enter student name: ");
         studentName = input.nextLine();
         System.out.print("Enter student surname: ");
-        studentSurname = input.nextLine();
+        studentSurname = input.nextLine().toUpperCase();
         System.out.print("Enter phone: ");
         phone = input.nextLine();
         System.out.print("Enter email: ");
@@ -84,7 +84,7 @@ public class Exercise1 {
         
         int executeUpdate = stm.executeUpdate(query);
         
-        System.out.println("Eklendi!");
+        System.out.println("Data recored to Student table!");
         
         String select = "SELECT * FROM Student";
         String selectCount = "SELECT COUNT(studentID) FROM Student";
@@ -103,6 +103,11 @@ public class Exercise1 {
                                rs.getInt("courseID") + "\t\t\t" + 
                                rs.getInt("departmentID"));
         }
+        
+        rs = stm.executeQuery(selectCount);
+        rs.next();
+        int rowCount = rs.getInt(1);
+        System.out.println("Number of records: " + rowCount);
         
     }
     
