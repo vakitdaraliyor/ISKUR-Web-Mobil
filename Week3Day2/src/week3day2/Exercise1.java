@@ -84,7 +84,7 @@ public class Exercise1 {
         
         int executeUpdate = stm.executeUpdate(query);
         
-        System.out.println("Data recored to Student table!");
+        System.out.println("\nData recored to Student table! " + executeUpdate + "\n");
         
         String select = "SELECT * FROM Student";
         String selectCount = "SELECT COUNT(studentID) FROM Student";
