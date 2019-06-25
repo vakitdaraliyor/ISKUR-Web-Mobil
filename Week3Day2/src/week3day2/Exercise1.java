@@ -60,7 +60,7 @@ public class Exercise1 {
         Statement stm = (Statement)con.createStatement();
         ResultSet rs;
         
-        // -------------------------------- Get courseID writing SQL statement --------------------------------
+        // ----------------------- Get courseID and departmentId writing SQL statement ------------------------
         if(courseName.equalsIgnoreCase("MATH")){
             rs = stm.executeQuery("SELECT courseID FROM Courses WHERE courseName = 'MATH'");
             rs.next();
