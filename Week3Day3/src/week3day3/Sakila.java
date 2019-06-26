@@ -31,6 +31,7 @@ public class Sakila {
         
         // Database baglantisi
         // Database adi: sakila
+        // ---------------------------------------------------------------------
         Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila", "root", "1234");        
         System.out.println("Connected!");
         
@@ -41,7 +42,8 @@ public class Sakila {
         System.out.print("Enter actor surname: ");
         String actorSurname = input.next();
         
-        // Adi ve soyadi verilen aktorun actor_id sini getir 
+        // Adi ve soyadi verilen aktorun actor_id sini getir
+        // ---------------------------------------------------------------------
         String query = "SELECT actor_id FROM actor WHERE first_name = ? AND last_name = ?";
         PreparedStatement stm = con.prepareStatement(query);
         stm.setString(1, actorName);
@@ -52,6 +54,7 @@ public class Sakila {
         int actor_id = rs.getInt("actor_id");
         
         // Aktorun oynadıgı filmlerin film_id lerini getir
+        // ---------------------------------------------------------------------
         query = "SELECT film_id FROM film_actor WHERE actor_id = ?";
         stm = con.prepareStatement(query);
         stm.setInt(1, actor_id);
@@ -61,6 +64,7 @@ public class Sakila {
         while(rs.next()){
             int film_id = rs.getInt("film_id");
             // Film basliklarini getir
+            // -----------------------------------------------------------------
             query = "SELECT title FROM film WHERE film_id = ? ORDER BY title ASC";
             stm = con.prepareStatement(query);
             stm.setInt(1, film_id);
@@ -71,6 +75,7 @@ public class Sakila {
         }
         
         // Aktorun oynadigi filmlerin sayisini getir
+        // ---------------------------------------------------------------------
         query = "SELECT COUNT(*) FROM(SELECT film_id FROM film_actor WHERE actor_id = ?) as filmler";
         stm = con.prepareStatement(query);
         stm.setInt(1, actor_id);
