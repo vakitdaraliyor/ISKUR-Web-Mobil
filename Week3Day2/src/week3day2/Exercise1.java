@@ -47,7 +47,10 @@ public class Exercise1 {
             System.out.print("Choice: ");
             choice = input.nextInt();
             
-            switch(choice){                
+            switch(choice){     
+                case 0:
+                    System.out.println("By By!");
+                    break;
                 case 1:
                     addStudent();
                     break;                
@@ -165,7 +168,7 @@ public class Exercise1 {
             System.out.print("Enter studentID: ");
             int stuID = input.nextInt();
             System.out.print("Enter new student surname: ");
-            String newSurname = input.next();
+            String newSurname = input.next().toUpperCase();
             query = "UPDATE Student SET studentSurname = '" + newSurname + "'" + "WHERE studentID = " + stuID;
             executeUpdate = stm.executeUpdate(query);
             if(executeUpdate == 1){
