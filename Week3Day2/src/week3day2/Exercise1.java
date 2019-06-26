@@ -7,6 +7,7 @@ package week3day2;
 
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -43,6 +44,8 @@ public class Exercise1 {
             System.out.println("4)Press 4 to list of students");
             System.out.println("5)Press 5 to get number of records");
             System.out.println("6)Press 6 to get student list acording to course name");
+            System.out.println("7)Press 7 to get students' names order by ASC");
+            System.out.println("8)Press 8 to get students' names which is deptID=1 and order by ASC");
             System.out.println("6)Press 0 to exit");
             System.out.print("Choice: ");
             choice = input.nextInt();
@@ -68,6 +71,13 @@ public class Exercise1 {
                     break;  
                 case 6:
                     getChemAndMath();
+                    break;
+                case 7:
+                    getNameASC();
+                    break;
+                case 8:
+                    getAscDept();
+                    break;
                 default:
                     break;
             }
@@ -81,7 +91,7 @@ public class Exercise1 {
         Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/studentdatabase","root", "1234");        
         System.out.println("Connected!");
         // ----------------------------------------- Create statement -----------------------------------------
-        Statement stm = (Statement)con.createStatement();
+        //Statement stm = (Statement)con.createStatement();
         
         Scanner input = new Scanner(System.in);
         
@@ -103,9 +113,20 @@ public class Exercise1 {
         int departmentID = getDepartmentID(department);
         // --------------------------------- Insert data to database -------------------------------------
         query = "insert into student(studentName, studentSurname, studentPhone, studentEmail, courseID, departmentID)";
-        query += "values(" + "'" +studentName+ "', " + "'" + studentSurname  + "', " + "'" + phone + "', " + "'" + email + "', " + courseID + ", " + departmentID + ")";
-        int executeUpdate = stm.executeUpdate(query);
-        System.out.println("\nData recored to database (Student table)! " + executeUpdate + "\n");
+        query += "values(?,?,?,?,?,?)";
+        
+        PreparedStatement stm = con.prepareStatement(query);
+        stm.setString(1, studentName);
+        stm.setString(2, studentSurname);
+        stm.setString(3, phone);
+        stm.setString(4, email);
+        stm.setInt(5, courseID);
+        stm.setInt(6, departmentID);
+        int executeUpdate = (stm.executeUpdate());
+        
+        if(executeUpdate == 1){
+            System.out.println("\nData recored to database (Student table)! " + "\n");
+        }
         
         stm.close();
         con.close();
@@ -127,7 +148,10 @@ public class Exercise1 {
         int studentID = input.nextInt();
         query = "delete from student WHERE studentID = " + studentID;
         executeUpdate = stm.executeUpdate(query);
-        System.out.println("\nStudent deleted! " + executeUpdate + "\n");
+        
+        if(executeUpdate == 1){
+            System.out.println("\nStudent deleted! " + "\n");
+        }
         
         stm.close();
         con.close();
@@ -295,6 +319,36 @@ public class Exercise1 {
         rs.close();
         stm.close();
         con.close();
+    }
+    
+    public static void getNameASC() throws SQLException{
+        Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/studentdatabase", "root", "1234");
+        System.out.println("Connected!");
+        
+        String query = "SELECT studentName FROM Student ORDER BY studentName ASC";
+        PreparedStatement stm = con.prepareStatement(query);
+        ResultSet rs = stm.executeQuery();
+        
+        System.out.println("Student name\n------------");
+        while(rs.next()){
+            System.out.println(rs.getString("studentName" ));
+        }
+        System.out.println();
+    }
+    
+    public static void getAscDept() throws SQLException{
+        Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/studentdatabase", "root", "1234");
+        System.out.println("Connected!");
+        
+        String query = "SELECT studentName FROM(SELECT * FROM student WHERE departmentID = 1) AS result ORDER BY studentName ASC";
+        PreparedStatement stm = con.prepareStatement(query);
+        
+        ResultSet rs = stm.executeQuery();
+        
+        System.out.println("Student name\n------------");
+        while(rs.next()){
+            System.out.println(rs.getString("studentName"));
+        }
     }
     
     // ----------------------------------- Methods -----------------------------------
