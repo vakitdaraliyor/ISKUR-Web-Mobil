@@ -189,3 +189,31 @@ WHERE T.salary > S.salary AND S.dept_name = 'Biology'*/
  /*SELECT ID as student_id, COUNT(DISTINCT course_id) AS number_of_course
  FROM takes
  GROUP BY ID*/
+ 
+-- Find the names of all instructors whose salary is greater
+-- than the salary of all the instructors in the Biology department
+-- SELECT name FROM instructor WHERE salary > all (SELECT salary from instructor WHERE dept_name = 'Biology') 
+
+-- Yet another way of specifying the query
+-- "Find all courses taught in both the Fall 2009 semester and in the Spring 2010 semester
+/*SELECT course_id FROM section as S
+WHERE semester = 'Fall' and year = 2009 and
+		exists(SELECT * FROM section as T
+			   WHERE semester = 'Spring' AND year = 2010
+			   AND S.course_id = T.course_id)*/
+               
+/*SELECT C.course_id FROM course as C
+WHERE UNIQUE(SELECT S.course_id FROM section as S WHERE C.course_id = S.course_id AND S.year = 2009)*/
+
+/*SELECT T.dept_name, T.avg_salary
+FROM(SELECT dept_name, AVG(salary) AS avg_salary FROM instructor GROUP BY dept_name) as T
+WHERE T.avg_salary > 42000*/
+
+/*SELECT dept_name, avg_salary
+FROM(SELECT dept_name, avg(salary) FROM instructor GROUP BY dept_name) as dept_avg(dept_name, avg_salary)
+WHERE avg_salary > 42000*/
+
+-- Find all departments with the  maximum budget
+-- WITH max_budget(value) AS (SELECT MAX(budget) FROM department)
+-- SELECT department.dept_name FROM department, max_budget
+-- WHERE department.budget = max_budget.value
