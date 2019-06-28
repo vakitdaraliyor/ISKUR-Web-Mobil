@@ -217,3 +217,87 @@ WHERE avg_salary > 42000*/
 -- WITH max_budget(value) AS (SELECT MAX(budget) FROM department)
 -- SELECT department.dept_name FROM department, max_budget
 -- WHERE department.budget = max_budget.value
+
+-- Find all departments where the total salary is greater than
+-- the avarage of the total salary at alldepartments
+/*WITH dept_total(dept_name, value) AS
+	(SELECT dept_name SUM(salary)
+	FROM instructor
+	GROUP BY dept_name),
+dept_total_avg(value) AS
+	(SELECT AVG(value)
+	FROM dep_total)
+SELECT dept_name
+FROM dept_total, dept_total_avg
+WHERE dept_total.value > dept_total_avg.value*/
+
+-- List all departments along with the number of instructor in each department
+/*SELECT dept_name,
+		(SELECT COUNT(*) FROM instructor WHERE department.dept_name = instructor.dept_name) AS num_instructor
+FROM department*/
+
+-- 1) Comp. Sci departmanındaki çalışanların maaşlarını %10 artıran sorguyu yazınız.
+-- UPDATE instructor SET salary = salary * 1.01 WHERE dept_name = 'Comp. Sci.';
+
+-- 2) Hiç açılmayan dersleri silen sorguyu yazınız.
+-- SELECT COUNT(course_id) FROM course  
+-- DELETE FROM course WHERE (course_id) NOT IN (SELECT course_id FROM takes)
+ 
+-- 3) tot_cred değeri 100'den büyük olan bütün öğrencileri aynı departmanda 10.000 maaşla instructor olarak ekleyiniz.
+-- INSERT INTO instructor
+-- SELECT ID, name, dept_name, 30000
+-- FROM student WHERE tot_cred > 100
+
+-- 4) 'Notlar' isimli, 'id' (not null) ve 'not' bilgisinden oluşan bir tablo oluşturun
+/*CREATE TABLE Notlar(
+	id INT NOT NULL AUTO_INCREMENT,
+    nott INT,
+    PRIMARY KEY(id)
+);*/
+
+-- 5) Notlar tablosuna kayıt ekleme
+-- Bu tabloya id'si 1 notu 90 olan kayıdı ekleyen sorguyu yazınız 
+-- Bu tabloya id'si 2 notu 80 olan kayıdı ekleyen sorguyu yazınız 
+-- Bu tabloya id'si 3 notu 75 olan kayıdı ekleyen sorguyu yazınız 
+-- Bu tabloya id'si 4 notu 95 olan kayıdı ekleyen sorguyu yazınız 
+-- Bu tabloya id'si 5 notu 60 olan kayıdı ekleyen sorguyu yazınız 
+-- Bu tabloya id'si 6 notu 40 olan kayıdı ekleyen sorguyu yazınız 
+-- Bu tabloya id'si 7 notu null olan kayıdı ekleyen sorguyu yazınız 
+
+-- INSERT INTO notlar VALUES(2,80), (3,75), (4,95), (5,60),(6,40)
+-- INSERT INTO notlar VALUES(7, null), (8, null)
+
+-- 6) Notlar tablosundaki öğrencilerin id ve harfNotlarini gösteren sorgu yazınız
+-- not < 50  --> F
+-- not < 70  --> C
+-- not < 85  --> B
+-- not >=85  --> A
+
+/*SELECT id, 
+(case
+	WHEN nott is null THEN null
+	WHEN nott < 50 THEN 'F'
+    WHEN nott < 70 THEN 'C'
+    WHEN nott < 85 THEN 'B'
+    ELSE 'A'
+    END) as harf
+FROM notlar*/
+
+-- 7) Not değeri null olan kaydı silen sorguyu yazınız
+-- DELETE FROM notlar WHERE id IN (SELECT id FROM notlar WHERE nott is null)
+ 
+-- 8) Her harf notundan kaç öğrenci olduğunu gösteren sorguyu yazınız
+
+/*WITH harfNotuTablosu(id, harfNotu) AS (
+SELECT id,
+(case
+	WHEN nott is null THEN null
+	WHEN nott < 50 THEN 'F'
+    WHEN nott < 70 THEN 'C'
+    WHEN nott < 85 THEN 'B'
+    ELSE 'A'
+    END) as harf
+FROM notlar)
+SELECT harfNotu, COUNT(id)
+FROM harfNotuTablosu
+GROUP BY harfNotu*/
