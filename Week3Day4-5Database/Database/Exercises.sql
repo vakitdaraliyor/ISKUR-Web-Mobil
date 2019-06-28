@@ -180,12 +180,12 @@ WHERE T.salary > S.salary AND S.dept_name = 'Biology'*/
 -- ORDER BY SUM(credits) DESC 
  
 -- 21) 2006 Fall döneminde C, C+ ve C- alan öğrencilerin toplam sayısını bulan sorguyu yazınız
--- SELECT COUNT(DISTINCT ID) FROM takes
--- WHERE (semester = 'Fall' AND year = 2006) AND (grade = 'C' OR grade = 'C+' OR grade = 'C-')
+ /*SELECT COUNT(*) FROM takes
+ WHERE (semester = 'Fall' AND year = 2006) AND ((grade = 'C') OR (grade = 'C+') OR (grade = 'C-'))*/
 
--- SELECT COUNT(DISTINT ID) FROM takes WHERE (semester = 'Fall' AND year = 2006) => 2428 KİŞİ
+-- SELECT COUNT(*) FROM takes WHERE year = 2006 AND semester = 'Fall' AND grade LIKE 'C%'
 
 -- 22) Öğrencilerin toplamda aldıkları ders sayılarını bulan sorguyu yazınız
--- SELECT ID as student_id, COUNT(DISTINCT course_id) AS number_of_course
--- FROM takes
--- GROUP BY ID
+ /*SELECT ID as student_id, COUNT(DISTINCT course_id) AS number_of_course
+ FROM takes
+ GROUP BY ID*/
