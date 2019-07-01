@@ -47,3 +47,6 @@
 -- Tablolarin birbirleri ile ilişkisi (foreign key)
 -- on delete cascade => silme islemi yapmak istedigimde,
 -- ana tablodan bir veri silersem bu verinin bagli oldugu child tablodaki veriler otomatik silinir
+-- SELECT * FROM faculty
+
+ SELECT instructor.ID, name, COUNT(takes.sec_id) AS numberOfSection FROM instructor LEFT OUTER JOIN takes ON instructor.ID = takes.ID GROUP BY instructor.name ORDER BY name ASC
