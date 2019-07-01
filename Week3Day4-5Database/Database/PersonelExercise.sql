@@ -1,0 +1,3 @@
+-- INSERT INTO departman(departman_adi) VALUES('Yazılım'), ('Satış'), ('Teknik Destek'), ('Muhasebe'), ('Yönetim'), ('AR-GE')
+-- INSERT INTO gorev(gorev_adi) VALUES('Genel Müdür'), ('Müdür'), ('Ofis Görevlisi'), ('Satışçı'), ('Teknik Eleman')
+-- INSERT INTO hareket_tipi(hareket_adi) VALUES('Maaş Hakedişi'), ('Maaş Ödemesi'), ('Avans Çekme')

@@ -284,7 +284,7 @@ FROM department*/
 FROM notlar*/
 
 -- 7) Not değeri null olan kaydı silen sorguyu yazınız
--- DELETE FROM notlar WHERE id IN (SELECT id FROM notlar WHERE nott is null)
+-- DELETE FROM notlar WHERE id IN (SELECT id FROM notlar WHERE nott is null)personel
  
 -- 8) Her harf notundan kaç öğrenci olduğunu gösteren sorguyu yazınız
 

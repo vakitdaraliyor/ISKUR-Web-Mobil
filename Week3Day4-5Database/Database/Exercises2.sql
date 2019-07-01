@@ -49,4 +49,34 @@
 -- ana tablodan bir veri silersem bu verinin bagli oldugu child tablodaki veriler otomatik silinir
 -- SELECT * FROM faculty
 
- SELECT instructor.ID, name, COUNT(takes.sec_id) AS numberOfSection FROM instructor LEFT OUTER JOIN takes ON instructor.ID = takes.ID GROUP BY instructor.name ORDER BY name ASC
+-- Instructor lari ID, name ve section sayilarini(verdigi ders sayilarini) gosterecek sekilde bir sorgu yaziniz
+/* SELECT instructor.ID, instructor.name, COUNT(teaches.sec_id) AS numberOfSection
+ FROM instructor NATURAL LEFT OUTER JOIN teaches
+ GROUP BY instructor.name
+ HAVING COUNT(teaches.sec_id) > 0
+ ORDER BY instructor.name */
+ 
+-- Index creation
+-- User-Defined Types
+-- CREATE TYPE Dollars AS NUMERIC(12,2) FINAL
+
+-- Buyuk data lari saklamak icin (photos, videos, CAD files, etc.)
+-- blob binary large object
+-- clob character large object
+-- blob binary large object
+
+-- Authorization
+-- Read - allows reading but not modification
+-- Insert - allows insertion of new data but not modification of existing data
+-- Update - allows modification but not deletion
+-- Delete - allows deletion of data
+
+-- GRANT SELECT ON instructor TO U1 => Yetki verme
+-- REVOKE SELECT ON instructor TO U1 => Yetki alma
+
+-- CREATE ROLE instructor => bir grup olusturduk
+-- GRANT instructor TO Yusuf => gruba user ekledik
+-- GRANT SELECT ON takes TO instructor => grubtaki herkese ayni yetkiyi verdik
+
+-- CREATE VIEW geo_instructor AS SELECT * FROM instructor WHERE dept_name = 'Geology'
+-- GRANT SELECT ON geo_instructor TO user
