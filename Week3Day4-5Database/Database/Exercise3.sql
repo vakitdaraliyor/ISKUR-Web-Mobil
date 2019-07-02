@@ -29,7 +29,7 @@ WHERE tarih > '2014-06-30'*/
 
 -- 13.	Herbir departmandaki ortalama maaşı bulan SQL'i yazınız.
 -- SELECT dept_adi, AVG(maas)
--- FROM personel NATURAL LEFT OUTER JOIN gorev NATURAL LEFT OUTER JOIN departman
+-- FROM personel NATURAL LEFT OUTER JOIN departman
 -- WHERE dept_adi is not null
 -- GROUP BY dept_adi
 
@@ -50,10 +50,28 @@ WHERE tarih > '2014-06-30'*/
 -- GROUP BY dept_adi
 
 -- 16.	Hangi departmanda ne kadar personel var listesini bulunuz
--- SELECT dept_adi, COUNT(personel_id) FROM personel NATURAL LEFT OUTER JOIN departman GROUP BY dept_adi
+/*SELECT
+(CASE WHEN dept_adi IS NULL THEN '-'
+ELSE dept_adi END) AS departman_adi,
+COUNT(personel_id) AS personel_sayisi
+FROM personel NATURAL LEFT OUTER JOIN departman
+WHERE durum = 1
+GROUP BY dept_adi 
+ORDER BY departman_adi ASC*/
 
 -- 17.	Ortalama Maaşı 1250 TL nin üzerinde olan departmanların listesini bulunuz.
-/*SELECT dept_adi,
-(SELECT AVG(maas) FROM personel HAVING AVG(maas) > 1250) AS ortalama_maas
-FROM departman
-WHERE dept_id IN (SELECT dept_id FROM personel GROUP BY dept_id HAVING AVG(maas) > 1250)*/
+/*SELECT dept_adi AS departman_adi, AVG(maas) AS ortalama_maas
+FROM departman NATURAL LEFT OUTER JOIN personel
+GROUP BY dept_adi
+HAVING AVG(maas) > 1250*/
+
+-- 18.	Hangi eleman kaç aydır çalışıyor listesiniz bulunuz
+-- SELECT adi_soyadi, TIMESTAMPDIFF(MONTH, giris_tarihi, '2019-07-02') AS Ay FROM personel
+
+-- 19.	Bütün Personel ve Bütün departmanların listesini bulunuz.
+/*SELECT(CASE WHEN adi_soyadi IS NULL THEN '-'
+ELSE adi_soyadi END) AS adi_soyadi, departman_adi
+FROM personel NATURAL RIGHT JOIN departman UNION ALL
+SELECT(CASE WHEN dept_adi IS NULL THEN '-'
+ELSE dept_adi END) AS adi_soyadi, departman_adi 
+FROM personel NATURAL LEFT OUTER JOIN departman*/
