@@ -25,13 +25,15 @@ namespace ADO.Net
             // Veritabanına bağlandı
             String cnnstr = @"Data Source=localhost\SQLEXPRESS;initial catalog=İŞKUR; user id=sa; password=1234";
             SqlConnection connection = new SqlConnection(cnnstr);
+            // Komut oluşturup connection oluşturuyoruz.
             SqlCommand command = new SqlCommand("SELECT * FROM KATEGORI", connection);
+            // Veri taşıma işlemlerini yapan bir adapter oluşturuyoruz.
             SqlDataAdapter adapter = new SqlDataAdapter(command);
 
             DataTable dt = new DataTable();
+            
+            adapter.Fill(dt); // sql cümlesini çalıştırıp dt tablosuna doldur
             dataGridView1.DataSource = dt;
-
-            adapter.Fill(dt);
         }
     }
 }
