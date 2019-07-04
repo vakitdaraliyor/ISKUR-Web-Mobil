@@ -70,8 +70,8 @@ HAVING AVG(maas) > 1250*/
 
 -- 19.	Bütün Personel ve Bütün departmanların listesini bulunuz.
 /*SELECT(CASE WHEN adi_soyadi IS NULL THEN '-'
-ELSE adi_soyadi END) AS adi_soyadi, departman_adi
-FROM personel NATURAL RIGHT JOIN departman UNION ALL
+ELSE adi_soyadi END) AS adi_soyadi
+FROM personel NATURAL RIGHT JOIN departman UNION ALL*/
 SELECT(CASE WHEN dept_adi IS NULL THEN '-'
-ELSE dept_adi END) AS adi_soyadi, departman_adi 
-FROM personel NATURAL LEFT OUTER JOIN departman*/
+ELSE dept_adi END) AS departman_adi 
+FROM personel NATURAL LEFT OUTER JOIN departman
