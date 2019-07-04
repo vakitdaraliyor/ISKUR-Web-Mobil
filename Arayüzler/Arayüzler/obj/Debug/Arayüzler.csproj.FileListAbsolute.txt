@@ -1,0 +1,10 @@
+C:\Users\AYBU\Documents\GitHub\C-\Arayüzler\Arayüzler\bin\Debug\Arayüzler.exe.config
+C:\Users\AYBU\Documents\GitHub\C-\Arayüzler\Arayüzler\bin\Debug\Arayüzler.exe
+C:\Users\AYBU\Documents\GitHub\C-\Arayüzler\Arayüzler\bin\Debug\Arayüzler.pdb
+C:\Users\AYBU\Documents\GitHub\C-\Arayüzler\Arayüzler\obj\Debug\Arayüzler.csprojAssemblyReference.cache
+C:\Users\AYBU\Documents\GitHub\C-\Arayüzler\Arayüzler\obj\Debug\Arayüzler.Form1.resources
+C:\Users\AYBU\Documents\GitHub\C-\Arayüzler\Arayüzler\obj\Debug\Arayüzler.Properties.Resources.resources
+C:\Users\AYBU\Documents\GitHub\C-\Arayüzler\Arayüzler\obj\Debug\Arayüzler.csproj.GenerateResource.cache
+C:\Users\AYBU\Documents\GitHub\C-\Arayüzler\Arayüzler\obj\Debug\Arayüzler.csproj.CoreCompileInputs.cache
+C:\Users\AYBU\Documents\GitHub\C-\Arayüzler\Arayüzler\obj\Debug\Arayüzler.exe
+C:\Users\AYBU\Documents\GitHub\C-\Arayüzler\Arayüzler\obj\Debug\Arayüzler.pdb

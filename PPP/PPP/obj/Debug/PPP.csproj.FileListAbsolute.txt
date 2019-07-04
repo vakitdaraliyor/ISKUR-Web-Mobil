@@ -1,0 +1,10 @@
+C:\Users\AYBU\Documents\GitHub\C-\PPP\PPP\bin\Debug\PPP.exe.config
+C:\Users\AYBU\Documents\GitHub\C-\PPP\PPP\bin\Debug\PPP.exe
+C:\Users\AYBU\Documents\GitHub\C-\PPP\PPP\bin\Debug\PPP.pdb
+C:\Users\AYBU\Documents\GitHub\C-\PPP\PPP\obj\Debug\PPP.csprojAssemblyReference.cache
+C:\Users\AYBU\Documents\GitHub\C-\PPP\PPP\obj\Debug\PPP.Form1.resources
+C:\Users\AYBU\Documents\GitHub\C-\PPP\PPP\obj\Debug\PPP.Properties.Resources.resources
+C:\Users\AYBU\Documents\GitHub\C-\PPP\PPP\obj\Debug\PPP.csproj.GenerateResource.cache
+C:\Users\AYBU\Documents\GitHub\C-\PPP\PPP\obj\Debug\PPP.csproj.CoreCompileInputs.cache
+C:\Users\AYBU\Documents\GitHub\C-\PPP\PPP\obj\Debug\PPP.exe
+C:\Users\AYBU\Documents\GitHub\C-\PPP\PPP\obj\Debug\PPP.pdb

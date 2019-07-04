@@ -1,0 +1,11 @@
+C:\Users\AYBU\Documents\GitHub\C-\IlkUygulama\IlkUygulama\bin\Debug\netcoreapp2.1\IlkUygulama.deps.json
+C:\Users\AYBU\Documents\GitHub\C-\IlkUygulama\IlkUygulama\bin\Debug\netcoreapp2.1\IlkUygulama.runtimeconfig.json
+C:\Users\AYBU\Documents\GitHub\C-\IlkUygulama\IlkUygulama\bin\Debug\netcoreapp2.1\IlkUygulama.runtimeconfig.dev.json
+C:\Users\AYBU\Documents\GitHub\C-\IlkUygulama\IlkUygulama\bin\Debug\netcoreapp2.1\IlkUygulama.dll
+C:\Users\AYBU\Documents\GitHub\C-\IlkUygulama\IlkUygulama\bin\Debug\netcoreapp2.1\IlkUygulama.pdb
+C:\Users\AYBU\Documents\GitHub\C-\IlkUygulama\IlkUygulama\obj\Debug\netcoreapp2.1\IlkUygulama.csprojAssemblyReference.cache
+C:\Users\AYBU\Documents\GitHub\C-\IlkUygulama\IlkUygulama\obj\Debug\netcoreapp2.1\IlkUygulama.csproj.CoreCompileInputs.cache
+C:\Users\AYBU\Documents\GitHub\C-\IlkUygulama\IlkUygulama\obj\Debug\netcoreapp2.1\IlkUygulama.AssemblyInfoInputs.cache
+C:\Users\AYBU\Documents\GitHub\C-\IlkUygulama\IlkUygulama\obj\Debug\netcoreapp2.1\IlkUygulama.AssemblyInfo.cs
+C:\Users\AYBU\Documents\GitHub\C-\IlkUygulama\IlkUygulama\obj\Debug\netcoreapp2.1\IlkUygulama.dll
+C:\Users\AYBU\Documents\GitHub\C-\IlkUygulama\IlkUygulama\obj\Debug\netcoreapp2.1\IlkUygulama.pdb
