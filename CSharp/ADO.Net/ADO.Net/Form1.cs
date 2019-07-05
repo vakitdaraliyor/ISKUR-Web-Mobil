@@ -13,8 +13,9 @@ namespace ADO.Net
 {
     public partial class Form1 : Form
     {
-         
-        SqlConnection connection = new SqlConnection(@"Data Source=localhost\SQLEXPRESS; initial catalog=İŞKUR; user id=sa; password=1234");
+
+        DBClass db = new DBClass();
+       
         int satir = -1;
 
         public Form1()
@@ -81,10 +82,7 @@ namespace ADO.Net
                 sql = "UPDATE KATEGORI SET KATEGORI_ADI = '@p1' WHERE KATEGORI_REFNO = @p2";
             }
 
-            SqlCalistir(sql, prm1, prm2);            
-
-            connection.Close();
-
+            db.SqlCalistir(sql, prm1, prm2);
             GridDoldur();
 
             MessageBox.Show("Başarıyla eklendi");
@@ -93,14 +91,8 @@ namespace ADO.Net
 
         void GridDoldur()
         {
-            // Komut oluşturup connection oluşturuyoruz.
-            SqlCommand command = new SqlCommand("SELECT * FROM KATEGORI", connection);
-            // Veri taşıma işlemlerini yapan bir adapter oluşturuyoruz.
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-            DataTable dt = new DataTable();
-            adapter.Fill(dt); // sql cümlesini çalıştırıp dt tablosuna doldur
-            dataGridView1.DataSource = dt;
+            DataTable dt = db.TableGetir("SELECT * FROM KATEGORI");
+            dataGridView1.DataSource = dt; // veri ızgarasının kaynağı dt yapıldı
         }
 
         private void Button4_Click(object sender, EventArgs e)
@@ -117,7 +109,7 @@ namespace ADO.Net
                     sql = "DELETE FROM KATEGORI WHERE KATEGORI_REFNO = @p2";
                     SqlParameter prm2 = new SqlParameter("@p2", txtKATEGORI_REFNO.Text);
 
-                    SqlCalistir(sql, prm2);
+                    db.SqlCalistir(sql, prm2);
                     GridDoldur();
 
                     MessageBox.Show("Başarıyla silindi");
@@ -130,21 +122,7 @@ namespace ADO.Net
 
         }
 
-        private void SqlCalistir(string sql, params SqlParameter[] prms)
-        {
-
-            SqlCommand cmd = new SqlCommand(sql, connection);
-
-            if(prms != null) cmd.Parameters.AddRange(prms);
-       
-            if (connection.State == ConnectionState.Closed) connection.Open();
-            
-            cmd.ExecuteNonQuery(); // INSERT UPDATE DELETE komutlarını çalıştırır                
-
-            connection.Close();
-
-            GridDoldur();
-        }
+        
 
     }
 }
