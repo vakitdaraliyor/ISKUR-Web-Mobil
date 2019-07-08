@@ -30,6 +30,7 @@ namespace EMagaza
             //comboBox1.ValueMember = "KATEGORI_REFNO"; // secili bir kategorinin refno su
         }
 
+        // combobox tan bir urun kategorısı secildiginde seçildiginde listbox in icine alt urunlerı doldurur
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string kategorirefno = comboBox1.SelectedValue.ToString();
@@ -43,6 +44,7 @@ namespace EMagaza
             //listBox1.ValueMember = "ALT_KATEGORI_REFNO"; // secili bir kategorinin refno su
         }
 
+        // listbox tan alt urun kategorisi secildiginde o alt kategorinin urunlerini datagridview e doldurur.
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string alt_kategori_refno = listBox1.SelectedValue.ToString();
