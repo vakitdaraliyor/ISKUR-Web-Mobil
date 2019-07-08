@@ -22,10 +22,24 @@ namespace ADO.Net
             // Veri taşıma işlemlerini yapan bir adapter oluşturuyoruz.
             SqlDataAdapter adapter = new SqlDataAdapter(command);
 
+
             DataTable dt = new DataTable();
             adapter.Fill(dt); // sql cümlesini çalıştırıp dt tablosuna doldur
             return dt;
         }
+
+        public void UpdateTable(string sql, DataTable dt, params SqlParameter[] prms)
+        {
+            // Komut oluşturup connection oluşturuyoruz.
+            SqlCommand command = new SqlCommand(sql, connection);
+
+            if (prms != null) command.Parameters.AddRange(prms);
+
+            // Veri taşıma işlemlerini yapan bir adapter oluşturuyoruz.
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter); //INSERT UPDATE DELETE Commandlerini otamatik build eder.
+            adapter.Update(dt);
+        }    
 
         public void SqlCalistir(string sql, params SqlParameter[] prms)
         {
