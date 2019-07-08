@@ -122,7 +122,9 @@ namespace ADO.Net
 
         }
 
-        
-
+        private void DataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            db.UpdateTable("SELECT * FROM KATEGORI", dt);
+        }
     }
 }

@@ -52,6 +52,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(407, 266);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_RowEnter);
+            this.dataGridView1.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_RowLeave);
             // 
             // label1
             // 
