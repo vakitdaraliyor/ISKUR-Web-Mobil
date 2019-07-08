@@ -91,7 +91,7 @@ namespace ADO.Net
             if (connection.State == ConnectionState.Closed) connection.Open();
             cmd.ExecuteNonQuery();
 
-            dataGridView1.DataSource = dt;
+            //dataGridView1.DataSource = dt;
 
         }
     }
