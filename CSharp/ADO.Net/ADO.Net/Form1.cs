@@ -15,7 +15,8 @@ namespace ADO.Net
     {
 
         DBClass db = new DBClass();
-       
+        DataTable dt = new DataTable();
+
         int satir = -1;
 
         public Form1()
@@ -36,6 +37,8 @@ namespace ADO.Net
                 txtKATEGORI_REFNO.Text = dataGridView1.Rows[satir].Cells["KATEGORI_REFNO"].Value.ToString();
                 txtKATEGORI_ADI.Text = dataGridView1.Rows[satir].Cells["KATEGORI_ADI"].Value.ToString();
             }
+
+            db.UpdateTable("SELECT * FROM KATEGORI", dt);
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -91,7 +94,7 @@ namespace ADO.Net
 
         void GridDoldur()
         {
-            DataTable dt = db.TableGetir("SELECT * FROM KATEGORI");
+            dt = db.TableGetir("SELECT * FROM KATEGORI");
             dataGridView1.DataSource = dt; // veri ızgarasının kaynağı dt yapıldı
         }
 
