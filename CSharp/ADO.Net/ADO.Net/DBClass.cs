@@ -37,7 +37,8 @@ namespace ADO.Net
 
             // Veri taşıma işlemlerini yapan bir adapter oluşturuyoruz.
             SqlDataAdapter adapter = new SqlDataAdapter(command);
-            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter); //INSERT UPDATE DELETE Commandlerini otamatik build eder.
+            //INSERT UPDATE DELETE Commandlerini SELECT Commandıne bakarak otamatik build eder.
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter); 
             adapter.Update(dt);
         }    
 

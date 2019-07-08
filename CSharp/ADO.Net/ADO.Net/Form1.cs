@@ -79,7 +79,7 @@ namespace ADO.Net
             }
             else
             {
-                sql = "UPDATE KATEGORI SET KATEGORI_ADI = '@p1' WHERE KATEGORI_REFNO = @p2";
+                sql = "UPDATE KATEGORI SET KATEGORI_ADI = @p1 WHERE KATEGORI_REFNO = @p2";
             }
 
             db.SqlCalistir(sql, prm1, prm2);
