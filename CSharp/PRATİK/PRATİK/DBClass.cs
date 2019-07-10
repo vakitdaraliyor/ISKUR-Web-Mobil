@@ -22,9 +22,10 @@ namespace ADO.Net
             // Veri taşıma işlemlerini yapan bir adapter oluşturuyoruz.
             SqlDataAdapter adapter = new SqlDataAdapter(command);
 
-
             DataTable dt = new DataTable();
-            adapter.Fill(dt); // sql cümlesini çalıştırıp dt tablosuna doldur
+            adapter.Fill(dt); // sql cümlesini çalıştırıp dt tablosuna doldur Satirlari dt ye ekler
+            adapter.FillSchema(dt, SchemaType.Source); // table yapisini PK vb dt ye ekler
+            command.Parameters.Clear();
             return dt;
         }
 
