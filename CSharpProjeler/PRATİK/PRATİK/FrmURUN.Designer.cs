@@ -60,7 +60,7 @@
             this.comboALT_KATEGORI_REFNO = new System.Windows.Forms.ComboBox();
             this.comboTEDARIKCI_REFNO = new System.Windows.Forms.ComboBox();
             this.comboSATIS_KDV_ORANI = new System.Windows.Forms.ComboBox();
-            this.combosALIS_KDV_ORANI = new System.Windows.Forms.ComboBox();
+            this.comboALIS_KDV_ORANI = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtURUN_REFNO
@@ -216,6 +216,7 @@
             // txtADI
             // 
             this.txtADI.Location = new System.Drawing.Point(141, 56);
+            this.txtADI.MaxLength = 15;
             this.txtADI.Name = "txtADI";
             this.txtADI.Size = new System.Drawing.Size(100, 20);
             this.txtADI.TabIndex = 66;
@@ -223,6 +224,7 @@
             // txtBIRIM1
             // 
             this.txtBIRIM1.Location = new System.Drawing.Point(141, 236);
+            this.txtBIRIM1.MaxLength = 10;
             this.txtBIRIM1.Name = "txtBIRIM1";
             this.txtBIRIM1.Size = new System.Drawing.Size(100, 20);
             this.txtBIRIM1.TabIndex = 70;
@@ -230,6 +232,7 @@
             // txtBIRIM2
             // 
             this.txtBIRIM2.Location = new System.Drawing.Point(407, 235);
+            this.txtBIRIM2.MaxLength = 10;
             this.txtBIRIM2.Name = "txtBIRIM2";
             this.txtBIRIM2.Size = new System.Drawing.Size(100, 20);
             this.txtBIRIM2.TabIndex = 82;
@@ -237,6 +240,7 @@
             // txtBARKODU
             // 
             this.txtBARKODU.Location = new System.Drawing.Point(407, 190);
+            this.txtBARKODU.MaxLength = 13;
             this.txtBARKODU.Name = "txtBARKODU";
             this.txtBARKODU.Size = new System.Drawing.Size(100, 20);
             this.txtBARKODU.TabIndex = 81;
@@ -244,6 +248,7 @@
             // txtKDVSIZ_ALIS_FIYATI
             // 
             this.txtKDVSIZ_ALIS_FIYATI.Location = new System.Drawing.Point(407, 55);
+            this.txtKDVSIZ_ALIS_FIYATI.MaxLength = 5;
             this.txtKDVSIZ_ALIS_FIYATI.Name = "txtKDVSIZ_ALIS_FIYATI";
             this.txtKDVSIZ_ALIS_FIYATI.Size = new System.Drawing.Size(100, 20);
             this.txtKDVSIZ_ALIS_FIYATI.TabIndex = 78;
@@ -305,6 +310,7 @@
             // txtKDVSIZ_SATIS_FIYATI
             // 
             this.txtKDVSIZ_SATIS_FIYATI.Location = new System.Drawing.Point(407, 10);
+            this.txtKDVSIZ_SATIS_FIYATI.MaxLength = 5;
             this.txtKDVSIZ_SATIS_FIYATI.Name = "txtKDVSIZ_SATIS_FIYATI";
             this.txtKDVSIZ_SATIS_FIYATI.Size = new System.Drawing.Size(100, 20);
             this.txtKDVSIZ_SATIS_FIYATI.TabIndex = 71;
@@ -313,28 +319,6 @@
             // 
             this.comboKATEGORI_REFNO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboKATEGORI_REFNO.FormattingEnabled = true;
-            this.comboKATEGORI_REFNO.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21"});
             this.comboKATEGORI_REFNO.Location = new System.Drawing.Point(141, 106);
             this.comboKATEGORI_REFNO.Name = "comboKATEGORI_REFNO";
             this.comboKATEGORI_REFNO.Size = new System.Drawing.Size(100, 21);
@@ -345,13 +329,6 @@
             // 
             this.comboALT_KATEGORI_REFNO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboALT_KATEGORI_REFNO.FormattingEnabled = true;
-            this.comboALT_KATEGORI_REFNO.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
             this.comboALT_KATEGORI_REFNO.Location = new System.Drawing.Point(142, 150);
             this.comboALT_KATEGORI_REFNO.Name = "comboALT_KATEGORI_REFNO";
             this.comboALT_KATEGORI_REFNO.Size = new System.Drawing.Size(99, 21);
@@ -361,11 +338,6 @@
             // 
             this.comboTEDARIKCI_REFNO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTEDARIKCI_REFNO.FormattingEnabled = true;
-            this.comboTEDARIKCI_REFNO.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
             this.comboTEDARIKCI_REFNO.Location = new System.Drawing.Point(142, 194);
             this.comboTEDARIKCI_REFNO.Name = "comboTEDARIKCI_REFNO";
             this.comboTEDARIKCI_REFNO.Size = new System.Drawing.Size(99, 21);
@@ -375,70 +347,26 @@
             // 
             this.comboSATIS_KDV_ORANI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboSATIS_KDV_ORANI.FormattingEnabled = true;
-            this.comboSATIS_KDV_ORANI.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21"});
             this.comboSATIS_KDV_ORANI.Location = new System.Drawing.Point(409, 105);
             this.comboSATIS_KDV_ORANI.Name = "comboSATIS_KDV_ORANI";
             this.comboSATIS_KDV_ORANI.Size = new System.Drawing.Size(100, 21);
             this.comboSATIS_KDV_ORANI.TabIndex = 86;
             // 
-            // combosALIS_KDV_ORANI
+            // comboALIS_KDV_ORANI
             // 
-            this.combosALIS_KDV_ORANI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combosALIS_KDV_ORANI.FormattingEnabled = true;
-            this.combosALIS_KDV_ORANI.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21"});
-            this.combosALIS_KDV_ORANI.Location = new System.Drawing.Point(407, 146);
-            this.combosALIS_KDV_ORANI.Name = "combosALIS_KDV_ORANI";
-            this.combosALIS_KDV_ORANI.Size = new System.Drawing.Size(100, 21);
-            this.combosALIS_KDV_ORANI.TabIndex = 87;
+            this.comboALIS_KDV_ORANI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboALIS_KDV_ORANI.FormattingEnabled = true;
+            this.comboALIS_KDV_ORANI.Location = new System.Drawing.Point(407, 146);
+            this.comboALIS_KDV_ORANI.Name = "comboALIS_KDV_ORANI";
+            this.comboALIS_KDV_ORANI.Size = new System.Drawing.Size(100, 21);
+            this.comboALIS_KDV_ORANI.TabIndex = 87;
             // 
             // FrmURUN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 359);
-            this.Controls.Add(this.combosALIS_KDV_ORANI);
+            this.Controls.Add(this.comboALIS_KDV_ORANI);
             this.Controls.Add(this.comboSATIS_KDV_ORANI);
             this.Controls.Add(this.comboTEDARIKCI_REFNO);
             this.Controls.Add(this.comboALT_KATEGORI_REFNO);
@@ -514,6 +442,6 @@
         private System.Windows.Forms.ComboBox comboALT_KATEGORI_REFNO;
         private System.Windows.Forms.ComboBox comboTEDARIKCI_REFNO;
         private System.Windows.Forms.ComboBox comboSATIS_KDV_ORANI;
-        private System.Windows.Forms.ComboBox combosALIS_KDV_ORANI;
+        private System.Windows.Forms.ComboBox comboALIS_KDV_ORANI;
     }
 }

@@ -35,7 +35,7 @@ namespace PRATİK
             Genel.ListeDoldur(comboSATIS_KDV_ORANI, dt4, "KDV_ORANI", "KDV_REFNO");
 
             DataTable dt5 = db.TableGetir("SELECT * FROM KDV");
-            Genel.ListeDoldur(combosALIS_KDV_ORANI, dt5, "KDV_ORANI", "KDV_REFNO");
+            Genel.ListeDoldur(comboALIS_KDV_ORANI, dt5, "KDV_ORANI", "KDV_REFNO");
 
             dt = db.TableGetir(sql, true);
             if (dt.Rows.Count > 0) satir = 0;
@@ -47,7 +47,7 @@ namespace PRATİK
             if(satir > -1)
             {
                 txtADI.Text = dt.Rows[satirno]["ADI"].ToString();
-                combosALIS_KDV_ORANI.SelectedValue = dt.Rows[satirno]["ALIS_KDV_ORANI"].ToString();
+                comboALIS_KDV_ORANI.SelectedValue = dt.Rows[satirno]["ALIS_KDV_ORANI"].ToString();
                 txtBARKODU.Text = dt.Rows[satirno]["BARKODU"].ToString();
                 txtBIRIM1.Text = dt.Rows[satirno]["BIRIM1"].ToString();
                 txtBIRIM2.Text = dt.Rows[satirno]["BIRIM2"].ToString();
@@ -55,7 +55,7 @@ namespace PRATİK
                 txtKDVSIZ_SATIS_FIYATI.Text = dt.Rows[satirno]["KDVSIZ_SATIS_FIYATI"].ToString();
                 comboSATIS_KDV_ORANI.SelectedValue = dt.Rows[satirno]["SATIS_KDV_ORANI"].ToString();
                 txtURUN_REFNO.Text = dt.Rows[satirno]["URUN_REFNO"].ToString();
-                comboALT_KATEGORI_REFNO.SelectedItem = dt.Rows[satirno]["ALT_KATEGORI_REFNO"].ToString();
+                comboALT_KATEGORI_REFNO.SelectedValue = dt.Rows[satirno]["ALT_KATEGORI_REFNO"].ToString();
                 comboKATEGORI_REFNO.SelectedValue = dt.Rows[satirno]["KATEGORI_REFNO"].ToString();
                 comboTEDARIKCI_REFNO.SelectedValue = dt.Rows[satirno]["TEDARIKCI_REFNO"].ToString();
             }
@@ -105,7 +105,7 @@ namespace PRATİK
         {
             // Kaydet
             SqlParameter prm1 = new SqlParameter("@p1", txtADI.Text);
-            SqlParameter prm2 = new SqlParameter("@p2", combosALIS_KDV_ORANI.SelectedValue);
+            SqlParameter prm2 = new SqlParameter("@p2", comboALIS_KDV_ORANI.SelectedValue);
             SqlParameter prm3 = new SqlParameter("@p3", txtBARKODU.Text);
             SqlParameter prm4 = new SqlParameter("@p4", txtBIRIM1.Text);
             SqlParameter prm5 = new SqlParameter("@p5", txtBIRIM2.Text);
@@ -113,15 +113,19 @@ namespace PRATİK
             SqlParameter prm7 = new SqlParameter("@p7", txtKDVSIZ_SATIS_FIYATI.Text);
             SqlParameter prm8 = new SqlParameter("@p8", comboSATIS_KDV_ORANI.SelectedValue);
             SqlParameter prm9 = new SqlParameter("@p9", txtURUN_REFNO.Text);
-            SqlParameter prm10 = new SqlParameter("@p10", comboALT_KATEGORI_REFNO.SelectedValue.ToString());
-            SqlParameter prm11 = new SqlParameter("@p11", comboKATEGORI_REFNO.SelectedValue.ToString());
-            SqlParameter prm12 = new SqlParameter("@p12", comboTEDARIKCI_REFNO.SelectedValue.ToString());
+            SqlParameter prm10 = new SqlParameter("@p10", comboALT_KATEGORI_REFNO.SelectedValue);
+            SqlParameter prm11 = new SqlParameter("@p11", comboKATEGORI_REFNO.SelectedValue);
+            SqlParameter prm12 = new SqlParameter("@p12", comboTEDARIKCI_REFNO.SelectedValue);
 
             string sql1 = "";
             if(txtURUN_REFNO.Text != "")
             {
-                sql1 = "INSERT INTO URUN(ADI, ALIS_KDV_ORANI, BARKODU, BIRIM1, BIRIM2, KDVSIZ_ALIS_FIYATI, KDVSIZ_SATIS_FIYATI, SATIS_KDV_ORANI,ALT_KATEGORI_REFNO, KATEGORI_REFNO, TEDARIKCI REFNO)" +
-                    " VALUES(@p1, @p2, @p3, @p4, @p5, @p5, @p6, @p7, @p8, @p10, @p11, @p12)";
+                sql1 = "INSERT INTO URUN(ADI, ALIS_KDV_ORANI, BARKODU, BIRIM1, BIRIM2, KDVSIZ_ALIS_FIYATI, KDVSIZ_SATIS_FIYATI, SATIS_KDV_ORANI, ALT_KATEGORI_REFNO, KATEGORI_REFNO, TEDARIKCI_REFNO)" +
+                    " VALUES(@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p10, @p11, @p12)";
+            }
+            else
+            {
+                sql1 = "UPDATE URUN SET ADI=@p1, ALIS_KDV_ORANI=@p2, BARKODU=@p3, BIRIM1=@p4, BIRIM2=@p5, KDVSIZ_ALIS_FIYATI=@p6, KDVSIZ_SATIS_FIYATI=@p7, SATIS_KDV_ORANI=@p8, ALT_KATEGORI_REFNO=@10, KATEGORI_REFNO=@p11, TEDARIKCI_REFNO=@p12 WHERE URUN_REFNO=@p9";
             }
             db.SqlCalistir(sql1, prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm12);
             dt = db.TableGetir(sql);
@@ -137,12 +141,16 @@ namespace PRATİK
 
         private void ComboKATEGORI_REFNO_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string kategorirefno = comboKATEGORI_REFNO.SelectedValue.ToString();
-            string sql = "SELECT * FROM ALT_KATEGORI WHERE KATEGORI_REFNO = @p1";
-            SqlParameter prm1 = new SqlParameter("@p1", Convert.ToInt32(kategorirefno));
+            if(comboKATEGORI_REFNO.SelectedIndex > -1)
+            {
+                string kategorirefno = comboKATEGORI_REFNO.SelectedValue.ToString();
+                string sql = "SELECT * FROM ALT_KATEGORI WHERE KATEGORI_REFNO = @p1";
+                SqlParameter prm1 = new SqlParameter("@p1", Convert.ToInt32(kategorirefno));
 
-            DataTable dt = db.TableGetir(sql,false, prm1);
-            Genel.ListeDoldur(comboALT_KATEGORI_REFNO, dt, "ALT_KATEGORI_ADI", "ALT_KATEGORI_REFNO");
+                DataTable dt = db.TableGetir(sql, false, prm1);
+                Genel.ListeDoldur(comboALT_KATEGORI_REFNO, dt, "ALT_KATEGORI_ADI", "ALT_KATEGORI_REFNO");
+            }
+            
         }
     }
 }
