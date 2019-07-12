@@ -28,7 +28,7 @@ namespace PRATİK
 
         private void FrmMUSTERI_Load(object sender, EventArgs e)
         {
-            dt = db.TableGetir(sql);
+            dt = db.TableGetir(sql,true);
             if (dt.Rows.Count > 0) satir = 0;
             KayitGetir(satir);
         }
@@ -160,6 +160,7 @@ namespace PRATİK
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            // Sil
             DialogResult dialogResult = MessageBox.Show("Silmek istediğinize emin misiniz?", "Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
@@ -191,6 +192,7 @@ namespace PRATİK
 
         private void Button5_Click(object sender, EventArgs e)
         {
+            // Arama
             string sql = "SELECT * FROM MUSTERI WHERE UNVANI LIKE '%'+@p1+'%' OR ADRES LIKE '%'+@p2+'%' OR SEHIR LIKE '%'+@p3+'%'";
             List<SqlParameter> prms = new List<SqlParameter>();
             SqlParameter prm1 = new SqlParameter("@p1", "");

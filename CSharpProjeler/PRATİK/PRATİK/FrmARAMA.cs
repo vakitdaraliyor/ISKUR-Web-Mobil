@@ -45,7 +45,7 @@ namespace PRATİK
                 prms[i].Value = txtArama.Text;
             }
 
-            DataTable dt = db.TableGetir(sql, prms.ToArray());
+            DataTable dt = db.TableGetir(sql, false, prms.ToArray());
             dataGridView1.DataSource = dt;
         }
 

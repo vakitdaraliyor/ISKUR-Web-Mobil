@@ -12,7 +12,7 @@ namespace ADO.Net
     {
         SqlConnection connection = new SqlConnection(@"Data Source=localhost\SQLEXPRESS; initial catalog=PRATIK; user id=sa; password=1234");
 
-        public DataTable TableGetir(string sql, params SqlParameter[] prms)
+        public DataTable TableGetir(string sql, bool WithSchema = false, params SqlParameter[] prms)
         {
             // Komut oluşturup connection oluşturuyoruz.
             SqlCommand command = new SqlCommand(sql, connection);
@@ -23,8 +23,11 @@ namespace ADO.Net
             SqlDataAdapter adapter = new SqlDataAdapter(command);
 
             DataTable dt = new DataTable();
-            adapter.Fill(dt); // sql cümlesini çalıştırıp dt tablosuna doldur Satirlari dt ye ekler
-            adapter.FillSchema(dt, SchemaType.Source); // table yapisini PK vb dt ye ekler
+            adapter.Fill(dt); // sql cümlesini çalıştırıp dt tablosuna doldur. Satirlari dt ye ekler
+            if(WithSchema == true)
+            {
+                adapter.FillSchema(dt, SchemaType.Source); // table yapisini PK vb dt ye ekler
+            }
             command.Parameters.Clear();
             return dt;
         }

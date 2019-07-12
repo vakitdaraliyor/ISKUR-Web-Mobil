@@ -59,23 +59,78 @@
     <Compile Include="FrmARAMA.Designer.cs">
       <DependentUpon>FrmARAMA.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmKATEGORI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKATEGORI.Designer.cs">
+      <DependentUpon>FrmKATEGORI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKULLANICI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKULLANICI.Designer.cs">
+      <DependentUpon>FrmKULLANICI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLOGIN.Designer.cs">
+      <DependentUpon>FrmLOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMUSHAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMUSHAR.Designer.cs">
+      <DependentUpon>FrmMUSHAR.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMUSTERI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMUSTERI.Designer.cs">
       <DependentUpon>FrmMUSTERI.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmURUN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmURUN.Designer.cs">
+      <DependentUpon>FrmURUN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUYARI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUYARI.Designer.cs">
+      <DependentUpon>FrmUYARI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Genel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalParameter.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmArama.resx">
       <DependentUpon>FrmARAMA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmKATEGORI.resx">
+      <DependentUpon>FrmKATEGORI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKULLANICI.resx">
+      <DependentUpon>FrmKULLANICI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLOGIN.resx">
+      <DependentUpon>FrmLOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMUSHAR.resx">
+      <DependentUpon>FrmMUSHAR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMUSTERI.resx">
       <DependentUpon>FrmMUSTERI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmURUN.resx">
+      <DependentUpon>FrmURUN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUYARI.resx">
+      <DependentUpon>FrmUYARI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,6 +153,35 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
