@@ -103,6 +103,56 @@ namespace PRATİK
 
         private void Button2_Click(object sender, EventArgs e)
         {
+
+            string mesaj = "";
+            if (txtADI.Text == "")
+            {
+                mesaj = "Ürün Adı boş bırakılamaz!\r\n";
+            }
+            if (txtBARKODU.Text == "")
+            {
+                mesaj += "Ürün Barkodu boş bırakılamaz!\r\n";
+            }
+            if (txtKDVSIZ_ALIS_FIYATI.Text == "")
+            {
+                mesaj += "Kdv siz alış fiyatı boş bırakılamaz\r\n";
+            }
+            if (txtKDVSIZ_SATIS_FIYATI.Text == "")
+            {
+                mesaj = "Kdv siz satış fiyatı boş bırakılamaz!\r\n";
+            }
+            if (txtBIRIM1.Text == "")
+            {
+                mesaj += "Birim1 boş bırakılamaz!\r\n";
+            }
+            if (comboALIS_KDV_ORANI.SelectedIndex == -1)
+            {
+                mesaj += "Alış kdv oranı boş bırakılamaz\r\n";
+            }
+            if (comboALT_KATEGORI_REFNO.SelectedIndex == -1)
+            {
+                mesaj += "Alt kategori alanı boş bırakılamaz\r\n";
+            }
+            if (comboKATEGORI_REFNO.SelectedIndex == -1)
+            {
+                mesaj += "Kategori alanı boş bırakılamaz\r\n";
+            }
+            if (comboSATIS_KDV_ORANI.SelectedIndex == -1)
+            {
+                mesaj += "Satış kdv oranı boş bırakılamaz\r\n";
+            }
+            if (comboTEDARIKCI_REFNO.SelectedIndex == -1)
+            {
+                mesaj += "Tedarikçi boş bırakılamaz";
+            }
+            if (mesaj != "")
+            {
+                FrmUYARI uyarı = new FrmUYARI();
+                uyarı.textBox1.Text = mesaj;
+                uyarı.ShowDialog();
+                return;
+            }
+
             // Kaydet
             SqlParameter prm1 = new SqlParameter("@p1", txtADI.Text);
             SqlParameter prm2 = new SqlParameter("@p2", comboALIS_KDV_ORANI.SelectedValue);
@@ -118,14 +168,14 @@ namespace PRATİK
             SqlParameter prm12 = new SqlParameter("@p12", comboTEDARIKCI_REFNO.SelectedValue);
 
             string sql1 = "";
-            if(txtURUN_REFNO.Text != "")
+            if(txtURUN_REFNO.Text == "")
             {
                 sql1 = "INSERT INTO URUN(ADI, ALIS_KDV_ORANI, BARKODU, BIRIM1, BIRIM2, KDVSIZ_ALIS_FIYATI, KDVSIZ_SATIS_FIYATI, SATIS_KDV_ORANI, ALT_KATEGORI_REFNO, KATEGORI_REFNO, TEDARIKCI_REFNO)" +
                     " VALUES(@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p10, @p11, @p12)";
             }
             else
             {
-                sql1 = "UPDATE URUN SET ADI=@p1, ALIS_KDV_ORANI=@p2, BARKODU=@p3, BIRIM1=@p4, BIRIM2=@p5, KDVSIZ_ALIS_FIYATI=@p6, KDVSIZ_SATIS_FIYATI=@p7, SATIS_KDV_ORANI=@p8, ALT_KATEGORI_REFNO=@10, KATEGORI_REFNO=@p11, TEDARIKCI_REFNO=@p12 WHERE URUN_REFNO=@p9";
+                sql1 = "UPDATE URUN SET ADI=@p1, ALIS_KDV_ORANI=@p2, BARKODU=@p3, BIRIM1=@p4, BIRIM2=@p5, KDVSIZ_ALIS_FIYATI=@p6, KDVSIZ_SATIS_FIYATI=@p7, SATIS_KDV_ORANI=@p8, ALT_KATEGORI_REFNO=@p10, KATEGORI_REFNO=@p11, TEDARIKCI_REFNO=@p12 WHERE URUN_REFNO=@p9";
             }
             db.SqlCalistir(sql1, prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm12);
             dt = db.TableGetir(sql);
@@ -151,6 +201,23 @@ namespace PRATİK
                 Genel.ListeDoldur(comboALT_KATEGORI_REFNO, dt, "ALT_KATEGORI_ADI", "ALT_KATEGORI_REFNO");
             }
             
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            // Arama
+            string sql = "SELECT * FROM URUN WHERE ADI LIKE '%'+@p1+'%' ";
+            List<SqlParameter> prms = new List<SqlParameter>();
+            SqlParameter prm1 = new SqlParameter("@p1", "");
+            prms.Add(prm1);
+
+            FrmARAMA arama = new FrmARAMA(prms, sql, "URUN_REFNO");
+            arama.ShowDialog();
+
+            DataRow dr = dt.Rows.Find(FrmARAMA.REFNO);
+            satir = dt.Rows.IndexOf(dr);
+
+            KayitGetir(satir);
         }
     }
 }

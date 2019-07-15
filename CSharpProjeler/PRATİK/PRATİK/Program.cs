@@ -16,7 +16,7 @@ namespace PRATİK
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmANA());
+            Application.Run(new FrmLOGIN());
         }
     }
 }

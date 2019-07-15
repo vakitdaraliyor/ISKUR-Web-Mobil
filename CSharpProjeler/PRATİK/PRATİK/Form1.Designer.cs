@@ -60,6 +60,7 @@
             this.araToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.hakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ürünListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,7 +128,8 @@
             // 
             this.açToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ürünKartıToolStripMenuItem,
-            this.ürünHareketListesiToolStripMenuItem});
+            this.ürünHareketListesiToolStripMenuItem,
+            this.ürünListesiToolStripMenuItem});
             this.açToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.açToolStripMenuItem.Name = "açToolStripMenuItem";
             this.açToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
@@ -145,6 +147,7 @@
             this.ürünHareketListesiToolStripMenuItem.Name = "ürünHareketListesiToolStripMenuItem";
             this.ürünHareketListesiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ürünHareketListesiToolStripMenuItem.Text = "Ürün Hareket Listesi";
+            this.ürünHareketListesiToolStripMenuItem.Click += new System.EventHandler(this.ÜrünHareketListesiToolStripMenuItem_Click);
             // 
             // toolStripSeparator
             // 
@@ -300,6 +303,13 @@
             this.hakkındaToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.hakkındaToolStripMenuItem.Text = "&Hakkında...";
             // 
+            // ürünListesiToolStripMenuItem
+            // 
+            this.ürünListesiToolStripMenuItem.Name = "ürünListesiToolStripMenuItem";
+            this.ürünListesiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ürünListesiToolStripMenuItem.Text = "Ürün Listesi";
+            this.ürünListesiToolStripMenuItem.Click += new System.EventHandler(this.ÜrünListesiToolStripMenuItem_Click);
+            // 
             // FrmANA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,6 +361,7 @@
         private System.Windows.Forms.ToolStripMenuItem ürünKartıToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ürünHareketListesiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem müşteriListesiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ürünListesiToolStripMenuItem;
     }
 }
 

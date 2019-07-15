@@ -46,8 +46,8 @@ namespace PRATİK
         {
             // Müşteri listesi
             string sql = "SELECT * FROM MUSTERI";
-            string dosyaAdi = "MUSTERI_LISTESI" + DateTime.Now.ToString().Replace(":", ".") + ".csv";
-            string yol = @"c:\Users\AYBU\Desktop\outputs\";
+            string dosyaAdi = "MUSTERI.csv";
+            string yol = @"C:\Users\osman\Desktop\";
             Genel.csvReport(yol, dosyaAdi, sql, true);
         }
 
@@ -61,6 +61,21 @@ namespace PRATİK
         {
             FrmURUN urun = new FrmURUN();
             urun.ShowDialog();
+        }
+
+        private void ÜrünHareketListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmURUNHAR urunHar = new FrmURUNHAR();
+            urunHar.ShowDialog();
+        }
+
+        private void ÜrünListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Urun listesi
+            string sql = "SELECT * FROM URUN";
+            string dosyaAdi = "URUN.csv";
+            string yol = @"C:\Users\osman\Desktop\";
+            Genel.csvReport(yol, dosyaAdi, sql, true);
         }
     }
 }
