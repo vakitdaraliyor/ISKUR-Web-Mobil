@@ -10,7 +10,7 @@ namespace ADO.Net
 {
     class DBClass
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=localhost\SQLEXPRESS; initial catalog=PRATIK; user id=sa; password=1234");
+        SqlConnection connection = new SqlConnection(@"Data Source=localhost\SQLEXPRESS; initial catalog=PRATIK; user id=sa; password=1234; MultipleActiveResultSets=true"); //  MultipleActiveResultSets=true connection kapatmadan sorgu yapmayı sağlar
 
         public DataTable TableGetir(string sql, bool WithSchema = false, params SqlParameter[] prms)
         {
@@ -54,7 +54,6 @@ namespace ADO.Net
 
         public void SqlCalistir(string sql, params SqlParameter[] prms)
         {
-
             SqlCommand cmd = new SqlCommand(sql, connection);
 
             if (prms != null) cmd.Parameters.AddRange(prms);
@@ -65,6 +64,30 @@ namespace ADO.Net
             connection.Close();
         }
 
+        public object TekDegerGetir(string sql, params SqlParameter[] prms)
+        {
+            object sonuc = null; SqlCommand cmd = new SqlCommand(sql, connection);
 
+            if (prms != null) cmd.Parameters.AddRange(prms);
+            if (connection.State == ConnectionState.Closed) connection.Open();
+
+            sonuc = cmd.ExecuteScalar();
+            connection.Close();
+
+            return sonuc;
+        }
+
+        public SqlDataReader VeriOkuyucu(string sql, params SqlParameter[] prms)
+        {
+            SqlDataReader okuyucu = null;
+            SqlCommand command = new SqlCommand(sql, connection);
+
+            if (prms != null) command.Parameters.AddRange(prms);
+
+            if (connection.State == ConnectionState.Closed) connection.Open();
+
+            okuyucu = command.ExecuteReader();// connection ı kapatmazsan => Öncelikle kapatılması gereken açık bir DataReader zaten var.
+            return okuyucu;
+        }
     }
 }

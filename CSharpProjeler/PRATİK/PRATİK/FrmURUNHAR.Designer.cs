@@ -118,6 +118,7 @@
             // 
             // comboTIPI
             // 
+            this.comboTIPI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTIPI.FormattingEnabled = true;
             this.comboTIPI.Items.AddRange(new object[] {
             "Alış",

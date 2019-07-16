@@ -64,6 +64,13 @@ namespace PRATİK
             // string dosyaAdi = "MUSTERI_LISTESI" + DateTime.Now.ToString().Replace(":", ".") + ".csv";
             StreamWriter sw = new StreamWriter(yol + dosyaAdi, false, Encoding.UTF8);
 
+            string columnNames = "";
+            foreach(DataColumn column in dt.Columns)
+            {
+                columnNames = columnNames + column.ColumnName + ";";                
+            }
+            sw.WriteLine(columnNames);
+
             string satir = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {

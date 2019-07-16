@@ -27,15 +27,28 @@ namespace PRATİK
             DataTable dt = db.TableGetir(sql1);
             Genel.ListeDoldur(comboURUN, dt, "ADI", "URUN_REFNO");
             comboURUN.SelectedIndex = 0; // ilk urunu secer
+            comboTIPI.SelectedIndex = 0;
+
         }
 
         void Sorgula()
         {
-            string sql = "SELECT * FROM URUN_HAREKET WHERE URUN_REFNO=@p1 AND TARIH BETWEEN @p2 AND @p3";
+            if (comboURUN.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            if (comboTIPI.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            string sql = "SELECT * FROM URUN_HAREKET WHERE (URUN_REFNO=@p1) AND (HAREKET_TIPI=@p2) AND (TARIH BETWEEN @p3 AND @p4)";
             SqlParameter prm1 = new SqlParameter("@p1", comboURUN.SelectedValue.ToString());
-            SqlParameter prm2 = new SqlParameter("@p2", dateTimePicker1.Value.ToString("MM.dd.yyyy"));
-            SqlParameter prm3 = new SqlParameter("@p3", dateTimePicker2.Value.ToString("MM.dd.yyyy"));
-            dt = db.TableGetir(sql, false, prm1, prm2, prm3);
+            SqlParameter prm2 = new SqlParameter("@p2", comboTIPI.SelectedItem.ToString());
+            SqlParameter prm3 = new SqlParameter("@p3", dateTimePicker1.Value.ToString("MM.dd.yyyy"));
+            SqlParameter prm4 = new SqlParameter("@p4", dateTimePicker2.Value.ToString("MM.dd.yyyy"));
+            dt = db.TableGetir(sql, false, prm1, prm2, prm3, prm4);
             dataGridView1.DataSource = dt;
         }
 

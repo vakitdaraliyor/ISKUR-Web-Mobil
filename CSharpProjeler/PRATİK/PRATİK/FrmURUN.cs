@@ -119,7 +119,7 @@ namespace PRATİK
             }
             if (txtKDVSIZ_SATIS_FIYATI.Text == "")
             {
-                mesaj = "Kdv siz satış fiyatı boş bırakılamaz!\r\n";
+                mesaj += "Kdv siz satış fiyatı boş bırakılamaz!\r\n";
             }
             if (txtBIRIM1.Text == "")
             {

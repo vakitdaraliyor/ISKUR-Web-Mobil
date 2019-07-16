@@ -47,7 +47,7 @@ namespace PRATİK
             // Müşteri listesi
             string sql = "SELECT * FROM MUSTERI";
             string dosyaAdi = "MUSTERI.csv";
-            string yol = @"C:\Users\osman\Desktop\";
+            string yol = @"C:\Users\AYBU\Desktop\";
             Genel.csvReport(yol, dosyaAdi, sql, true);
         }
 
@@ -74,7 +74,7 @@ namespace PRATİK
             // Urun listesi
             string sql = "SELECT * FROM URUN";
             string dosyaAdi = "URUN.csv";
-            string yol = @"C:\Users\osman\Desktop\";
+            string yol = @"C:\Users\AYBU\Desktop\";
             Genel.csvReport(yol, dosyaAdi, sql, true);
         }
     }

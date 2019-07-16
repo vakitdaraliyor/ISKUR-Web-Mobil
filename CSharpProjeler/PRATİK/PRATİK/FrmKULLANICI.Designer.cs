@@ -47,6 +47,7 @@
             this.btnVAZGEC = new System.Windows.Forms.Button();
             this.btnKAYDET = new System.Windows.Forms.Button();
             this.btnYENI = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             this.groupBox1.Controls.Add(this.txtKULLANICI_REFNO);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(13, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(506, 105);
             this.groupBox1.TabIndex = 0;
@@ -78,6 +79,7 @@
             // 
             // comboDURUMU
             // 
+            this.comboDURUMU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboDURUMU.FormattingEnabled = true;
             this.comboDURUMU.Items.AddRange(new object[] {
             "Aktif",
@@ -147,16 +149,16 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 196);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 227);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(506, 242);
+            this.dataGridView1.Size = new System.Drawing.Size(506, 211);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_RowEnter);
             // 
             // btnSON
             // 
-            this.btnSON.Location = new System.Drawing.Point(354, 167);
+            this.btnSON.Location = new System.Drawing.Point(353, 195);
             this.btnSON.Name = "btnSON";
             this.btnSON.Size = new System.Drawing.Size(75, 23);
             this.btnSON.TabIndex = 8;
@@ -166,7 +168,7 @@
             // 
             // btnSONRAKI
             // 
-            this.btnSONRAKI.Location = new System.Drawing.Point(272, 167);
+            this.btnSONRAKI.Location = new System.Drawing.Point(271, 195);
             this.btnSONRAKI.Name = "btnSONRAKI";
             this.btnSONRAKI.Size = new System.Drawing.Size(75, 23);
             this.btnSONRAKI.TabIndex = 7;
@@ -176,7 +178,7 @@
             // 
             // btnONCEKI
             // 
-            this.btnONCEKI.Location = new System.Drawing.Point(190, 167);
+            this.btnONCEKI.Location = new System.Drawing.Point(189, 195);
             this.btnONCEKI.Name = "btnONCEKI";
             this.btnONCEKI.Size = new System.Drawing.Size(75, 23);
             this.btnONCEKI.TabIndex = 6;
@@ -186,7 +188,7 @@
             // 
             // btnILK
             // 
-            this.btnILK.Location = new System.Drawing.Point(108, 167);
+            this.btnILK.Location = new System.Drawing.Point(107, 195);
             this.btnILK.Name = "btnILK";
             this.btnILK.Size = new System.Drawing.Size(75, 23);
             this.btnILK.TabIndex = 5;
@@ -196,7 +198,7 @@
             // 
             // btnARAMA
             // 
-            this.btnARAMA.Location = new System.Drawing.Point(437, 123);
+            this.btnARAMA.Location = new System.Drawing.Point(436, 151);
             this.btnARAMA.Name = "btnARAMA";
             this.btnARAMA.Size = new System.Drawing.Size(75, 23);
             this.btnARAMA.TabIndex = 4;
@@ -206,7 +208,7 @@
             // 
             // btnSIL
             // 
-            this.btnSIL.Location = new System.Drawing.Point(334, 123);
+            this.btnSIL.Location = new System.Drawing.Point(333, 151);
             this.btnSIL.Name = "btnSIL";
             this.btnSIL.Size = new System.Drawing.Size(75, 23);
             this.btnSIL.TabIndex = 3;
@@ -216,7 +218,7 @@
             // 
             // btnVAZGEC
             // 
-            this.btnVAZGEC.Location = new System.Drawing.Point(231, 123);
+            this.btnVAZGEC.Location = new System.Drawing.Point(230, 151);
             this.btnVAZGEC.Name = "btnVAZGEC";
             this.btnVAZGEC.Size = new System.Drawing.Size(75, 23);
             this.btnVAZGEC.TabIndex = 2;
@@ -226,7 +228,7 @@
             // 
             // btnKAYDET
             // 
-            this.btnKAYDET.Location = new System.Drawing.Point(128, 123);
+            this.btnKAYDET.Location = new System.Drawing.Point(127, 151);
             this.btnKAYDET.Name = "btnKAYDET";
             this.btnKAYDET.Size = new System.Drawing.Size(75, 23);
             this.btnKAYDET.TabIndex = 1;
@@ -236,7 +238,7 @@
             // 
             // btnYENI
             // 
-            this.btnYENI.Location = new System.Drawing.Point(25, 123);
+            this.btnYENI.Location = new System.Drawing.Point(24, 151);
             this.btnYENI.Name = "btnYENI";
             this.btnYENI.Size = new System.Drawing.Size(75, 23);
             this.btnYENI.TabIndex = 0;
@@ -244,12 +246,24 @@
             this.btnYENI.UseVisualStyleBackColor = true;
             this.btnYENI.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.Location = new System.Drawing.Point(397, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Yetkilendirme";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
+            // 
             // FrmKULLANICI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(535, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSON);
             this.Controls.Add(this.btnSONRAKI);
             this.Controls.Add(this.btnONCEKI);
@@ -262,6 +276,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmKULLANICI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kayıt Ekranı";
@@ -294,5 +310,6 @@
         private System.Windows.Forms.TextBox txtKULLANICI_REFNO;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

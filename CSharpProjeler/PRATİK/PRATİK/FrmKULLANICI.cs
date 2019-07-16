@@ -258,5 +258,12 @@ namespace PRATİK
         {
             YeniKayit();
         }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            FrmYETKI yetki = new FrmYETKI();
+            yetki.label1.Text = txtKULLANICI_REFNO.Text;
+            yetki.ShowDialog();
+        }
     }
 }

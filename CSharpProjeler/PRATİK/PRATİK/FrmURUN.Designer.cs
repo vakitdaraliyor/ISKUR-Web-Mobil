@@ -295,9 +295,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(307, 61);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 13);
+            this.label11.Size = new System.Drawing.Size(87, 13);
             this.label11.TabIndex = 73;
-            this.label11.Text = "Kdvs Alış Fiyatı:";
+            this.label11.Text = "Kdvsiz Alış Fiyatı:";
             // 
             // label12
             // 
