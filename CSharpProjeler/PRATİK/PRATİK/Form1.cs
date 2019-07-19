@@ -53,8 +53,16 @@ namespace PRATİK
 
         private void KullanıcılarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmKULLANICI kullanıcı = new FrmKULLANICI();
-            kullanıcı.ShowDialog();
+            if(Genel.YetkiVarmı(Genel.KULLANICI_REFNO, Convert.ToInt32(MODUL.Kullanıcı), Convert.ToInt32(YETKI.OKU)) == true)
+            {
+                FrmKULLANICI kullanıcı = new FrmKULLANICI();
+                kullanıcı.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Yetkiniz yok!");
+            }
+            
         }
 
         private void ÜrünKartıToolStripMenuItem_Click(object sender, EventArgs e)

@@ -38,6 +38,8 @@ namespace PRATİK
 
             if(dt.Rows.Count == 1)
             {
+                Genel.KULLANICI_REFNO = Convert.ToInt32(dt.Rows[0]["KULLANICI_REFNO"]);
+                Genel.KULLANICI_ADI = dt.Rows[0]["KULLANICI_ADI"].ToString();
                 Hide();
                 FrmANA frmAna = new FrmANA();
                 frmAna.ShowDialog();

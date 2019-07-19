@@ -36,7 +36,7 @@ namespace PRATİK
             SqlParameter prm2 = new SqlParameter("@p2", modul_refno);
             db.SqlCalistir(sql, prm1, prm2);
 
-            string sqlYetkiEkle = "INSERT INTO YETKI(KULLANICI_REFNO, MODUL_REFNO,EKLE, GUNCELLE, SIL, OKU)";
+            string sqlYetkiEkle = "INSERT INTO YETKI(KULLANICI_REFNO, MODUL_REFNO, EKLE, GUNCELLE, SIL, OKU)";
             sqlYetkiEkle += "VALUES(@p11, @p22, @p33, @p44, @p55, @p66)";
 
             SqlParameter prm11 = new SqlParameter("@p11", label1.Text);

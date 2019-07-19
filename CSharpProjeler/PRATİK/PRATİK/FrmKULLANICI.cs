@@ -65,8 +65,17 @@ namespace PRATİK
         private void Button1_Click(object sender, EventArgs e)
         {
             // Yeni
-            Genel.EkranıTemizle(this);
-            YeniKayit();
+            if(Genel.YetkiVarmı(Genel.KULLANICI_REFNO, Convert.ToInt32(MODUL.Kullanıcı), Convert.ToInt32(YETKI.EKLE)) == true)
+            {
+                Genel.EkranıTemizle(this);
+                YeniKayit();
+            }
+            else
+            {
+                MessageBox.Show("Yetkiniz yok!");
+                return;
+            }
+            
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -142,62 +151,79 @@ namespace PRATİK
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            string mesaj = "";
-            if(txtKULLANICI_ADI.Text == "")
-            {
-                mesaj = "Kullanıcı adı boş bırakılamaz!\r\n";
-            }
-            if(txtSIFRESI.Text == "")
-            {
-                mesaj += "Şifre boş bırakılamaz!\r\n";
-            }
-            if(comboDURUMU.SelectedIndex == -1)
-            {
-                mesaj += "Durumu boş bırakılamaz";
-            }
-            if (mesaj!="")
-            {
-                FrmUYARI uyarı = new FrmUYARI();
-                uyarı.textBox1.Text = mesaj;
-                uyarı.ShowDialog();
-                return;
-            }
-
             // Yeni kullanıcı ekleme / Güncelleme
-            SqlParameter prm1 = new SqlParameter("@p1", txtKULLANICI_ADI.Text);
-            SqlParameter prm2 = new SqlParameter("@p2", txtKULLANICI_REFNO.Text);
-            SqlParameter prm3 = new SqlParameter("@p3", txtSIFRESI.Text);
-            SqlParameter prm4 = new SqlParameter("@p4", comboDURUMU.SelectedItem.ToString());
-
-            string sql2 = "";
-            if (txtKULLANICI_REFNO.Text != "")
+            if (Genel.YetkiVarmı(Genel.KULLANICI_REFNO, Convert.ToInt32(MODUL.Kullanıcı), Convert.ToInt32(YETKI.GUNCELLE)) == true)
             {
-                sql2 = "UPDATE KULLANICI SET KULLANICI_ADI = @p1, SIFRESI = @p3, DURUMU = @p4 WHERE KULLANICI_REFNO = @p2";
+                string mesaj = "";
+                if (txtKULLANICI_ADI.Text == "")
+                {
+                    mesaj = "Kullanıcı adı boş bırakılamaz!\r\n";
+                }
+                if (txtSIFRESI.Text == "")
+                {
+                    mesaj += "Şifre boş bırakılamaz!\r\n";
+                }
+                if (comboDURUMU.SelectedIndex == -1)
+                {
+                    mesaj += "Durumu boş bırakılamaz";
+                }
+                if (mesaj != "")
+                {
+                    FrmUYARI uyarı = new FrmUYARI();
+                    uyarı.textBox1.Text = mesaj;
+                    uyarı.ShowDialog();
+                    return;
+                }
+                                
+                SqlParameter prm1 = new SqlParameter("@p1", txtKULLANICI_ADI.Text);
+                SqlParameter prm2 = new SqlParameter("@p2", txtKULLANICI_REFNO.Text);
+                SqlParameter prm3 = new SqlParameter("@p3", txtSIFRESI.Text);
+                SqlParameter prm4 = new SqlParameter("@p4", comboDURUMU.SelectedItem.ToString());
+
+                string sql2 = "";
+                if (txtKULLANICI_REFNO.Text != "")
+                {
+                    sql2 = "UPDATE KULLANICI SET KULLANICI_ADI = @p1, SIFRESI = @p3, DURUMU = @p4 WHERE KULLANICI_REFNO = @p2";
+                }
+                else
+                {
+                    sql2 = "INSERT INTO KULLANICI(KULLANICI_ADI, SIFRESI, DURUMU) VALUES(@p1, @p3, @p4)";
+                }
+
+                db.SqlCalistir(sql2, prm1, prm2, prm3, prm4);
+                // verilen gride listelenecek
+
+                GridDoldur();
             }
             else
             {
-                sql2 = "INSERT INTO KULLANICI(KULLANICI_ADI, SIFRESI, DURUMU) VALUES(@p1, @p3, @p4)";
+                MessageBox.Show("Yetkiniz yok!");
             }
 
-            db.SqlCalistir(sql2, prm1, prm2, prm3, prm4);
-            // verilen gride listelenecek
-
-            GridDoldur();
+           
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            // Sil
-            DialogResult dr = MessageBox.Show("Silmek istediğinize emin misiniz?", "DİKKAT", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr != DialogResult.Yes) return;
-
-            if(txtKULLANICI_REFNO.Text != "")
+            if(Genel.YetkiVarmı(Genel.KULLANICI_REFNO, Convert.ToInt32(MODUL.Kullanıcı), Convert.ToInt32(YETKI.SIL)) == true)
             {
-                SqlParameter prm1 = new SqlParameter("@p1", txtKULLANICI_REFNO.Text);
-                string sql2 = "DELETE FROM KULLANICI WHERE KULLANICI_REFNO = @p1";
-                db.SqlCalistir(sql2, prm1);
-                GridDoldur();
+                // Sil
+                DialogResult dr = MessageBox.Show("Silmek istediğinize emin misiniz?", "DİKKAT", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr != DialogResult.Yes) return;
+
+                if (txtKULLANICI_REFNO.Text != "")
+                {
+                    SqlParameter prm1 = new SqlParameter("@p1", txtKULLANICI_REFNO.Text);
+                    string sql2 = "DELETE FROM KULLANICI WHERE KULLANICI_REFNO = @p1";
+                    db.SqlCalistir(sql2, prm1);
+                    GridDoldur();
+                }
             }
+            else
+            {
+                MessageBox.Show("Yetkiniz yok!");
+            }
+                        
         }
 
         private void Button5_Click(object sender, EventArgs e)
