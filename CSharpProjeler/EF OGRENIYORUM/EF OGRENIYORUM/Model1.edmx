@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PRATIKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ALT_KATEGORI">
+          <Key>
+            <PropertyRef Name="ALT_KATEGORI_REFNO" />
+          </Key>
+          <Property Name="ALT_KATEGORI_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KATEGORI_REFNO" Type="int" />
+          <Property Name="ALT_KATEGORI_ADI" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="FAT_DETAY">
+          <Key>
+            <PropertyRef Name="FAT_DETAY_REFNO" />
+          </Key>
+          <Property Name="FAT_DETAY_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FATURA_REFNO" Type="int" />
+          <Property Name="MIKTAR" Type="real" />
+          <Property Name="KDVSIZ_BIRIM_FIYATI" Type="money" />
+          <Property Name="BIRIMI" Type="nvarchar" MaxLength="10" />
+          <Property Name="KDV_ORANI" Type="int" />
+          <Property Name="KDV_TUTAR" Type="money" />
+          <Property Name="URUN_REFNO" Type="int" />
+        </EntityType>
+        <EntityType Name="FATURA">
+          <Key>
+            <PropertyRef Name="FATURA_REFNO" />
+          </Key>
+          <Property Name="FATURA_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MUSTERI_REFNO" Type="int" />
+          <Property Name="FATURA_TIPI" Type="nvarchar" MaxLength="10" />
+          <Property Name="FATURA_TARIHI" Type="datetime" />
+          <Property Name="ADRES" Type="nvarchar" MaxLength="150" />
+          <Property Name="SEHIR" Type="nvarchar" MaxLength="20" />
+          <Property Name="ILGILI_KISI" Type="nvarchar" MaxLength="50" />
+          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="KATEGORI">
+          <Key>
+            <PropertyRef Name="KATEGORI_REFNO" />
+          </Key>
+          <Property Name="KATEGORI_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KATEGORI_ADI" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="KDV">
+          <Key>
+            <PropertyRef Name="KDV_REFNO" />
+          </Key>
+          <Property Name="KDV_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KDV_ORANI" Type="int" />
+        </EntityType>
+        <EntityType Name="KULLANICI">
+          <Key>
+            <PropertyRef Name="KULLANICI_REFNO" />
+          </Key>
+          <Property Name="KULLANICI_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KULLANICI_ADI" Type="nvarchar" MaxLength="20" />
+          <Property Name="SIFRESI" Type="nvarchar" MaxLength="10" />
+          <Property Name="DURUMU" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="MODUL">
+          <Key>
+            <PropertyRef Name="MODUL_REFNO" />
+          </Key>
+          <Property Name="MODUL_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MODUL_ADI" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="MUSTERI">
+          <Key>
+            <PropertyRef Name="MUSTERI_REFNO" />
+          </Key>
+          <Property Name="MUSTERI_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UNVANI" Type="nvarchar" MaxLength="100" />
+          <Property Name="ILGILI_KISI" Type="nvarchar" MaxLength="50" />
+          <Property Name="ADRES" Type="nvarchar" MaxLength="150" />
+          <Property Name="SEHIR" Type="nvarchar" MaxLength="20" />
+          <Property Name="POSTA_KODU" Type="nvarchar" MaxLength="10" />
+          <Property Name="TELEFON1" Type="nvarchar" MaxLength="11" />
+          <Property Name="TELEFON2" Type="nvarchar" MaxLength="11" />
+          <Property Name="TELEFON3" Type="nvarchar" MaxLength="11" />
+          <Property Name="FAX" Type="nvarchar" MaxLength="11" />
+          <Property Name="E_POSTA" Type="nvarchar" MaxLength="50" />
+          <Property Name="WEB_ADRESI" Type="nvarchar" MaxLength="50" />
+          <Property Name="ACIKLAMA" Type="ntext" />
+          <Property Name="TIPI" Type="nvarchar" MaxLength="20" />
+          <Property Name="BORC" Type="money" />
+          <Property Name="ALACAK" Type="money" />
+          <Property Name="BAKIYE" Type="money" />
+          <Property Name="VERGI_DAIRESI" Type="nvarchar" MaxLength="30" />
+          <Property Name="VERGI_NUMARASI" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="MUSTERI_HAREKET">
+          <Key>
+            <PropertyRef Name="MUSTERI_HAREKET_REFNO" />
+          </Key>
+          <Property Name="MUSTERI_HAREKET_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MUSTERI_REFNO" Type="int" />
+          <Property Name="TARIH" Type="datetime" />
+          <Property Name="BORC" Type="money" />
+          <Property Name="ALACAK" Type="money" />
+          <Property Name="KAYNAK" Type="nvarchar" MaxLength="50" />
+          <Property Name="KAYNAK_REFNO" Type="int" />
+        </EntityType>
+        <EntityType Name="SIP_DETAY">
+          <Key>
+            <PropertyRef Name="SIP_DETAY_REFNO" />
+          </Key>
+          <Property Name="SIP_DETAY_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SIPARIS_REFNO" Type="int" />
+          <Property Name="URUN_REFNO" Type="int" />
+          <Property Name="MIKTAR" Type="real" />
+          <Property Name="KDVSIZ_BIRIM_FIYATI" Type="money" />
+          <Property Name="BIRIMI" Type="nvarchar" MaxLength="10" />
+          <Property Name="KDV_ORANI" Type="int" />
+          <Property Name="KDV_TUTAR" Type="money" />
+        </EntityType>
+        <EntityType Name="SIPARIS">
+          <Key>
+            <PropertyRef Name="SIPARIS_REFNO" />
+          </Key>
+          <Property Name="SIPARIS_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MUSTERI_REFNO" Type="int" />
+          <Property Name="SIPARIS_TIPI" Type="nvarchar" MaxLength="10" />
+          <Property Name="SIPARIS_TARIHI" Type="datetime" />
+          <Property Name="TESLIM_TARIHI" Type="datetime" />
+          <Property Name="ADRES" Type="nvarchar" MaxLength="150" />
+          <Property Name="SEHIR" Type="nvarchar" MaxLength="20" />
+          <Property Name="ILGILI_KISI" Type="nvarchar" MaxLength="50" />
+          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="URUN">
+          <Key>
+            <PropertyRef Name="URUN_REFNO" />
+          </Key>
+          <Property Name="URUN_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ADI" Type="nvarchar" MaxLength="50" />
+          <Property Name="KATEGORI_REFNO" Type="int" />
+          <Property Name="ALT_KATEGORI_REFNO" Type="int" />
+          <Property Name="TEDARIKCI_REFNO" Type="int" />
+          <Property Name="KDVSIZ_SATIS_FIYATI" Type="money" />
+          <Property Name="KDVSIZ_ALIS_FIYATI" Type="money" />
+          <Property Name="SATIS_KDV_ORANI" Type="int" />
+          <Property Name="ALIS_KDV_ORANI" Type="int" />
+          <Property Name="BARKODU" Type="nvarchar" MaxLength="13" />
+          <Property Name="BIRIM1" Type="nvarchar" MaxLength="10" />
+          <Property Name="BIRIM2" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="URUN_HAREKET">
+          <Key>
+            <PropertyRef Name="URUN_HAREKET_REFNO" />
+          </Key>
+          <Property Name="URUN_HAREKET_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="URUN_REFNO" Type="int" />
+          <Property Name="TARIH" Type="datetime" />
+          <Property Name="HAREKET_TIPI" Type="nvarchar" MaxLength="10" />
+          <Property Name="KDVSIZ_ALIS_FIYATI" Type="money" />
+          <Property Name="KDVSIZ_SATIS_FIYATI" Type="money" />
+          <Property Name="MIKTAR" Type="real" />
+          <Property Name="KAYNAK" Type="nvarchar" MaxLength="15" />
+          <Property Name="KAYNAK_REFNO" Type="int" />
+        </EntityType>
+        <EntityType Name="YETKI">
+          <Key>
+            <PropertyRef Name="YETKI_REFNO" />
+          </Key>
+          <Property Name="YETKI_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KULLANICI_REFNO" Type="int" />
+          <Property Name="MODUL_REFNO" Type="int" />
+          <Property Name="EKLE" Type="bit" />
+          <Property Name="GUNCELLE" Type="bit" />
+          <Property Name="SIL" Type="bit" />
+          <Property Name="OKU" Type="bit" />
+        </EntityType>
+        <Association Name="FK_ALT_KATEGORI_KATEGORI">
+          <End Role="KATEGORI" Type="Self.KATEGORI" Multiplicity="0..1" />
+          <End Role="ALT_KATEGORI" Type="Self.ALT_KATEGORI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KATEGORI">
+              <PropertyRef Name="KATEGORI_REFNO" />
+            </Principal>
+            <Dependent Role="ALT_KATEGORI">
+              <PropertyRef Name="KATEGORI_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_URUN_KATEGORI">
+          <End Role="KATEGORI" Type="Self.KATEGORI" Multiplicity="0..1" />
+          <End Role="URUN" Type="Self.URUN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KATEGORI">
+              <PropertyRef Name="KATEGORI_REFNO" />
+            </Principal>
+            <Dependent Role="URUN">
+              <PropertyRef Name="KATEGORI_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PRATIKModelStoreContainer">
+          <EntitySet Name="ALT_KATEGORI" EntityType="Self.ALT_KATEGORI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FAT_DETAY" EntityType="Self.FAT_DETAY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FATURA" EntityType="Self.FATURA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KATEGORI" EntityType="Self.KATEGORI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KDV" EntityType="Self.KDV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KULLANICI" EntityType="Self.KULLANICI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MODUL" EntityType="Self.MODUL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MUSTERI" EntityType="Self.MUSTERI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MUSTERI_HAREKET" EntityType="Self.MUSTERI_HAREKET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SIP_DETAY" EntityType="Self.SIP_DETAY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SIPARIS" EntityType="Self.SIPARIS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="URUN" EntityType="Self.URUN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="URUN_HAREKET" EntityType="Self.URUN_HAREKET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YETKI" EntityType="Self.YETKI" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ALT_KATEGORI_KATEGORI" Association="Self.FK_ALT_KATEGORI_KATEGORI">
+            <End Role="KATEGORI" EntitySet="KATEGORI" />
+            <End Role="ALT_KATEGORI" EntitySet="ALT_KATEGORI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_URUN_KATEGORI" Association="Self.FK_URUN_KATEGORI">
+            <End Role="KATEGORI" EntitySet="KATEGORI" />
+            <End Role="URUN" EntitySet="URUN" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PRATIKModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ALT_KATEGORI">
+          <Key>
+            <PropertyRef Name="ALT_KATEGORI_REFNO" />
+          </Key>
+          <Property Name="ALT_KATEGORI_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KATEGORI_REFNO" Type="Int32" />
+          <Property Name="ALT_KATEGORI_ADI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KATEGORI" Relationship="Self.FK_ALT_KATEGORI_KATEGORI" FromRole="ALT_KATEGORI" ToRole="KATEGORI" />
+        </EntityType>
+        <EntityType Name="FAT_DETAY">
+          <Key>
+            <PropertyRef Name="FAT_DETAY_REFNO" />
+          </Key>
+          <Property Name="FAT_DETAY_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FATURA_REFNO" Type="Int32" />
+          <Property Name="MIKTAR" Type="Single" />
+          <Property Name="KDVSIZ_BIRIM_FIYATI" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BIRIMI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KDV_ORANI" Type="Int32" />
+          <Property Name="KDV_TUTAR" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="URUN_REFNO" Type="Int32" />
+        </EntityType>
+        <EntityType Name="FATURA">
+          <Key>
+            <PropertyRef Name="FATURA_REFNO" />
+          </Key>
+          <Property Name="FATURA_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MUSTERI_REFNO" Type="Int32" />
+          <Property Name="FATURA_TIPI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FATURA_TARIHI" Type="DateTime" Precision="3" />
+          <Property Name="ADRES" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SEHIR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ILGILI_KISI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KATEGORI">
+          <Key>
+            <PropertyRef Name="KATEGORI_REFNO" />
+          </Key>
+          <Property Name="KATEGORI_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KATEGORI_ADI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ALT_KATEGORI" Relationship="Self.FK_ALT_KATEGORI_KATEGORI" FromRole="KATEGORI" ToRole="ALT_KATEGORI" />
+          <NavigationProperty Name="URUNs" Relationship="Self.FK_URUN_KATEGORI" FromRole="KATEGORI" ToRole="URUN" />
+        </EntityType>
+        <EntityType Name="KDV">
+          <Key>
+            <PropertyRef Name="KDV_REFNO" />
+          </Key>
+          <Property Name="KDV_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KDV_ORANI" Type="Int32" />
+        </EntityType>
+        <EntityType Name="KULLANICI">
+          <Key>
+            <PropertyRef Name="KULLANICI_REFNO" />
+          </Key>
+          <Property Name="KULLANICI_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KULLANICI_ADI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SIFRESI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DURUMU" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MODUL">
+          <Key>
+            <PropertyRef Name="MODUL_REFNO" />
+          </Key>
+          <Property Name="MODUL_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MODUL_ADI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MUSTERI">
+          <Key>
+            <PropertyRef Name="MUSTERI_REFNO" />
+          </Key>
+          <Property Name="MUSTERI_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UNVANI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ILGILI_KISI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ADRES" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SEHIR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="POSTA_KODU" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFON1" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFON2" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFON3" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="FAX" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="E_POSTA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WEB_ADRESI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TIPI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BORC" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ALACAK" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BAKIYE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="VERGI_DAIRESI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="VERGI_NUMARASI" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MUSTERI_HAREKET">
+          <Key>
+            <PropertyRef Name="MUSTERI_HAREKET_REFNO" />
+          </Key>
+          <Property Name="MUSTERI_HAREKET_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MUSTERI_REFNO" Type="Int32" />
+          <Property Name="TARIH" Type="DateTime" Precision="3" />
+          <Property Name="BORC" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ALACAK" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="KAYNAK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KAYNAK_REFNO" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SIP_DETAY">
+          <Key>
+            <PropertyRef Name="SIP_DETAY_REFNO" />
+          </Key>
+          <Property Name="SIP_DETAY_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SIPARIS_REFNO" Type="Int32" />
+          <Property Name="URUN_REFNO" Type="Int32" />
+          <Property Name="MIKTAR" Type="Single" />
+          <Property Name="KDVSIZ_BIRIM_FIYATI" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BIRIMI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KDV_ORANI" Type="Int32" />
+          <Property Name="KDV_TUTAR" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="SIPARI">
+          <Key>
+            <PropertyRef Name="SIPARIS_REFNO" />
+          </Key>
+          <Property Name="SIPARIS_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MUSTERI_REFNO" Type="Int32" />
+          <Property Name="SIPARIS_TIPI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SIPARIS_TARIHI" Type="DateTime" Precision="3" />
+          <Property Name="TESLIM_TARIHI" Type="DateTime" Precision="3" />
+          <Property Name="ADRES" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SEHIR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ILGILI_KISI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="URUN">
+          <Key>
+            <PropertyRef Name="URUN_REFNO" />
+          </Key>
+          <Property Name="URUN_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KATEGORI_REFNO" Type="Int32" />
+          <Property Name="ALT_KATEGORI_REFNO" Type="Int32" />
+          <Property Name="TEDARIKCI_REFNO" Type="Int32" />
+          <Property Name="KDVSIZ_SATIS_FIYATI" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="KDVSIZ_ALIS_FIYATI" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SATIS_KDV_ORANI" Type="Int32" />
+          <Property Name="ALIS_KDV_ORANI" Type="Int32" />
+          <Property Name="BARKODU" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="BIRIM1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BIRIM2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KATEGORI" Relationship="Self.FK_URUN_KATEGORI" FromRole="URUN" ToRole="KATEGORI" />
+        </EntityType>
+        <EntityType Name="URUN_HAREKET">
+          <Key>
+            <PropertyRef Name="URUN_HAREKET_REFNO" />
+          </Key>
+          <Property Name="URUN_HAREKET_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="URUN_REFNO" Type="Int32" />
+          <Property Name="TARIH" Type="DateTime" Precision="3" />
+          <Property Name="HAREKET_TIPI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KDVSIZ_ALIS_FIYATI" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="KDVSIZ_SATIS_FIYATI" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MIKTAR" Type="Single" />
+          <Property Name="KAYNAK" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="KAYNAK_REFNO" Type="Int32" />
+        </EntityType>
+        <EntityType Name="YETKI">
+          <Key>
+            <PropertyRef Name="YETKI_REFNO" />
+          </Key>
+          <Property Name="YETKI_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KULLANICI_REFNO" Type="Int32" />
+          <Property Name="MODUL_REFNO" Type="Int32" />
+          <Property Name="EKLE" Type="Boolean" />
+          <Property Name="GUNCELLE" Type="Boolean" />
+          <Property Name="SIL" Type="Boolean" />
+          <Property Name="OKU" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_ALT_KATEGORI_KATEGORI">
+          <End Role="KATEGORI" Type="Self.KATEGORI" Multiplicity="0..1" />
+          <End Role="ALT_KATEGORI" Type="Self.ALT_KATEGORI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KATEGORI">
+              <PropertyRef Name="KATEGORI_REFNO" />
+            </Principal>
+            <Dependent Role="ALT_KATEGORI">
+              <PropertyRef Name="KATEGORI_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_URUN_KATEGORI">
+          <End Role="KATEGORI" Type="Self.KATEGORI" Multiplicity="0..1" />
+          <End Role="URUN" Type="Self.URUN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KATEGORI">
+              <PropertyRef Name="KATEGORI_REFNO" />
+            </Principal>
+            <Dependent Role="URUN">
+              <PropertyRef Name="KATEGORI_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PRATIKEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ALT_KATEGORI" EntityType="Self.ALT_KATEGORI" />
+          <EntitySet Name="FAT_DETAY" EntityType="Self.FAT_DETAY" />
+          <EntitySet Name="FATURAs" EntityType="Self.FATURA" />
+          <EntitySet Name="KATEGORIs" EntityType="Self.KATEGORI" />
+          <EntitySet Name="KDVs" EntityType="Self.KDV" />
+          <EntitySet Name="KULLANICIs" EntityType="Self.KULLANICI" />
+          <EntitySet Name="MODULs" EntityType="Self.MODUL" />
+          <EntitySet Name="MUSTERIs" EntityType="Self.MUSTERI" />
+          <EntitySet Name="MUSTERI_HAREKET" EntityType="Self.MUSTERI_HAREKET" />
+          <EntitySet Name="SIP_DETAY" EntityType="Self.SIP_DETAY" />
+          <EntitySet Name="SIPARIS" EntityType="Self.SIPARI" />
+          <EntitySet Name="URUNs" EntityType="Self.URUN" />
+          <EntitySet Name="URUN_HAREKET" EntityType="Self.URUN_HAREKET" />
+          <EntitySet Name="YETKIs" EntityType="Self.YETKI" />
+          <AssociationSet Name="FK_ALT_KATEGORI_KATEGORI" Association="Self.FK_ALT_KATEGORI_KATEGORI">
+            <End Role="KATEGORI" EntitySet="KATEGORIs" />
+            <End Role="ALT_KATEGORI" EntitySet="ALT_KATEGORI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_URUN_KATEGORI" Association="Self.FK_URUN_KATEGORI">
+            <End Role="KATEGORI" EntitySet="KATEGORIs" />
+            <End Role="URUN" EntitySet="URUNs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PRATIKModelStoreContainer" CdmEntityContainer="PRATIKEntities">
+          <EntitySetMapping Name="ALT_KATEGORI">
+            <EntityTypeMapping TypeName="PRATIKModel.ALT_KATEGORI">
+              <MappingFragment StoreEntitySet="ALT_KATEGORI">
+                <ScalarProperty Name="ALT_KATEGORI_REFNO" ColumnName="ALT_KATEGORI_REFNO" />
+                <ScalarProperty Name="KATEGORI_REFNO" ColumnName="KATEGORI_REFNO" />
+                <ScalarProperty Name="ALT_KATEGORI_ADI" ColumnName="ALT_KATEGORI_ADI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FAT_DETAY">
+            <EntityTypeMapping TypeName="PRATIKModel.FAT_DETAY">
+              <MappingFragment StoreEntitySet="FAT_DETAY">
+                <ScalarProperty Name="FAT_DETAY_REFNO" ColumnName="FAT_DETAY_REFNO" />
+                <ScalarProperty Name="FATURA_REFNO" ColumnName="FATURA_REFNO" />
+                <ScalarProperty Name="MIKTAR" ColumnName="MIKTAR" />
+                <ScalarProperty Name="KDVSIZ_BIRIM_FIYATI" ColumnName="KDVSIZ_BIRIM_FIYATI" />
+                <ScalarProperty Name="BIRIMI" ColumnName="BIRIMI" />
+                <ScalarProperty Name="KDV_ORANI" ColumnName="KDV_ORANI" />
+                <ScalarProperty Name="KDV_TUTAR" ColumnName="KDV_TUTAR" />
+                <ScalarProperty Name="URUN_REFNO" ColumnName="URUN_REFNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FATURAs">
+            <EntityTypeMapping TypeName="PRATIKModel.FATURA">
+              <MappingFragment StoreEntitySet="FATURA">
+                <ScalarProperty Name="FATURA_REFNO" ColumnName="FATURA_REFNO" />
+                <ScalarProperty Name="MUSTERI_REFNO" ColumnName="MUSTERI_REFNO" />
+                <ScalarProperty Name="FATURA_TIPI" ColumnName="FATURA_TIPI" />
+                <ScalarProperty Name="FATURA_TARIHI" ColumnName="FATURA_TARIHI" />
+                <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+                <ScalarProperty Name="SEHIR" ColumnName="SEHIR" />
+                <ScalarProperty Name="ILGILI_KISI" ColumnName="ILGILI_KISI" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KATEGORIs">
+            <EntityTypeMapping TypeName="PRATIKModel.KATEGORI">
+              <MappingFragment StoreEntitySet="KATEGORI">
+                <ScalarProperty Name="KATEGORI_REFNO" ColumnName="KATEGORI_REFNO" />
+                <ScalarProperty Name="KATEGORI_ADI" ColumnName="KATEGORI_ADI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KDVs">
+            <EntityTypeMapping TypeName="PRATIKModel.KDV">
+              <MappingFragment StoreEntitySet="KDV">
+                <ScalarProperty Name="KDV_REFNO" ColumnName="KDV_REFNO" />
+                <ScalarProperty Name="KDV_ORANI" ColumnName="KDV_ORANI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KULLANICIs">
+            <EntityTypeMapping TypeName="PRATIKModel.KULLANICI">
+              <MappingFragment StoreEntitySet="KULLANICI">
+                <ScalarProperty Name="KULLANICI_REFNO" ColumnName="KULLANICI_REFNO" />
+                <ScalarProperty Name="KULLANICI_ADI" ColumnName="KULLANICI_ADI" />
+                <ScalarProperty Name="SIFRESI" ColumnName="SIFRESI" />
+                <ScalarProperty Name="DURUMU" ColumnName="DURUMU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MODULs">
+            <EntityTypeMapping TypeName="PRATIKModel.MODUL">
+              <MappingFragment StoreEntitySet="MODUL">
+                <ScalarProperty Name="MODUL_REFNO" ColumnName="MODUL_REFNO" />
+                <ScalarProperty Name="MODUL_ADI" ColumnName="MODUL_ADI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUSTERIs">
+            <EntityTypeMapping TypeName="PRATIKModel.MUSTERI">
+              <MappingFragment StoreEntitySet="MUSTERI">
+                <ScalarProperty Name="MUSTERI_REFNO" ColumnName="MUSTERI_REFNO" />
+                <ScalarProperty Name="UNVANI" ColumnName="UNVANI" />
+                <ScalarProperty Name="ILGILI_KISI" ColumnName="ILGILI_KISI" />
+                <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+                <ScalarProperty Name="SEHIR" ColumnName="SEHIR" />
+                <ScalarProperty Name="POSTA_KODU" ColumnName="POSTA_KODU" />
+                <ScalarProperty Name="TELEFON1" ColumnName="TELEFON1" />
+                <ScalarProperty Name="TELEFON2" ColumnName="TELEFON2" />
+                <ScalarProperty Name="TELEFON3" ColumnName="TELEFON3" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="E_POSTA" ColumnName="E_POSTA" />
+                <ScalarProperty Name="WEB_ADRESI" ColumnName="WEB_ADRESI" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+                <ScalarProperty Name="TIPI" ColumnName="TIPI" />
+                <ScalarProperty Name="BORC" ColumnName="BORC" />
+                <ScalarProperty Name="ALACAK" ColumnName="ALACAK" />
+                <ScalarProperty Name="BAKIYE" ColumnName="BAKIYE" />
+                <ScalarProperty Name="VERGI_DAIRESI" ColumnName="VERGI_DAIRESI" />
+                <ScalarProperty Name="VERGI_NUMARASI" ColumnName="VERGI_NUMARASI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUSTERI_HAREKET">
+            <EntityTypeMapping TypeName="PRATIKModel.MUSTERI_HAREKET">
+              <MappingFragment StoreEntitySet="MUSTERI_HAREKET">
+                <ScalarProperty Name="MUSTERI_HAREKET_REFNO" ColumnName="MUSTERI_HAREKET_REFNO" />
+                <ScalarProperty Name="MUSTERI_REFNO" ColumnName="MUSTERI_REFNO" />
+                <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+                <ScalarProperty Name="BORC" ColumnName="BORC" />
+                <ScalarProperty Name="ALACAK" ColumnName="ALACAK" />
+                <ScalarProperty Name="KAYNAK" ColumnName="KAYNAK" />
+                <ScalarProperty Name="KAYNAK_REFNO" ColumnName="KAYNAK_REFNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIP_DETAY">
+            <EntityTypeMapping TypeName="PRATIKModel.SIP_DETAY">
+              <MappingFragment StoreEntitySet="SIP_DETAY">
+                <ScalarProperty Name="SIP_DETAY_REFNO" ColumnName="SIP_DETAY_REFNO" />
+                <ScalarProperty Name="SIPARIS_REFNO" ColumnName="SIPARIS_REFNO" />
+                <ScalarProperty Name="URUN_REFNO" ColumnName="URUN_REFNO" />
+                <ScalarProperty Name="MIKTAR" ColumnName="MIKTAR" />
+                <ScalarProperty Name="KDVSIZ_BIRIM_FIYATI" ColumnName="KDVSIZ_BIRIM_FIYATI" />
+                <ScalarProperty Name="BIRIMI" ColumnName="BIRIMI" />
+                <ScalarProperty Name="KDV_ORANI" ColumnName="KDV_ORANI" />
+                <ScalarProperty Name="KDV_TUTAR" ColumnName="KDV_TUTAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIPARIS">
+            <EntityTypeMapping TypeName="PRATIKModel.SIPARI">
+              <MappingFragment StoreEntitySet="SIPARIS">
+                <ScalarProperty Name="SIPARIS_REFNO" ColumnName="SIPARIS_REFNO" />
+                <ScalarProperty Name="MUSTERI_REFNO" ColumnName="MUSTERI_REFNO" />
+                <ScalarProperty Name="SIPARIS_TIPI" ColumnName="SIPARIS_TIPI" />
+                <ScalarProperty Name="SIPARIS_TARIHI" ColumnName="SIPARIS_TARIHI" />
+                <ScalarProperty Name="TESLIM_TARIHI" ColumnName="TESLIM_TARIHI" />
+                <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+                <ScalarProperty Name="SEHIR" ColumnName="SEHIR" />
+                <ScalarProperty Name="ILGILI_KISI" ColumnName="ILGILI_KISI" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="URUNs">
+            <EntityTypeMapping TypeName="PRATIKModel.URUN">
+              <MappingFragment StoreEntitySet="URUN">
+                <ScalarProperty Name="URUN_REFNO" ColumnName="URUN_REFNO" />
+                <ScalarProperty Name="ADI" ColumnName="ADI" />
+                <ScalarProperty Name="KATEGORI_REFNO" ColumnName="KATEGORI_REFNO" />
+                <ScalarProperty Name="ALT_KATEGORI_REFNO" ColumnName="ALT_KATEGORI_REFNO" />
+                <ScalarProperty Name="TEDARIKCI_REFNO" ColumnName="TEDARIKCI_REFNO" />
+                <ScalarProperty Name="KDVSIZ_SATIS_FIYATI" ColumnName="KDVSIZ_SATIS_FIYATI" />
+                <ScalarProperty Name="KDVSIZ_ALIS_FIYATI" ColumnName="KDVSIZ_ALIS_FIYATI" />
+                <ScalarProperty Name="SATIS_KDV_ORANI" ColumnName="SATIS_KDV_ORANI" />
+                <ScalarProperty Name="ALIS_KDV_ORANI" ColumnName="ALIS_KDV_ORANI" />
+                <ScalarProperty Name="BARKODU" ColumnName="BARKODU" />
+                <ScalarProperty Name="BIRIM1" ColumnName="BIRIM1" />
+                <ScalarProperty Name="BIRIM2" ColumnName="BIRIM2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="URUN_HAREKET">
+            <EntityTypeMapping TypeName="PRATIKModel.URUN_HAREKET">
+              <MappingFragment StoreEntitySet="URUN_HAREKET">
+                <ScalarProperty Name="URUN_HAREKET_REFNO" ColumnName="URUN_HAREKET_REFNO" />
+                <ScalarProperty Name="URUN_REFNO" ColumnName="URUN_REFNO" />
+                <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+                <ScalarProperty Name="HAREKET_TIPI" ColumnName="HAREKET_TIPI" />
+                <ScalarProperty Name="KDVSIZ_ALIS_FIYATI" ColumnName="KDVSIZ_ALIS_FIYATI" />
+                <ScalarProperty Name="KDVSIZ_SATIS_FIYATI" ColumnName="KDVSIZ_SATIS_FIYATI" />
+                <ScalarProperty Name="MIKTAR" ColumnName="MIKTAR" />
+                <ScalarProperty Name="KAYNAK" ColumnName="KAYNAK" />
+                <ScalarProperty Name="KAYNAK_REFNO" ColumnName="KAYNAK_REFNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YETKIs">
+            <EntityTypeMapping TypeName="PRATIKModel.YETKI">
+              <MappingFragment StoreEntitySet="YETKI">
+                <ScalarProperty Name="YETKI_REFNO" ColumnName="YETKI_REFNO" />
+                <ScalarProperty Name="KULLANICI_REFNO" ColumnName="KULLANICI_REFNO" />
+                <ScalarProperty Name="MODUL_REFNO" ColumnName="MODUL_REFNO" />
+                <ScalarProperty Name="EKLE" ColumnName="EKLE" />
+                <ScalarProperty Name="GUNCELLE" ColumnName="GUNCELLE" />
+                <ScalarProperty Name="SIL" ColumnName="SIL" />
+                <ScalarProperty Name="OKU" ColumnName="OKU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
