@@ -48,7 +48,7 @@ Bu duurmdan kurtulmak için baðlantý cümlesinde (MultipleActiveReslultSets=true) 
 DataReader kapatýlmazsa bile baþka sorgularýn çalýþmasýný saðlar.
 
 Foreign key
-Veri tutarlýlýðýný saðlar. Ýki tabloyu iliþkiilendirmede
+Veri tutarlýlýðýný saðlar. Ýki tabloyu iliþkilendirmede kullanýlýr.
 
 No Action => Tablolar baðlýysa silmeyi engeller
 Cascade => Tablolar baðlý olsa bile siler. 2 tablodan da siler.(face te silinen fotonun yorumlarýnýn da silinmesi gibi)
@@ -67,3 +67,13 @@ Extension methodlarý bir sýnýfa eklemek için sýnýfýn static olmasý gerekir.
 Methodun static tanýmlanmasý gerekir.
 Hangi veri tipine method eklenecekse onun baþýna this kelimesi gelir.
 this kelimesi eklenen veri tipi method parametrelerinde en baþta olmalýdýr.
+
+Daha üst versiyonlu bir sql serverda oluþturulan projeyi daha düþük versiyonlu bir projede açmaya çalýþýrsak hata alýrýz.
+	A) Ayný sürüm olmalý
+	B) Ya da script alýp
+
+id þifre ayný
+sa
+123 ayný ama açýlmýyor
+En baþtakine sað týkla properties=>security => sql server and windows authantication mode(seç)
+daha sonra security sað týk yeni id þifre
