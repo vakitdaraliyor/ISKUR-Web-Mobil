@@ -76,4 +76,10 @@ id þifre ayný
 sa
 123 ayný ama açýlmýyor
 En baþtakine sað týkla properties=>security => sql server and windows authantication mode(seç)
-daha sonra security sað týk yeni id þifre
+daha sonra security => logins => sa
+þifre güncelle
+
+SqlDataReader connection kapatmazsan => zaten açýk bir DataReader var hatasý verir.
+Bunu engellemek için connection string e MARS eklenmeli.
+SqlConnection connection = new SqlConnection(@"Data Source=localhost\SQLEXPRESS; initial catalog=PRATIK; user id=sa; password=1234; MultipleActiveResultSets=true"); 
+MultipleActiveResultSets=true connection kapatmadan sorgu yapmayý saðlar.
