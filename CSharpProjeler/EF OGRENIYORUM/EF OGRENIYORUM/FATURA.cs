@@ -14,6 +14,12 @@ namespace EF_OGRENIYORUM
     
     public partial class FATURA
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public FATURA()
+        {
+            this.FAT_DETAY = new HashSet<FAT_DETAY>();
+        }
+    
         public int FATURA_REFNO { get; set; }
         public Nullable<int> MUSTERI_REFNO { get; set; }
         public string FATURA_TIPI { get; set; }
@@ -22,5 +28,9 @@ namespace EF_OGRENIYORUM
         public string SEHIR { get; set; }
         public string ILGILI_KISI { get; set; }
         public string ACIKLAMA { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FAT_DETAY> FAT_DETAY { get; set; }
+        public virtual MUSTERI MUSTERI { get; set; }
     }
 }

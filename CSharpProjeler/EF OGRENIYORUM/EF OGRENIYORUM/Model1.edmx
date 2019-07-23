@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PRATIKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PRATIKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ALT_KATEGORI">
           <Key>
             <PropertyRef Name="ALT_KATEGORI_REFNO" />
@@ -187,6 +187,90 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_FAT_DETAY_FATURA">
+          <End Role="FATURA" Type="Self.FATURA" Multiplicity="0..1" />
+          <End Role="FAT_DETAY" Type="Self.FAT_DETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FATURA">
+              <PropertyRef Name="FATURA_REFNO" />
+            </Principal>
+            <Dependent Role="FAT_DETAY">
+              <PropertyRef Name="FATURA_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FAT_DETAY_URUN">
+          <End Role="URUN" Type="Self.URUN" Multiplicity="0..1" />
+          <End Role="FAT_DETAY" Type="Self.FAT_DETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUN">
+              <PropertyRef Name="URUN_REFNO" />
+            </Principal>
+            <Dependent Role="FAT_DETAY">
+              <PropertyRef Name="URUN_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FATURA_MUSTERI">
+          <End Role="MUSTERI" Type="Self.MUSTERI" Multiplicity="0..1" />
+          <End Role="FATURA" Type="Self.FATURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUSTERI">
+              <PropertyRef Name="MUSTERI_REFNO" />
+            </Principal>
+            <Dependent Role="FATURA">
+              <PropertyRef Name="MUSTERI_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MUSTERI_HAREKET_MUSTERI">
+          <End Role="MUSTERI" Type="Self.MUSTERI" Multiplicity="0..1" />
+          <End Role="MUSTERI_HAREKET" Type="Self.MUSTERI_HAREKET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUSTERI">
+              <PropertyRef Name="MUSTERI_REFNO" />
+            </Principal>
+            <Dependent Role="MUSTERI_HAREKET">
+              <PropertyRef Name="MUSTERI_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SIP_DETAY_SIPARIS">
+          <End Role="SIPARIS" Type="Self.SIPARIS" Multiplicity="0..1" />
+          <End Role="SIP_DETAY" Type="Self.SIP_DETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIPARIS">
+              <PropertyRef Name="SIPARIS_REFNO" />
+            </Principal>
+            <Dependent Role="SIP_DETAY">
+              <PropertyRef Name="SIPARIS_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SIP_DETAY_URUN">
+          <End Role="URUN" Type="Self.URUN" Multiplicity="0..1" />
+          <End Role="SIP_DETAY" Type="Self.SIP_DETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUN">
+              <PropertyRef Name="URUN_REFNO" />
+            </Principal>
+            <Dependent Role="SIP_DETAY">
+              <PropertyRef Name="URUN_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_URUN_HAREKET_URUN">
+          <End Role="URUN" Type="Self.URUN" Multiplicity="0..1" />
+          <End Role="URUN_HAREKET" Type="Self.URUN_HAREKET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUN">
+              <PropertyRef Name="URUN_REFNO" />
+            </Principal>
+            <Dependent Role="URUN_HAREKET">
+              <PropertyRef Name="URUN_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_URUN_KATEGORI">
           <End Role="KATEGORI" Type="Self.KATEGORI" Multiplicity="0..1" />
           <End Role="URUN" Type="Self.URUN" Multiplicity="*" />
@@ -196,6 +280,30 @@
             </Principal>
             <Dependent Role="URUN">
               <PropertyRef Name="KATEGORI_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_YETKI_KULLANICI1">
+          <End Role="KULLANICI" Type="Self.KULLANICI" Multiplicity="0..1" />
+          <End Role="YETKI" Type="Self.YETKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KULLANICI">
+              <PropertyRef Name="KULLANICI_REFNO" />
+            </Principal>
+            <Dependent Role="YETKI">
+              <PropertyRef Name="KULLANICI_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_YETKI_MODUL">
+          <End Role="MODUL" Type="Self.MODUL" Multiplicity="0..1" />
+          <End Role="YETKI" Type="Self.YETKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MODUL">
+              <PropertyRef Name="MODUL_REFNO" />
+            </Principal>
+            <Dependent Role="YETKI">
+              <PropertyRef Name="MODUL_REFNO" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -218,13 +326,48 @@
             <End Role="KATEGORI" EntitySet="KATEGORI" />
             <End Role="ALT_KATEGORI" EntitySet="ALT_KATEGORI" />
           </AssociationSet>
+          <AssociationSet Name="FK_FAT_DETAY_FATURA" Association="Self.FK_FAT_DETAY_FATURA">
+            <End Role="FATURA" EntitySet="FATURA" />
+            <End Role="FAT_DETAY" EntitySet="FAT_DETAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FAT_DETAY_URUN" Association="Self.FK_FAT_DETAY_URUN">
+            <End Role="URUN" EntitySet="URUN" />
+            <End Role="FAT_DETAY" EntitySet="FAT_DETAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FATURA_MUSTERI" Association="Self.FK_FATURA_MUSTERI">
+            <End Role="MUSTERI" EntitySet="MUSTERI" />
+            <End Role="FATURA" EntitySet="FATURA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MUSTERI_HAREKET_MUSTERI" Association="Self.FK_MUSTERI_HAREKET_MUSTERI">
+            <End Role="MUSTERI" EntitySet="MUSTERI" />
+            <End Role="MUSTERI_HAREKET" EntitySet="MUSTERI_HAREKET" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SIP_DETAY_SIPARIS" Association="Self.FK_SIP_DETAY_SIPARIS">
+            <End Role="SIPARIS" EntitySet="SIPARIS" />
+            <End Role="SIP_DETAY" EntitySet="SIP_DETAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SIP_DETAY_URUN" Association="Self.FK_SIP_DETAY_URUN">
+            <End Role="URUN" EntitySet="URUN" />
+            <End Role="SIP_DETAY" EntitySet="SIP_DETAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_URUN_HAREKET_URUN" Association="Self.FK_URUN_HAREKET_URUN">
+            <End Role="URUN" EntitySet="URUN" />
+            <End Role="URUN_HAREKET" EntitySet="URUN_HAREKET" />
+          </AssociationSet>
           <AssociationSet Name="FK_URUN_KATEGORI" Association="Self.FK_URUN_KATEGORI">
             <End Role="KATEGORI" EntitySet="KATEGORI" />
             <End Role="URUN" EntitySet="URUN" />
           </AssociationSet>
+          <AssociationSet Name="FK_YETKI_KULLANICI1" Association="Self.FK_YETKI_KULLANICI1">
+            <End Role="KULLANICI" EntitySet="KULLANICI" />
+            <End Role="YETKI" EntitySet="YETKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_YETKI_MODUL" Association="Self.FK_YETKI_MODUL">
+            <End Role="MODUL" EntitySet="MODUL" />
+            <End Role="YETKI" EntitySet="YETKI" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PRATIKModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -249,6 +392,8 @@
           <Property Name="KDV_ORANI" Type="Int32" />
           <Property Name="KDV_TUTAR" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="URUN_REFNO" Type="Int32" />
+          <NavigationProperty Name="FATURA" Relationship="PRATIKModel.FK_FAT_DETAY_FATURA" FromRole="FAT_DETAY" ToRole="FATURA" />
+          <NavigationProperty Name="URUN" Relationship="PRATIKModel.FK_FAT_DETAY_URUN" FromRole="FAT_DETAY" ToRole="URUN" />
         </EntityType>
         <EntityType Name="FATURA">
           <Key>
@@ -262,6 +407,8 @@
           <Property Name="SEHIR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="ILGILI_KISI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ACIKLAMA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FAT_DETAY" Relationship="PRATIKModel.FK_FAT_DETAY_FATURA" FromRole="FATURA" ToRole="FAT_DETAY" />
+          <NavigationProperty Name="MUSTERI" Relationship="PRATIKModel.FK_FATURA_MUSTERI" FromRole="FATURA" ToRole="MUSTERI" />
         </EntityType>
         <EntityType Name="KATEGORI">
           <Key>
@@ -287,6 +434,7 @@
           <Property Name="KULLANICI_ADI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="SIFRESI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="DURUMU" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="YETKIs" Relationship="PRATIKModel.FK_YETKI_KULLANICI1" FromRole="KULLANICI" ToRole="YETKI" />
         </EntityType>
         <EntityType Name="MODUL">
           <Key>
@@ -294,6 +442,7 @@
           </Key>
           <Property Name="MODUL_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MODUL_ADI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="YETKIs" Relationship="PRATIKModel.FK_YETKI_MODUL" FromRole="MODUL" ToRole="YETKI" />
         </EntityType>
         <EntityType Name="MUSTERI">
           <Key>
@@ -318,6 +467,8 @@
           <Property Name="BAKIYE" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="VERGI_DAIRESI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="VERGI_NUMARASI" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FATURAs" Relationship="PRATIKModel.FK_FATURA_MUSTERI" FromRole="MUSTERI" ToRole="FATURA" />
+          <NavigationProperty Name="MUSTERI_HAREKET" Relationship="PRATIKModel.FK_MUSTERI_HAREKET_MUSTERI" FromRole="MUSTERI" ToRole="MUSTERI_HAREKET" />
         </EntityType>
         <EntityType Name="MUSTERI_HAREKET">
           <Key>
@@ -330,6 +481,7 @@
           <Property Name="ALACAK" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="KAYNAK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="KAYNAK_REFNO" Type="Int32" />
+          <NavigationProperty Name="MUSTERI" Relationship="PRATIKModel.FK_MUSTERI_HAREKET_MUSTERI" FromRole="MUSTERI_HAREKET" ToRole="MUSTERI" />
         </EntityType>
         <EntityType Name="SIP_DETAY">
           <Key>
@@ -343,6 +495,8 @@
           <Property Name="BIRIMI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="KDV_ORANI" Type="Int32" />
           <Property Name="KDV_TUTAR" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="URUN" Relationship="PRATIKModel.FK_SIP_DETAY_URUN" FromRole="SIP_DETAY" ToRole="URUN" />
+          <NavigationProperty Name="SIPARI" Relationship="PRATIKModel.FK_SIP_DETAY_SIPARIS" FromRole="SIP_DETAY" ToRole="SIPARI" />
         </EntityType>
         <EntityType Name="SIPARI">
           <Key>
@@ -357,6 +511,7 @@
           <Property Name="SEHIR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="ILGILI_KISI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ACIKLAMA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SIP_DETAY" Relationship="PRATIKModel.FK_SIP_DETAY_SIPARIS" FromRole="SIPARI" ToRole="SIP_DETAY" />
         </EntityType>
         <EntityType Name="URUN">
           <Key>
@@ -375,6 +530,9 @@
           <Property Name="BIRIM1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="BIRIM2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="KATEGORI" Relationship="Self.FK_URUN_KATEGORI" FromRole="URUN" ToRole="KATEGORI" />
+          <NavigationProperty Name="SIP_DETAY" Relationship="PRATIKModel.FK_SIP_DETAY_URUN" FromRole="URUN" ToRole="SIP_DETAY" />
+          <NavigationProperty Name="FAT_DETAY" Relationship="PRATIKModel.FK_FAT_DETAY_URUN" FromRole="URUN" ToRole="FAT_DETAY" />
+          <NavigationProperty Name="URUN_HAREKET" Relationship="PRATIKModel.FK_URUN_HAREKET_URUN" FromRole="URUN" ToRole="URUN_HAREKET" />
         </EntityType>
         <EntityType Name="URUN_HAREKET">
           <Key>
@@ -389,6 +547,7 @@
           <Property Name="MIKTAR" Type="Single" />
           <Property Name="KAYNAK" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="KAYNAK_REFNO" Type="Int32" />
+          <NavigationProperty Name="URUN" Relationship="PRATIKModel.FK_URUN_HAREKET_URUN" FromRole="URUN_HAREKET" ToRole="URUN" />
         </EntityType>
         <EntityType Name="YETKI">
           <Key>
@@ -401,6 +560,8 @@
           <Property Name="GUNCELLE" Type="Boolean" />
           <Property Name="SIL" Type="Boolean" />
           <Property Name="OKU" Type="Boolean" />
+          <NavigationProperty Name="KULLANICI" Relationship="PRATIKModel.FK_YETKI_KULLANICI1" FromRole="YETKI" ToRole="KULLANICI" />
+          <NavigationProperty Name="MODUL" Relationship="PRATIKModel.FK_YETKI_MODUL" FromRole="YETKI" ToRole="MODUL" />
         </EntityType>
         <Association Name="FK_ALT_KATEGORI_KATEGORI">
           <End Role="KATEGORI" Type="Self.KATEGORI" Multiplicity="0..1" />
@@ -449,7 +610,151 @@
             <End Role="KATEGORI" EntitySet="KATEGORIs" />
             <End Role="URUN" EntitySet="URUNs" />
           </AssociationSet>
+          <AssociationSet Name="FK_SIP_DETAY_URUN" Association="PRATIKModel.FK_SIP_DETAY_URUN">
+            <End Role="URUN" EntitySet="URUNs" />
+            <End Role="SIP_DETAY" EntitySet="SIP_DETAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FAT_DETAY_FATURA" Association="PRATIKModel.FK_FAT_DETAY_FATURA">
+            <End Role="FATURA" EntitySet="FATURAs" />
+            <End Role="FAT_DETAY" EntitySet="FAT_DETAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FAT_DETAY_URUN" Association="PRATIKModel.FK_FAT_DETAY_URUN">
+            <End Role="URUN" EntitySet="URUNs" />
+            <End Role="FAT_DETAY" EntitySet="FAT_DETAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FATURA_MUSTERI" Association="PRATIKModel.FK_FATURA_MUSTERI">
+            <End Role="MUSTERI" EntitySet="MUSTERIs" />
+            <End Role="FATURA" EntitySet="FATURAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_YETKI_KULLANICI1" Association="PRATIKModel.FK_YETKI_KULLANICI1">
+            <End Role="KULLANICI" EntitySet="KULLANICIs" />
+            <End Role="YETKI" EntitySet="YETKIs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_YETKI_MODUL" Association="PRATIKModel.FK_YETKI_MODUL">
+            <End Role="MODUL" EntitySet="MODULs" />
+            <End Role="YETKI" EntitySet="YETKIs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MUSTERI_HAREKET_MUSTERI" Association="PRATIKModel.FK_MUSTERI_HAREKET_MUSTERI">
+            <End Role="MUSTERI" EntitySet="MUSTERIs" />
+            <End Role="MUSTERI_HAREKET" EntitySet="MUSTERI_HAREKET" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SIP_DETAY_SIPARIS" Association="PRATIKModel.FK_SIP_DETAY_SIPARIS">
+            <End Role="SIPARI" EntitySet="SIPARIS" />
+            <End Role="SIP_DETAY" EntitySet="SIP_DETAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_URUN_HAREKET_URUN" Association="PRATIKModel.FK_URUN_HAREKET_URUN">
+            <End Role="URUN" EntitySet="URUNs" />
+            <End Role="URUN_HAREKET" EntitySet="URUN_HAREKET" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_SIP_DETAY_URUN">
+          <End Type="PRATIKModel.URUN" Role="URUN" Multiplicity="0..1" />
+          <End Type="PRATIKModel.SIP_DETAY" Role="SIP_DETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUN">
+              <PropertyRef Name="URUN_REFNO" />
+            </Principal>
+            <Dependent Role="SIP_DETAY">
+              <PropertyRef Name="URUN_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FAT_DETAY_FATURA">
+          <End Type="PRATIKModel.FATURA" Role="FATURA" Multiplicity="0..1" />
+          <End Type="PRATIKModel.FAT_DETAY" Role="FAT_DETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FATURA">
+              <PropertyRef Name="FATURA_REFNO" />
+            </Principal>
+            <Dependent Role="FAT_DETAY">
+              <PropertyRef Name="FATURA_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FAT_DETAY_URUN">
+          <End Type="PRATIKModel.URUN" Role="URUN" Multiplicity="0..1" />
+          <End Type="PRATIKModel.FAT_DETAY" Role="FAT_DETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUN">
+              <PropertyRef Name="URUN_REFNO" />
+            </Principal>
+            <Dependent Role="FAT_DETAY">
+              <PropertyRef Name="URUN_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FATURA_MUSTERI">
+          <End Type="PRATIKModel.MUSTERI" Role="MUSTERI" Multiplicity="0..1" />
+          <End Type="PRATIKModel.FATURA" Role="FATURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUSTERI">
+              <PropertyRef Name="MUSTERI_REFNO" />
+            </Principal>
+            <Dependent Role="FATURA">
+              <PropertyRef Name="MUSTERI_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_YETKI_KULLANICI1">
+          <End Type="PRATIKModel.KULLANICI" Role="KULLANICI" Multiplicity="0..1" />
+          <End Type="PRATIKModel.YETKI" Role="YETKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KULLANICI">
+              <PropertyRef Name="KULLANICI_REFNO" />
+            </Principal>
+            <Dependent Role="YETKI">
+              <PropertyRef Name="KULLANICI_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_YETKI_MODUL">
+          <End Type="PRATIKModel.MODUL" Role="MODUL" Multiplicity="0..1" />
+          <End Type="PRATIKModel.YETKI" Role="YETKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MODUL">
+              <PropertyRef Name="MODUL_REFNO" />
+            </Principal>
+            <Dependent Role="YETKI">
+              <PropertyRef Name="MODUL_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MUSTERI_HAREKET_MUSTERI">
+          <End Type="PRATIKModel.MUSTERI" Role="MUSTERI" Multiplicity="0..1" />
+          <End Type="PRATIKModel.MUSTERI_HAREKET" Role="MUSTERI_HAREKET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUSTERI">
+              <PropertyRef Name="MUSTERI_REFNO" />
+            </Principal>
+            <Dependent Role="MUSTERI_HAREKET">
+              <PropertyRef Name="MUSTERI_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SIP_DETAY_SIPARIS">
+          <End Type="PRATIKModel.SIPARI" Role="SIPARI" Multiplicity="0..1" />
+          <End Type="PRATIKModel.SIP_DETAY" Role="SIP_DETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SIPARI">
+              <PropertyRef Name="SIPARIS_REFNO" />
+            </Principal>
+            <Dependent Role="SIP_DETAY">
+              <PropertyRef Name="SIPARIS_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_URUN_HAREKET_URUN">
+          <End Type="PRATIKModel.URUN" Role="URUN" Multiplicity="0..1" />
+          <End Type="PRATIKModel.URUN_HAREKET" Role="URUN_HAREKET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUN">
+              <PropertyRef Name="URUN_REFNO" />
+            </Principal>
+            <Dependent Role="URUN_HAREKET">
+              <PropertyRef Name="URUN_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

@@ -167,5 +167,148 @@ namespace EF_OGRENIYORUM
                 listBox1.Items.Add("Kategori Adı: " + item.KATEGORI_ADI.ToString() + " Urun Adı: " + item.ADI.ToString());
             }
         }
+
+        private void Button15_Click(object sender, EventArgs e)
+        {
+            var liste = db.KATEGORIs.SelectMany(k => k.ALT_KATEGORI, (k, a) => new { k.KATEGORI_ADI, a.ALT_KATEGORI_ADI });
+            foreach (var item in liste)
+            {
+                listBox1.Items.Add("Kategori Adı: " + item.KATEGORI_ADI.ToString() + " Alt kategori Adı: " + item.ALT_KATEGORI_ADI.ToString());
+            }
+        }
+
+        private void Button16_Click(object sender, EventArgs e)
+        {
+            var liste = db.URUNs.SelectMany(u => u.SIP_DETAY, (u, s) => new { u.ADI, s.MIKTAR, s.KDVSIZ_BIRIM_FIYATI });
+            foreach (var item in liste)
+            {
+                listBox1.Items.Add("Urun adı: " + item.ADI.ToString() + "\t" +
+                                   " Miktarı: " + item.MIKTAR.ToString() + "\t" + 
+                                   " Birim Fiyatı: " + item.KDVSIZ_BIRIM_FIYATI.ToString());
+            }
+        }
+
+        private void Button17_Click(object sender, EventArgs e)
+        {
+            var liste = from urun in db.URUNs
+                        from sipdetay in db.SIP_DETAY
+                        where urun.URUN_REFNO == sipdetay.URUN_REFNO
+                        select new { urun.ADI, sipdetay.MIKTAR, sipdetay.KDVSIZ_BIRIM_FIYATI };
+            foreach (var item in liste)
+            {
+                listBox1.Items.Add("Urun adı: " + item.ADI.ToString() + "\t\t" +
+                                   " Miktarı: " + item.MIKTAR.ToString() + "\t\t" +
+                                   " Birim Fiyatı: " + item.KDVSIZ_BIRIM_FIYATI.ToString());
+            }
+        }
+
+        //                GROUP BY (Istatistiksel veri elde etmekte kullanılır.Raporlama!)
+        /*-----------------------------------------------------------------------------------------------
+        SELECT COUNT(*) FROM URUN
+        -------------------------------------------------------------------------------------------------
+        SELECT KATEGORY_REFNO COUNT(*) FROM URUN
+        GROUP BY KATEGORY_REFNO
+        -------------------------------------------------------------------------------------------------
+        SEELCT ALT_KATEGORY_REFNO COUNT(*),MIN(FIYATI), MAX(FIYATI), AVG(FIYATI), SUM(FIYATI) FROM URUN
+        GROUP BY ALT_KATEGORI_REFNO
+        -------------------------------------------------------------------------------------------------
+        SEELCT ALT_KATEGORI.ALT_KATEGORY_ADI,
+	        COUNT(*) SAYI,
+	        MIN(FIYATI) "MINIMUM FIYATI", 
+	        MAX(FIYATI) [MAKSIMUM FIYATI], 
+	        AVG(FIYATI) AS ORTALAMA, 
+	        SUM(FIYATI) [SUM]
+        FROM URUN, ALT_KATEORI
+        WHERE URUN.ALT_KATEGORI_REFNO=ALT_KATEGORI.ALT_KATEGORI_REFNO
+        GROUP BY ALT_KATEGORI.ALT_KATEGORI_ADI
+        -----------------------------------------------------------------------------------------------*/
+
+        private void Button18_Click(object sender, EventArgs e)
+        {
+            var liste = db.URUNs.GroupBy(u => u.KATEGORI_REFNO)
+                                .Select(g => new { groupkey = g.Key, min = g.Min(u => u.KDVSIZ_SATIS_FIYATI),
+                                                                     max = g.Max(u => u.KDVSIZ_SATIS_FIYATI),
+                                                                     avg = g.Average(u => u.KDVSIZ_SATIS_FIYATI),
+                                                                     sum = g.Sum(u => u.KDVSIZ_SATIS_FIYATI),
+                                                                     count = g.Count()});
+
+            listBox1.Items.Clear();
+            listBox1.Items.Add("REFNO\tCount\tOrtalama\t\tMin\tMax\tSum");
+            foreach (var item in liste)
+            {                
+                listBox1.Items.Add(item.groupkey + "\t" + item.count + "\t" + item.avg + "\t" + item.min + "\t" + item.max + "\t" + item.sum);
+            }
+        }
+
+        private void Button19_Click(object sender, EventArgs e)
+        {
+            var liste = db.URUNs.GroupBy(u => u.KATEGORI_REFNO)
+                                .Select(g => new {
+                                    groupkey = g.Key,
+                                    grup = g,
+                                    min = g.Min(u => u.KDVSIZ_SATIS_FIYATI),
+                                    max = g.Max(u => u.KDVSIZ_SATIS_FIYATI),
+                                    avg = g.Average(u => u.KDVSIZ_SATIS_FIYATI),
+                                    sum = g.Sum(u => u.KDVSIZ_SATIS_FIYATI),
+                                    count = g.Count()
+                                });
+
+            listBox1.Items.Clear();
+            foreach (var item in liste)
+            {
+                listBox1.Items.Add("REFNO\tCount\tOrtalama\t\tMin\tMax\tSum");
+                listBox1.Items.Add(item.groupkey + "\t" + item.count + "\t" + item.avg + "\t" + item.min + "\t" + item.max + "\t" + item.sum);
+                listBox1.Items.Add("--------------------------------------------------------------------------------------------------------------");
+                foreach (var urun in item.grup)
+                {
+                    listBox1.Items.Add(urun.ADI + " " + urun.KDVSIZ_SATIS_FIYATI);
+                }
+                listBox1.Items.Add("--------------------------------------------------------------------------------------------------------------");
+            }
+        }
+
+        private void Button20_Click(object sender, EventArgs e)
+        {
+            var liste = from urun in db.URUNs
+                        group urun by urun.KATEGORI_REFNO into urunler
+                        select new
+                        {
+                            groupkey = urunler.Key,
+                            grup = urunler,
+                            min = urunler.Min(u => u.KDVSIZ_SATIS_FIYATI),
+                            max = urunler.Max(u => u.KDVSIZ_SATIS_FIYATI),
+                            avg = urunler.Average(u => u.KDVSIZ_SATIS_FIYATI),
+                            sum = urunler.Sum(u => u.KDVSIZ_SATIS_FIYATI),
+                            count = urunler.Count()
+                        };
+
+            listBox1.Items.Clear();
+            foreach (var item in liste)
+            {
+                listBox1.Items.Add("REFNO\tCount\tOrtalama\t\tMin\tMax\tSum");
+                listBox1.Items.Add(item.groupkey + "\t" + item.count + "\t" + item.avg + "\t" + item.min + "\t" + item.max + "\t" + item.sum);
+                listBox1.Items.Add("--------------------------------------------------------------------------------------------------------------");
+                foreach (var urun in item.grup)
+                {
+                    listBox1.Items.Add(urun.ADI + " " + urun.KDVSIZ_SATIS_FIYATI);
+                }
+                listBox1.Items.Add("--------------------------------------------------------------------------------------------------------------");
+            }
+        }
+
+        private void Button21_Click(object sender, EventArgs e)
+        {
+            // SelectMany başka yöntemi
+            var liste = db.KATEGORIs.Join(db.URUNs,
+                                          k => k.KATEGORI_REFNO,
+                                          u => u.KATEGORI_REFNO,
+                                          (k, u) => new { k.KATEGORI_ADI, u.ADI, u.KDVSIZ_SATIS_FIYATI});
+
+            listBox1.Items.Clear();
+            foreach (var item in liste)
+            {
+                listBox1.Items.Add(item.KATEGORI_ADI + " " + item.ADI);
+            }
+        }
     }
 }

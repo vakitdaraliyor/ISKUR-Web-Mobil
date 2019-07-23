@@ -21,6 +21,15 @@
         <EntityTypeShape EntityType="PRATIKModel.YETKI" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
         <AssociationConnector Association="PRATIKModel.FK_ALT_KATEGORI_KATEGORI" ManuallyRouted="false" />
         <AssociationConnector Association="PRATIKModel.FK_URUN_KATEGORI" ManuallyRouted="false" />
+        <AssociationConnector Association="PRATIKModel.FK_SIP_DETAY_URUN" />
+        <AssociationConnector Association="PRATIKModel.FK_FAT_DETAY_FATURA" />
+        <AssociationConnector Association="PRATIKModel.FK_FAT_DETAY_URUN" />
+        <AssociationConnector Association="PRATIKModel.FK_FATURA_MUSTERI" />
+        <AssociationConnector Association="PRATIKModel.FK_YETKI_KULLANICI1" />
+        <AssociationConnector Association="PRATIKModel.FK_YETKI_MODUL" />
+        <AssociationConnector Association="PRATIKModel.FK_MUSTERI_HAREKET_MUSTERI" />
+        <AssociationConnector Association="PRATIKModel.FK_SIP_DETAY_SIPARIS" />
+        <AssociationConnector Association="PRATIKModel.FK_URUN_HAREKET_URUN" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

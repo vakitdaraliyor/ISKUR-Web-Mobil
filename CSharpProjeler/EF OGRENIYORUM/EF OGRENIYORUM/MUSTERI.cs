@@ -14,6 +14,13 @@ namespace EF_OGRENIYORUM
     
     public partial class MUSTERI
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public MUSTERI()
+        {
+            this.FATURAs = new HashSet<FATURA>();
+            this.MUSTERI_HAREKET = new HashSet<MUSTERI_HAREKET>();
+        }
+    
         public int MUSTERI_REFNO { get; set; }
         public string UNVANI { get; set; }
         public string ILGILI_KISI { get; set; }
@@ -33,5 +40,10 @@ namespace EF_OGRENIYORUM
         public Nullable<decimal> BAKIYE { get; set; }
         public string VERGI_DAIRESI { get; set; }
         public string VERGI_NUMARASI { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FATURA> FATURAs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MUSTERI_HAREKET> MUSTERI_HAREKET { get; set; }
     }
 }

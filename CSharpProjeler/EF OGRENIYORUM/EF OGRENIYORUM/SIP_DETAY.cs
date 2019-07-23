@@ -22,5 +22,8 @@ namespace EF_OGRENIYORUM
         public string BIRIMI { get; set; }
         public Nullable<int> KDV_ORANI { get; set; }
         public Nullable<decimal> KDV_TUTAR { get; set; }
+    
+        public virtual URUN URUN { get; set; }
+        public virtual SIPARI SIPARI { get; set; }
     }
 }

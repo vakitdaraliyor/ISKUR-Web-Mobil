@@ -23,5 +23,7 @@ namespace EF_OGRENIYORUM
         public Nullable<float> MIKTAR { get; set; }
         public string KAYNAK { get; set; }
         public Nullable<int> KAYNAK_REFNO { get; set; }
+    
+        public virtual URUN URUN { get; set; }
     }
 }

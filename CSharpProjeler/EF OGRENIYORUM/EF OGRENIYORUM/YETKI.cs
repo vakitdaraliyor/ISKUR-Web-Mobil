@@ -21,5 +21,8 @@ namespace EF_OGRENIYORUM
         public Nullable<bool> GUNCELLE { get; set; }
         public Nullable<bool> SIL { get; set; }
         public Nullable<bool> OKU { get; set; }
+    
+        public virtual KULLANICI KULLANICI { get; set; }
+        public virtual MODUL MODUL { get; set; }
     }
 }

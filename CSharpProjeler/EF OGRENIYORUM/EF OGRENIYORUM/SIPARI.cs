@@ -14,6 +14,12 @@ namespace EF_OGRENIYORUM
     
     public partial class SIPARI
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SIPARI()
+        {
+            this.SIP_DETAY = new HashSet<SIP_DETAY>();
+        }
+    
         public int SIPARIS_REFNO { get; set; }
         public Nullable<int> MUSTERI_REFNO { get; set; }
         public string SIPARIS_TIPI { get; set; }
@@ -23,5 +29,8 @@ namespace EF_OGRENIYORUM
         public string SEHIR { get; set; }
         public string ILGILI_KISI { get; set; }
         public string ACIKLAMA { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIP_DETAY> SIP_DETAY { get; set; }
     }
 }

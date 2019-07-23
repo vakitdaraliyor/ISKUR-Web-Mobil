@@ -70,6 +70,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm3.Designer.cs">
+      <DependentUpon>Frm3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm4.Designer.cs">
+      <DependentUpon>Frm4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPAGING.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPAGING.Designer.cs">
+      <DependentUpon>FrmPAGING.cs</DependentUpon>
+    </Compile>
     <Compile Include="KATEGORI.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -122,6 +140,15 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm3.resx">
+      <DependentUpon>Frm3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm4.resx">
+      <DependentUpon>Frm4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPAGING.resx">
+      <DependentUpon>FrmPAGING.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

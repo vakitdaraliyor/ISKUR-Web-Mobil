@@ -14,6 +14,14 @@ namespace EF_OGRENIYORUM
     
     public partial class URUN
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public URUN()
+        {
+            this.SIP_DETAY = new HashSet<SIP_DETAY>();
+            this.FAT_DETAY = new HashSet<FAT_DETAY>();
+            this.URUN_HAREKET = new HashSet<URUN_HAREKET>();
+        }
+    
         public int URUN_REFNO { get; set; }
         public string ADI { get; set; }
         public Nullable<int> KATEGORI_REFNO { get; set; }
@@ -28,5 +36,11 @@ namespace EF_OGRENIYORUM
         public string BIRIM2 { get; set; }
     
         public virtual KATEGORI KATEGORI { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SIP_DETAY> SIP_DETAY { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FAT_DETAY> FAT_DETAY { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<URUN_HAREKET> URUN_HAREKET { get; set; }
     }
 }

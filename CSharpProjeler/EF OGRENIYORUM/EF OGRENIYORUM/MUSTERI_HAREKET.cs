@@ -21,5 +21,7 @@ namespace EF_OGRENIYORUM
         public Nullable<decimal> ALACAK { get; set; }
         public string KAYNAK { get; set; }
         public Nullable<int> KAYNAK_REFNO { get; set; }
+    
+        public virtual MUSTERI MUSTERI { get; set; }
     }
 }

@@ -22,5 +22,8 @@ namespace EF_OGRENIYORUM
         public Nullable<int> KDV_ORANI { get; set; }
         public Nullable<decimal> KDV_TUTAR { get; set; }
         public Nullable<int> URUN_REFNO { get; set; }
+    
+        public virtual FATURA FATURA { get; set; }
+        public virtual URUN URUN { get; set; }
     }
 }

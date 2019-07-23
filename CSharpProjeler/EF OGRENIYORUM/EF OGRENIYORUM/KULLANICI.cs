@@ -14,9 +14,18 @@ namespace EF_OGRENIYORUM
     
     public partial class KULLANICI
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public KULLANICI()
+        {
+            this.YETKIs = new HashSet<YETKI>();
+        }
+    
         public int KULLANICI_REFNO { get; set; }
         public string KULLANICI_ADI { get; set; }
         public string SIFRESI { get; set; }
         public string DURUMU { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<YETKI> YETKIs { get; set; }
     }
 }

@@ -14,7 +14,16 @@ namespace EF_OGRENIYORUM
     
     public partial class MODUL
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public MODUL()
+        {
+            this.YETKIs = new HashSet<YETKI>();
+        }
+    
         public int MODUL_REFNO { get; set; }
         public string MODUL_ADI { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<YETKI> YETKIs { get; set; }
     }
 }
