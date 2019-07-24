@@ -90,3 +90,19 @@ LINQ olmazsa entity olmaz.
 Entity her çeþit veri tabaný ile çalýþmayý saðlar.
 
 Database de foreign key tanýmlanmazsa geçiþ yapamýyoruz(navigation yapamýyoruz)
+
+Form kapatmada
+FormClosing event i çalýþtýrýlýyor
+
+MesajKutusu
+HayaletForm
+SanalKlavye
+Notepad
+Paint
+Windows Explorer
+Web Explorer
+SQL Explorer
+Ders Mola Verme
+
+MouseMove => form u kaydýrma
+TransparancyKey => form u þekillendirirken kullan
