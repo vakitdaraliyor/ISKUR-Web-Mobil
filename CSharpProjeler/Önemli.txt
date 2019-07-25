@@ -91,18 +91,18 @@ Entity her çeþit veri tabaný ile çalýþmayý saðlar.
 
 Database de foreign key tanýmlanmazsa geçiþ yapamýyoruz(navigation yapamýyoruz)
 
-Form kapatmada
-FormClosing event i çalýþtýrýlýyor
+Form açma çeþitleri
+Show();
+ShowDialog();
+Show() birden fazla form açabilir ama ShowDialog() ta bir form açýlýr arkadaki forma ulaþýlamaz.
+ShowDialog() ta Evet Hayýr sorabiliriz
 
-MesajKutusu
-HayaletForm
-SanalKlavye
+Referans tipli veri tipleri ayný adresi gösterir.
+
 Notepad
-Paint
-Windows Explorer
-Web Explorer
-SQL Explorer
-Ders Mola Verme
-
-MouseMove => form u kaydýrma
-TransparancyKey => form u þekillendirirken kullan
+opendialog at
+defaultex text
+Filter Text|*.txt|CSV|*.csv
+pageSetupDialog -> printDocument e baðlý
+printDialog1 -> printDocument e baðlý
+printPreviewDialog -> printDocument e baðlý
