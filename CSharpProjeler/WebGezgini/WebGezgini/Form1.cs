@@ -20,9 +20,9 @@ namespace WebGezgini
         private void ToolStripButton1_Click(object sender, EventArgs e)
         {
             ;
-            if (txtAdres.Text != "")
+            if (txtADRES.Text != "")
             {
-                webBrowser1.Navigate(txtAdres.Text);
+                webBrowser1.Navigate(txtADRES.Text);
             }
         }
 
@@ -47,9 +47,28 @@ namespace WebGezgini
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string arama = "https://www.google.com/search?q="+ txtArama.Text + "&oq=" + txtArama.Text + "&aqs=chrome..69i57j69i60.4111j0j4&sourceid=chrome&ie=UTF-8";
+                string arama = "https://www.google.com/search?q=" + txtArama.Text + "&oq=" + txtArama.Text + "&aqs=chrome..69i57j69i60.4111j0j4&sourceid=chrome&ie=UTF-8";
                 webBrowser1.Navigate(arama);
             }
+        }
+
+        private void TxtAdres_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control == true && e.KeyCode == Keys.Enter)
+            {
+                txtADRES.Text = "www." + txtADRES.Text + ".com";
+                webBrowser1.Navigate(txtADRES.Text);
+            }
+        }
+
+        private void WebBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            txtDURUMU.Text = "Sayfa tamamlandı.";
+        }
+
+        private void WebBrowser1_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+        {
+            txtDURUMU.Text = "Sayfa yükleniyor...";
         }
     }
 }

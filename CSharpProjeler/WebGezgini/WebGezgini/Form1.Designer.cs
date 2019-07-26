@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.txtAdres = new System.Windows.Forms.ToolStripTextBox();
+            this.txtADRES = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -39,7 +39,7 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.txtArama = new System.Windows.Forms.ToolStripTextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txtDURUMU = new System.Windows.Forms.ToolStripStatusLabel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -49,7 +49,7 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
-            this.txtAdres,
+            this.txtADRES,
             this.toolStripButton1,
             this.toolStripButton2,
             this.toolStripButton3,
@@ -68,11 +68,14 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(37, 22);
             this.toolStripLabel1.Text = "Adres";
             // 
-            // txtAdres
+            // txtADRES
             // 
-            this.txtAdres.BackColor = System.Drawing.SystemColors.Info;
-            this.txtAdres.Name = "txtAdres";
-            this.txtAdres.Size = new System.Drawing.Size(200, 25);
+            this.txtADRES.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtADRES.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllUrl;
+            this.txtADRES.BackColor = System.Drawing.SystemColors.Info;
+            this.txtADRES.Name = "txtADRES";
+            this.txtADRES.Size = new System.Drawing.Size(200, 25);
+            this.txtADRES.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtAdres_KeyDown);
             // 
             // toolStripButton1
             // 
@@ -130,18 +133,18 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.txtDURUMU});
             this.statusStrip1.Location = new System.Drawing.Point(0, 439);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(818, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // txtDURUMU
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            this.txtDURUMU.Name = "txtDURUMU";
+            this.txtDURUMU.Size = new System.Drawing.Size(64, 17);
+            this.txtDURUMU.Text = "Site Arama";
             // 
             // webBrowser1
             // 
@@ -151,6 +154,8 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(818, 414);
             this.webBrowser1.TabIndex = 2;
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.WebBrowser1_DocumentCompleted);
+            this.webBrowser1.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.WebBrowser1_Navigating);
             // 
             // Form1
             // 
@@ -177,14 +182,14 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripTextBox txtAdres;
+        private System.Windows.Forms.ToolStripTextBox txtADRES;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripTextBox txtArama;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel txtDURUMU;
         private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
