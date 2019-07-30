@@ -45,8 +45,7 @@ $(document).ready(function(){
     var studentsAge = ["21", "26", "28"]
     var studentsNumber = ["1", "2", "3"]
 
-    var count = 0;
-    
+    var count = 0;    
     
     $('#tableButton2').click(function(){
         if(count > studentsName.length - 1){
@@ -60,7 +59,7 @@ $(document).ready(function(){
 
             count++;
         }            
-    })
+    })    
     
     // ---------------------- JSON verileri ile tablo doldurma ----------------------
 
@@ -71,12 +70,10 @@ $(document).ready(function(){
         success: function(data){
             console.log(data);
 
-            $('#tableButton3').click(function(){
-                
+            $('#tableButton3').click(function(){                
                 $('#countryTable').append("<tr><td>"+data["name"]+"</td>" +
                 "<td>"+data["country"]+"</td>" +
-                "<td>"+data["ip"]+"</td></tr>");     
-                                               
+                "<td>"+data["ip"]+"</td></tr>");                                             
             })
 
         }
