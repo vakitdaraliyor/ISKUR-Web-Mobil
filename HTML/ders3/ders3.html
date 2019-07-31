@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+    </script>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+    <div>
+        First name: <input type="text" id="fname"><br>
+        Last name: <input type="text" id="lname"><br>
+        Age: <input type="text" id="age"><br>
+        <button type = "button" id="addUser">Yeni Öğe ekle</button><br>
+    </div>
+
+    <div>
+        <table id="ogrenciTable" style="width: 100%" border="1">
+            <tr>
+                <th style="border:1px solid;background-color: chocolate">Firstname</th>
+                <th style="border:1px solid;background-color: chocolate">Lastname</th> 
+                <th style="border:1px solid;background-color: chocolate">Age</th>
+            </tr>
+            <tr>
+                <td>Ramazan</td>
+                <td>MERCAN</td> 
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Osman</td>
+                <td>SAVAŞ</td> 
+                <td>25</td>
+            </tr>
+        </table>        
+    </div>
+
+    <br>
+
+    <!-- ------------- Dizi ismi alacağımız texbox oluşturduk(single search) ------------- -->
+    <div>
+        Dizi adı: <input type="text" id="diziAdı"><br>
+        <button type="button" id="btnDiziGetir">Dizi Getir</button>
+    </div>
+
+    <br>
+
+    <!-- ---------------- Dizilerin yükleneceği div bloğu ---------------- -->
+    <div id=diziImage>
+        
+    </div>
+    <br>
+
+    <!-- ------------- Dizi ismi alacağımız texbox oluşturduk(multi search) ------------- -->
+    <div>
+        Arama yap: <input type="text" id="diziArama"><br>
+        <button type="button" id="btnDizileriGetir">Dizileri Getir</button>
+    </div>
+
+    <!-- ------------- Dizileri yerleştirdiğimiz tablo ------------- -->
+    <div>
+        <table id="diziTablo" style="width: 100%" border="1">
+            <tr style="border:1px solid;background-color: chocolate"> 
+                <th>Series Image</th>
+                <th>Series Name</th>
+                <th>Series Score</th>
+                <th>Series Genre</th>
+                <th>Series Summary</th>                
+                <th>Series Actor</th>
+                <th>URL</th>
+            </tr>
+        </table>
+    </div>
+    <br>
+
+    <!-- ------------- Dizi adını almak için textbox koyduk ------------- -->
+    <div>
+        Oyuncuları getir: <input type="text" id="txtOyuncu"><br>
+        <button type="button" id="btnOyuncularGetir">Dizileri Getir</button>
+    </div>
+
+    <!-- ------------- Dizi oyuncuları tablosu ------------- -->
+
+    <div>
+        <table id="oyuncularTablo" class="table table-striped" style="width: 40%;">
+            <tr>
+                <th style="width:100px">Actor Image</th>
+                <th>Actor Name</th>
+                <th>Country</th>
+                <th>Character Name</th>
+            </tr>
+        </table>
+    </div>
+    <br>
+
+</body>
+</html>
