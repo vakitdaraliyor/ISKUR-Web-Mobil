@@ -111,6 +111,7 @@ $(document).ready(function(){
         $('#resultHeader').hide();
         $(this).hide();
         totalQuestion=1;
+        score=0;
         soruGetir();
     })
 
