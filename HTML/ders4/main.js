@@ -54,7 +54,7 @@ $(document).ready(function(){
             }
         })
         $('#yapılanAramalar').append($('#txtOyuncu').val() + "<br>");
-        $('#selSection').append("<option>" + $('#txtOyuncu').val() + "</option>")
+        $('#selSection').append("<option>" + $('#txtOyuncu').val() + "</option>");
 
     }
     
