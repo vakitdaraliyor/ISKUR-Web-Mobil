@@ -107,6 +107,7 @@ $(document).ready(function(){
         $('#answer1').show();
         $('#answer2').show(); 
         $('#correctAnswers').hide();
+        $('#correctAnswers').empty();
         $('#score').hide();
         $('#resultHeader').hide();
         $(this).hide();
