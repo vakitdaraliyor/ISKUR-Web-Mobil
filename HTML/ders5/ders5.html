@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+    </script>
+    <script src='main.js'></script>
+</head>
+<body>
+    <!-- container-fluid ekranı full doldurur -->
+    <div class="container-fluid"> 
+        <header class="jumbotron my-4">
+            <h1 class="display-6" align="center">Welcome to The Quiz</h1>            
+        </header>
+
+        <p id="info" class="alert alert-success" align="center">15 Soruluk İŞKUR Testine Hoşgeldiniz.</p>
+
+        <div class="row m-1">
+            <div id="question" class="col bg-success text-white p-4 rounded">
+            </div>
+        </div>
+
+        <div class="row" align="center">
+            <div class="col-md">
+                <button class="m-5" id="answer1" type="button"></button>
+            </div>
+            <div class="col-md">
+                <button class="m-5" id="answer2" type="button"></button>
+            </div>            
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col">                
+                <h5 id="score" class="alert alert-info" align="center" style="height: 50px; padding-top: 10px; display: none"></h5>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col">
+                <h3 id="resultHeader" style="display: none" align="center">Correct Answers</h3><br>
+                <p align="center" id="correctAnswers" style="display: none"></p>
+                <button align="center" class="btn btn-primary m-5" id="btnRetry" type="button" style="display: none">Retry</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

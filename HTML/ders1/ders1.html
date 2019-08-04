@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+    </script>
+
+    <!-- Önce kütüphaneyi koy sonra kendi yazdığın dosyaları koy. (main.js script en sona koy) -->
+    <script src='main.js'></script>
+</head>
+
+<body>
+
+    <!-- -------------------------------------- Headers -------------------------------------- -->
+    <div>
+        <h1>Osman SAVAS</h1>
+        <h2>Osman SAVAS</h2>
+        <h3>Osman SAVAS</h3>
+        <h4>Osman SAVAS</h4>
+        <h5>Osman SAVAS</h5>
+        <h6>Osman SAVAS</h6>
+    </div>
+
+    <!-- --------------------------------------Links -------------------------------------- -->
+    <div>
+        <a href="https://www.google.com">Go Google</a>
+    </div>
+
+    <!-- -------------------------------------- Image -------------------------------------- -->
+    <div style="float:left">
+        <img src="kalp.png" alt="kalp" width="300px" height="200px">
+    </div>
+
+    <div style="float: left">
+        <img src="kalp.png" alt="kalp" width="300px" height="200px">
+    </div>
+
+    <div>
+        <img src="kalp.png" alt="kalp" width="300px" height="200px">
+    </div>
+
+    <!-- -------------------------------------- Button -------------------------------------- -->
+    <div>
+        <img id="myImage" src="kalp.png" alt="kalp" width="300px" height="200px">
+        <button type="button" id="ImageButton">Resim Değiştir</button>
+    </div>
+
+    <div>
+        <a id="myLink" href="https://www.google.com">Google</a>
+        <button type="button" id="LinkButton">Link Değiştir</button>
+    </div>
+
+    <!-- -------------------------------------- Listeleme -------------------------------------- -->
+    <div>
+        <ul>
+            <li id="firstItem">Çay</li>
+            <li>Kahve</li>
+            <li>Limonata</li>
+        </ul>
+    </div>
+
+    <!-- -------------------------------------- Tables ---------------------------------------->
+    <!-- ---------------------- Ogrenci Table ---------------------- -->
+    <div>
+        <table id="ogrenciTable" style="width: 25%">
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th> 
+                <th>Age</th>
+                <th>Student Number</th>
+            </tr>
+            <tr>
+                <td>Ramazan</td>
+                <td>MERCAN</td> 
+                <td>50</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Osman</td>
+                <td>SAVAŞ</td> 
+                <td>25</td>
+                <td>2</td>
+            </tr>
+        </table>
+        <button type = "button" id="tableButton">Yeni Öğe ekle</button>
+        <button type = "button" id="tableButton2">Sırayla ekle</button>
+    </div>
+
+    <!-- ---------------------- Country Table ---------------------- -->
+    <!-- ------------- JSON verileri ile tablo doldurma ------------ -->
+    <div>
+        <table id="countryTable" style="width: 25%">
+            <tr>
+                <th>Name</th>
+                <th>Country</th> 
+                <th>Ip</th>
+            </tr>
+        </table>
+        <button type = "button" id="tableButton3">JSON ekle</button>
+    </div>
+
+</body>
+
+</html>
