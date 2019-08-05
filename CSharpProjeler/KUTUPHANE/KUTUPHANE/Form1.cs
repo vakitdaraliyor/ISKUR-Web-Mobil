@@ -34,14 +34,14 @@ namespace KUTUPHANE
         }
 
         /// <summary>
-        /// Datagrid te secili satirin bilgilerini textbox lara doldurur
+        /// Datagrid te secili satirin bilgilerini ilgili alanlara doldurur
         /// </summary>
         private void DataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             satir = e.RowIndex;
             if (satir > -1)
             {
-                txtADI.Text = dataGridView1.Rows[satir].Cells["ADI"].Value.ToString();
+                txtADI.Text = dataGridView1.Rows[satir].Cells["KITAP_ADI"].Value.ToString();
                 txtISBN.Text = dataGridView1.Rows[satir].Cells["ISBN"].Value.ToString();
                 txtKITAP_REFNO.Text = dataGridView1.Rows[satir].Cells["KITAP_REFNO"].Value.ToString();                
                 txtOZET.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["OZET"].Value);
@@ -57,7 +57,7 @@ namespace KUTUPHANE
         }
 
         /// <summary>
-        /// Textboxlarin icini bosaltir
+        /// Alanlarin icini bosaltir
         /// </summary>
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -84,7 +84,7 @@ namespace KUTUPHANE
             // Vazgeç
             if (satir > -1)
             {
-                txtADI.Text = dataGridView1.Rows[satir].Cells["ADI"].Value.ToString();
+                txtADI.Text = dataGridView1.Rows[satir].Cells["KITAP_ADI"].Value.ToString();
                 txtISBN.Text = dataGridView1.Rows[satir].Cells["ISBN"].Value.ToString();
                 txtKITAP_REFNO.Text = dataGridView1.Rows[satir].Cells["KITAP_REFNO"].Value.ToString();
                 txtOZET.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["OZET"].Value);
@@ -194,7 +194,7 @@ namespace KUTUPHANE
                         select new
                         {
                             kitap.KITAP_REFNO,
-                            kitap.ADI,
+                            KITAP_ADI = kitap.ADI,
                             kitap.YAZARI,
                             kitap.ISBN,
                             kitap.BASIM_TARIHI,
@@ -209,36 +209,53 @@ namespace KUTUPHANE
             this.Opacity = this.Opacity + 0.1;
         }
 
-        private void KitapİşlemlerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Kitap Islemleri
-            Form1 form1 = new Form1();
-            form1.ShowDialog();
-            this.Close();
-        }
-
         private void ÜyeİşlemlerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Uye Islemleri
             FrmUYE uye = new FrmUYE();
             uye.ShowDialog();
         }
 
         private void ÖdünçKitapİşlemlerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Odunc Kitap Islemleri
             FrmODUNCKITAP oduncKitap = new FrmODUNCKITAP();
             oduncKitap.ShowDialog();
         }
 
         private void KitapListesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Kitap Listesi
             FrmKITAPLAR kitaplar = new FrmKITAPLAR();
             kitaplar.ShowDialog();
         }
 
         private void ÜyeListesiRaporuToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Uye Listesi
             FrmUYELER uyeler = new FrmUYELER();
             uyeler.ShowDialog();
+        }
+
+        private void ÖdünçVerilenKitaplarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Odunc Verilen Kitaplar
+            FrmODUNCVERILEN oduncVerilen = new FrmODUNCVERILEN();
+            oduncVerilen.ShowDialog();
+        }
+
+        private void AlınanVerilenKitaplarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Alınan ve Verilen Kitapların Sayısı
+            FrmALVERSAY alversay = new FrmALVERSAY();
+            alversay.ShowDialog();
+        }
+
+        private void GeriAlınanKitaplarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Alınan Kitaplar
+            FrmALINANKITAPLAR alınanKitaplar = new FrmALINANKITAPLAR();
+            alınanKitaplar.ShowDialog();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,7 +50,9 @@
             this.txtALINIS_TARIHI = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -151,6 +154,7 @@
             // txtACIKLAMA
             // 
             this.txtACIKLAMA.Location = new System.Drawing.Point(24, 179);
+            this.txtACIKLAMA.MaxLength = 500;
             this.txtACIKLAMA.Multiline = true;
             this.txtACIKLAMA.Name = "txtACIKLAMA";
             this.txtACIKLAMA.Size = new System.Drawing.Size(613, 47);
@@ -211,11 +215,14 @@
             this.comboDURUMU.Name = "comboDURUMU";
             this.comboDURUMU.Size = new System.Drawing.Size(116, 23);
             this.comboDURUMU.TabIndex = 26;
+            this.comboDURUMU.SelectedIndexChanged += new System.EventHandler(this.ComboDURUMU_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(24, 293);
             this.dataGridView1.Name = "dataGridView1";
@@ -258,6 +265,10 @@
             this.label9.TabIndex = 31;
             this.label9.Text = "(Ör:10-10-2019)";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmODUNCKITAP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -294,6 +305,7 @@
             this.Text = "ODUNC KITAP";
             this.Load += new System.EventHandler(this.FrmODUNCKITAP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,5 +334,6 @@
         private System.Windows.Forms.TextBox txtALINIS_TARIHI;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

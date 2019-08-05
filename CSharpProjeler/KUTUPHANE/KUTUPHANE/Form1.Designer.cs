@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,7 +53,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.işlemlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kitapİşlemlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.üyeİşlemlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ödünçKitapİşlemlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -145,14 +144,14 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -201,17 +200,10 @@
             // işlemlerToolStripMenuItem
             // 
             this.işlemlerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kitapİşlemlerToolStripMenuItem,
             this.üyeİşlemlerToolStripMenuItem,
             this.ödünçKitapİşlemlerToolStripMenuItem});
             this.işlemlerToolStripMenuItem.Name = "işlemlerToolStripMenuItem";
             resources.ApplyResources(this.işlemlerToolStripMenuItem, "işlemlerToolStripMenuItem");
-            // 
-            // kitapİşlemlerToolStripMenuItem
-            // 
-            this.kitapİşlemlerToolStripMenuItem.Name = "kitapİşlemlerToolStripMenuItem";
-            resources.ApplyResources(this.kitapİşlemlerToolStripMenuItem, "kitapİşlemlerToolStripMenuItem");
-            this.kitapİşlemlerToolStripMenuItem.Click += new System.EventHandler(this.KitapİşlemlerToolStripMenuItem_Click);
             // 
             // üyeİşlemlerToolStripMenuItem
             // 
@@ -252,16 +244,19 @@
             // 
             this.ödünçVerilenKitaplarToolStripMenuItem.Name = "ödünçVerilenKitaplarToolStripMenuItem";
             resources.ApplyResources(this.ödünçVerilenKitaplarToolStripMenuItem, "ödünçVerilenKitaplarToolStripMenuItem");
+            this.ödünçVerilenKitaplarToolStripMenuItem.Click += new System.EventHandler(this.ÖdünçVerilenKitaplarToolStripMenuItem_Click);
             // 
             // alınanVerilenKitaplarToolStripMenuItem
             // 
             this.alınanVerilenKitaplarToolStripMenuItem.Name = "alınanVerilenKitaplarToolStripMenuItem";
             resources.ApplyResources(this.alınanVerilenKitaplarToolStripMenuItem, "alınanVerilenKitaplarToolStripMenuItem");
+            this.alınanVerilenKitaplarToolStripMenuItem.Click += new System.EventHandler(this.AlınanVerilenKitaplarToolStripMenuItem_Click);
             // 
             // geriAlınanKitaplarToolStripMenuItem
             // 
             this.geriAlınanKitaplarToolStripMenuItem.Name = "geriAlınanKitaplarToolStripMenuItem";
             resources.ApplyResources(this.geriAlınanKitaplarToolStripMenuItem, "geriAlınanKitaplarToolStripMenuItem");
+            this.geriAlınanKitaplarToolStripMenuItem.Click += new System.EventHandler(this.GeriAlınanKitaplarToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -327,7 +322,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem işlemlerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kitapİşlemlerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem üyeİşlemlerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ödünçKitapİşlemlerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem raporlarToolStripMenuItem;

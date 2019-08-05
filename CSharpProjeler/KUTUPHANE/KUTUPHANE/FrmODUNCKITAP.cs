@@ -51,14 +51,7 @@ namespace KUTUPHANE
                 txtACIKLAMA.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["ACIKLAMA"].Value);
                 txtALINIS_TARIHI.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["ALINIS_TARIHI"].Value);
                 txtVERILIS_TARIHI.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["VERILIS_TARIHI"].Value);
-                if (Convert.ToBoolean(dataGridView1.Rows[satir].Cells["DURUMU"].Value) == true)
-                {
-                    comboDURUMU.SelectedItem = "Verildi";
-                }
-                else
-                {
-                    comboDURUMU.SelectedItem = "Alındı";
-                }
+                comboDURUMU.SelectedItem = Convert.ToString(dataGridView1.Rows[satir].Cells["DURUMU"].Value);
                 comboUYE_REFNO.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["ADI_SOYADI"].Value);
                 comboKITAP_REFNO.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["ADI"].Value);
 
@@ -101,14 +94,7 @@ namespace KUTUPHANE
                 txtACIKLAMA.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["ACIKLAMA"].Value);
                 txtALINIS_TARIHI.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["ALINIS_TARIHI"].Value);
                 txtVERILIS_TARIHI.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["VERILIS_TARIHI"].Value);
-                if (Convert.ToBoolean(dataGridView1.Rows[satir].Cells["DURUMU"].Value) == true)
-                {
-                    comboDURUMU.SelectedItem = "Verildi";
-                }
-                else
-                {
-                    comboDURUMU.SelectedItem = "Alındı";
-                }
+                comboDURUMU.SelectedItem = Convert.ToString(dataGridView1.Rows[satir].Cells["DURUMU"].Value);
                 comboUYE_REFNO.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["ADI_SOYADI"].Value);
                 comboKITAP_REFNO.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["ADI"].Value);
 
@@ -161,7 +147,7 @@ namespace KUTUPHANE
                 ok.KITAP_REFNO = Convert.ToInt32(comboKITAP_REFNO.SelectedValue);
                 ok.VERILIS_TARIHI = Convert.ToDateTime(txtVERILIS_TARIHI.Text);
 
-                // Durumu Verildi ise alınıs tarihini alma
+                // DURUMU Verildi ise ALINIS TARIHI alma
                 if (Convert.ToString(comboDURUMU.SelectedItem) == "Verildi")
                 {
                     ok.DURUMU = true;
@@ -174,7 +160,6 @@ namespace KUTUPHANE
                 }
 
                 ok.ACIKLAMA = txtACIKLAMA.Text;
-                entities.ODUNC_KITAP.Add(ok);
                 entities.SaveChanges();
             }
             else
@@ -192,7 +177,15 @@ namespace KUTUPHANE
                 else
                 {
                     ok.DURUMU = false;
-                    ok.ALINIS_TARIHI = Convert.ToDateTime(txtALINIS_TARIHI.Text);
+                    if (Convert.ToDateTime(txtALINIS_TARIHI.Text) > Convert.ToDateTime(txtVERILIS_TARIHI.Text))
+                    {
+                        ok.ALINIS_TARIHI = Convert.ToDateTime(txtALINIS_TARIHI.Text);
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(txtALINIS_TARIHI, "Uygun Tarih Giriniz!");
+                        return;
+                    }                    
                 }
 
                 ok.ACIKLAMA = txtACIKLAMA.Text;
@@ -238,11 +231,31 @@ namespace KUTUPHANE
                              kitapp.ADI,
                              o_kitap.VERILIS_TARIHI,
                              o_kitap.ALINIS_TARIHI,
-                             o_kitap.DURUMU,
+                             DURUMU = o_kitap.DURUMU == true ? "Verildi":"Alındı",
                              o_kitap.ACIKLAMA
                          }).ToList();
 
             dataGridView1.DataSource = liste;
+        }
+
+        /// <summary>
+        /// DURUMU Alındı Olarak Değiştirildiği Zaman
+        /// ALINIS TARIHI Doldurulabilir Hale Gelir
+        /// </summary>
+        private void ComboDURUMU_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToString(comboDURUMU.SelectedItem) == "Verildi")
+            {
+                txtALINIS_TARIHI.ReadOnly = true;
+            }
+            else if(Convert.ToString(comboDURUMU.SelectedItem) == "Alındı")
+            {
+                txtALINIS_TARIHI.ReadOnly = false;
+            }
+            else
+            {
+                txtALINIS_TARIHI.ReadOnly = true;
+            }
         }
     }
 }

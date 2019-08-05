@@ -31,6 +31,11 @@ namespace KUTUPHANE
 
             if (ToplamSatir % SayfadakiSatir != 0) ToplamSayfa++;
             GridDoldur();
+
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = true;
+            button4.Enabled = true;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -38,6 +43,11 @@ namespace KUTUPHANE
             // Ilk sayfa
             AktifSayfa = 1;
             GridDoldur();
+
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = true;
+            button4.Enabled = true;
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -47,6 +57,16 @@ namespace KUTUPHANE
             {
                 AktifSayfa--;
                 GridDoldur();
+
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = true;
+            }
+            if (AktifSayfa == 1)
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
             }
         }
 
@@ -57,6 +77,16 @@ namespace KUTUPHANE
             {
                 AktifSayfa++;
                 GridDoldur();
+
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = true;
+            }
+            if (AktifSayfa == ToplamSayfa)
+            {
+                button3.Enabled = false;
+                button4.Enabled = false;
             }
         }
 
@@ -65,6 +95,11 @@ namespace KUTUPHANE
             // Son Sayfa
             AktifSayfa = ToplamSayfa;
             GridDoldur();
+
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = false;
+            button4.Enabled = false;
         }
 
         void GridDoldur()

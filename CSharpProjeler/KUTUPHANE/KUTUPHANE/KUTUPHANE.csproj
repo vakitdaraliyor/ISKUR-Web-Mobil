@@ -61,6 +61,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmALINANKITAPLAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmALINANKITAPLAR.Designer.cs">
+      <DependentUpon>FrmALINANKITAPLAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmALVERSAY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmALVERSAY.Designer.cs">
+      <DependentUpon>FrmALVERSAY.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGIRIS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,12 @@
     </Compile>
     <Compile Include="FrmODUNCKITAP.Designer.cs">
       <DependentUpon>FrmODUNCKITAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmODUNCVERILEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmODUNCVERILEN.Designer.cs">
+      <DependentUpon>FrmODUNCVERILEN.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUYE.cs">
       <SubType>Form</SubType>
@@ -127,6 +145,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmALINANKITAPLAR.resx">
+      <DependentUpon>FrmALINANKITAPLAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmALVERSAY.resx">
+      <DependentUpon>FrmALVERSAY.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGIRIS.resx">
       <DependentUpon>FrmGIRIS.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmODUNCKITAP.resx">
       <DependentUpon>FrmODUNCKITAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmODUNCVERILEN.resx">
+      <DependentUpon>FrmODUNCVERILEN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUYE.resx">
       <DependentUpon>FrmUYE.cs</DependentUpon>

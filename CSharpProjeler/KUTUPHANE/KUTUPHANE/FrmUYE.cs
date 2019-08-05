@@ -48,14 +48,7 @@ namespace KUTUPHANE
                 txtTELEFON.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["TELEFON"].Value);
                 txtUYE_REFNO.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["UYE_REFNO"].Value);
                 dateTimePicker1.Text = Convert.ToString(dataGridView1.Rows[satir].Cells["EKLEME_TARIHI"].Value);
-                if(Convert.ToBoolean(dataGridView1.Rows[satir].Cells["DURUMU"].Value) == true)
-                {
-                    comboDURUMU.SelectedItem = "Aktif";
-                }
-                else
-                {
-                    comboDURUMU.SelectedItem = "Pasif";
-                }
+                comboDURUMU.SelectedItem = Convert.ToString(dataGridView1.Rows[satir].Cells["DURUMU"].Value);
 
                 button1.Enabled = true;
                 button2.Enabled = true;
@@ -101,14 +94,7 @@ namespace KUTUPHANE
                 txtTELEFON.Text = dataGridView1.Rows[satir].Cells["TELEFON"].Value.ToString();
                 txtUYE_REFNO.Text = dataGridView1.Rows[satir].Cells["UYE_REFNO"].Value.ToString();
                 dateTimePicker1.Text = dataGridView1.Rows[satir].Cells["EKLEME_TARIHI"].Value.ToString();
-                if (Convert.ToBoolean(dataGridView1.Rows[satir].Cells["DURUMU"].Value) == true)
-                {
-                    comboDURUMU.SelectedItem = "Aktif";
-                }
-                else
-                {
-                    comboDURUMU.SelectedItem = "Pasif";
-                }
+                comboDURUMU.SelectedItem = Convert.ToString(dataGridView1.Rows[satir].Cells["DURUMU"].Value);
 
                 button1.Enabled = true;
                 button2.Enabled = true;
@@ -223,7 +209,7 @@ namespace KUTUPHANE
                             uye.TELEFON,
                             uye.EMAIL,
                             uye.EKLEME_TARIHI,
-                            uye.DURUMU,
+                            DURUMU = uye.DURUMU == true ? "Aktif":"Pasif",
                             uye.ACIKLAMA
                         }).ToList();
             dataGridView1.DataSource = list;

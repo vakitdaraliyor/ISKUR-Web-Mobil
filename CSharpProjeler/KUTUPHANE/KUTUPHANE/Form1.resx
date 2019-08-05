@@ -654,24 +654,6 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>104, 17</value>
   </metadata>
-  <data name="kitapİşlemlerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="kitapİşlemlerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Kitap İşlemleri</value>
-  </data>
-  <data name="üyeİşlemlerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="üyeİşlemlerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Üye İşlemleri</value>
-  </data>
-  <data name="ödünçKitapİşlemlerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="ödünçKitapİşlemlerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ödünç Kitap İşlemleri</value>
-  </data>
   <data name="işlemlerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
   </data>
@@ -738,6 +720,18 @@
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
+  <data name="üyeİşlemlerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="üyeİşlemlerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Üye İşlemleri</value>
+  </data>
+  <data name="ödünçKitapİşlemlerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="ödünçKitapİşlemlerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ödünç Kitap İşlemleri</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -766,12 +760,6 @@
     <value>işlemlerToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;işlemlerToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;kitapİşlemlerToolStripMenuItem.Name" xml:space="preserve">
-    <value>kitapİşlemlerToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;kitapİşlemlerToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;üyeİşlemlerToolStripMenuItem.Name" xml:space="preserve">
