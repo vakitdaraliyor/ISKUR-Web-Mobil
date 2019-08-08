@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!--<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+    </script>-->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col sm">
+                <table id="numbers" class="table table-striped">
+
+                </table><hr><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5 id="string">abcasjdhasjkdhaskjdabcşlkdfşl</h5>
+                <input type="text" id="txtInput">
+                <button type="button" id="btnSearch" onclick="search()">Search</button><br>
+                <label for="lblFirst">First occurence</label><br>
+                <input type="text" id="txtFirstOccurence"><br>
+                <label for="lblSecond">Last occurence</label><br>
+                <input type="text" id="txtLastOccurence"><br><hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>Split Example</h5>
+                <input type="text" id="txtInput2">
+                <button type="button" id="btnSplit" onclick="split()">Split</button><br>
+                <div class="form-group">
+                    <label for="comment">Splitted:</label>
+                    <textarea class="form-control" id="txtArea"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
+
+
