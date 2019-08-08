@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+    </script>
+    <script src='quizApp.js'></script>
+</head>
+<body>
+    <div class="container">
+
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Quiz App</a>
+            <a class="navbar-brand" href="index2.html">Add Question</a>
+        </nav>
+        
+        <div class="row">
+            <div class="col" align="center">
+                <h1>Quiz App</h1>
+                <p id="question">Question will here</p>
+            </div>
+        </div>
+        <div class="row" align="center">
+            <div class="col">
+                <button id="answer1"></button><br><br>
+                <button id="answer2"></button>
+            </div>
+            <div class="col">
+                <button id="answer3"></button><br><br>
+                <button id="answer4"></button>
+            </div>
+        </div><br>
+        <div class="row" align="center">
+            <div class="col">
+                <div id="success" style="display: none" class="alert alert-success" role="alert">
+                    Correct Answer!
+                </div>
+                <div id="danger" style="display: none" class="alert alert-danger" role="alert">
+                    Wrong Answer!
+                </div>
+                <button id="btnNewQuestion" style="display: none">New Question</button>
+            </div>            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+    </script>
+    <script src='addQuestion.js'></script>
+</head>
+<body>
+    
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Quiz App</a>
+            <a class="navbar-brand" href="index2.html">Add Question</a>
+        </nav>
+
+        <div class="row">
+            <div class="col-lg">
+                <form id="form">
+                    <div class="form-group">
+                        <label for="lblQuestion">Question</label>
+                        <textarea class="form-control rounded-0" id="txtQuestion" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="lblAns1">Answer1</label><br>
+                        <input type="text" class="form-control" id="txtAnswer1" placeholder="Answer1">
+                    </div>
+                    <div class="form-group">
+                        <label for="lblAns2">Answer2</label><br>
+                        <input type="text" class="form-control" id="txtAnswer2" placeholder="Answer2">
+                    </div>
+                    <div class="form-group">
+                        <label for="lblAns3">Answer3</label><br>
+                        <input type="text" class="form-control" id="txtAnswer3" placeholder="Answer3">
+                    </div>
+                    <div class="form-group">
+                        <label for="lblAns4">Answer4</label><br>
+                        <input type="text" class="form-control" id="txtAnswer4" placeholder="Answer4">
+                    </div>                    
+                </form>
+                <label id="lblCorrect" for="lblCorrect" style="display: none">Correct Answer</label>
+                <select id="selSection" style="display: none"></select><br><br>
+                <button id="btnSend" style="display: none">Send Question</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
