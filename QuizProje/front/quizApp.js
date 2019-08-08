@@ -12,6 +12,10 @@ $(document).ready(function(){
 
     function getQuestion(){
         question.empty();
+        btnAnswer1.attr("disabled", false);
+        btnAnswer2.attr("disabled", false);
+        btnAnswer3.attr("disabled", false);
+        btnAnswer4.attr("disabled", false);
 
         $.ajax({
             url:"http://localhost:3000/getQuestion",
@@ -36,10 +40,18 @@ $(document).ready(function(){
         if(obj.text() == correct){
             $('#success').show();
             $('#btnNewQuestion').show();
+            btnAnswer1.attr("disabled", true);
+            btnAnswer2.attr("disabled", true);
+            btnAnswer3.attr("disabled", true);
+            btnAnswer4.attr("disabled", true);
         }
         else{
             $('#danger').show();
             $('#btnNewQuestion').show();
+            btnAnswer1.attr("disabled", true);
+            btnAnswer2.attr("disabled", true);
+            btnAnswer3.attr("disabled", true);
+            btnAnswer4.attr("disabled", true);
         }
     }
 

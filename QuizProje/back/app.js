@@ -48,5 +48,5 @@ app.get('/getQuestion', function(req, res){
     console.log(result);
     console.log(err);
     res.send(result);
-    })
+})
 })
