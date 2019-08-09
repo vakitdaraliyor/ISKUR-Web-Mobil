@@ -18,25 +18,67 @@
 
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="index.html">Quiz App</a>
+            <a class="navbar-brand" href="user.html">User</a>
             <a class="navbar-brand" href="index2.html">Add Question</a>
         </nav>
         
-        <div class="row">
-            <div class="col" align="center">
-                <h1>Quiz App</h1>
-                <p id="question">Question will here</p>
+        <!-- ------------------ Quiz blogu start ------------------ -->
+        <div id="divQuiz">
+            <div class="row">
+                <div class="col" align="center">
+                    <h1>Quiz App</h1>                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" align="center">
+                    <p id="question">Question will here</p>
+                </div>
+            </div>
+            <div class="row" align="center" >
+                <div class="col">                    
+                    <button id="answer1"></button><br><br>
+                    <button id="answer2"></button>
+                </div>
+                <div class="col">
+                    <button id="answer3"></button><br><br>
+                    <button id="answer4"></button>
+                </div>
+            </div><br>
+        </div>
+        <!-- ------------------ Quiz blogu end ------------------ -->
+        <!-- ------------------ Login blogu start ------------------ -->
+        <div class="row" id="divLogin">
+            <div class="col">
+                <form id="userForm">
+                    <div class="form-group">
+                        <label for="lblLoginUsername">Username</label>
+                        <input type="text" id="txtLoginUsername" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="lblLoginPassword">Password</label>
+                        <input type="password" id="txtLoginPassword" class="form-control">
+                    </div>                     
+                </form> 
+                <button class="btn btn-primary" id="btnLogin" >Login</button>
+                <div class="row" align="center">
+                    <div class="col">
+                        <div id="dangerLogin" style="display: none" class="alert alert-danger" role="alert">
+                            Invalid username or password!
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row" align="center">
+        <div class="row" id="divScore">
             <div class="col">
-                <button id="answer1"></button><br><br>
-                <button id="answer2"></button>
+                <div id="score" style="display: none" class="alert alert-danger" role="alert">
+                    <!-- Score will appear here -->
+                </div>
             </div>
-            <div class="col">
-                <button id="answer3"></button><br><br>
-                <button id="answer4"></button>
-            </div>
-        </div><br>
+        </div>
+        
+        <!-- ------------------ Login blogu end ------------------ -->
+
         <div class="row" align="center">
             <div class="col">
                 <div id="success" style="display: none" class="alert alert-success" role="alert">

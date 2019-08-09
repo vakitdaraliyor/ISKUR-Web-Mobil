@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    // Quiz blogu icindeki textbox ve buttonlar
+    var divQuiz = $('#divQuiz');
+    divQuiz.hide();
     var question = $('#question');
     var btnAnswer1 = $('#answer1');
     var btnAnswer2 = $('#answer2');
@@ -8,7 +11,42 @@ $(document).ready(function(){
 
     var correct;
 
-    getQuestion();
+    // Login blogu icindeki textbox ve buttonlar
+    var divLogin = $('#divLogin');
+    var txtLoginUsername = $('#txtLoginUsername');
+    var txtLoginPassword = $('#txtLoginPassword');
+    var btnLogin = $('#btnLogin');
+
+    // Score blogu icindekiler
+    var divScore = $('#divScore');
+    divScore.hide();
+    var score=0;
+
+    var questionState;
+
+    function login(loginU, loginP){
+        $.ajax({
+            url:"http://localhost:3000/login",
+            type: "POST",
+            cache: false,
+            async: false,
+            data:{
+                username: loginU,
+                password: loginP
+            },
+            success: function(data){
+                console.log(data);
+                if(data == "Successfull"){
+                    getQuestion();
+                    divQuiz.show();
+                    divLogin.hide();
+                }
+                else{
+                    $('#dangerLogin').show();
+                }
+            } 
+        })
+    }
 
     function getQuestion(){
         question.empty();
@@ -23,13 +61,21 @@ $(document).ready(function(){
             cache: false,
             async: false,
             success: function(data){
-                console.log(data);
-                correct = data[0].correct;
-                question.text(data[0].question);
-                btnAnswer1.text(data[0].answer1);
-                btnAnswer2.text(data[0].answer2);
-                btnAnswer3.text(data[0].answer3);
-                btnAnswer4.text(data[0].answer4);
+                if(data != "No Question" || data != "New Question"){
+                    console.log(data);
+                    correct = data[0].correct;
+                    question.text(data[0].question);
+                    btnAnswer1.text(data[0].answer1);
+                    btnAnswer2.text(data[0].answer2);
+                    btnAnswer3.text(data[0].answer3);
+                    btnAnswer4.text(data[0].answer4);
+                }
+                else if(data == "New Question"){
+                    getQuestion();
+                }
+                else if(data == "No Question"){
+                    questionState = "No Question";
+                }          
             }
         })
     }
@@ -38,6 +84,7 @@ $(document).ready(function(){
     function check(obj){
         // console.log(obj.text());
         if(obj.text() == correct){
+            score++;
             $('#success').show();
             $('#btnNewQuestion').show();
             btnAnswer1.attr("disabled", true);
@@ -69,10 +116,15 @@ $(document).ready(function(){
     })
 
     $('#btnNewQuestion').click(function(){
+        console.log(questionState);
         getQuestion();
         $('#success').hide();
         $('#danger').hide();
         $(this).hide();
+    })
+
+    btnLogin.click(function(){
+        login(txtLoginUsername.val(), txtLoginPassword.val());
     })
 
 })

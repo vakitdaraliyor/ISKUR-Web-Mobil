@@ -26,6 +26,7 @@ con.connect(function(err){
     console.log("Connected");
 })
 
+// Ön taraftan gelen soruyu database e kaydeder
 app.post('/sendQuestion', function(req, res){    
     console.log(req.body);
     var question = req.body.question;
@@ -42,11 +43,66 @@ app.post('/sendQuestion', function(req, res){
     })
 })
 
-app.get('/getQuestion', function(req, res){
-    query = "SELECT * FROM questions ORDER BY RAND() LIMIT 1"; 
-    con.query(query, function(err, result){
-    console.log(result);
-    console.log(err);
-    res.send(result);
+// Son sorunun id sini bulur
+var maxId;
+query = "SELECT MAX(example_id) as C FROM questions";
+con.query(query, function(err, result){
+    maxId = parseInt(result[0].C);
+    console.log("Max_id: " + typeof(maxId));
 })
+
+// id ye göre soru getirir ve ön tarafa gönderir
+var id = 2;
+app.get('/getQuestion', function(req, res){
+    console.log(maxId);
+    query = "SELECT * FROM questions WHERE example_id="+id;     
+    con.query(query, function(err, result){ 
+        if(id < maxId && result.length != 0){
+            console.log(result);
+            console.log(err);     
+            res.send(result);            
+            id++;
+        }
+        else if(id == maxId){
+            id=2;
+            res.send("No Question");
+        }    
+        else{
+            id++;
+            res.send("New Question");
+        }    
+    })
+     
+})
+
+// Ön taraftan gelen verileri user tablosuna ekler
+app.post('/addUser', function(req, res){
+    console.log(req.body);
+    var username = req.body.username;
+    var password = req.body.password;
+    query = "INSERT INTO users(username, password) VALUES(?,?)";
+    con.query(query, [username, password], function(err, result){
+        console.log(result);
+        console.log(err);
+        res.end("Eklendi");
+    })
+})
+
+// Kullanici adi ve sifresi dogru mu kontrol eder
+app.post('/login', function(req, res){
+    console.log(req.body);
+    var username = req.body.username;
+    var password  = req.body.password;
+    query = "SELECT * FROM users WHERE username=? AND password=?";
+    con.query(query, [username, password], function(err, result){
+        if(result.length != 0){
+            res.end("Successfull");
+            console.log(result);
+        }
+        else{
+            console.log(result);
+            console.log(err);
+            res.end(err);
+        }
+    })
 })
