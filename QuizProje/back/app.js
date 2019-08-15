@@ -120,3 +120,14 @@ app.post('/sendScore', function(req, res){
         res.end("User's score added!")
     })
 })
+
+// --------------------------------------------------------------------
+// Kullanicilari score larina gore sirali getirir
+// --------------------------------------------------------------------
+app.get('/userScore', function(req, res){
+    query = "SELECT * FROM users ORDER BY score DESC, username ASC";
+    con.query(query, function(err, result){
+        console.log(result);
+        res.send(result);
+    })
+})

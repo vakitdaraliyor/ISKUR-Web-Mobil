@@ -46,6 +46,7 @@ $(document).ready(function(){
                 console.log(data);
                 if(data == "Successfull"){
                     loginedUser = loginU;
+                    getNumberOfQuestion();
                     getQuestion();
                     divQuiz.show();
                     divLogin.hide();
@@ -64,19 +65,23 @@ $(document).ready(function(){
         login(txtLoginUsername.val(), txtLoginPassword.val());
     })
 
+    // --------------------------------------------------------------------
+    // Toplam soru sayisini aldigimiz function
+    // --------------------------------------------------------------------
     var askedQuestion = 0;
     var numberOfQuestion;
-    $.ajax({
-        url:"http://localhost:3000/numberOfQuestion",
-        type: "GET",
-        cache: false,
-        async: false,
-        success: function(data){
-            numberOfQuestion = data[0].C;
-            console.log(numberOfQuestion);
-        }
-    })
-    
+    function getNumberOfQuestion(){
+        $.ajax({
+            url:"http://localhost:3000/numberOfQuestion",
+            type: "GET",
+            cache: false,
+            async: false,
+            success: function(data){
+                numberOfQuestion = data[0].C;
+                console.log(numberOfQuestion);
+            }
+        })
+    }    
 
     // --------------------------------------------------------------------
     // Server dan soru getirir ve ilgili alanlari gelen veri ile doldurur

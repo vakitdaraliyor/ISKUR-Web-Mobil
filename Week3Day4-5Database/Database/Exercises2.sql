@@ -80,3 +80,7 @@
 
 -- CREATE VIEW geo_instructor AS SELECT * FROM instructor WHERE dept_name = 'Geology'
 -- GRANT SELECT ON geo_instructor TO user
+
+SELECT count(*) 
+FROM information_schema.columns 
+WHERE table_name = 'category'
