@@ -10,25 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfLoginApp
 {
     /// <summary>
-    /// Window1.xaml etkileşim mantığı
+    /// HesapBilgileri.xaml etkileşim mantığı
     /// </summary>
-    public partial class Window1 : Window
+    public partial class HesapBilgileri : UserControl
     {
-        public Window1()
+        public HesapBilgileri()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MyAccount ma = new MyAccount();
-            ma.Show();
-            this.Close();
         }
     }
 }

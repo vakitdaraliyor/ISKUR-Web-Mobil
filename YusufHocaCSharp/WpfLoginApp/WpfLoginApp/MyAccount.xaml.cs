@@ -15,20 +15,24 @@ using System.Windows.Shapes;
 namespace WpfLoginApp
 {
     /// <summary>
-    /// Window1.xaml etkileşim mantığı
+    /// MyAccount.xaml etkileşim mantığı
     /// </summary>
-    public partial class Window1 : Window
+    public partial class MyAccount : Window
     {
-        public Window1()
+        public MyAccount()
         {
             InitializeComponent();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            lblWelcome.Content =  "Welcome " + LoginUser.Name;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MyAccount ma = new MyAccount();
-            ma.Show();
-            this.Close();
+
+            UygulamaKontrol.AddUserControlToGrid(UserControlGrid, new HesapBilgileri());
         }
     }
 }

@@ -48,8 +48,19 @@ namespace WpfLoginApp
 
                 if (count == 1)
                 {
-                    Window1 w = new Window1();
-                    w.Show();
+                    string selectName = "SELECT NAME FROM dbo.USERS WHERE USERNAME=@P1";
+                    SqlCommand cmdName = new SqlCommand(selectName, con);
+                    cmdName.CommandType = CommandType.Text;
+                    cmdName.Parameters.AddWithValue("@P1", txtUsername.Text);
+
+                    SqlDataReader dr = cmdName.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        LoginUser.Name = Convert.ToString(dr["NAME"]);
+                    }
+
+                    MyAccount ma = new MyAccount();
+                    ma.Show();
                     this.Close();
                 }
                 else
@@ -66,6 +77,13 @@ namespace WpfLoginApp
             {
                 con.Close();
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Register r = new Register();
+            r.Show();
+            this.Close();
         }
     }
 }

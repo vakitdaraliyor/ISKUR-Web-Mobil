@@ -5,11 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfLoginApp"
         mc:Ignorable="d"
-        Title="Window1" Height="500" Width="500">
+        Title="Window1" Height="500" Width="500" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBlock Text="Buraya yönlendirildiniz"
+        <TextBlock Text="Uygulamaya Hoşgeldiniz"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
+                   Margin="0 50 0 0"
                    FontSize="25"/>
+        <Button Content="My Account" Width="150" Click="Button_Click"/>
     </Grid>
+    
+    
 </Window>
