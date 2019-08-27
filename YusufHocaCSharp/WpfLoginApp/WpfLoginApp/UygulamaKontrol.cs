@@ -12,11 +12,13 @@ namespace WpfLoginApp
 
         public static void AddUserControlToGrid(Grid gridObj, UserControl ucObj)
         {
+            // Grid in ici doluysa once temizle sonra ekleme yap
             if (gridObj.Children.Count > 0)
             {
                 gridObj.Children.Clear();
                 gridObj.Children.Add(ucObj);
             }
+            // Grid in ici bos ise direk ekle
             else
             {
                 gridObj.Children.Add(ucObj);

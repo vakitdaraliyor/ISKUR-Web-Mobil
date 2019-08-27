@@ -63,6 +63,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BiletAl.xaml.cs">
+      <DependentUpon>BiletAl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HesapBilgileri.xaml.cs">
       <DependentUpon>HesapBilgileri.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,10 @@
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
+    <Page Include="BiletAl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="HesapBilgileri.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

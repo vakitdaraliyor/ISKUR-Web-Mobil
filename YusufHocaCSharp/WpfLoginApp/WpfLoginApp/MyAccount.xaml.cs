@@ -31,8 +31,37 @@ namespace WpfLoginApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             UygulamaKontrol.AddUserControlToGrid(UserControlGrid, new HesapBilgileri());
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            // Close Button (Ekrani Kapatma)
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            // Maximize Button (Tam ekran yapma)
+            if (this.WindowState == WindowState.Normal)
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = WindowState.Normal;
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            // Minimize Button (Ekrani asagi alir)
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            UygulamaKontrol.AddUserControlToGrid(UserControlGrid, new BiletAl());
         }
     }
 }

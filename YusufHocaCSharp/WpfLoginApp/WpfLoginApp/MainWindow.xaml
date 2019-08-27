@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfLoginApp"
         mc:Ignorable="d"
-        Title="LOGIN" Height="350" Width="350" Background="Pink" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="LOGIN" Height="350" Width="350" Background="WhiteSmoke" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -16,7 +16,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         >
 
-    <Border CornerRadius="70" Background="Yellow" Margin="20">
+    <Border CornerRadius="70" Background="White" Margin="20">
         <StackPanel>
             <TextBlock Text="LOGIN"
                        Foreground="Black"
@@ -35,8 +35,8 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="Submit" Height="35" Width="100" Margin="0 15 0 0" Foreground="White" FontSize="15" Background="Brown" Click="Button_Click"/>
-                <Button Grid.Column="1" Content="SignUp" Height="35" Width="100" Margin="0 15 0 0" Foreground="White" FontSize="15" Background="Brown" Click="Button_Click_1"/>
+                <Button Grid.Column="0" Content="Submit" Height="35" Width="100" Margin="0 15 0 0" Foreground="White" FontSize="15" Background="Black" Click="Button_Click"/>
+                <Button Grid.Column="1" Content="SignUp" Height="35" Width="100" Margin="0 15 0 0" Foreground="White" FontSize="15" Background="Black" Click="Button_Click_1"/>
             </Grid>
         </StackPanel>
     </Border>

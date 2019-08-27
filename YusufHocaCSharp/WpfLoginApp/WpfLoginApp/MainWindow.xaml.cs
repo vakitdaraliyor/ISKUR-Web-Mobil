@@ -48,7 +48,7 @@ namespace WpfLoginApp
 
                 if (count == 1)
                 {
-                    string selectName = "SELECT NAME FROM dbo.USERS WHERE USERNAME=@P1";
+                    string selectName = "SELECT * FROM dbo.USERS WHERE USERNAME=@P1";
                     SqlCommand cmdName = new SqlCommand(selectName, con);
                     cmdName.CommandType = CommandType.Text;
                     cmdName.Parameters.AddWithValue("@P1", txtUsername.Text);
@@ -57,6 +57,8 @@ namespace WpfLoginApp
                     while (dr.Read())
                     {
                         LoginUser.Name = Convert.ToString(dr["NAME"]);
+                        LoginUser.Username = Convert.ToString(dr["USERNAME"]);
+                        LoginUser.Password = Convert.ToString(dr["PASSWORD"]);
                     }
 
                     MyAccount ma = new MyAccount();

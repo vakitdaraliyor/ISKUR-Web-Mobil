@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="WpfLoginApp.BiletAl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfLoginApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="450"
+             
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextOptions.TextFormattingMode="Ideal" 
+             TextOptions.TextRenderingMode="Auto"
+             FontFamily="{DynamicResource MaterialDesignFont}" Loaded="UserControl_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Margin="10">
+            <StackPanel HorizontalAlignment="Left" Margin="10 10 0 0">
+                <TextBlock Text="Nereden" FontSize="20" FontWeight="DemiBold"/>
+                <ComboBox x:Name="comboNereden" SelectionChanged="NeredenComboChanged"/>
+                <TextBlock Margin="0 10 0 0" Text="Nereye" FontSize="20" FontWeight="DemiBold"/>
+                <ComboBox x:Name="comboNereye"/>
+                <DatePicker
+                    Margin="0 10 0 0"
+                    materialDesign:HintAssist.Hint="Pick Date"
+                    Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                <Button Margin="0 20 0 0" Content="Seferleri Listele"/>
+            </StackPanel>
+        </Border>   
+    </Grid>
+    
+</UserControl>
