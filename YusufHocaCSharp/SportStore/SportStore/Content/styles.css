@@ -1,0 +1,68 @@
+﻿div#header div.title, div.item h3, div.item h4, div.pager a{
+    font: bold 1em "Arial Narrow", "Gergoria", "Times New Roman", Arial;
+}
+
+div#header{
+    background-color: darkorange;
+    border-bottom:2px solid black;
+    color:white;
+}
+
+div#header div.title{
+    font-size:1em;
+    padding:0.4em;
+
+}
+
+div#content{
+    border-left:2px solid black;
+    margin-left:9em;
+    padding:1em;
+}
+
+div#categories{
+    float:left;
+    width:8em;
+    padding:0.3em;
+}
+
+div.item{
+    border-bottom: 1px dotted gray;
+    padding-top:0.7em;
+    padding-bottom:0.7em;
+    margin-bottom:0.7em;
+}
+
+div.item:first-child{
+    border-top:none;
+    padding-top:0px;
+}
+
+div.item h3 {font-size:1.3em; margin:0 0 0.25em 0; text-decoration:underline;}
+div.item h4 {font-size:1.3em; margin:0.4em 0 0 0;}
+
+div.pager{text-align:center; border-top:2px solid silver; padding:0.5em 0 0 0; margin-top:1em;}
+
+div.pager a{font-size:1.1em; color:#666; text-decoration:none; padding:0 0.4em 0 0.4em;}
+
+div.pager a:hover{background-color:silver;}
+
+div.pager a.selected{background-color:darkorange; color:white;}
+
+div#categories a{
+    font: bold 1.1em "Arial Narrow","Franklin Gothic Medium", "Arial";
+    display:block;
+    text-decoration:none;
+    padding:0.6em;
+    color:black;
+    border-bottom:1px solid silver;
+}
+
+div#categories a.selected{
+    background-color:#666;
+    color:white;
+}
+
+div#categories a:hover{ background-color:lightsalmon;  color:white; border-radius:5px;}
+
+div#categories a.selected:hover{ background-color:#666; }
