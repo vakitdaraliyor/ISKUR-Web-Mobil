@@ -66,3 +66,14 @@ div#categories a.selected{
 div#categories a:hover{ background-color:lightsalmon;  color:white; border-radius:5px;}
 
 div#categories a.selected:hover{ background-color:#666; }
+
+div.item button{
+    float:right;
+    color:white;
+    background-color:black;
+    border: 1px solid black;
+}
+
+#sepetTablosu{
+    border:1px solid black;
+}

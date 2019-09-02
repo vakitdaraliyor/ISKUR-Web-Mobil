@@ -16,7 +16,26 @@ namespace SportStore.Pages
         private int PageSize = 4;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            if (IsPostBack)
+            {
+                int seciliUrunREFNO = Convert.ToInt32(Request.Form["ekle"]);
+                // int.TryParse(Request.Form["ekle"], out seciliUrunREFNO);
 
+                Sepet sepetim = (Sepet)Session["sepet"];
+                if (sepetim == null)
+                {
+                    sepetim = new Sepet();
+                }
+
+                Product seciliUrun = repository.Products.Where(p => p.PRODUCT_REFNO == seciliUrunREFNO).FirstOrDefault();
+                sepetim.SepeteEkle(seciliUrun, 1);
+
+                Session["sepet"] = sepetim;
+
+                // Programimizi baska bir sayfaya yonlendirmeye yarar
+                Response.Redirect("/Pages/SepetiGoster.aspx");
+            }
         }
 
         protected int CurrentPage
@@ -71,7 +90,7 @@ namespace SportStore.Pages
         }
 
         // Veri tabaninin icerisinde bulundugu listeyi return eder
-        protected IEnumerable<Product> GetProducts()
+        public IEnumerable<Product> GetProducts()
         {
             return FilteredProductsByCategory().OrderBy(p => p.PRODUCT_REFNO)
                                       .Skip((CurrentPage - 1) * PageSize)
