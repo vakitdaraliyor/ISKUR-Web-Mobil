@@ -77,6 +77,9 @@
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resim.cs" />
+    <Compile Include="SeferCard.xaml.cs">
+      <DependentUpon>SeferCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UygulamaKontrol.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
@@ -106,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SeferCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -149,6 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resimler\titanic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resimler\otobüs.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

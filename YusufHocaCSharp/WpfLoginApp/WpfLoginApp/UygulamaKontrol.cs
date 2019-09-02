@@ -25,5 +25,19 @@ namespace WpfLoginApp
             }
         }
 
+        public static void SeferEkle(StackPanel spObj, UserControl ucObj)
+        {
+            // Grid in ici doluysa once temizle sonra ekleme yap
+            if (spObj.Children.Count > 0)
+            {
+                spObj.Children.Add(ucObj);
+            }
+            // Grid in ici bos ise direk ekle
+            else
+            {
+                spObj.Children.Add(ucObj);
+            }
+        }
+
     }
 }

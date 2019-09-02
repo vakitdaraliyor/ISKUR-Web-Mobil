@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfLoginApp"
         mc:Ignorable="d"
-        Title="MyAccount" Height="500" Width="850" Loaded="Window_Loaded" 
+        Title="MyAccount" Height="600" Width="1200" Loaded="Window_Loaded" 
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"

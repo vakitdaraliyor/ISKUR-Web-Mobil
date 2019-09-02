@@ -26,7 +26,7 @@ namespace WpfLoginApp
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            lblWelcome.Content =  "Welcome " + LoginUser.Name;
+            lblWelcome.Content =  "Hoşgeldiniz " + LoginUser.Name;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
