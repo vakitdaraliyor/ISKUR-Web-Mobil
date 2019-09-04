@@ -18,7 +18,12 @@
             </asp:Panel>
 
             <asp:Panel ID="Panel2" runat="server">
-                MENU
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Kategori.aspx">Kategori</asp:HyperLink>
+                &nbsp;&nbsp;&nbsp;<asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="Yazi.aspx">Yazı</asp:HyperLink>
+                &nbsp;&nbsp;&nbsp;<asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="Sayfa.aspx">Sayfa</asp:HyperLink>
+                &nbsp;&nbsp;&nbsp;<asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="Kullanici.aspx">Kullanıcı</asp:HyperLink>
+                &nbsp;&nbsp;
+                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="Yorum.aspx">Yorum</asp:HyperLink>
             </asp:Panel>
 
             <asp:Panel ID="Panel3" runat="server">

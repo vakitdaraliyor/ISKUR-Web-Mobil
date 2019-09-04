@@ -12,6 +12,18 @@ namespace GUNLUK.admin
         BLOGEntities entities = new BLOGEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["GIRIS_YETKI"] == null)
+            {
+                Response.Redirect("Giris.aspx");
+            }
+            else
+            {
+                if (Convert.ToBoolean(Session["GIRIS_YETKI"]) == false)
+                {
+                    Response.Redirect("Giris.aspx");
+                }
+            }
+
             GridView1.DataSource = entities.KULLANICI.ToList();
             GridView1.DataBind();
         }
