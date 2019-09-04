@@ -10,7 +10,7 @@
 namespace GUNLUK.admin {
     
     
-    public partial class Kullanici {
+    public partial class Kategori {
         
         /// <summary>
         /// pnlLISTE denetimi.
@@ -31,13 +31,13 @@ namespace GUNLUK.admin {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// txtARA denetimi.
+        /// txtKATEGORI_ADI_ARA denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtARA;
+        protected global::System.Web.UI.WebControls.TextBox txtKATEGORI_ADI_ARA;
         
         /// <summary>
         /// Button1 denetimi.
@@ -76,31 +76,13 @@ namespace GUNLUK.admin {
         protected global::System.Web.UI.WebControls.Panel pnlKAYIT;
         
         /// <summary>
-        /// Label6 denetimi.
+        /// Label5 denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
-        
-        /// <summary>
-        /// Label2 denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// txtKULLANICI_REFNO denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtKULLANICI_REFNO;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
         /// Label3 denetimi.
@@ -112,22 +94,13 @@ namespace GUNLUK.admin {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// txtKULLANICI_ADI denetimi.
+        /// txtKATEGORI_REFNO denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtKULLANICI_ADI;
-        
-        /// <summary>
-        /// RequiredFieldValidator1 denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.TextBox txtKATEGORI_REFNO;
         
         /// <summary>
         /// Label4 denetimi.
@@ -139,40 +112,22 @@ namespace GUNLUK.admin {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// txtPAROLA denetimi.
+        /// txtKATEGORI_ADI denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPAROLA;
+        protected global::System.Web.UI.WebControls.TextBox txtKATEGORI_ADI;
         
         /// <summary>
-        /// RequiredFieldValidator2 denetimi.
+        /// RequiredFieldValidator1 denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-        
-        /// <summary>
-        /// Label5 denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
-        
-        /// <summary>
-        /// drpDURUMU denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpDURUMU;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
         /// Button3 denetimi.
