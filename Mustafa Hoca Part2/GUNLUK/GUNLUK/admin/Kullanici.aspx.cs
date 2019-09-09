@@ -30,6 +30,7 @@ namespace GUNLUK.admin
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {     
+            // Seç
             int refno =  Convert.ToInt32(GridView1.SelectedDataKey.Value);
             KULLANICI k = entities.KULLANICI.Find(refno);
 
