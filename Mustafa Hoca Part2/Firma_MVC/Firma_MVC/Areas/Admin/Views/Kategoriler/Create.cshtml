@@ -1,0 +1,31 @@
+﻿@model Firma_MVC.Models.KATEGORI 
+ 
+@{
+    ViewBag.Title = "Create";
+}
+
+    <form action="/Admin/Kategoriler/Create" method="post">
+        <table>
+            <tr>
+                <td></td>
+                <td>KAYIT FORMU</td>
+            </tr>
+            <tr>
+                <td>Kategori Refno</td>
+                <td><input type="text" readonly name="KATEGORI_REFNO" value="@Model.KATEGORI_REFNO" /></td>
+            </tr>
+            <tr>
+                <td>Kategori Adı</td>
+                <td><input type="text" name="KATEGORI_ADI" value="@Model.KATEGORI_ADI" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Kaydet" />
+                    <a href="/Admin/Kategoriler/Index">Vazgeç</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+

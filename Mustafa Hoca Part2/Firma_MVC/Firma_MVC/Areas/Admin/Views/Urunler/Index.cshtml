@@ -1,0 +1,37 @@
+﻿@model List<Firma_MVC.Models.URUN>
+@{
+    ViewBag.Title = "Index";
+}
+
+    <div id="arama"></div>
+
+    <div id="liste">
+        <table>
+            <tr>
+                <th>Sil</th>
+                <th>Ürün Refno</th>
+                <th>Ürün Adı</th>
+                <th>Fiyatı</th>
+                <th>Durumu</th>
+                <th>Kategori</th>
+                <th>Marka</th>
+                <th>Resim</th>
+            </tr>
+
+            @foreach (var urun in Model)
+            {
+        <tr>
+            <td><a href="/Admin/Urunler/Delete/@urun.URUN_REFNO">Sil</a></td>
+            <td>@urun.URUN_REFNO</td>
+            <td><a href="/Admin/Urunler/Create/@urun.URUN_REFNO"> @urun.URUN_ADI</a></td>
+            <td>@urun.FIYATI</td>
+            <td>@urun.DURUMU</td>
+            <td>@urun.KATEGORI.KATEGORI_ADI</td>
+            <td>@urun.MARKA.MARKA_ADI</td>
+            <td><img src="~/images/@urun.RESIM1" alt="Alternate text" /></td>
+        </tr>
+            }
+
+        </table>
+    </div>
+

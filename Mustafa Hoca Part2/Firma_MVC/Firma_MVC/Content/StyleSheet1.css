@@ -1,0 +1,91 @@
+﻿body {
+    background-color: #e1e1e1;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+#liste table{
+    background-color: #cbeded;
+    width: 100%;
+}
+
+#liste table tr {
+    height: 25px;
+    line-height: 25px;
+    border: 1px dotted black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#liste table tr:nth-child(2n+1) {
+    background-color: whitesmoke;
+}
+
+#liste table tr:nth-child(2n) {
+    background-color: white;
+}
+
+#liste table tr:hover:not(:first-child) {
+    transition-duration: 0.3s;
+    background-color: #aadbfe;
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+}
+
+    a:hover {
+        color: red;
+        text-shadow: 3px 3px 3px black;
+    }
+
+#menu{
+    height: 50px;
+    line-height: 50px;
+    margin-top: 20px;
+    background-color: #2a595c;
+    padding: 8px;
+}
+
+    #menu a{
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 5px;
+        color: whitesmoke;
+    }
+
+        #menu a:hover{
+            color: red;
+            border-color: red;
+            transition-duration: 0.3s;
+            text-shadow: 3px 3px 3px black;
+        }
+
+#arama {
+    height: 100px;
+    line-height: 100px;
+    background-color: #d7d7d7;
+}
+
+    #arama input{
+        height:30px;
+        width:200px;
+        border-radius: 10px;
+        transition-duration: 0.5s;
+        transition: width .5s ease-in-out, background .3s ease;
+    }
+
+    #arama input:focus{
+        width:300px;
+    }
+
+    #arama button {
+        height: 30px;
+        width: 50px;
+        border-radius: 10px;
+    }
+        #arama button:hover{
+            background-color:orangered;
+            color: whitesmoke
+        }
