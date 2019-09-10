@@ -17,6 +17,10 @@
     text-align: center;
 }
 
+th{
+    font-weight:bold;
+}
+
 #liste table tr:nth-child(2n+1) {
     background-color: whitesmoke;
 }
@@ -37,7 +41,7 @@ a{
 
     a:hover {
         color: red;
-        text-shadow: 3px 3px 3px black;
+        text-shadow: 2px 2px 2px black;
     }
 
 #menu{
@@ -86,6 +90,6 @@ a{
         border-radius: 10px;
     }
         #arama button:hover{
-            background-color:orangered;
+            background-color:red;
             color: whitesmoke
         }

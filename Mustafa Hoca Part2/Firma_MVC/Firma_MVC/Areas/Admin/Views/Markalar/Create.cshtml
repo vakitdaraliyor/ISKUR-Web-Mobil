@@ -1,0 +1,30 @@
+﻿@model Firma_MVC.Models.MARKA
+
+@{
+    ViewBag.Title = "Create";
+}
+
+    <form action="/Admin/Markalar/Create" method="post">
+        <table>
+            <tr>
+                <td></td>
+                <td>KAYIT FORMU</td>
+            </tr>
+            <tr>
+                <td>Marka Refno</td>
+                <td><input type="text" readonly name="MARKA_REFNO" value="@Model.MARKA_REFNO" /></td>
+            </tr>
+            <tr>
+                <td>Kategori Adı</td>
+                <td><input type="text" name="MARKA_ADI" value="@Model.MARKA_ADI" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Kaydet" />
+                    <a href="/Admin/Markalar/Index">Vazgeç</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+

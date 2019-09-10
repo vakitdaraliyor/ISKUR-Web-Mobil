@@ -20,16 +20,16 @@
 
             @foreach (var urun in Model)
             {
-        <tr>
-            <td><a href="/Admin/Urunler/Delete/@urun.URUN_REFNO">Sil</a></td>
-            <td>@urun.URUN_REFNO</td>
-            <td><a href="/Admin/Urunler/Create/@urun.URUN_REFNO"> @urun.URUN_ADI</a></td>
-            <td>@urun.FIYATI</td>
-            <td>@urun.DURUMU</td>
-            <td>@urun.KATEGORI.KATEGORI_ADI</td>
-            <td>@urun.MARKA.MARKA_ADI</td>
-            <td><img src="~/images/@urun.RESIM1" alt="Alternate text" /></td>
-        </tr>
+                <tr>
+                    <td><a href="/Admin/Urunler/Delete/@urun.URUN_REFNO">Sil</a></td>
+                    <td>@urun.URUN_REFNO</td>
+                    <td><a href="/Admin/Urunler/Create/@urun.URUN_REFNO"> @urun.URUN_ADI</a></td>
+                    <td>@urun.FIYATI</td>
+                    <td>@urun.DURUMU</td>
+                    <td>@urun.KATEGORI.KATEGORI_ADI</td>
+                    <td>@urun.MARKA.MARKA_ADI</td>
+                    <td><img src="~/images/@urun.RESIM1" alt="Alternate text" /></td>
+                </tr>
             }
 
         </table>

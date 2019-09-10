@@ -22,16 +22,16 @@
                 <th>Kategori Adı</th>
             </tr>
 
-            @{ 
-                foreach (var kategori in Model)
-                {
-                    <tr>
-                        <th><a href="/Admin/Kategoriler/Delete/@kategori.KATEGORI_REFNO">Sil</a></th>
-                        <th>@kategori.KATEGORI_REFNO</th>
-                        <th><a href="/Admin/Kategoriler/Create/@kategori.KATEGORI_REFNO">@kategori.KATEGORI_ADI</a></th>
-                    </tr>
-                }
+            @foreach (var kategori in Model)
+            {
+                <tr>
+                    <td><a href="/Admin/Kategoriler/Delete/@kategori.KATEGORI_REFNO">Sil</a></td>
+                    <td>@kategori.KATEGORI_REFNO</td>
+                    <td><a href="/Admin/Kategoriler/Create/@kategori.KATEGORI_REFNO">@kategori.KATEGORI_ADI</a></td>
+                </tr>
             }
+
+
 
         </table>
     </div>
