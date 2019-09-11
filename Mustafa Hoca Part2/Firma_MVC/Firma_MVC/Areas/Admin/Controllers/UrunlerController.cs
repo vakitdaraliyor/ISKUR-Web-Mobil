@@ -66,33 +66,68 @@ namespace Firma_MVC.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Create(URUN u, HttpPostedFileBase RESIM1, HttpPostedFileBase RESIM2, HttpPostedFileBase RESIM3, HttpPostedFileBase RESIM4)
         {
-            if (u.URUN_REFNO == 0)
+            if (ModelState.IsValid)
             {
-                db.URUNs.Add(u);
+                if (RESIM1 != null)
+                {
+                    u.RESIM1 = RESIM1.FileName;
+                }
+                if (RESIM2 != null)
+                {
+                    u.RESIM2 = RESIM2.FileName;
+                }
+                if (RESIM3 != null)
+                {
+                    u.RESIM3 = RESIM3.FileName;
+                }
+                if (RESIM4 != null)
+                {
+                    u.RESIM4 = RESIM4.FileName;
+                }
+
+                if (u.URUN_REFNO == 0)
+                {
+                    db.URUNs.Add(u);
+                }
+                else
+                {
+                    db.Entry(u).State = System.Data.Entity.EntityState.Modified;
+                }
+                db.SaveChanges();
+
+                if (RESIM1 != null)
+                {
+                    RESIM1.SaveAs(Request.PhysicalApplicationPath + "/Images/" + RESIM1.FileName);
+                }
+                if (RESIM2 != null)
+                {
+                    RESIM2.SaveAs(Request.PhysicalApplicationPath + "/Images/" + RESIM2.FileName);
+                }
+                if (RESIM3 != null)
+                {
+                    RESIM3.SaveAs(Request.PhysicalApplicationPath + "/Images/" + RESIM3.FileName);
+                }
+                if (RESIM4 != null)
+                {
+                    RESIM4.SaveAs(Request.PhysicalApplicationPath + "/Images/" + RESIM4.FileName);
+                }
             }
             else
             {
-                db.Entry(u).State = System.Data.Entity.EntityState.Modified;
-            }
+                string hatalar = "";
+                foreach (var item in ModelState.Values)
+                {
+                    for (int i = 0; i < item.Errors.Count; i++)
+                    {
+                        hatalar += item.Errors[i].ErrorMessage;
+                    }
+                }
 
-            if (RESIM1 != null)
-            {
-                RESIM1.SaveAs(Request.PhysicalApplicationPath + "/Images/" + RESIM1.FileName);
-            }
-            if (RESIM2 != null)
-            {
-                RESIM2.SaveAs(Request.PhysicalApplicationPath + "/Images/" + RESIM2.FileName);
-            }
-            if (RESIM3 != null)
-            {
-                RESIM3.SaveAs(Request.PhysicalApplicationPath + "/Images/" + RESIM3.FileName);
-            }
-            if (RESIM4 != null)
-            {
-                RESIM4.SaveAs(Request.PhysicalApplicationPath + "/Images/" + RESIM4.FileName);
-            }
-
-            db.SaveChanges();
+                ViewData["hatalar"] = hatalar;
+                ViewData["kategori"] = db.KATEGORIs.ToList();
+                ViewBag.marka = db.MARKAs.ToList();
+                return View(u);
+            }        
             return RedirectToAction("Index");
         }
 
