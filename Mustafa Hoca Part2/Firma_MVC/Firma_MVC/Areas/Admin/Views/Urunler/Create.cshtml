@@ -1,0 +1,116 @@
+﻿@model Firma_MVC.Models.URUN
+@using Firma_MVC.Models
+@{
+    ViewBag.Title = "Create";
+    List<KATEGORI> kategoriListe = ViewData["kategori"] as List<KATEGORI>;
+    List<MARKA> markaListe = ViewBag.marka as List<MARKA>;
+}
+
+    <form action="/Admin/Urunler/Create" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td></td>
+                <td>KAYIT FORMU</td>
+            </tr>
+            <tr>
+                <td>Urun Refno</td>
+                <td><input type="text" readonly name="URUN_REFNO" value="@Model.URUN_REFNO" /></td>
+            </tr>
+            <tr>
+                <td>Urun Adı</td>
+                <td><input type="text" name="URUN_ADI" value="@Model.URUN_ADI" /></td>
+            </tr>
+            <tr>
+                <td>Urun Fiyatı</td>
+                <td><input type="text" name="FIYATI" value="@Model.FIYATI" /></td>
+            </tr>
+            <tr>
+                <td>Durumu</td>
+                <td>
+                    <select name="DURUMU">
+                        @if (Model.DURUMU.ToString() == "True")
+                        {
+                            <option selected value="@Model.DURUMU">Aktif</option>
+                        }
+                        else if (Model.DURUMU.ToString() == "True")
+                        {
+                            <option selected value="@Model.DURUMU">Pasif</option>
+                        }
+                        else
+                        {
+                            <option value="@Model.DURUMU">Aktif</option>
+                            <option value="@Model.DURUMU">Pasif</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Kategori</td>
+                <td>
+                    <select name="KATEGORI_REFNO">
+                        @foreach (var kategori in @kategoriListe)
+                        {
+                            if (Model.KATEGORI_REFNO == kategori.KATEGORI_REFNO)
+                            {
+                                <option selected value="@kategori.KATEGORI_REFNO">@kategori.KATEGORI_ADI</option>
+                            }
+                            else
+                            {
+                                <option value="@kategori.KATEGORI_REFNO">@kategori.KATEGORI_ADI</option>
+                            }
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>KDV Oranı</td>
+                <td><input type="text" name="KDV_ORANI" value="@Model.KDV_ORANI" /></td>
+            </tr>
+            <tr>
+                <td>Marka</td>
+                <td>
+                    <select name="MARKA_REFNO">
+                        @foreach (var marka in markaListe)
+                        {
+                            if (Model.MARKA_REFNO == marka.MARKA_REFNO)
+                            {
+                                <option selected value="@marka.MARKA_REFNO">@marka.MARKA_ADI</option>
+                            }
+                            else
+                            {
+                                <option value="@marka.MARKA_REFNO">@marka.MARKA_ADI</option>
+                            }                        
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Açıklama</td>
+                <td><textarea name="ACIKLAMA" value="@Model.ACIKLAMA">@Model.ACIKLAMA</textarea></td>
+            </tr>
+            <tr>
+                <td>Resim1</td>
+                <td><input type="file" name="RESIM1" value="@Model.RESIM1" /></td>
+            </tr>
+            <tr>
+                <td>Resim2</td>
+                <td><input type="file" name="RESIM2" value="@Model.RESIM2" /></td>
+            </tr>
+            <tr>
+                <td>Resim3</td>
+                <td><input type="file" name="RESIM3" value="@Model.RESIM3" /></td>
+            </tr>
+            <tr>
+                <td>Resim4</td>
+                <td><input type="file" name="RESIM4" value="@Model.RESIM4" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Kaydet" />
+                    <a href="/Admin/Urunler/Index">Vazgeç</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+

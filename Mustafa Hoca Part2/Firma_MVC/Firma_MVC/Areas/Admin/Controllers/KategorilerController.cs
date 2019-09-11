@@ -12,7 +12,7 @@ namespace Firma_MVC.Areas.Admin.Controllers
         FIRMAMODEL db = new FIRMAMODEL();
 
         // GET: Kategoriler
-        // View e veri yollama yontemleri 1-DataBinding ve 2-ViewData
+        // View e veri yollama yontemleri 1-Model Binding ve 2-ViewData
         public ActionResult Index(string arama)
         {
             List<KATEGORI> liste = new List<KATEGORI>();

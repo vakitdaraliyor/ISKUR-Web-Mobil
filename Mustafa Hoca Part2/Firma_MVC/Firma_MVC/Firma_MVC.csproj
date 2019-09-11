@@ -163,6 +163,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\resim1.jpg" />
+    <Content Include="Images\resim2.jpg" />
+    <Content Include="Images\resim3.jpg" />
+    <Content Include="Images\resim4.jpg" />
+    <Content Include="Images\resim5.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="WebForm1.aspx" />
@@ -171,6 +176,7 @@
     <Content Include="Areas\Admin\Views\Urunler\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Markalar\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Markalar\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Urunler\Create.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

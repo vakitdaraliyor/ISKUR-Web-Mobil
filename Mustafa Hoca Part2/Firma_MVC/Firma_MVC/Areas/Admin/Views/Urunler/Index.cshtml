@@ -1,9 +1,18 @@
 ﻿@model List<Firma_MVC.Models.URUN>
+
 @{
     ViewBag.Title = "Index";
+    string veri = ViewData["veri"].ToString();
 }
 
-    <div id="arama"></div>
+    <div id="arama">
+        <form action="/Admin/Urunler/Search" method="post">
+            <label for="txtARA">Ara</label>
+            <input id="txtARA" type="text" name="txtARA" placeholder="Ürün adı giriniz" value="@veri" />
+            <button type="submit" value="Ara">Ara</button>
+            <a href="/Admin/Urunler/Create">Yeni</a>
+        </form>
+    </div>
 
     <div id="liste">
         <table>
@@ -28,7 +37,7 @@
                     <td>@urun.DURUMU</td>
                     <td>@urun.KATEGORI.KATEGORI_ADI</td>
                     <td>@urun.MARKA.MARKA_ADI</td>
-                    <td><img src="~/images/@urun.RESIM1" alt="Alternate text" /></td>
+                    <td><img class="urunResim" src="~/Images/@urun.RESIM1" alt="Alternate text" /></td>
                 </tr>
             }
 
