@@ -5,34 +5,40 @@
     string veri = ViewData["veri"].ToString();
 }
 
-    <div id="arama">
-        <form action="/Admin/Kategoriler/Search" method="post">
-            <label>Ara</label>
-            <input type="text" name="txtARA" placeholder="Kategori adı giriniz" value="@veri"/>
-            <button type="submit" value="Ara">Ara</button>
-            <a href="/Admin/Kategoriler/Create">Yeni</a>
-        </form>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="/Admin/Kategoriler/Search" method="post">
+                <label>Ara</label>
+                <input type="text" name="txtARA" placeholder="Kategori adı giriniz" value="@veri" />
+                <button type="submit" value="Ara">Ara</button>
+                <a href="/Admin/Kategoriler/Create">Yeni</a>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <input type="text" id="myInput" placeholder="Tabloda ara" />
+        </div>
     </div>
 
     <div id="liste">
-        <table class="table-striped">
-            <tr>
-                <th>Sil</th>
-                <th>Kategori Refno</th>
-                <th>Kategori Adı</th>
-            </tr>
-
-            @foreach (var kategori in Model)
-            {
+        <table class="table-striped" id="myTable">
+            <thead>
                 <tr>
-                    <td><a href="/Admin/Kategoriler/Delete/@kategori.KATEGORI_REFNO">Sil</a></td>
-                    <td>@kategori.KATEGORI_REFNO</td>
-                    <td><a href="/Admin/Kategoriler/Create/@kategori.KATEGORI_REFNO">@kategori.KATEGORI_ADI</a></td>
+                    <th>Sil</th>
+                    <th>Kategori Refno</th>
+                    <th>Kategori Adı</th>
                 </tr>
-            }
+            </thead>
 
-
-
+            <tbody>
+                @foreach (var kategori in Model)
+                {
+                    <tr>
+                        <td><a href="/Admin/Kategoriler/Delete/@kategori.KATEGORI_REFNO">Sil</a></td>
+                        <td>@kategori.KATEGORI_REFNO</td>
+                        <td><a href="/Admin/Kategoriler/Create/@kategori.KATEGORI_REFNO">@kategori.KATEGORI_ADI</a></td>
+                    </tr>
+                }
+            </tbody>
         </table>
     </div>
 

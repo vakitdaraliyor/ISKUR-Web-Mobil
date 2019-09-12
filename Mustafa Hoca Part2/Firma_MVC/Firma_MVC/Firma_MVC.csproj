@@ -173,6 +173,7 @@
     <Content Include="Images\resim5.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\myScripts.js" />
     <Content Include="WebForm1.aspx" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
