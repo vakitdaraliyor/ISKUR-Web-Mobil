@@ -4,13 +4,21 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+
     <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 </head>
 <body>
     <div>
         <div id="banner">YÖNETİM PANELİ</div>
         <div id="menu">
-            <a href="/Admin/Urunler/Index">ÜrÜnler</a>
+            <a href="/Admin/Urunler/Index">Ürünler</a>
             <a href="/Admin/Kategoriler/Index">Kategoriler</a>
             <a href="/Admin/Kullanicilar/Index">Kullanıcılar</a>
             <a href="/Admin/Markalar/Index">Markalar</a>
@@ -18,7 +26,7 @@
             <a href="/Admin/Sayfalar/Index">Sayfalar</a>
             <a href="/Admin/Sliderler/Index">Sliderler</a>
         </div>
-        <div>@RenderBody()</div>
+        <div id="content" class="container">@RenderBody()</div>
         <div id="footer"></div>
     </div>
 </body>

@@ -1,0 +1,42 @@
+﻿@model Firma_MVC.Models.PROJE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PROJE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PROJE_ADI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROJE_ADI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RESIM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RESIM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACIKLAMA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACIKLAMA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PROJE_REFNO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

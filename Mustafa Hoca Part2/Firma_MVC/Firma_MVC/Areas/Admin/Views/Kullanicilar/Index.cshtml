@@ -1,0 +1,52 @@
+﻿@model IEnumerable<KULLANICI>
+@using Firma_MVC.Models
+
+@{
+    ViewBag.Title = "Index";
+    string veri = ViewData["veri"].ToString();
+}
+
+    <div id="arama">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+        <div class="form">
+            <div class="form-group">
+                @Html.Label("Ara", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.Editor("", new { htmlAttributes = new { @class = "form-control", @name = "txtARA", @value = @veri, @placeholder = "Kullanıcı adı giriniz" } })
+                    <input type="submit" value="Ara" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <div id="liste">
+        <table class="table-striped">
+
+            <tr>
+                <th>Sil</th>
+                <th>@Html.DisplayNameFor(model => model.KULLANICI_REFNO)</th>
+                <th>@Html.DisplayNameFor(model => model.KULLANICI_ADI)</th>
+                <th>@Html.DisplayNameFor(model => model.PAROLA)</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <!-- <a href="/Admin/Kullanicilar/Delete/@item.KULLANICI_REFNO">Sil</a> -->
+                        @Html.ActionLink("Sil", "Delete", new { id = item.KULLANICI_REFNO })
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.KULLANICI_REFNO)</td>
+                    <td>@Html.ActionLink(item.KULLANICI_ADI, "Create", new { id = item.KULLANICI_REFNO})</td>
+                    <td>@Html.DisplayFor(modelItem => item.PAROLA)</td>
+                </tr>                
+            }
+
+        </table>
+    </div>
+
+
+

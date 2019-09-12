@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Firma_MVC.Models.PROJE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div id="liste">
+
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PROJE_ADI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RESIM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ACIKLAMA)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PROJE_ADI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RESIM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ACIKLAMA)
+                </td>
+                <td>
+
+            <!--<a href="/Admin/Projeler/Edit/@item.PROJE_REFNO">Edit</a> -->
+            @Html.ActionLink("Edit", "Edit", new { id=item.PROJE_REFNO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PROJE_REFNO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PROJE_REFNO })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

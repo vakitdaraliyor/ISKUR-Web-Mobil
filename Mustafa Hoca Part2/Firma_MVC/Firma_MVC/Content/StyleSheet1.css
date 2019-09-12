@@ -5,51 +5,27 @@
 }
 
 #liste table{
-    background-color: #cbeded;
     width: 100%;
-}
-
-#liste table tr {
-    height: 25px;
-    line-height: 25px;
-    border: 1px dotted black;
-    border-collapse: collapse;
+    line-height: 50px;
     text-align: center;
 }
 
-th{
+#liste table th{
     font-weight:bold;
-}
-
-#liste table tr:nth-child(2n+1) {
-    background-color: whitesmoke;
-}
-
-#liste table tr:nth-child(2n) {
-    background-color: white;
-}
-
-#liste table tr:hover:not(:first-child) {
-    transition-duration: 0.3s;
-    background-color: #aadbfe;
-    cursor:pointer;
+    text-align:center;
 }
 
 a{
     text-decoration:none;
 }
 
-    a:hover {
-        color: red;
-        text-shadow: 2px 2px 2px black;
-    }
 
 #menu{
-    height: 50px;
-    line-height: 50px;
-    margin-top: 20px;
+    height: 70px;
+    line-height: 40px;
+    margin-top:20px;
     background-color: #2a595c;
-    padding: 8px;
+    padding: 15px;
 }
 
     #menu a{
@@ -57,6 +33,7 @@ a{
         border-radius: 10px;
         padding: 5px;
         color: whitesmoke;
+        font-size: 20px;
     }
 
         #menu a:hover{
@@ -68,11 +45,11 @@ a{
 
 #arama {
     height: 100px;
-    line-height: 100px;
     background-color: #d7d7d7;
 }
 
     #arama input{
+        margin-top:40px;
         height:30px;
         width:200px;
         border-radius: 10px;
@@ -84,15 +61,10 @@ a{
         width:300px;
     }
 
-    #arama button {
+    #arama button{
         height: 30px;
-        width: 50px;
-        border-radius: 10px;
     }
-        #arama button:hover{
-            background-color:red;
-            color: whitesmoke
-        }
+
 
 .urunResim{
     height:50px;
@@ -102,4 +74,8 @@ a{
 #hatalar{
     background-color: white;
 
+}
+
+#content {
+    margin-top: 50px;
 }
