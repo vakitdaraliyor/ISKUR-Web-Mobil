@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Firma_MVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +9,25 @@ namespace Firma_MVC.Controllers
 {
     public class HomeController : Controller
     {
+        FIRMAMODEL db = new FIRMAMODEL();
         public ActionResult Index()
         {
+            ViewData["slider"] = db.SLIDERs.Where(s => s.DURUMU == true).ToList();
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Kurumsal()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewData["sayfa"] = db.SAYFAs.Where(s => s.BASLIK == "kurumsal").SingleOrDefault();
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Iletisim()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewData["sayfa"] = db.SAYFAs.Where(s => s.BASLIK == "iletisim").SingleOrDefault();
 
-            return View();
+            return View("Kurumsal");
         }
     }
 }

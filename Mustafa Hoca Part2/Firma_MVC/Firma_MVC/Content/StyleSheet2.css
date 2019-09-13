@@ -1,0 +1,25 @@
+﻿body {
+}
+
+#banner{
+    background-color: #159dff;
+    height:50px;
+}
+
+#menu{
+
+}
+
+#icerik{
+    background-color: #efefef;
+}
+
+#footer{
+    background-color: black;
+    color:white;
+}
+
+.resim1{
+    height: 200px;
+    width: 200px;
+}

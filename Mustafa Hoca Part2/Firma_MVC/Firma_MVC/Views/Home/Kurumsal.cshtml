@@ -1,0 +1,10 @@
+﻿@using Firma_MVC.Models
+
+@{
+    ViewBag.Title = "Kurumsal";
+    SAYFA sayfa = ViewData["sayfa"] as SAYFA;
+}
+
+    <div class="sayfaBaslik">@Html.Raw(@sayfa.BASLIK)</div>
+    <div class="sayfaIcerik">@Html.Raw(@sayfa.ICERIK)</div>
+

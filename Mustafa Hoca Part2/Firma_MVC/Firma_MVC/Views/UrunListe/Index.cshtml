@@ -1,0 +1,30 @@
+﻿@using Firma_MVC.Models;
+
+@{
+    ViewBag.Title = "Index";
+    List<KATEGORI> kategoriler = ViewData["kategoriler"] as List<KATEGORI>;
+    List<URUN> urunler = ViewData["urunler"] as List<URUN>;
+}
+
+    <div id="urunsol" class="col-md-3">
+        <ul class="nav flex-column">
+            @foreach (var kategori in kategoriler)
+            {
+                <li class="nav-item">
+                    @Html.ActionLink(kategori.KATEGORI_ADI, "Index", new { id = kategori.KATEGORI_REFNO }, new { @class = "nav-item"})
+                </li>
+            }
+        </ul>
+    </div>
+
+    <div id="urunicerik" class="col-md-9">
+        @foreach (var urun in urunler)
+        {
+            <div class="col-md-4">
+                <div>@urun.URUN_ADI</div>
+                <div class="text-center"><img class="resim1 img-fluid" src="~/Images/@urun.RESIM1" /></div>
+                <div>@Html.Raw(urun.ACIKLAMA)</div>
+            </div>
+        }
+    </div>
+

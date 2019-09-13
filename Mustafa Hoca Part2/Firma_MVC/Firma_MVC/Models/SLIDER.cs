@@ -23,5 +23,9 @@ namespace Firma_MVC.Models
         [Required]
         [StringLength(50)]
         public string RESIM { get; set; }
+
+        [Required]
+        public bool DURUMU { get; set; }
+
     }
 }
