@@ -10,13 +10,16 @@ namespace Firma_MVC.Models
     public partial class SAYFA
     {
         [Key]
+        [Display(Name = "Sayfa REFNO")]
         public int SAYFA_REFNO { get; set; }
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "Baþlýk")]
         public string BASLIK { get; set; }
 
         [Required]
+        [Display(Name = "Ýçerik")]
         public string ICERIK { get; set; }
     }
 }

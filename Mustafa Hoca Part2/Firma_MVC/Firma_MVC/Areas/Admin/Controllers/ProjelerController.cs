@@ -46,6 +46,7 @@ namespace Firma_MVC.Areas.Admin.Controllers
         // daha fazla bilgi için https://go.microsoft.com/fwlink/?LinkId=317598 sayfasına bakın.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create([Bind(Include = "PROJE_REFNO,PROJE_ADI,RESIM,ACIKLAMA")] PROJE pROJE)
         {
             if (ModelState.IsValid)
@@ -78,6 +79,7 @@ namespace Firma_MVC.Areas.Admin.Controllers
         // daha fazla bilgi için https://go.microsoft.com/fwlink/?LinkId=317598 sayfasına bakın.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit([Bind(Include = "PROJE_REFNO,PROJE_ADI,RESIM,ACIKLAMA")] PROJE pROJE)
         {
             if (ModelState.IsValid)

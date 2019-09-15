@@ -11,11 +11,12 @@
             <input id="txtARA" type="text" name="txtARA" placeholder="Ürün adı giriniz" value="@veri" />
             <button type="submit" value="Ara">Ara</button>
             <a href="/Admin/Urunler/Create">Yeni</a>
+            @Html.Editor("myInput", new { htmlAttributes = new { @name = "myInput", @placeholder = "Tabloda ara" } })
         </form>
     </div>
 
     <div id="liste">
-        <table class="table-striped">
+        <table class="table-striped" id="myTable">
             <tr>
                 <th>Sil</th>
                 <th>Ürün Refno</th>

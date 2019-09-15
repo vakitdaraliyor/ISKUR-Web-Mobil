@@ -14,8 +14,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.KULLANICI_REFNO, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.KULLANICI_REFNO, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.KULLANICI_REFNO, "", new { @class = "text-danger", @readonly = "readonly" })
+                @Html.EditorFor(model => model.KULLANICI_REFNO, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.KULLANICI_REFNO, "", new { @class = "text-danger" })
             </div>
         </div>
 

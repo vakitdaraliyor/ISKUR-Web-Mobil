@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SAYFA>
+@using Firma_MVC.Models
+
+@{
+    ViewBag.Title = "Index";
+    string veri = ViewData["veri"].ToString();
+}
+
+@using (Html.BeginForm("Search", "Sayfalar"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-inline">
+        <div class="form-group col-md-6">
+            @Html.Editor("txtARA", new { htmlAttributes = new { @class = "form-control", @name = "txtARA", @value = @veri, @placeholder = "Başlıkta ara" } })
+            <input type="submit" value="Ara" class="btn btn-default" />
+            @Html.ActionLink("Yeni", "Create")
+        </div>
+        <div class="col-md-6">
+            @Html.Editor("myInput", new { htmlAttributes = new { @name = "myInput", @placeholder = "Tabloda ara" } })
+        </div>
+    </div>
+}
+
+<div id="liste">
+    <table class="table table-striped" id="myTable">
+        <thead>
+            <tr>
+                <th>Sil</th>
+                <th>@Html.DisplayNameFor(model => model.SAYFA_REFNO)</th>
+                <th>@Html.DisplayNameFor(model => model.BASLIK)</th>
+                <th>@Html.DisplayNameFor(model => model.ICERIK)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink("Sil", "Delete", new { id = item.SAYFA_REFNO })</td>
+                    <td>@Html.DisplayFor(modelItem => item.SAYFA_REFNO)</td>
+                    <td>@Html.ActionLink(item.BASLIK, "Create", new { id = item.SAYFA_REFNO })</td>
+                    <td>@Html.DisplayFor(modelItem => item.ICERIK)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

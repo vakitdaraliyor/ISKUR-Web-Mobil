@@ -1,0 +1,66 @@
+﻿@model Firma_MVC.Models.SLIDER
+
+@{
+    ViewBag.Title = "Create";
+}
+
+    <form action="/Admin/Sliderlar/Create" method="post">
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                <label for="" class="control-label col-md-2">Slider Refno</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" readonly name="SLIDER_REFNO" value="@Model.SLIDER_REFNO" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="" class="control-label col-md-2" col-md-2>Başlık</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" name="BASLIK" value="@Model.BASLIK" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="" class="control-label col-md-2" col-md-2>Link</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" name="LINK" value="@Model.LINK" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="" class="control-label col-md-2">Resim</label>
+                <div class="col-md-10">
+                    <input type="file" name="RESIM" value="@Model.RESIM" />
+                    <img class="urunResim" src="~/Images/Slider/@Model.RESIM" alt="Alternate Text" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="" class="control-label col-md-2">Durumu</label>
+                <div class="col-md-10">
+                    <select class="form-control" name="DURUMU">
+                        @if (Model.DURUMU.ToString() == "True")
+                        {
+                            <option selected value="True">Aktif</option>
+                            <option value="False">Pasif</option>
+                        }
+                        else
+                        {
+                            <option value="True">Aktif</option>
+                            <option selected value="False">Pasif</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Kaydet" class="btn btn-default" />
+                    <a href="/Admin/Sliderlar/Index">Vazgeç</a>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
