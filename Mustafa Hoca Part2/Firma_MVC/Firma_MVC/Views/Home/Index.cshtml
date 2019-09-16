@@ -1,15 +1,18 @@
 ﻿@using Firma_MVC.Models
 
-
 @{
     ViewBag.Title = "Index";
     List<SLIDER> slider = ViewData["slider"] as List<SLIDER>;
     List<PROJE> projeler = ViewData["projeler"] as List<PROJE>;
     List<URUN> urunler = ViewData["urunler"] as List<URUN>;
+    int ziyaretci = Convert.ToInt32(ViewData["ziyaretci"]);
+    string saat = Convert.ToString(ViewData["saat"]);
 }
 
+<div>Ziyaretci: @ziyaretci</div>
+<div>Saat: @saat</div>
+
 <div id="slider">
-        
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 
         <div class="carousel-inner" role="listbox">

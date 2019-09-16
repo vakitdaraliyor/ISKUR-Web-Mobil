@@ -32,7 +32,8 @@ namespace Firma_MVC.Controllers
             URUN urun = db.URUNs.Find(id);
             if (urun == null)
             {
-                return RedirectToAction("Goster", "Mesaj" ,new { m = "Ürün bulunamadı."});
+                TempData["m"] = "Ürün bulunamadi";
+                return RedirectToAction("Goster", "Mesaj");
             }
             return View(urun);
         }

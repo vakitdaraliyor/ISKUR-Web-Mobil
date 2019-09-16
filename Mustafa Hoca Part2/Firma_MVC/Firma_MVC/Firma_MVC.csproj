@@ -137,6 +137,7 @@
     <Compile Include="Areas\Admin\Controllers\UrunlerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\KategorilerController.cs" />
+    <Compile Include="Controllers\MesajController.cs" />
     <Compile Include="Controllers\ProjeListeController.cs" />
     <Compile Include="Controllers\UrunListeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -582,6 +583,7 @@
     <Content Include="Views\Home\Kurumsal.cshtml" />
     <Content Include="Views\UrunListe\Detay.cshtml" />
     <Content Include="Views\ProjeListe\Detay.cshtml" />
+    <Content Include="Views\Mesaj\Goster.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

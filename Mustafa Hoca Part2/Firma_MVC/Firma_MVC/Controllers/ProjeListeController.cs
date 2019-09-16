@@ -21,7 +21,8 @@ namespace Firma_MVC.Controllers
             PROJE proje = db.PROJEs.Find(id);
             if (proje == null)
             {
-                return RedirectToAction("Goster", "Mesaj", new { m = "Proje bulunamadı" });
+                TempData["m"] = "Proje Bulunamadı.";
+                return RedirectToAction("Goster", "Mesaj");
             }
             return View(proje);
         }
