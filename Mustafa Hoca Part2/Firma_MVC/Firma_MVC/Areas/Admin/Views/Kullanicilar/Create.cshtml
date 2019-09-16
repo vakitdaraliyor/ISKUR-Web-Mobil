@@ -13,7 +13,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.KULLANICI_REFNO, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.KULLANICI_REFNO, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.KULLANICI_REFNO, "", new { @class = "text-danger" })
             </div>
@@ -21,7 +21,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.KULLANICI_ADI, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.KULLANICI_ADI, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.KULLANICI_ADI, "", new { @class = "text-danger" })
             </div>
@@ -29,14 +29,14 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.PAROLA, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.PAROLA, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.PAROLA, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-2 col-md-8">
                 <input type="submit" value="Kaydet" class="btn btn-default" />
                 @Html.ActionLink("Vazgeç", "Index")
             </div>

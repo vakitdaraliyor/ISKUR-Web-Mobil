@@ -60,10 +60,14 @@ namespace Firma_MVC.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(SLIDER s)
+        public ActionResult Create(SLIDER s, HttpPostedFileBase RESIM)
         {
             if (ModelState.IsValid)
             {
+                if (RESIM != null)
+                {
+                    s.RESIM = RESIM.FileName;
+                }
                 if (s.SLIDER_REFNO == 0)
                 {
                     db.SLIDERs.Add(s);
@@ -73,9 +77,17 @@ namespace Firma_MVC.Areas.Admin.Controllers
                     db.Entry(s).State = System.Data.Entity.EntityState.Modified;
                 }
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                if (RESIM != null)
+                {
+                    RESIM.SaveAs(Request.PhysicalApplicationPath + "/Images" + RESIM.FileName);
+                }                
             }
-            return View(s);            
+            else
+            {
+                return View(s);
+            }
+            return RedirectToAction("Index");
+
         }
 
         public ActionResult Search(string txtARA)

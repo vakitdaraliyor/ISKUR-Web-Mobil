@@ -41,7 +41,7 @@
                 <td>@Html.DisplayFor(modelItem => item.SLIDER_REFNO)</td>
                 <td>@Html.ActionLink(item.BASLIK, "Create", new { id= item.SLIDER_REFNO})</td>
                 <td>@Html.DisplayFor(modelItem => item.LINK)</td>
-                <td><img style="height: 100px; width: 100px;" src="~/Images/Slider/@item.RESIM" alt="Alternate Text" /></td>
+                <td><img class="urunResim" src="~/Images/Slider/@item.RESIM" alt="Alternate Text" /></td>
                 <td>@Html.DisplayFor(modelItem => item.DURUMU)</td>
             </tr>
             }

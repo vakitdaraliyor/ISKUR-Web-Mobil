@@ -26,5 +26,15 @@ namespace Firma_MVC.Controllers
 
             return View();
         }
+
+        public ActionResult Detay(int id=0)
+        {
+            URUN urun = db.URUNs.Find(id);
+            if (urun == null)
+            {
+                return RedirectToAction("Goster", "Mesaj" ,new { m = "Ürün bulunamadı."});
+            }
+            return View(urun);
+        }
     }
 }
