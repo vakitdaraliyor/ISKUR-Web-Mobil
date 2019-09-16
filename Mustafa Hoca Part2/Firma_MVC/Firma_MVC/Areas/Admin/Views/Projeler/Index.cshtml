@@ -1,52 +1,49 @@
-﻿@model IEnumerable<Firma_MVC.Models.PROJE>
+﻿@model IEnumerable<PROJE>
+@using Firma_MVC.Models
 
 @{
     ViewBag.Title = "Index";
+    string veri = ViewData["veri"].ToString();
 }
 
-<h2>Index</h2>
+@using (Html.BeginForm("Search", "Projeler"))
+{
+    @Html.AntiForgeryToken()
 
+    <div class="form-inline">
+        <div class="form-group col-md-6">
+            @Html.Editor("txtARA", new { htmlAttributes = new { @class = "form-control", @name = "txtARA", @value = @veri, @placeholder = "Proje başlığı giriniz" } })
+            <input type="submit" value="Ara" class="btn btn-default" />
+            @Html.ActionLink("Yeni", "Create")
+        </div>
+        <div class="col-md-6">
+            @Html.Editor("myInput", new { htmlAttributes = new { @name = "myInput", @placeholder = "Tabloda ara" } })
+        </div>
+    </div>
+}
 <div id="liste">
-
-
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table-striped">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PROJE_ADI)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RESIM)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ACIKLAMA)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
+    <table class="table table-striped" id="myTable">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PROJE_ADI)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RESIM)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ACIKLAMA)
-                </td>
-                <td>
-
-            <!--<a href="/Admin/Projeler/Edit/@item.PROJE_REFNO">Edit</a> -->
-            @Html.ActionLink("Edit", "Edit", new { id=item.PROJE_REFNO }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PROJE_REFNO }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PROJE_REFNO })
-                </td>
+                <th>Sil</th>
+                <th>@Html.DisplayNameFor(model => model.PROJE_REFNO)</th>
+                <th>@Html.DisplayNameFor(model => model.PROJE_ADI)</th>
+                <th>@Html.DisplayNameFor(model => model.RESIM)</th>
+                <th>@Html.DisplayNameFor(model => model.ACIKLAMA)</th>
             </tr>
-        }
-
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink("Sil", "Delete", new { id = item.PROJE_REFNO })</td>
+                    <td>@Html.DisplayFor(modelItem => item.PROJE_REFNO)</td>
+                    <td>@Html.ActionLink(item.PROJE_ADI, "Create", new { id = item.PROJE_REFNO })</td>
+                    <td><img class="urunResim" src="~/Images/Proje/@item.RESIM" alt="Alternate text" /></td>
+                    <td>@Html.DisplayFor(modelItem => item.ACIKLAMA)</td>
+                </tr>
+            }
+        </tbody>
     </table>
 </div>
+

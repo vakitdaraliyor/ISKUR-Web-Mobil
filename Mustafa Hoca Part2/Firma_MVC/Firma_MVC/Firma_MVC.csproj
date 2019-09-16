@@ -169,6 +169,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Proje\person_computer.jpg" />
     <Content Include="Images\resim1.jpg" />
     <Content Include="Images\resim2.jpg" />
     <Content Include="Images\resim3.jpg" />
@@ -530,11 +531,6 @@
     <Content Include="Areas\Admin\Views\Markalar\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Markalar\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Urunler\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Projeler\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Projeler\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Projeler\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Projeler\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Projeler\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Kullanicilar\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Kullanicilar\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Sayfalar\Index.cshtml" />
@@ -551,6 +547,8 @@
     <Content Include="Scripts\ckeditor\package.json" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
+    <Content Include="Areas\Admin\Views\Projeler\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Projeler\Create.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
