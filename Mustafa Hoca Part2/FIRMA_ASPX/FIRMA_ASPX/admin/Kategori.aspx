@@ -4,9 +4,6 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style2 {
-            width: 168px;
-        }
         .auto-style3 {
             width: 150px;
         }
@@ -69,12 +66,13 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtKATEGORI_ADI" runat="server" MaxLength="50"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtKATEGORI_ADI" ErrorMessage="kategori adı giriniz" ValidationGroup="ValidateGroup1"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style3">&nbsp;</td>
                 <td>
-                    <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Kaydet" />
+                    <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Kaydet" ValidationGroup="ValidateGroup1" />
                     <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Vazgeç" />
                     <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" OnClientClick="return confirm(&quot;Silmek istediğinize emin misiniz?&quot;)" Text="Sil" />
                 </td>

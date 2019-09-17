@@ -6,15 +6,19 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script src="../ckfinder/ckfinder.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+
             <asp:Panel ID="Panel1" runat="server">
                 YÖNETİM PANELİ
             </asp:Panel>
+
             <asp:Panel ID="Panel2" runat="server">
                 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Urun.aspx">Ürün</asp:HyperLink>
                 &nbsp;
@@ -22,11 +26,13 @@
                 &nbsp;
                 <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="Marka.aspx">Marka</asp:HyperLink>
             </asp:Panel>
+
             <asp:Panel ID="Panel3" runat="server">
                  <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
                  </asp:ContentPlaceHolder>
             </asp:Panel>
+
             <asp:Panel ID="Panel4" runat="server">
                 FOOTER
             </asp:Panel>

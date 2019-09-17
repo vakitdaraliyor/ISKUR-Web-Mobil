@@ -32,5 +32,6 @@ namespace FIRMA_ASPX
         public virtual DbSet<SAYFA> SAYFAs { get; set; }
         public virtual DbSet<SLIDER> SLIDERs { get; set; }
         public virtual DbSet<URUN> URUNs { get; set; }
+        public virtual DbSet<urunler> urunlers { get; set; }
     }
 }

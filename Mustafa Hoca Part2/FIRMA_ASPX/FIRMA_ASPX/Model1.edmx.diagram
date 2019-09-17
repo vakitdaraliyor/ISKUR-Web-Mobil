@@ -14,6 +14,7 @@
         <EntityTypeShape EntityType="FIRMAModel.URUN" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="FIRMAModel.FK_URUN_KATEGORI" ManuallyRouted="false" />
         <AssociationConnector Association="FIRMAModel.FK_URUN_MARKA" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FIRMAModel.urunler" Width="1.5" PointX="7.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

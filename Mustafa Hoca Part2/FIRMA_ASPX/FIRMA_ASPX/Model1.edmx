@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FIRMAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FIRMAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="KATEGORI">
           <Key>
             <PropertyRef Name="KATEGORI_REFNO" />
@@ -71,6 +71,36 @@
           <Property Name="RESIM3" Type="varchar" MaxLength="50" />
           <Property Name="RESIM4" Type="varchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FIRMA.dbo.urunler' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="urunler">
+          <Key>
+            <PropertyRef Name="DURUMU" />
+            <PropertyRef Name="FIYATI" />
+            <PropertyRef Name="KDV_ORANI" />
+            <PropertyRef Name="URUN_REFNO" />
+            <PropertyRef Name="RESIM1" />
+            <PropertyRef Name="URUN_ADI" />
+            <PropertyRef Name="KATEGORI_REFNO" />
+            <PropertyRef Name="KATEGORI_ADI" />
+            <PropertyRef Name="MARKA_REFNO" />
+            <PropertyRef Name="MARKA_ADI" />
+          </Key>
+          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="4000" />
+          <Property Name="DURUMU" Type="bit" Nullable="false" />
+          <Property Name="FIYATI" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="KDV_ORANI" Type="int" Nullable="false" />
+          <Property Name="URUN_REFNO" Type="int" Nullable="false" />
+          <Property Name="RESIM1" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RESIM2" Type="varchar" MaxLength="50" />
+          <Property Name="RESIM3" Type="varchar" MaxLength="50" />
+          <Property Name="RESIM4" Type="varchar" MaxLength="50" />
+          <Property Name="URUN_ADI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KATEGORI_REFNO" Type="int" Nullable="false" />
+          <Property Name="KATEGORI_ADI" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MARKA_REFNO" Type="int" Nullable="false" />
+          <Property Name="MARKA_ADI" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <Association Name="FK_URUN_KATEGORI">
           <End Role="KATEGORI" Type="Self.KATEGORI" Multiplicity="1" />
           <End Role="URUN" Type="Self.URUN" Multiplicity="*" />
@@ -103,6 +133,24 @@
           <EntitySet Name="SAYFA" EntityType="Self.SAYFA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SLIDER" EntityType="Self.SLIDER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="URUN" EntityType="Self.URUN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="urunler" EntityType="Self.urunler" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [urunler].[ACIKLAMA] AS [ACIKLAMA], 
+    [urunler].[DURUMU] AS [DURUMU], 
+    [urunler].[FIYATI] AS [FIYATI], 
+    [urunler].[KDV_ORANI] AS [KDV_ORANI], 
+    [urunler].[URUN_REFNO] AS [URUN_REFNO], 
+    [urunler].[RESIM1] AS [RESIM1], 
+    [urunler].[RESIM2] AS [RESIM2], 
+    [urunler].[RESIM3] AS [RESIM3], 
+    [urunler].[RESIM4] AS [RESIM4], 
+    [urunler].[URUN_ADI] AS [URUN_ADI], 
+    [urunler].[KATEGORI_REFNO] AS [KATEGORI_REFNO], 
+    [urunler].[KATEGORI_ADI] AS [KATEGORI_ADI], 
+    [urunler].[MARKA_REFNO] AS [MARKA_REFNO], 
+    [urunler].[MARKA_ADI] AS [MARKA_ADI]
+    FROM [dbo].[urunler] AS [urunler]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_URUN_KATEGORI" Association="Self.FK_URUN_KATEGORI">
             <End Role="KATEGORI" EntitySet="KATEGORI" />
             <End Role="URUN" EntitySet="URUN" />
@@ -112,8 +160,7 @@
             <End Role="URUN" EntitySet="URUN" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FIRMAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -227,7 +274,36 @@
             <End Role="MARKA" EntitySet="MARKAs" />
             <End Role="URUN" EntitySet="URUNs" />
           </AssociationSet>
+          <EntitySet Name="urunlers" EntityType="FIRMAModel.urunler" />
         </EntityContainer>
+        <EntityType Name="urunler">
+          <Key>
+            <PropertyRef Name="DURUMU" />
+            <PropertyRef Name="FIYATI" />
+            <PropertyRef Name="KDV_ORANI" />
+            <PropertyRef Name="URUN_REFNO" />
+            <PropertyRef Name="RESIM1" />
+            <PropertyRef Name="URUN_ADI" />
+            <PropertyRef Name="KATEGORI_REFNO" />
+            <PropertyRef Name="KATEGORI_ADI" />
+            <PropertyRef Name="MARKA_REFNO" />
+            <PropertyRef Name="MARKA_ADI" />
+          </Key>
+          <Property Name="ACIKLAMA" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="DURUMU" Type="Boolean" Nullable="false" />
+          <Property Name="FIYATI" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="KDV_ORANI" Type="Int32" Nullable="false" />
+          <Property Name="URUN_REFNO" Type="Int32" Nullable="false" />
+          <Property Name="RESIM1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RESIM2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RESIM3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RESIM4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="URUN_ADI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KATEGORI_REFNO" Type="Int32" Nullable="false" />
+          <Property Name="KATEGORI_ADI" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MARKA_REFNO" Type="Int32" Nullable="false" />
+          <Property Name="MARKA_ADI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -304,6 +380,26 @@
                 <ScalarProperty Name="RESIM2" ColumnName="RESIM2" />
                 <ScalarProperty Name="RESIM3" ColumnName="RESIM3" />
                 <ScalarProperty Name="RESIM4" ColumnName="RESIM4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="urunlers">
+            <EntityTypeMapping TypeName="FIRMAModel.urunler">
+              <MappingFragment StoreEntitySet="urunler">
+                <ScalarProperty Name="MARKA_ADI" ColumnName="MARKA_ADI" />
+                <ScalarProperty Name="MARKA_REFNO" ColumnName="MARKA_REFNO" />
+                <ScalarProperty Name="KATEGORI_ADI" ColumnName="KATEGORI_ADI" />
+                <ScalarProperty Name="KATEGORI_REFNO" ColumnName="KATEGORI_REFNO" />
+                <ScalarProperty Name="URUN_ADI" ColumnName="URUN_ADI" />
+                <ScalarProperty Name="RESIM4" ColumnName="RESIM4" />
+                <ScalarProperty Name="RESIM3" ColumnName="RESIM3" />
+                <ScalarProperty Name="RESIM2" ColumnName="RESIM2" />
+                <ScalarProperty Name="RESIM1" ColumnName="RESIM1" />
+                <ScalarProperty Name="URUN_REFNO" ColumnName="URUN_REFNO" />
+                <ScalarProperty Name="KDV_ORANI" ColumnName="KDV_ORANI" />
+                <ScalarProperty Name="FIYATI" ColumnName="FIYATI" />
+                <ScalarProperty Name="DURUMU" ColumnName="DURUMU" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

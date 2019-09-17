@@ -121,6 +121,15 @@ namespace FIRMA_ASPX.admin {
         protected global::System.Web.UI.WebControls.TextBox txtKATEGORI_ADI;
         
         /// <summary>
+        /// RequiredFieldValidator2 denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        
+        /// <summary>
         /// Button3 denetimi.
         /// </summary>
         /// <remarks>

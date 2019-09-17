@@ -73,12 +73,13 @@
                 </td>
                 <td class="auto-style4">
                     <asp:TextBox ID="txtMARKA_ADI" runat="server" MaxLength="50"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtMARKA_ADI" ErrorMessage="marka adı giriniz" ValidationGroup="ValidationGroup1"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
                 <td>
-                    <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Kaydet" />
+                    <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Kaydet" ValidationGroup="ValidationGroup1" />
                     <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Vazgeç" />
                     <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" OnClientClick="return confirm(&quot;Silmek istediğinize emin misiniz?&quot;)" Text="Sil" />
                 </td>
