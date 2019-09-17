@@ -137,8 +137,6 @@
     <Compile Include="Areas\Admin\Controllers\UrunlerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\KategorilerController.cs" />
-    <Compile Include="Controllers\MesajController.cs" />
-    <Compile Include="Controllers\ProjeListeController.cs" />
     <Compile Include="Controllers\UrunListeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -172,8 +170,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\Proje\person_computer.jpg" />
-    <Content Include="Images\Proje\resim1.jpg" />
-    <Content Include="Images\Proje\resim2.jpg" />
     <Content Include="Images\resim1.jpg" />
     <Content Include="Images\resim2.jpg" />
     <Content Include="Images\resim3.jpg" />
@@ -581,9 +577,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\UrunListe\Index.cshtml" />
     <Content Include="Views\Home\Kurumsal.cshtml" />
-    <Content Include="Views\UrunListe\Detay.cshtml" />
-    <Content Include="Views\ProjeListe\Detay.cshtml" />
-    <Content Include="Views\Mesaj\Goster.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

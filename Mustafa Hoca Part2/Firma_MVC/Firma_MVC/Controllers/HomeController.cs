@@ -13,10 +13,6 @@ namespace Firma_MVC.Controllers
         public ActionResult Index()
         {
             ViewData["slider"] = db.SLIDERs.Where(s => s.DURUMU == true).ToList();
-            ViewData["projeler"] = db.PROJEs.OrderBy(p => p.PROJE_REFNO).Take(2).ToList();
-            ViewData["urunler"] = db.URUNs.OrderBy(p => p.URUN_REFNO).Take(2).ToList();
-            ViewData["ziyaretci"] = Convert.ToInt32(HttpContext.Application["sayi"]); // application ziyaretci sayici
-            ViewData["saat"] = Convert.ToString(HttpContext.Session["saat"]);
             return View();
         }
 

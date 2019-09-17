@@ -57,14 +57,10 @@ namespace Firma_MVC.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Create(PROJE p, HttpPostedFileBase RESIM)
+        public ActionResult Create(PROJE p)
         {
             if (ModelState.IsValid)
             {
-                if (RESIM != null)
-                {
-                    p.RESIM = RESIM.FileName;
-                }
                 if (p.PROJE_REFNO == 0)
                 {
                     db.PROJEs.Add(p);
@@ -74,16 +70,9 @@ namespace Firma_MVC.Areas.Admin.Controllers
                     db.Entry(p).State = System.Data.Entity.EntityState.Modified;
                 }
                 db.SaveChanges();
-                if (RESIM != null)
-                {
-                    RESIM.SaveAs(Request.PhysicalApplicationPath + "/Images" + RESIM.FileName);
-                }
+                return RedirectToAction("Index");
             }
-            else
-            {
-                return View(p);
-            }
-            return RedirectToAction("Index");
+            return View(p);
         }
 
         public ActionResult Search(string txtARA)

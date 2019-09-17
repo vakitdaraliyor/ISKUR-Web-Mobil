@@ -15,7 +15,7 @@ namespace FIRMA_ASPX.admin
             GridView1.DataSource = db.urunlers.ToList();
             GridView1.DataBind();
 
-            if (IsPostBack)
+            if (IsPostBack==false)
             {
                 ddlKATEGORI_ADI.DataSource = db.KATEGORIs.ToList();
                 ddlKATEGORI_ADI.DataTextField = "KATEGORI_ADI";

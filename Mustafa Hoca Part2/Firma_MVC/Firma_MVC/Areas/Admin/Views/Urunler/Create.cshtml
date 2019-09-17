@@ -21,28 +21,28 @@
 
             <div class="form-group">
                 <label for="" class="control-label col-md-2">Ürün Refno</label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <input type="text" class="form-control" readonly name="URUN_REFNO" value="@Model.URUN_REFNO" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="" class="control-label col-md-2">Ürün Adı</label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="URUN_ADI" value="@Model.URUN_ADI" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="" class="control-label col-md-2">Fiyatı</label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="FIYATI" value="@Model.FIYATI" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="" class="control-label col-md-2">Durumu</label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <select class="form-control" name="DURUMU">
                         @if (Model.DURUMU.ToString() == "True")
                         {
@@ -60,7 +60,7 @@
 
             <div class="form-group">
                 <label for="" class="control-label col-md-2">Kategori</label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <select class="form-control" name="KATEGORI_REFNO">
                         @foreach (var kategori in @kategoriListe)
                         {
@@ -79,14 +79,14 @@
 
             <div class="form-group">
                 <label for="" class="control-label col-md-2">KDV Oranı</label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <input type="text" class="form-control" name="KDV_ORANI" value="@Model.KDV_ORANI" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="" class="control-label col-md-2">Marka</label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <select class="form-control" name="MARKA_REFNO">
                         @foreach (var marka in markaListe)
                         {
@@ -105,14 +105,14 @@
 
             <div class="form-group">
                 <label for="" class="control-label col-md-2">Açıklama</label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <textarea type="text" class="form-control" name="ACIKLAMA" value="@Model.ACIKLAMA"></textarea>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="" class="control-label col-md-2">Resim1</label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <input type="file" name="RESIM1" value="@Model.RESIM1" />
                     <img class="urunResim" src="~/Images/@Model.RESIM1" alt="Alternate Text" />
                 </div>
@@ -120,7 +120,7 @@
 
             <div class="form-group">
                 <label for="" class="control-label col-md-2">Resim2</label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <input type="file" name="RESIM2" value="@Model.RESIM2" />
                     <img class="urunResim" src="~/Images/@Model.RESIM2" alt="Alternate Text" />
                 </div>
@@ -128,7 +128,7 @@
 
             <div class="form-group">
                 <label for="" class="control-label col-md-2">Resim3</label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <input type="file" name="RESIM3" value="@Model.RESIM3" />
                     <img class="urunResim" src="~/Images/@Model.RESIM3" alt="Alternate Text" />
                 </div>
@@ -136,14 +136,14 @@
 
             <div class="form-group">
                 <label for="" class="control-label col-md-2">Resim4</label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <input type="file" name="RESIM4" value="@Model.RESIM4" />
                     <img class="urunResim" src="~/Images/@Model.RESIM4" alt="Alternate Text" />
                 </div>
             </div>
 
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-8">
+                <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Kaydet" class="btn btn-default"/>
                     <a href="/Admin/Urunler/Index">Vazgeç</a>
                 </div>

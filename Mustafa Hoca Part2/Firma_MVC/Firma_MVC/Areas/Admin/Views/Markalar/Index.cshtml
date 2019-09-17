@@ -4,7 +4,7 @@
     string veri = ViewData["veri"].ToString();
 }
 
-    <div>
+    <div id="arama">
         <form action="/Admin/Markalar/Search" method="post">
             <label>Ara</label>
             <input type="text" name="txtARA" placeholder="Marka adı giriniz" value="@veri" />
@@ -15,7 +15,7 @@
     </div>
 
     <div id="liste">
-        <table class="table-striped" id="myTable">
+        <table class="table-bordered table-striped" id="myTable">
             <tr>
                 <th>Sil</th>
                 <th>Marka Refno</th>

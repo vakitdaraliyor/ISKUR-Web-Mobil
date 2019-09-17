@@ -38,6 +38,7 @@ namespace Firma_MVC.Areas.Admin.Controllers
                     db.SaveChanges();
                 }
             }
+
             return RedirectToAction("Index");
         }
 
@@ -53,6 +54,7 @@ namespace Firma_MVC.Areas.Admin.Controllers
             {
                 s = new SAYFA();
             }
+
             return View(s);
         }
 
@@ -73,6 +75,7 @@ namespace Firma_MVC.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(s);
         }
 

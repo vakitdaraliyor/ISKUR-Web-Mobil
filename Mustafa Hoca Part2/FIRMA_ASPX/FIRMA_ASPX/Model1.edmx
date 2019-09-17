@@ -10,7 +10,7 @@
             <PropertyRef Name="KATEGORI_REFNO" />
           </Key>
           <Property Name="KATEGORI_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="KATEGORI_ADI" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KATEGORI_ADI" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="KULLANICI">
           <Key>
@@ -75,29 +75,29 @@
 warning 6002: The table/view 'FIRMA.dbo.urunler' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="urunler">
           <Key>
-            <PropertyRef Name="DURUMU" />
-            <PropertyRef Name="FIYATI" />
-            <PropertyRef Name="KDV_ORANI" />
             <PropertyRef Name="URUN_REFNO" />
-            <PropertyRef Name="RESIM1" />
             <PropertyRef Name="URUN_ADI" />
+            <PropertyRef Name="FIYATI" />
+            <PropertyRef Name="DURUMU" />
+            <PropertyRef Name="KDV_ORANI" />
+            <PropertyRef Name="RESIM1" />
             <PropertyRef Name="KATEGORI_REFNO" />
             <PropertyRef Name="KATEGORI_ADI" />
             <PropertyRef Name="MARKA_REFNO" />
             <PropertyRef Name="MARKA_ADI" />
           </Key>
-          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="4000" />
-          <Property Name="DURUMU" Type="bit" Nullable="false" />
-          <Property Name="FIYATI" Type="numeric" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="KDV_ORANI" Type="int" Nullable="false" />
           <Property Name="URUN_REFNO" Type="int" Nullable="false" />
+          <Property Name="URUN_ADI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FIYATI" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="DURUMU" Type="bit" Nullable="false" />
+          <Property Name="KDV_ORANI" Type="int" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="4000" />
           <Property Name="RESIM1" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="RESIM2" Type="varchar" MaxLength="50" />
           <Property Name="RESIM3" Type="varchar" MaxLength="50" />
           <Property Name="RESIM4" Type="varchar" MaxLength="50" />
-          <Property Name="URUN_ADI" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="KATEGORI_REFNO" Type="int" Nullable="false" />
-          <Property Name="KATEGORI_ADI" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KATEGORI_ADI" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="MARKA_REFNO" Type="int" Nullable="false" />
           <Property Name="MARKA_ADI" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -135,16 +135,16 @@ warning 6002: The table/view 'FIRMA.dbo.urunler' does not have a primary key def
           <EntitySet Name="URUN" EntityType="Self.URUN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="urunler" EntityType="Self.urunler" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [urunler].[ACIKLAMA] AS [ACIKLAMA], 
-    [urunler].[DURUMU] AS [DURUMU], 
-    [urunler].[FIYATI] AS [FIYATI], 
-    [urunler].[KDV_ORANI] AS [KDV_ORANI], 
     [urunler].[URUN_REFNO] AS [URUN_REFNO], 
+    [urunler].[URUN_ADI] AS [URUN_ADI], 
+    [urunler].[FIYATI] AS [FIYATI], 
+    [urunler].[DURUMU] AS [DURUMU], 
+    [urunler].[KDV_ORANI] AS [KDV_ORANI], 
+    [urunler].[ACIKLAMA] AS [ACIKLAMA], 
     [urunler].[RESIM1] AS [RESIM1], 
     [urunler].[RESIM2] AS [RESIM2], 
     [urunler].[RESIM3] AS [RESIM3], 
     [urunler].[RESIM4] AS [RESIM4], 
-    [urunler].[URUN_ADI] AS [URUN_ADI], 
     [urunler].[KATEGORI_REFNO] AS [KATEGORI_REFNO], 
     [urunler].[KATEGORI_ADI] AS [KATEGORI_ADI], 
     [urunler].[MARKA_REFNO] AS [MARKA_REFNO], 
@@ -169,7 +169,7 @@ warning 6002: The table/view 'FIRMA.dbo.urunler' does not have a primary key def
             <PropertyRef Name="KATEGORI_REFNO" />
           </Key>
           <Property Name="KATEGORI_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="KATEGORI_ADI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KATEGORI_ADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="URUNs" Relationship="Self.FK_URUN_KATEGORI" FromRole="KATEGORI" ToRole="URUN" />
         </EntityType>
         <EntityType Name="KULLANICI">
@@ -300,7 +300,7 @@ warning 6002: The table/view 'FIRMA.dbo.urunler' does not have a primary key def
           <Property Name="RESIM4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="URUN_ADI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="KATEGORI_REFNO" Type="Int32" Nullable="false" />
-          <Property Name="KATEGORI_ADI" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KATEGORI_ADI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MARKA_REFNO" Type="Int32" Nullable="false" />
           <Property Name="MARKA_ADI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>

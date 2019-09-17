@@ -12,7 +12,7 @@ namespace FIRMA_ASPX.admin
         FIRMAEntities db = new FIRMAEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataSource = db.MARKAs.ToList();
+            GridView1.DataSource = db.MARKAs.Where(m => m.MARKA_ADI!="Markasız").ToList();
             GridView1.DataBind();
         }
 
@@ -45,7 +45,7 @@ namespace FIRMA_ASPX.admin
                 db.MARKAs.Add(m);
                 db.SaveChanges();
             }
-            GridView1.DataSource = db.MARKAs.ToList();
+            GridView1.DataSource = db.MARKAs.Where(m => m.MARKA_ADI != "Markasız").ToList();
             GridView1.DataBind();
 
             pnlKAYIT.Visible = false;
@@ -55,7 +55,7 @@ namespace FIRMA_ASPX.admin
         protected void Button4_Click(object sender, EventArgs e)
         {
             // VAZGEÇ
-            GridView1.DataSource = db.MARKAs.ToList();
+            GridView1.DataSource = db.MARKAs.Where(m => m.MARKA_ADI != "Markasız").ToList();
             GridView1.DataBind();
             pnlKAYIT.Visible = false;
             pnlLISTE.Visible = true;
@@ -70,7 +70,7 @@ namespace FIRMA_ASPX.admin
                 db.MARKAs.Remove(m);
                 db.SaveChanges();
 
-                GridView1.DataSource = db.MARKAs.ToList();
+                GridView1.DataSource = db.MARKAs.Where(marka => marka.MARKA_ADI != "Markasız").ToList();
                 GridView1.DataBind();
 
                 pnlKAYIT.Visible = false;
@@ -90,7 +90,7 @@ namespace FIRMA_ASPX.admin
         protected void Button1_Click(object sender, EventArgs e)
         {
             // ARA
-            GridView1.DataSource = db.MARKAs.Where(m => m.MARKA_ADI.Contains(txtARA.Text)).ToList();
+            GridView1.DataSource = db.MARKAs.Where(m => m.MARKA_ADI.Contains(txtARA.Text) && m.MARKA_ADI != "Markasız").ToList();
             GridView1.DataBind();
             pnlKAYIT.Visible = false;
             pnlLISTE.Visible = true;
@@ -100,7 +100,7 @@ namespace FIRMA_ASPX.admin
         {
             // PAGING
             GridView1.PageIndex = e.NewPageIndex;
-            GridView1.DataSource = db.MARKAs.Where(m => m.MARKA_ADI.Contains(txtARA.Text)).ToList();
+            GridView1.DataSource = db.MARKAs.Where(m => m.MARKA_ADI.Contains(txtARA.Text) && m.MARKA_ADI != "Markasız").ToList();
             GridView1.DataBind();
         }
     }
