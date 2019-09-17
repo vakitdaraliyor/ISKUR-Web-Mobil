@@ -12,7 +12,7 @@ namespace FIRMA_ASPX.admin
         FIRMAEntities db = new FIRMAEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataSource = db.KATEGORIs.ToList();
+            GridView1.DataSource = db.KATEGORIs.Where(k => k.KATEGORI_ADI != "Kategorisiz").ToList();
             GridView1.DataBind();
         }
 
@@ -48,7 +48,7 @@ namespace FIRMA_ASPX.admin
                 db.SaveChanges();
             }
 
-            GridView1.DataSource = db.KATEGORIs.ToList();
+            GridView1.DataSource = db.KATEGORIs.Where(k => k.KATEGORI_ADI != "Kategorisiz").ToList();
             GridView1.DataBind();
 
             pnlKAYIT.Visible = false;
@@ -58,7 +58,7 @@ namespace FIRMA_ASPX.admin
         protected void Button4_Click(object sender, EventArgs e)
         {
             // VAZGEÇ
-            GridView1.DataSource = db.KATEGORIs.ToList();
+            GridView1.DataSource = db.KATEGORIs.Where(k => k.KATEGORI_ADI != "Kategorisiz").ToList();
             GridView1.DataBind();
             pnlKAYIT.Visible = false;
             pnlLISTE.Visible = true;
@@ -73,7 +73,7 @@ namespace FIRMA_ASPX.admin
                 db.KATEGORIs.Remove(k);
                 db.SaveChanges();
 
-                GridView1.DataSource = db.KATEGORIs.ToList();
+                GridView1.DataSource = db.KATEGORIs.Where(kat => kat.KATEGORI_ADI != "Kategorisiz").ToList();
                 GridView1.DataBind();
 
                 pnlKAYIT.Visible = false;
@@ -93,7 +93,7 @@ namespace FIRMA_ASPX.admin
         protected void Button1_Click(object sender, EventArgs e)
         {
             // ARA
-            GridView1.DataSource = db.KATEGORIs.Where(k => k.KATEGORI_ADI.Contains(txtARA.Text)).ToList();
+            GridView1.DataSource = db.KATEGORIs.Where(k => k.KATEGORI_ADI.Contains(txtARA.Text) && k.KATEGORI_ADI != "Kategorisiz").ToList();
             GridView1.DataBind();
 
             pnlKAYIT.Visible = false;
@@ -104,7 +104,7 @@ namespace FIRMA_ASPX.admin
         {
             //PAGING
             GridView1.PageIndex = e.NewPageIndex;
-            GridView1.DataSource = db.KATEGORIs.Where(k => k.KATEGORI_ADI.Contains(txtARA.Text)).ToList();
+            GridView1.DataSource = db.KATEGORIs.Where(k => k.KATEGORI_ADI.Contains(txtARA.Text) && k.KATEGORI_ADI != "Kategorisiz").ToList();
             GridView1.DataBind();
         }
     }

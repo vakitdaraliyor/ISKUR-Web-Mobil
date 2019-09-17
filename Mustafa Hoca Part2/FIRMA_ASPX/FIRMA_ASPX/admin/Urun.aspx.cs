@@ -44,7 +44,7 @@ namespace FIRMA_ASPX.admin
                 ddlKATEGORI_ADI.SelectedValue = Convert.ToString(u.KATEGORI_REFNO);
                 txtKDV_ORANI.Text = Convert.ToString(u.KDV_ORANI);
                 ddlMARKA_ADI.SelectedValue = Convert.ToString(u.MARKA_REFNO);
-                txtACIKLAMA.Text = u.ACIKLAMA;
+                txtACIKLAMA.Text = HttpUtility.HtmlDecode(u.ACIKLAMA);
             }
 
             pnlKAYIT.Visible = true;
