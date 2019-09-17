@@ -1,0 +1,31 @@
+﻿@model Firma_MVC.Models.URUN
+
+@{
+    ViewBag.Title = "Detay";
+}
+
+<div>@Model.URUN_ADI</div>
+
+<div>
+    @if (String.IsNullOrEmpty(Model.RESIM1) == false)
+    {
+        <img src="~/Images/@Model.RESIM1" class="urundetayresim" alt="Alternate Text" />
+    }
+    @if (String.IsNullOrEmpty(Model.RESIM2) == false)
+    {
+        <img src="~/Images/@Model.RESIM2" class="urundetayresim" alt="Alternate Text" />
+    }
+    @if (String.IsNullOrEmpty(Model.RESIM3) == false)
+    {
+        <img src="~/Images/@Model.RESIM3" class="urundetayresim" alt="Alternate Text" />
+    }
+    @if (String.IsNullOrEmpty(Model.RESIM4) == false)
+    {
+        <img src="~/Images/@Model.RESIM4" class="urundetayresim" alt="Alternate Text" />
+    }
+</div>
+
+<div id="aciklama">
+    @Html.Raw(Model.ACIKLAMA)
+</div>
+
