@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FIRMAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="KATEGORI">
+          <Key>
+            <PropertyRef Name="KATEGORI_REFNO" />
+          </Key>
+          <Property Name="KATEGORI_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KATEGORI_ADI" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KULLANICI">
+          <Key>
+            <PropertyRef Name="KULLANICI_REFNO" />
+          </Key>
+          <Property Name="KULLANICI_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KULLANICI_ADI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PAROLA" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MARKA">
+          <Key>
+            <PropertyRef Name="MARKA_REFNO" />
+          </Key>
+          <Property Name="MARKA_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MARKA_ADI" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PROJE">
+          <Key>
+            <PropertyRef Name="PROJE_REFNO" />
+          </Key>
+          <Property Name="PROJE_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PROJE_ADI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RESIM" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SAYFA">
+          <Key>
+            <PropertyRef Name="SAYFA_REFNO" />
+          </Key>
+          <Property Name="SAYFA_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BASLIK" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ICERIK" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SLIDER">
+          <Key>
+            <PropertyRef Name="SLIDER_REFNO" />
+          </Key>
+          <Property Name="SLIDER_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BASLIK" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LINK" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RESIM" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DURUMU" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="URUN">
+          <Key>
+            <PropertyRef Name="URUN_REFNO" />
+          </Key>
+          <Property Name="URUN_REFNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="URUN_ADI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FIYATI" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="DURUMU" Type="bit" Nullable="false" />
+          <Property Name="KATEGORI_REFNO" Type="int" Nullable="false" />
+          <Property Name="KDV_ORANI" Type="int" Nullable="false" />
+          <Property Name="MARKA_REFNO" Type="int" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="4000" />
+          <Property Name="RESIM1" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RESIM2" Type="varchar" MaxLength="50" />
+          <Property Name="RESIM3" Type="varchar" MaxLength="50" />
+          <Property Name="RESIM4" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_URUN_KATEGORI">
+          <End Role="KATEGORI" Type="Self.KATEGORI" Multiplicity="1" />
+          <End Role="URUN" Type="Self.URUN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KATEGORI">
+              <PropertyRef Name="KATEGORI_REFNO" />
+            </Principal>
+            <Dependent Role="URUN">
+              <PropertyRef Name="KATEGORI_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_URUN_MARKA">
+          <End Role="MARKA" Type="Self.MARKA" Multiplicity="1" />
+          <End Role="URUN" Type="Self.URUN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MARKA">
+              <PropertyRef Name="MARKA_REFNO" />
+            </Principal>
+            <Dependent Role="URUN">
+              <PropertyRef Name="MARKA_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FIRMAModelStoreContainer">
+          <EntitySet Name="KATEGORI" EntityType="Self.KATEGORI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KULLANICI" EntityType="Self.KULLANICI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MARKA" EntityType="Self.MARKA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROJE" EntityType="Self.PROJE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAYFA" EntityType="Self.SAYFA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SLIDER" EntityType="Self.SLIDER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="URUN" EntityType="Self.URUN" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_URUN_KATEGORI" Association="Self.FK_URUN_KATEGORI">
+            <End Role="KATEGORI" EntitySet="KATEGORI" />
+            <End Role="URUN" EntitySet="URUN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_URUN_MARKA" Association="Self.FK_URUN_MARKA">
+            <End Role="MARKA" EntitySet="MARKA" />
+            <End Role="URUN" EntitySet="URUN" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FIRMAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="KATEGORI">
+          <Key>
+            <PropertyRef Name="KATEGORI_REFNO" />
+          </Key>
+          <Property Name="KATEGORI_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KATEGORI_ADI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="URUNs" Relationship="Self.FK_URUN_KATEGORI" FromRole="KATEGORI" ToRole="URUN" />
+        </EntityType>
+        <EntityType Name="KULLANICI">
+          <Key>
+            <PropertyRef Name="KULLANICI_REFNO" />
+          </Key>
+          <Property Name="KULLANICI_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KULLANICI_ADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PAROLA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MARKA">
+          <Key>
+            <PropertyRef Name="MARKA_REFNO" />
+          </Key>
+          <Property Name="MARKA_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MARKA_ADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="URUNs" Relationship="Self.FK_URUN_MARKA" FromRole="MARKA" ToRole="URUN" />
+        </EntityType>
+        <EntityType Name="PROJE">
+          <Key>
+            <PropertyRef Name="PROJE_REFNO" />
+          </Key>
+          <Property Name="PROJE_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PROJE_ADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RESIM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SAYFA">
+          <Key>
+            <PropertyRef Name="SAYFA_REFNO" />
+          </Key>
+          <Property Name="SAYFA_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BASLIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ICERIK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SLIDER">
+          <Key>
+            <PropertyRef Name="SLIDER_REFNO" />
+          </Key>
+          <Property Name="SLIDER_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BASLIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LINK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RESIM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DURUMU" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="URUN">
+          <Key>
+            <PropertyRef Name="URUN_REFNO" />
+          </Key>
+          <Property Name="URUN_REFNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="URUN_ADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FIYATI" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="DURUMU" Type="Boolean" Nullable="false" />
+          <Property Name="KATEGORI_REFNO" Type="Int32" Nullable="false" />
+          <Property Name="KDV_ORANI" Type="Int32" Nullable="false" />
+          <Property Name="MARKA_REFNO" Type="Int32" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="RESIM1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RESIM2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RESIM3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RESIM4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="KATEGORI" Relationship="Self.FK_URUN_KATEGORI" FromRole="URUN" ToRole="KATEGORI" />
+          <NavigationProperty Name="MARKA" Relationship="Self.FK_URUN_MARKA" FromRole="URUN" ToRole="MARKA" />
+        </EntityType>
+        <Association Name="FK_URUN_KATEGORI">
+          <End Role="KATEGORI" Type="Self.KATEGORI" Multiplicity="1" />
+          <End Role="URUN" Type="Self.URUN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KATEGORI">
+              <PropertyRef Name="KATEGORI_REFNO" />
+            </Principal>
+            <Dependent Role="URUN">
+              <PropertyRef Name="KATEGORI_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_URUN_MARKA">
+          <End Role="MARKA" Type="Self.MARKA" Multiplicity="1" />
+          <End Role="URUN" Type="Self.URUN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MARKA">
+              <PropertyRef Name="MARKA_REFNO" />
+            </Principal>
+            <Dependent Role="URUN">
+              <PropertyRef Name="MARKA_REFNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FIRMAEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KATEGORIs" EntityType="Self.KATEGORI" />
+          <EntitySet Name="KULLANICIs" EntityType="Self.KULLANICI" />
+          <EntitySet Name="MARKAs" EntityType="Self.MARKA" />
+          <EntitySet Name="PROJEs" EntityType="Self.PROJE" />
+          <EntitySet Name="SAYFAs" EntityType="Self.SAYFA" />
+          <EntitySet Name="SLIDERs" EntityType="Self.SLIDER" />
+          <EntitySet Name="URUNs" EntityType="Self.URUN" />
+          <AssociationSet Name="FK_URUN_KATEGORI" Association="Self.FK_URUN_KATEGORI">
+            <End Role="KATEGORI" EntitySet="KATEGORIs" />
+            <End Role="URUN" EntitySet="URUNs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_URUN_MARKA" Association="Self.FK_URUN_MARKA">
+            <End Role="MARKA" EntitySet="MARKAs" />
+            <End Role="URUN" EntitySet="URUNs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FIRMAModelStoreContainer" CdmEntityContainer="FIRMAEntities">
+          <EntitySetMapping Name="KATEGORIs">
+            <EntityTypeMapping TypeName="FIRMAModel.KATEGORI">
+              <MappingFragment StoreEntitySet="KATEGORI">
+                <ScalarProperty Name="KATEGORI_REFNO" ColumnName="KATEGORI_REFNO" />
+                <ScalarProperty Name="KATEGORI_ADI" ColumnName="KATEGORI_ADI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KULLANICIs">
+            <EntityTypeMapping TypeName="FIRMAModel.KULLANICI">
+              <MappingFragment StoreEntitySet="KULLANICI">
+                <ScalarProperty Name="KULLANICI_REFNO" ColumnName="KULLANICI_REFNO" />
+                <ScalarProperty Name="KULLANICI_ADI" ColumnName="KULLANICI_ADI" />
+                <ScalarProperty Name="PAROLA" ColumnName="PAROLA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MARKAs">
+            <EntityTypeMapping TypeName="FIRMAModel.MARKA">
+              <MappingFragment StoreEntitySet="MARKA">
+                <ScalarProperty Name="MARKA_REFNO" ColumnName="MARKA_REFNO" />
+                <ScalarProperty Name="MARKA_ADI" ColumnName="MARKA_ADI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROJEs">
+            <EntityTypeMapping TypeName="FIRMAModel.PROJE">
+              <MappingFragment StoreEntitySet="PROJE">
+                <ScalarProperty Name="PROJE_REFNO" ColumnName="PROJE_REFNO" />
+                <ScalarProperty Name="PROJE_ADI" ColumnName="PROJE_ADI" />
+                <ScalarProperty Name="RESIM" ColumnName="RESIM" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAYFAs">
+            <EntityTypeMapping TypeName="FIRMAModel.SAYFA">
+              <MappingFragment StoreEntitySet="SAYFA">
+                <ScalarProperty Name="SAYFA_REFNO" ColumnName="SAYFA_REFNO" />
+                <ScalarProperty Name="BASLIK" ColumnName="BASLIK" />
+                <ScalarProperty Name="ICERIK" ColumnName="ICERIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SLIDERs">
+            <EntityTypeMapping TypeName="FIRMAModel.SLIDER">
+              <MappingFragment StoreEntitySet="SLIDER">
+                <ScalarProperty Name="SLIDER_REFNO" ColumnName="SLIDER_REFNO" />
+                <ScalarProperty Name="BASLIK" ColumnName="BASLIK" />
+                <ScalarProperty Name="LINK" ColumnName="LINK" />
+                <ScalarProperty Name="RESIM" ColumnName="RESIM" />
+                <ScalarProperty Name="DURUMU" ColumnName="DURUMU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="URUNs">
+            <EntityTypeMapping TypeName="FIRMAModel.URUN">
+              <MappingFragment StoreEntitySet="URUN">
+                <ScalarProperty Name="URUN_REFNO" ColumnName="URUN_REFNO" />
+                <ScalarProperty Name="URUN_ADI" ColumnName="URUN_ADI" />
+                <ScalarProperty Name="FIYATI" ColumnName="FIYATI" />
+                <ScalarProperty Name="DURUMU" ColumnName="DURUMU" />
+                <ScalarProperty Name="KATEGORI_REFNO" ColumnName="KATEGORI_REFNO" />
+                <ScalarProperty Name="KDV_ORANI" ColumnName="KDV_ORANI" />
+                <ScalarProperty Name="MARKA_REFNO" ColumnName="MARKA_REFNO" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+                <ScalarProperty Name="RESIM1" ColumnName="RESIM1" />
+                <ScalarProperty Name="RESIM2" ColumnName="RESIM2" />
+                <ScalarProperty Name="RESIM3" ColumnName="RESIM3" />
+                <ScalarProperty Name="RESIM4" ColumnName="RESIM4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
