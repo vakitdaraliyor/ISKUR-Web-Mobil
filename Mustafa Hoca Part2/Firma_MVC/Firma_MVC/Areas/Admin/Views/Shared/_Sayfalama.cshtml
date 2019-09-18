@@ -1,0 +1,52 @@
+﻿@{
+    int aktifsayfa = Convert.ToInt32(ViewData["aktifsayfa"]);
+    int toplamsatir = Convert.ToInt32(ViewData["toplamsatir"]);
+    int toplamsayfa = Convert.ToInt32(ViewData["toplamsayfa"]);
+
+    string controllerName = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+    string actionName = HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString();
+
+    if (toplamsatir == 0)
+    {
+        <div class="sayfalama">
+            <a href="/Admin/@controllerName/@actionName">İlk</a>
+            <a href="/Admin/@controllerName/@actionName">Geri</a>
+            <input type="text" value="0" />
+            <a href="/Admin/@controllerName/@actionName">İleri</a>
+            <a href="/Admin/@controllerName/@actionName">Son</a>
+        </div>
+    }
+    else
+    {
+        if (aktifsayfa == 0)
+        {
+            <div class="sayfalama">
+                <a href="/Admin/@controllerName/@actionName?aktifsayfa=0">İlk</a>
+                <a href="/Admin/@controllerName/@actionName?aktifsayfa=0">Geri</a>
+                <input type="text" value="@aktifsayfa" />
+                <a href="/Admin/@controllerName/@actionName?aktifsayfa=@(@aktifsayfa+1)">İleri</a>
+                <a href="/Admin/@controllerName/@actionName?aktifsayfa=@(@toplamsayfa-1)">Son</a>
+            </div>
+        }
+        else if (aktifsayfa == toplamsayfa - 1)
+        {
+            <div class="sayfalama">
+                <a href="/Admin/@controllerName/@actionName?aktifsayfa=0">İlk</a>
+                <a href="/Admin/@controllerName/@actionName?aktifsayfa=@(@aktifsayfa-1)">Geri</a>
+                <input type="text" value="@aktifsayfa" />
+                <a href="/Admin/@controllerName/@actionName?aktifsayfa=@(@toplamsayfa-1)">İleri</a>
+                <a href="/Admin/@controllerName/@actionName?aktifsayfa=@(@toplamsayfa-1)">Son</a>
+            </div>
+        }
+        else
+        {
+            <div class="sayfalama">
+                <a href="/Admin/@controllerName/@actionName?aktifsayfa=0">İlk</a>
+                <a href="/Admin/@controllerName/@actionName?aktifsayfa=@(@aktifsayfa-1)">Geri</a>
+                <input type="text" value="@aktifsayfa" />
+                <a href="/Admin/@controllerName/@actionName?aktifsayfa=@(@aktifsayfa+1)">İleri</a>
+                <a href="/Admin/@controllerName/@actionName?aktifsayfa=@(@toplamsayfa-1)">Son</a>
+            </div>
+        }
+    }
+}

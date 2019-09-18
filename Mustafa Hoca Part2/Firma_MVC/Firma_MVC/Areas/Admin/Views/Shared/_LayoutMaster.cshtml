@@ -19,19 +19,25 @@
     <script src="~/Scripts/myScripts.js"></script>
 </head>
 <body>
-    <div>
-        <div id="banner">YÖNETİM PANELİ</div>
-        <div id="menu">
-            <a href="/Admin/Urunler/Index">Ürünler</a>
-            <a href="/Admin/Kategoriler/Index">Kategoriler</a>
-            <a href="/Admin/Kullanicilar/Index">Kullanıcılar</a>
-            <a href="/Admin/Markalar/Index">Markalar</a>
-            <a href="/Admin/Projeler/Index">Projeler</a>
-            <a href="/Admin/Sayfalar/Index">Sayfalar</a>
-            <a href="/Admin/Sliderlar/Index">Sliderler</a>
-        </div>
-        <div id="content" class="container">@RenderBody()</div>
-        <div id="footer"></div>
+    
+    <div id="banner">
+        YÖNETİM PANELİ
+        <a href="/Admin/Giris/Cikis">@User.Identity.Name Çıkış</a>
     </div>
+
+    <div id="menu">
+        <a href="/Admin/Urunler/Index">Ürünler</a>
+        <a href="/Admin/Kategoriler/Index">Kategoriler</a>
+        <a href="/Admin/Kullanicilar/Index">Kullanıcılar</a>
+        <a href="/Admin/Markalar/Index">Markalar</a>
+        <a href="/Admin/Projeler/Index">Projeler</a>
+        <a href="/Admin/Sayfalar/Index">Sayfalar</a>
+        <a href="/Admin/Sliderlar/Index">Sliderler</a>
+    </div>
+
+    <div id="content" class="container">@RenderBody()</div>
+
+    <div id="footer"></div>
+    
 </body>
 </html>

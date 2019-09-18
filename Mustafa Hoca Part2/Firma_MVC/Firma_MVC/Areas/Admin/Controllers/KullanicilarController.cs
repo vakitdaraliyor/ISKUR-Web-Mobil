@@ -7,6 +7,7 @@ using Firma_MVC.Models;
 
 namespace Firma_MVC.Areas.Admin.Controllers
 {
+    [Authorize]
     public class KullanicilarController : Controller
     {
         FIRMAMODEL db = new FIRMAMODEL();

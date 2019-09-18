@@ -163,7 +163,7 @@ namespace FIRMA_ASPX.admin
         {
             if ((fuRESIM1.PostedFile != null) && (fuRESIM1.PostedFile.ContentLength > 0))
             {
-                u.RESIM1 = "/admin/Images/" + fuRESIM1.FileName;
+                u.RESIM1 = fuRESIM1.FileName;
                 string SaveLocation = Server.MapPath("/admin/Images/" + fuRESIM1.FileName);
                 try
                 {
@@ -177,11 +177,11 @@ namespace FIRMA_ASPX.admin
 
             if ((fuRESIM2.PostedFile != null) && (fuRESIM2.PostedFile.ContentLength > 0))
             {
-                u.RESIM2 = "/admin/Images/" + fuRESIM2.FileName;
+                u.RESIM2 = fuRESIM2.FileName;
                 string SaveLocation = Server.MapPath("/admin/Images/" + fuRESIM2.FileName);
                 try
                 {
-                    fuRESIM1.PostedFile.SaveAs(SaveLocation);
+                    fuRESIM2.PostedFile.SaveAs(SaveLocation);
                 }
                 catch (Exception ex)
                 {
@@ -191,7 +191,7 @@ namespace FIRMA_ASPX.admin
 
             if ((fuRESIM3.PostedFile != null) && (fuRESIM3.PostedFile.ContentLength > 0))
             {
-                u.RESIM3 = "/admin/Images/" + fuRESIM3.FileName;
+                u.RESIM3 = fuRESIM3.FileName;
                 string SaveLocation = Server.MapPath("/admin/Images/" + fuRESIM3.FileName);
                 try
                 {
@@ -205,7 +205,7 @@ namespace FIRMA_ASPX.admin
 
             if ((fuRESIM4.PostedFile != null) && (fuRESIM4.PostedFile.ContentLength > 0))
             {
-                u.RESIM4 = "/admin/Images/" + fuRESIM4.FileName;
+                u.RESIM4 = fuRESIM4.FileName;
                 string SaveLocation = Server.MapPath("/admin/Images/" + fuRESIM4.FileName);
                 try
                 {

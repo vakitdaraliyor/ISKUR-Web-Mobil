@@ -129,6 +129,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\GirisController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HataController.cs" />
     <Compile Include="Areas\Admin\Controllers\KullanicilarController.cs" />
     <Compile Include="Areas\Admin\Controllers\MarkalarController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProjelerController.cs" />
@@ -553,6 +555,9 @@
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Areas\Admin\Views\Projeler\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Projeler\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Giris\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Sayfalama.cshtml" />
+    <Content Include="Areas\Admin\Views\Hata\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

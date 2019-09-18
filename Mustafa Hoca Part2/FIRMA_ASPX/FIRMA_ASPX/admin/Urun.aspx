@@ -41,10 +41,10 @@
                             <asp:BoundField DataField="KDV_ORANI" HeaderText="Kdv Oranı" />
                             <asp:BoundField DataField="MARKA_ADI" HeaderText="Marka Adı" />
                             <asp:BoundField DataField="ACIKLAMA" HeaderText="Açıklama" HtmlEncode="False" />
-                            <asp:ImageField DataImageUrlField="RESIM1" HeaderText="Resim1" ControlStyle-Width="50" ControlStyle-Height = "50"></asp:ImageField>
-                            <asp:BoundField DataField="RESIM2" HeaderText="Resim2" />
-                            <asp:BoundField DataField="RESIM3" HeaderText="Resim3" />
-                            <asp:BoundField DataField="RESIM4" HeaderText="Resim4" />
+                            <asp:ImageField DataImageUrlField="RESIM1" DataImageUrlFormatString="/admin/Images/{0}" HeaderText="Resim1" ControlStyle-Width="50" ControlStyle-Height = "50"></asp:ImageField>
+                            <asp:ImageField DataImageUrlField="RESIM2" DataImageUrlFormatString="/admin/Images/{0}" HeaderText="Resim2" ControlStyle-Width="50" ControlStyle-Height = "50"></asp:ImageField>
+                            <asp:ImageField DataImageUrlField="RESIM3" DataImageUrlFormatString="/admin/Images/{0}" HeaderText="Resim3" ControlStyle-Width="50" ControlStyle-Height = "50"></asp:ImageField>
+                            <asp:ImageField DataImageUrlField="RESIM4" DataImageUrlFormatString="/admin/Images/{0}" HeaderText="Resim4" ControlStyle-Width="50" ControlStyle-Height = "50"></asp:ImageField>
                         </Columns>
                         <EditRowStyle BackColor="#999999" />
                         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

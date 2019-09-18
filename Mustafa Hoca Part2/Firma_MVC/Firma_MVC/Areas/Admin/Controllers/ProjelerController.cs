@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Firma_MVC.Areas.Admin.Controllers
 {
+    [Authorize]
     public class ProjelerController : Controller
     {
         FIRMAMODEL db = new FIRMAMODEL();

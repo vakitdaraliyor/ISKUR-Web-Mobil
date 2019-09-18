@@ -36,5 +36,12 @@ namespace Firma_MVC
             Application["sayi"] = ((int)Application["sayi"]) - 1;
         }
 
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception ex = Server.GetLastError();            
+            Server.ClearError();
+            Response.Redirect("/Admin/Hata/Index?mesaj=" + ex.Message.Replace("\r\n", ""));
+        }
+
     }
 }

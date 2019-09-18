@@ -7,24 +7,52 @@ using System.Web.Mvc;
 
 namespace Firma_MVC.Areas.Admin.Controllers
 {
+    [Authorize]
     public class UrunlerController : Controller
     {
         // GET: Admin/Urunler
         FIRMAMODEL db = new FIRMAMODEL();
-        public ActionResult Index(string arama)
+        // int toplamsatir = 0;
+        int sayfadakiSatirSayisi = 5;
+        // int toplamsayfa = 0;
+        // int aktifsayfa = 0;
+
+        public ActionResult Index(string arama, int aktifsayfa=0)
         {
             List<URUN> liste = new List<URUN>();
             if (arama == null)
             {
                 arama = "";
-                liste = db.URUNs.ToList();
+                Sayfalama(db.URUNs.Count());
+                liste = db.URUNs.OrderBy(u => u.URUN_REFNO)
+                                .Skip(aktifsayfa * sayfadakiSatirSayisi)
+                                .Take(sayfadakiSatirSayisi).ToList();
             }
             else
             {
-                liste = db.URUNs.Where(u => u.URUN_ADI.Contains(arama)).ToList();
+                Sayfalama(db.URUNs.Where(u => u.URUN_ADI.Contains(arama)).Count());
+                liste = db.URUNs.OrderBy(u => u.URUN_REFNO)
+                                .Where(u => u.URUN_ADI.Contains(arama))
+                                .Skip(aktifsayfa * sayfadakiSatirSayisi)
+                                .Take(sayfadakiSatirSayisi).ToList();
             }
+            
             ViewData["veri"] = arama;
+            ViewData["aktifsayfa"] = aktifsayfa;
             return View(liste);
+        }
+
+        public void Sayfalama(int satirsayisi)
+        {
+            int toplamsatir = satirsayisi;
+            int toplamsayfa = toplamsatir / sayfadakiSatirSayisi;
+            if (toplamsatir % sayfadakiSatirSayisi != 0)
+            {
+                toplamsayfa++;
+            }
+
+            ViewData["toplamsatir"] = toplamsatir;
+            ViewData["toplamsayfa"] = toplamsayfa;
         }
 
         public ActionResult Delete(int? id)

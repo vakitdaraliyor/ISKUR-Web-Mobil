@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Firma_MVC.Areas.Admin.Controllers
 {
+    [Authorize]
     public class SliderlarController : Controller
     {
         FIRMAMODEL db = new FIRMAMODEL();
