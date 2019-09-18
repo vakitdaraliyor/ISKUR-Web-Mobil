@@ -40,8 +40,8 @@
                             <asp:BoundField DataField="KATEGORI_ADI" HeaderText="Kategori Adı" />
                             <asp:BoundField DataField="KDV_ORANI" HeaderText="Kdv Oranı" />
                             <asp:BoundField DataField="MARKA_ADI" HeaderText="Marka Adı" />
-                            <asp:BoundField DataField="ACIKLAMA" HeaderText="Açıklama" />
-                            <asp:BoundField DataField="RESIM1" HeaderText="Resim1" />
+                            <asp:BoundField DataField="ACIKLAMA" HeaderText="Açıklama" HtmlEncode="False" />
+                            <asp:ImageField DataImageUrlField="RESIM1" HeaderText="Resim1" ControlStyle-Width="50" ControlStyle-Height = "50"></asp:ImageField>
                             <asp:BoundField DataField="RESIM2" HeaderText="Resim2" />
                             <asp:BoundField DataField="RESIM3" HeaderText="Resim3" />
                             <asp:BoundField DataField="RESIM4" HeaderText="Resim4" />
@@ -83,7 +83,7 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtURUN_ADI" runat="server" MaxLength="50"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtURUN_ADI" ErrorMessage="ürün adı giriniz"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtURUN_ADI" ErrorMessage="ürün adı giriniz" ValidationGroup="ValidationGroup"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -92,7 +92,7 @@
                 </td>
                 <td class="auto-style4">
                     <asp:TextBox ID="txtFIYATI" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtFIYATI" ErrorMessage="fiyatı giriniz"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtFIYATI" ErrorMessage="fiyatı giriniz" ValidationGroup="ValidationGroup"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -104,7 +104,7 @@
                         <asp:ListItem Selected="True" Value="True">Aktif</asp:ListItem>
                         <asp:ListItem Value="False">Pasif</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="ddlDURUMU" ErrorMessage="durumu seçiniz"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="ddlDURUMU" ErrorMessage="durumu seçiniz" ValidationGroup="ValidationGroup"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -114,7 +114,7 @@
                 <td>
                     <asp:DropDownList ID="ddlKATEGORI_ADI" runat="server">
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="ddlKATEGORI_ADI" ErrorMessage="kategori seçiniz"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="ddlKATEGORI_ADI" ErrorMessage="kategori seçiniz" ValidationGroup="ValidationGroup"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -123,7 +123,7 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtKDV_ORANI" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtKDV_ORANI" ErrorMessage="kdv oranı giriniz"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtKDV_ORANI" ErrorMessage="kdv oranı giriniz" ValidationGroup="ValidationGroup"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -133,7 +133,7 @@
                 <td>
                     <asp:DropDownList ID="ddlMARKA_ADI" runat="server">
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ddlMARKA_ADI" ErrorMessage="marka seçiniz"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ddlMARKA_ADI" ErrorMessage="marka seçiniz" ValidationGroup="ValidationGroup"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -150,7 +150,8 @@
                 </td>
                 <td>
                     <asp:FileUpload ID="fuRESIM1" runat="server" />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="fuRESIM1" ErrorMessage="resim seçiniz"></asp:RequiredFieldValidator>
+                    <asp:Image ID="imgRESIM1" Height="50" Width="50" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="fuRESIM1" ErrorMessage="resim seçiniz" ValidationGroup="ValidationGroup"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -159,6 +160,7 @@
                 </td>
                 <td>
                     <asp:FileUpload ID="fuRESIM2" runat="server" />
+                    <asp:Image ID="imgRESIM2" Height="50" Width="50" runat="server" />
                 </td>
             </tr>
             <tr>
@@ -167,6 +169,7 @@
                 </td>
                 <td>
                     <asp:FileUpload ID="fuRESIM3" runat="server" />
+                    <asp:Image ID="imgRESIM3" Height="50" Width="50" runat="server" />
                 </td>
             </tr>
             <tr>
@@ -175,12 +178,13 @@
                 </td>
                 <td>
                     <asp:FileUpload ID="fuRESIM4" runat="server" />
+                    <asp:Image ID="imgRESIM4" Height="50" Width="50" runat="server" />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">&nbsp;</td>
                 <td>
-                    <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Kaydet" />
+                    <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Kaydet" ValidationGroup="ValidationGroup" />
                     <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Vazgeç" />
                     <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Sil" />
                 </td>

@@ -301,6 +301,15 @@ namespace FIRMA_ASPX.admin {
         protected global::System.Web.UI.WebControls.FileUpload fuRESIM1;
         
         /// <summary>
+        /// imgRESIM1 denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgRESIM1;
+        
+        /// <summary>
         /// RequiredFieldValidator7 denetimi.
         /// </summary>
         /// <remarks>
@@ -328,6 +337,15 @@ namespace FIRMA_ASPX.admin {
         protected global::System.Web.UI.WebControls.FileUpload fuRESIM2;
         
         /// <summary>
+        /// imgRESIM2 denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgRESIM2;
+        
+        /// <summary>
         /// Label13 denetimi.
         /// </summary>
         /// <remarks>
@@ -346,6 +364,15 @@ namespace FIRMA_ASPX.admin {
         protected global::System.Web.UI.WebControls.FileUpload fuRESIM3;
         
         /// <summary>
+        /// imgRESIM3 denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgRESIM3;
+        
+        /// <summary>
         /// Label14 denetimi.
         /// </summary>
         /// <remarks>
@@ -362,6 +389,15 @@ namespace FIRMA_ASPX.admin {
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fuRESIM4;
+        
+        /// <summary>
+        /// imgRESIM4 denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgRESIM4;
         
         /// <summary>
         /// Button3 denetimi.

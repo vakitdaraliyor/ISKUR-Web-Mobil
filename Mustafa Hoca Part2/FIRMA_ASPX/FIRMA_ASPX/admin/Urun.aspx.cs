@@ -45,6 +45,10 @@ namespace FIRMA_ASPX.admin
                 txtKDV_ORANI.Text = Convert.ToString(u.KDV_ORANI);
                 ddlMARKA_ADI.SelectedValue = Convert.ToString(u.MARKA_REFNO);
                 txtACIKLAMA.Text = HttpUtility.HtmlDecode(u.ACIKLAMA);
+                imgRESIM1.ImageUrl = u.RESIM1;
+                imgRESIM2.ImageUrl = u.RESIM2;
+                imgRESIM3.ImageUrl = u.RESIM3;
+                imgRESIM4.ImageUrl = u.RESIM4;
             }
 
             pnlKAYIT.Visible = true;
@@ -65,10 +69,9 @@ namespace FIRMA_ASPX.admin
                 u.KDV_ORANI = Convert.ToInt32(txtKDV_ORANI.Text);
                 u.MARKA_REFNO = Convert.ToInt32(ddlMARKA_ADI.SelectedValue);
                 u.URUN_ADI = txtURUN_ADI.Text;
-                u.RESIM1 = fuRESIM1.FileName;
-                u.RESIM2 = fuRESIM2.FileName;
-                u.RESIM3 = fuRESIM3.FileName;
-                u.RESIM4 = fuRESIM4.FileName;
+
+                ResimKaydet(u, fuRESIM1, fuRESIM2, fuRESIM3, fuRESIM4);
+
                 db.SaveChanges();
             }
             else
@@ -82,10 +85,9 @@ namespace FIRMA_ASPX.admin
                 u.KDV_ORANI = Convert.ToInt32(txtKDV_ORANI.Text);
                 u.MARKA_REFNO = Convert.ToInt32(ddlMARKA_ADI.SelectedValue);
                 u.URUN_ADI = txtURUN_ADI.Text;
-                u.RESIM1 = fuRESIM1.FileName;
-                u.RESIM2 = fuRESIM2.FileName;
-                u.RESIM3 = fuRESIM3.FileName;
-                u.RESIM4 = fuRESIM4.FileName;
+                
+                ResimKaydet(u, fuRESIM1, fuRESIM2, fuRESIM3, fuRESIM4);
+
                 db.URUNs.Add(u);
                 db.SaveChanges();
             }
@@ -155,6 +157,66 @@ namespace FIRMA_ASPX.admin
             GridView1.DataBind();
             pnlKAYIT.Visible = false;
             pnlLISTE.Visible = true;
+        }
+
+        public void ResimKaydet(URUN u, FileUpload fuRESIM1, FileUpload fuRESIM2, FileUpload fuRESIM3, FileUpload fuRESIM4)
+        {
+            if ((fuRESIM1.PostedFile != null) && (fuRESIM1.PostedFile.ContentLength > 0))
+            {
+                u.RESIM1 = "/admin/Images/" + fuRESIM1.FileName;
+                string SaveLocation = Server.MapPath("/admin/Images/" + fuRESIM1.FileName);
+                try
+                {
+                    fuRESIM1.PostedFile.SaveAs(SaveLocation);
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
+            if ((fuRESIM2.PostedFile != null) && (fuRESIM2.PostedFile.ContentLength > 0))
+            {
+                u.RESIM2 = "/admin/Images/" + fuRESIM2.FileName;
+                string SaveLocation = Server.MapPath("/admin/Images/" + fuRESIM2.FileName);
+                try
+                {
+                    fuRESIM1.PostedFile.SaveAs(SaveLocation);
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
+            if ((fuRESIM3.PostedFile != null) && (fuRESIM3.PostedFile.ContentLength > 0))
+            {
+                u.RESIM3 = "/admin/Images/" + fuRESIM3.FileName;
+                string SaveLocation = Server.MapPath("/admin/Images/" + fuRESIM3.FileName);
+                try
+                {
+                    fuRESIM3.PostedFile.SaveAs(SaveLocation);
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
+            if ((fuRESIM4.PostedFile != null) && (fuRESIM4.PostedFile.ContentLength > 0))
+            {
+                u.RESIM4 = "/admin/Images/" + fuRESIM4.FileName;
+                string SaveLocation = Server.MapPath("/admin/Images/" + fuRESIM4.FileName);
+                try
+                {
+                    fuRESIM4.PostedFile.SaveAs(SaveLocation);
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
         }
     }
 }

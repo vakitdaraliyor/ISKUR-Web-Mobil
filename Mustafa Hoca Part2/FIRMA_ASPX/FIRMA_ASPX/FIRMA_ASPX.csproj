@@ -77,6 +77,7 @@
   <ItemGroup>
     <Content Include="admin\bin\CKEditor.NET.dll" />
     <Content Include="admin\bin\CKFinder.dll" />
+    <Content Include="admin\Images\IMG-20190915-WA0002.jpg" />
     <Content Include="admin\Kategori.aspx" />
     <Content Include="admin\Marka.aspx" />
     <Content Include="admin\Urun.aspx" />
@@ -851,6 +852,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
