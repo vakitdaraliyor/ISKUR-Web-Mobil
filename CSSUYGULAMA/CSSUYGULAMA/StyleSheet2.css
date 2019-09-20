@@ -1,0 +1,16 @@
+﻿body {
+}
+
+.kullanici{
+    background: url('user.png') left no-repeat;
+    padding-left: 25px;
+    height:30px;
+    line-height:30px;
+}
+
+.parola {
+    background: url('parola.png') left no-repeat;
+    padding-left: 25px;
+    height: 30px;
+    line-height: 30px;
+}

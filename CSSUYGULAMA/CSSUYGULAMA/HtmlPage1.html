@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+
+        div[adi] {
+            background-color:red;
+        }
+
+        div[adi='div1'] {
+            background-color:yellow;
+        }
+
+        div[adi] {
+            background-color:red;
+        }
+
+        div[adi^='div']{
+            background-color: aqua;
+        }
+
+        div[adi$='1']{
+            background-color: orange;
+        }
+
+        #test1 {
+            background-color: green;
+        }
+
+        div[id='test1']{
+            background-color: blue;
+        }
+
+        div[class='zemin']{
+            background-color:darkseagreen;
+        }
+
+        .zemin{
+            background-color: brown;
+        }        
+
+    </style>
+</head>
+<body>
+
+    <div adi="div1">
+        DIV1
+    </div>
+
+    <div adi="div2">
+        DIV2
+    </div>
+
+    <div id="test1">
+        TEST1
+    </div>
+
+    <div class="zemin">
+        ZEMIN1
+    </div>
+
+</body>
+</html>

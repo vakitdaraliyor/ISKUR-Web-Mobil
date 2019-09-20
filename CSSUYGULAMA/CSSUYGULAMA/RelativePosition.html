@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+
+        #sahne{
+            width:800px;
+            height:500px;
+            position:relative;
+        }
+
+        #sahne > img:not(:first-child) {
+            display:none;
+            width:800px;
+            height:500px;
+        }
+
+        #sahne > img {
+            width:800px;
+            height:500px;
+        }
+
+        #sahne div{
+            width: 100%;
+            height: 50px;
+            background-color:white;
+            opacity:0.5;
+            position:absolute;
+            left:0px;
+            bottom:0px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="banner">BANNER</div>
+    <div id="sahne">
+        <img src="resim1.jpg" /><img src="resim2.jpg" /><img src="resim3.jpg" /><img src="resim4.jpg" />
+        <div>
+            <span>YAZILAR</span>
+        </div>
+    </div>
+    <div id="sahne">ICERIK</div>
+    <div id="sahne">FOOTER</div>
+</body>
+</html>

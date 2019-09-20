@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+
+        body{
+            background-color: whitesmoke;;
+        }
+
+        table tr{
+            background-color: pink;
+        }
+
+        *{
+            padding:0;
+            margin:0;
+            list-style-type:none;
+        }
+
+        #menubar {
+            background-color: #1899f5;
+            height:30px;
+            line-height:30px;
+        }
+
+        #menu > li {
+            float:left;
+            height:30px;
+            line-height:30px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        #menu a {
+            text-decoration:none;
+            color:white;
+        }
+
+        #menu > li > ul {
+            display:none;
+            background-color: #1899f5;
+            position:absolute;
+        }
+        
+        #menu > li:hover ul {
+            display:block;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div>BANNER</div>
+
+    <div id="menubar">
+        <ul id="menu">
+            <li><a href="#">Anasayfa</a></li>
+            <li><a href="#">Ürünler</a></li>
+            <li>
+                <a href="#">Hakkımızda</a>
+                <ul>
+                    <li><a href="#">Kurumsal</a></li>
+                    <li><a href="#">Tarihçe</a></li>
+                    <li><a href="#">INKA Politikası</a></li>
+                </ul>
+            </li>
+            <li><a href="#">İletişim</a></li>
+        </ul>
+    </div>
+
+    <div>ICERIK</div>
+</body>
+</html>
