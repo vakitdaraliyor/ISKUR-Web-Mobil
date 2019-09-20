@@ -1,0 +1,18 @@
+Asla vazgeçmeyen(kararlý, tutarlý)
+Takým çalýþmasýna uygun
+Kendini geliþtirmeye açýk
+Analitik düþünme yeteneðine sahip
+Esnek çalýþma saatlerine uygun
+
+1. CSharp Nesne Tabanlý Programlama
+2. SQL Server Veritabaný Programlama
+3. Windows Form ile Uygulama Geliþtirme
+4. ADO.NET ve Entity ile Veritabaný Uygulamalarý
+5. HTML, CSS, Javascript, JQuery
+6. ASP.NET Web Form ile Uygulama Geliþtirme
+7. ASP.NET MVC ile Uygulama Geliþtirme
+8. WCF ile Web Servisi Geliþtirme
+9. WEB API ile Web ServisiGeliþtirme
+10. Tasarým Desenleri
+11. Xamarin Form ile Mobil Yazýlým geliþtirme
+12. Bulut Teknolojisi ve Azure

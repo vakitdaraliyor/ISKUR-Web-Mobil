@@ -1,0 +1,19 @@
+/*-----------------------------------------------------------------------------------------------
+SELECT COUNT(*) FROM URUN
+-------------------------------------------------------------------------------------------------
+SELECT KATEGORY_REFNO COUNT(*) FROM URUN
+GROUP BY KATEGORY_REFNO
+-------------------------------------------------------------------------------------------------
+SEELCT ALT_KATEGORY_REFNO COUNT(*),MIN(FIYATI), MAX(FIYATI), AVG(FIYATI), SUM(FIYATI) FROM URUN
+GROUP BY ALT_KATEGORI_REFNO
+-------------------------------------------------------------------------------------------------
+SEELCT ALT_KATEGORI.ALT_KATEGORY_ADI,
+	COUNT(*) SAYI,
+	MIN(FIYATI) "MINIMUM FIYATI", 
+	MAX(FIYATI) [MAKSIMUM FIYATI], 
+	AVG(FIYATI) AS ORTALAMA, 
+	SUM(FIYATI) [SUM]
+FROM URUN, ALT_KATEORI
+WHERE URUN.ALT_KATEGORI_REFNO=ALT_KATEGORI.ALT_KATEGORI_REFNO
+GROUP BY ALT_KATEGORI.ALT_KATEGORI_ADI
+-----------------------------------------------------------------------------------------------*/

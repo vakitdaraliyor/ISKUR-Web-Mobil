@@ -1,0 +1,31 @@
+SEÇİCİLER
+
+1. id seçiciler (#yazı)
+2. sınıf seçiciler (.yazı)
+3. tag seçiciler (div)
+
+Cascade Style Sheet (basamaklı still sayfaları)
+En genel olan en sonadır
+0. !important EN ÖNCELİKLİDİR (background-color:red!important;)
+1. html elemanının style özelliğine önceliği 1 numaradır
+2. id seçicinin 2 numara
+3. sınıf 3 numara
+4. html2 tag'i 4 numaradır
+
+5.Bir html elemanı çalışan özelliklerinde en son uygulanan css geçerlidir.
+
+POSITION
+--------
+absolute
+fixed
+relative
+-----------------------
+YANINA BİR ŞEY KABUL ETMEYEN ETIKETLER
+p
+h1, h2, h3,...
+div
+bir satırda bulunurlar. Biz bunları aynı satırda aynı katarda hizalanmasını float:left ile sağlıyoruz
+
+iconfinder
+CSS3 Generator
+Colorzilla

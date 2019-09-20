@@ -1,0 +1,97 @@
+Form Authentican ile Kullanıcı paneline güvenliğini sağlama (giriş yapma) 
+
+1. Adım
+Web.config içine
+Her hangi bir yerden tıkladığımızda bizi buraya yonlendiriyor
+<system.web>
+    <authentication mode="Forms">
+      <forms loginUrl="~/Admin/Giris/Index" timeout="1440"></forms>
+    </authentication>
+</system.web>
+
+2. GirisController oluştur
+
+3. Giriş ekranı tasarlandı. (Layout = null yapılarak)
+
+4. CheckUser action ı yazıldı
+
+5. Diğer sayfaların Controller larının başına [Authorize] ekliyoruz
+
+6. Çıkış Action unu yazıyoruz (User.Identity.Name ile kullanıcı adı öğrenebiliyoruz)
+
+-------------------------------------------------------------------------------------------------
+
+GirisController
+
+public class GirisController : Controller
+    {
+        FIRMAMODEL db = new FIRMAMODEL();
+        // GET: Admin/Giris
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult CheckUser(string KULLANICI_ADI, string PAROLA)
+        {
+            KULLANICI kullanici = db.KULLANICIs.Where(k => k.KULLANICI_ADI == KULLANICI_ADI && k.PAROLA == PAROLA).SingleOrDefault();
+
+            if (kullanici != null)
+            {
+                FormsAuthentication.SetAuthCookie(KULLANICI_ADI, false);
+                return RedirectToAction("Index", "Urunler");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }            
+        }
+
+        public ActionResult Cikis()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index");
+        }
+    }
+------------------------------------------------------------------------------------------------------------
+
+Index.cshtml
+
+@{
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <form action="/Admin/Giris/CheckUser" method="post">
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="KULLANICI_ADI">Kullanıcı Adı</label>
+                <div class="col-md-2">
+                    <input type="text" id="KULLANICI_ADI" name="KULLANICI_ADI" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="PAROLA">Parola</label>
+                <div class="col-md-2">
+                    <input type="password" id="PAROLA" name="PAROLA" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-2">
+                    <input type="submit" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

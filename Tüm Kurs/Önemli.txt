@@ -1,0 +1,108 @@
+DataTable
+Bilgisayarýn memory sinde bulunur.
+RowState bilgisini tutar
+Bilginin eski ve yeni halini tutar(versiyonlama yapar)
+
+DataAdapter
+Veri tabaný ile data table arasýnda taþýma iþlemi yapar.
+Datatable da deðiþiklik olursa veri tabanýný update fonksiyonu sayesinde günceller.
+
+Command?
+sql sorgularýný(cümlelerini) çalýþmasýný saðlayan
+ExecuteNonQuery => her türlü sorgu çalýþýr.
+ExecuteScalar => Sadece tek deðer döner. Çok satýrlý çok kolonlu bir sorgu çalýþtýrýldýðýnda ilk satýrýn,
+ilk sütununu döndürür.Veri tipi sütun tipi sorguya göre deðiþtiði için, object türünde döner.
+ExecuteReader => Bir tabloyu satýr satýr okumayý saðlar. Ýleri doðru okur. Geri okumaz. Kayýtlar deðiþtirilemez.
+Varsayýlan olarak baðlantý kurulan connectionu kitler. Ayný anda baþka sorgu çalýþtýramazsýnýz. Tek satýrlýk kadar memory.
+Hýzlý çalýþýr.
+
+Connection?
+ip
+sql server adý
+database name
+kullanýcý adý, þifresi
+----------------------------
+baðlanma çeþitleri
+windows = integrated security 
+
+sa => id, þifre
+
+
+ADO NET?
+.NET ile veriler ile çalýþmasýný saðlayan class lardýr.(excel, xml, vs..)
+Bilinen tüm veri türleri ile çalýþýr.
+.Net in verilerle çalýþmasýný saðlayan kütüphanesidir.
+
+Database Driver nedir?
+Bir database yazdým o database ime ulaþmayý saðlayan kütüphanem.(database üreticilerin kütüphanesi)
+
+ALTER AUTHORIZATION ON DATABASE::PRATIK TO sa;
+Databaseleri taþýyýp baska bir yerde açtýðýmnýzda diagram oluþturmak için gerekli.
+
+DataSet
+Birden fazla tabloyu bulundurabilen yapý. (Database in memory versiyonu)
+
+MARS=true ne iþe yarar?(MultipleActiveReslultSets=true)
+DataReader ile bir sorgu okurken, Datareader kapatýlmazsa baðlantýyý kilitler.
+Bir baþka sorguyu ayný baðlantý üzerinden çalýþtýrmak istersek hata alýrýz.
+Bu duurmdan kurtulmak için baðlantý cümlesinde (MultipleActiveReslultSets=true) cümleciðini ekleyerek,
+DataReader kapatýlmazsa bile baþka sorgularýn çalýþmasýný saðlar.
+
+Foreign key
+Veri tutarlýlýðýný saðlar. Ýki tabloyu iliþkiilendirmede
+
+No Action => Tablolar baðlýysa silmeyi engeller
+Cascade => Tablolar baðlý olsa bile siler. 2 tablodan da siler.(face te silinen fotonun yorumlarýnýn da silinmesi gibi)
+Update => Ana tablo deðiþtiðinde alt tablolarda update olur.
+
+EntityFramework
+Tablolarý sýnýflaþtýrma.
+Generic => genelleme
+
+F9: Durak noktasý koyar
+F10: satir satir ilerler fonksiyonu çalýþtýrýr ama içine girmez.
+F11: satir satir ilerler fonksiyonun içine de girer ve orada da satir satir ilerler.
+F5: Yazýlýmý çalýþtýrýr. Bir sonraki durak noktasýna kadar çalýþtýrýr.
+
+Extension methodlarý bir sýnýfa eklemek için sýnýfýn static olmasý gerekir.
+Methodun static tanýmlanmasý gerekir.
+Hangi veri tipine method eklenecekse onun baþýna this kelimesi gelir.
+this kelimesi eklenen veri tipi method parametrelerinde en baþta olmalýdýr.
+
+1.Select(Seçme)
+2.Where(Filtreleme)
+3.Group(Gruplama)
+4.Join(Tablo Birleþtirme)
+5.Order(Sýralama)
+6.Partition(Sayfalama)
+7.CRUD Ýþlemleri
+
+LINQ: Language Integrated Query: Dile entegre sorgulama
+Array, Object collection, DataSet, Veritabaný, XML üzerinde sorgulama yapar.
+SQL LIKE ya da extension methodlarla kullanýlýr.(Select, Where, OrderBy, SelectMany vs.)
+LINQTOSQL
+LINQTOXML
+LINQTOENTITY
+
+Var olan bir sýnýfa method ekleme(extension methodlarla) static class
+LINQ bütün verileri sorgular. 
+LINQ olmazsa entity olmaz.
+Entity her çeþit veri tabaný ile çalýþmayý saðlar.
+
+Database de foreign key tanýmlanmazsa geçiþ yapamýyoruz(navigation yapamýyoruz)
+
+Form açma çeþitleri
+Show();
+ShowDialog();
+Show() birden fazla form açabilir ama ShowDialog() ta bir form açýlýr arkadaki forma ulaþýlamaz.
+ShowDialog() ta Evet Hayýr sorabiliriz
+
+Referans tipli veri tipleri ayný adresi gösterir.
+
+Notepad
+opendialog at
+defaultex text
+Filter Text|*.txt|CSV|*.csv
+pageSetupDialog -> printDocument e baðlý
+printDialog1 -> printDocument e baðlý
+printPreviewDialog -> printDocument e baðlý

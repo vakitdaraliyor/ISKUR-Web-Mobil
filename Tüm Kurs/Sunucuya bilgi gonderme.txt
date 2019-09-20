@@ -1,0 +1,11 @@
+Sunucuya bilgi gönderme yollari
+
+1- Adres çubuðundan gönderilir
+	www.hepsiburada.com/?kategoriid=10&urunid=5&userid=6
+
+2- Form ile gönderilir
+	<form action="www.hepsiburada.com/urungoster.aspx">
+		
+	</form>
+
+------------------------------------------------------------------------------------------------------

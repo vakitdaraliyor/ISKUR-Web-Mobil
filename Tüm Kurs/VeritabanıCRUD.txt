@@ -1,0 +1,28 @@
+1. Ekran tasarým yap
+2. Max min uzunluklarý ve veri doðrulama iþlemlerini yap
+3. Kodlama yap
+
+dataGridView1(datagridview) => RowEnter -> Seçilen satiri texboxlara yazar
+Kategori_REFNO(textbox) => ReadOnly -> Veri giriþini önler
+
+a. Gridi doldur
+b. Gridten satýr seçip bilgi kutularý doldu
+c. Yeni, Kaydet, Vazgeç, Sil kodlandý 	
+
+SQL Injection
+INSERT INTO KATEGORI(KATEGORI_ADI) VALUES('');shutdown;--') sunucuyu kapattý yorum yolladý
+
+Kategori adý boþ olmamalý => Bileþenler -> errorProvider
+if(txtKATEGORI_ADI.Text.Trim() == "")
+           if(txtKATEGORI_ADI.Text.Trim() == "")
+            {
+                errorProvider1.SetError(txtKATEGORI_ADI, "Kategori Adý giriniz");
+                return;
+            }
+            else
+            {
+                errorProvider1.SetError(txtKATEGORI_ADI, "");
+            }
+
+
+Identity Column -> primary key

@@ -1,0 +1,108 @@
+-- SELECT * FROM dbo.OGRENCI
+-- view olusturulurken kullanilan SQL komutunu gosterir
+-- SELECT OBJECT_DEFINITION(OBJECT_ID('dbo.TumOgrenciler'))
+-- select * from dbo.OGRENCI where OKUL_NO = 11111111111
+
+-- TRY CATCH kullanimi 
+/*BEGIN TRY
+	DECLARE @a INT
+	SET @a = 3 / 0
+END TRY
+BEGIN CATCH
+	-- PRINT 'HATA OLUSTU'
+	SELECT ERROR_LINE() AS HataSatiri, 
+	ERROR_MESSAGE() AS HataNedeni,
+	ERROR_STATE(), 
+	ERROR_NUMBER(), 
+	ERROR_PROCEDURE()
+END CATCH*/
+
+-- ---------------------------------------------------------------------------------
+-- Fonksiyonda degisiklik yapma
+/*ALTER FUNCTION dbo.kdvHesaplama(
+	@fiyat MONEY,
+	@kdv_orani DEC(10,2)
+)
+RETURNS MONEY
+AS
+BEGIN
+	RETURN @fiyat * @kdv_orani;
+END;*/
+
+-- Fonksiyon kullanimi
+-- SELECT URUN_REFNO, FIYAT, dbo.kdvHesaplama(FIYAT, 0.8) AS KDV_DEGERI FROM dbo.URUNLER;
+-- SELECT SUM(dbo.kdvHesaplama(FIYAT, 0.8)) AS KDV_DEGERI FROM dbo.URUNLER;
+
+-- ---------------------------------------------------------------------------------
+-- Fonksiyonun olusturulmasi
+/*CREATE FUNCTION dbo.KategoriyeGoreUrun(
+	@kategori_id INT
+)
+RETURNS TABLE
+AS
+RETURN
+	SELECT * FROM dbo.URUNLER WHERE KATEGORI_REFNO = @kategori_id*/
+
+-- Kullanimi
+-- SELECT * FROM dbo.KategoriyeGoreURUN(2)
+
+-- ---------------------------------------------------------------------------------
+
+-- Transaction 
+
+-- Bir veya birden fazla islemi tek bir islem parcacigi haline getirip,
+-- bu islem parcacigini geri almayi (iptal etmeyi) saglayan yapidir.
+
+/*BEGIN TRAN
+DELETE FROM dbo.URUNLER WHERE URUN_REFNO = 1;
+
+SELECT * FROM URUNLER
+ 
+-- Transactionun baslangic noktasina geri donmeye yarar
+ROLLBACK TRAN
+
+-- Transaction islemini gecerli kilmak icin 
+COMMIT TRAN*/
+
+/*CREATE PROC dbo.HavaleYap(
+	@miktar MONEY,
+	@alici_id INT,
+	@gonderen_id INT
+)
+AS
+BEGIN TRY
+	BEGIN TRAN
+	UPDATE dbo.BANKA SET BAKIYE += @miktar WHERE MUSTERI_REFNO = @alici_id
+	-- BAGLANTIDA BIR SORUN OLUSTU
+	/*DECLARE @a INT;
+	SET @a = 3 / 0;*/
+	UPDATE dbo.BANKA SET BAKIYE -= @miktar WHERE MUSTERI_REFNO = @gonderen_id
+	END TRY
+BEGIN CATCH 
+	PRINT 'HATA OLUSTU'
+	ROLLBACK TRAN -- HATA OLUSURSA ISLEMI GERI AL
+END CATCH
+COMMIT TRAN -- HATA OLUSMAZSA ISLEMI GECERLI KIL*/
+ 
+-- EXEC dbo.HavaleYap 1000, 1, 2 -- PROCEDURE calistirma sekli
+
+-- TRIGGER (Tetikleyen): Bir islemin yerine / Bir islemden sonra 
+-- baska bir islem gerceklestirmemizi saglayan yapidir
+-- Diger yapilardan farkli olarak calisacagi zamani kendisi belirler
+
+-- 2 cesit trigger yapisi var
+-- 1) After Trigger: Bir islemden sonra baska bir islem yapmayi saglayan
+-- 2) Instead of Trigger: Bir islem yerine baska bir islem yapmayi saglayan
+
+-- SELECT * FROM URUNLER
+
+/*CREATE TRIGGER trg_UrunSil -- Trigger ismi
+ON URUNLER -- Hangi tabloda calisacagi
+INSTEAD OF -- Hangi tur trigger oldugu (diger tur -> AFTER)
+DELETE -- Hangi islemin yerine / hangi islemden sonra
+AS
+DECLARE @id INT
+SET @id = (SELECT URUN_REFNO FROM deleted)
+UPDATE URUNLER SET DURUM = 0 WHERE URUN_REFNO = @id*/
+
+DELETE FROM URUNLER WHERE URUN_REFNO = 2

@@ -1,0 +1,45 @@
+Cuma Günü Sorular
+
+1) Comp. Sci departmanýndaki çalýþanlarýn maaþlarýný %10 artýran sorguyu yazýnýz.
+
+
+
+2) Hiç açýlmayan dersleri silen sorguyu yazýnýz.
+
+
+
+
+3) tot_cred deðeri 100'den büyük olan bütün öðrencileri ayný departmanda 10.000 maaþla instructor olarak ekleyiniz.
+
+
+
+4) 'Notlar' isimli, 'id' (not null) ve 'not' bilgisinden oluþan bir tablo oluþturun
+
+
+
+
+5) Bu tabloya id'si 1 notu 90 olan kayýdý ekleyen sorguyu yazýnýz 
+   Bu tabloya id'si 2 notu 80 olan kayýdý ekleyen sorguyu yazýnýz 
+   Bu tabloya id'si 3 notu 75 olan kayýdý ekleyen sorguyu yazýnýz 
+   Bu tabloya id'si 4 notu 95 olan kayýdý ekleyen sorguyu yazýnýz 
+   Bu tabloya id'si 5 notu 60 olan kayýdý ekleyen sorguyu yazýnýz 
+   Bu tabloya id'si 6 notu 40 olan kayýdý ekleyen sorguyu yazýnýz 
+   Bu tabloya id'si 7 notu null olan kayýdý ekleyen sorguyu yazýnýz 
+
+
+6) Notlar tablosundaki öðrencilerin id ve harfNotlarini gösteren sorgu yazýnýz
+   not < 50  --> F
+   not < 70  --> C
+   not < 85  --> B
+   not >=85  --> A
+
+
+7) Not deðeri null olan kaydý silen sorguyu yazýnýz
+
+
+
+
+8) Her harf notundan kaç öðrenci olduðunu gösteren sorguyu yazýnýz
+
+
+

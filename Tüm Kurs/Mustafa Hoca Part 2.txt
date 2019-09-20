@@ -1,0 +1,36 @@
+.NET NEDÝR?
+Bizim uygulama geliþtirmemizi ve uygulama çalýþtýrmaýzý saðlayan.
+Memory yonetebilen ortak tip sistemine sahip bir yapýdýr.
+Dil+kütüphane. C# native(direk assembly koduna dönüþtürülür)
+Yazýlan uygulama aradile dönüþtürülür.
+Uygulamanýn çalýþmasý için makinada .net framework yüklü olmasi gerekir.
+1- Kod geliþtirir
+2- Kod çalýþtýrýr
+3- Ortak tip sistemi
+4- Otomatik memory yönetimi
+Eski ASP de sunucu þiþme örneði
+----------------------------------------------------------------------------
+ADO.NET
+
+ASP.NET WEB FORMS
+
+ASP.NET MVC
+
+.NET WÝNDOWS FORM
+----------------------------------------------------------------------------
+29 Ekim 1969 -> 4 bilgisayar birbirine baðlandý(internet doðdu)
+1983 yýlýnda ilk PC
+640 KB DOS(Dirty Operating System)
+LaTex
+1989 HTML Cern -> denilen metin iþaretleme dili geliþtirildi.
+1992-1993 Gopher -> Browser atasý(text tabanlý)
+1993-1994 netscape -> navigater(Js)
+1995 Internet explorer
+1995 PHP - MySQL
+1996 ASP
+1998 CSS
+2002 .NET Framework 1.0
+2004 facebook
+2005 youtube, GIT Projesi geliþtirildi
+2008 ASP.NET MVC
+2016 ASP.NET Core (Bütün iþletim sistemlerinde çalýþabilen web uygulamasý ve console uygulamasý)

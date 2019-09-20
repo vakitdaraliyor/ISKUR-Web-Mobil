@@ -1,0 +1,27 @@
+public class ValidateUsername : ValidationAttribute
+    {
+        FIRMAMODEL db = new FIRMAMODEL();
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            if (value != null)
+            {
+                int sonuc = (validationContext.ObjectInstance as KULLANICI).KULLANICI_REFNO;
+
+                string kullanýcýAdý = value.ToString();
+                KULLANICI k = db.KULLANICIs.Where(k1 => k1.KULLANICI_ADI == kullanýcýAdý && k1.KULLANICI_REFNO!=sonuc).FirstOrDefault();
+                    
+                if (k == null)
+                {
+                    return ValidationResult.Success;
+                }
+                else
+                {
+                    return new ValidationResult("Kullanýcý adý zaten var");
+                }
+            }
+            else
+            {
+                return new ValidationResult("" + validationContext.DisplayName + " Giriniz");
+            }
+        }
+    }

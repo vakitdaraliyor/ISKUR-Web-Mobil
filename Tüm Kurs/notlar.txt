@@ -1,0 +1,42 @@
+F12 kýsayol focuslanma
+namespace => baska projeden bizim projeye dahil ettiðimizde deðiþkenlerin çakýþmasýný önlemek, kategorize etme
+çözüm => birden fazla projenin bulunduðu yapý
+F7 - shift F7
+shift + alt + enter tam ekran
+int s1 = Convert.ToInt32(textBox1.Text);
+
+		kendisi		nesne		kalýtým
+public  	görünür		görünür		görünür
+private		görünür		görünmez	görünmez
+protected	görünür		görünmez	görünür
+
+.Net 3.5? kurulurken istiyor. Gerekli dosyalar indir
+SQLExpress
+
+Mixed mode (SQL server) password : 1234 (weak password not suitable)
+Database = security
+Database çok kullanýcýlý ve ardýþýlýk yüksek olmalý
+Hýz
+
+.Net Framework => Çoklu dil desteði
+
+Primary key
+Benzersizdir, tekildir, auto increment
+Tablolar arasý iliþkilerde fk için referans olarak kullanýlýr.
+Bir tabloda bir primar key bulunur.Bir veya birden fazla columndan oluþur. 
+
+Protokol: Ýki bilgisayar arasýnda iletiþimi saðlayan kurallar topluluðudur.
+Ýnternet baðlantýsý saðlamak için
+Ip adress
+Subnet mask
+Default gateway
+DNS
+
+TCP/IP bilgisayarlarýn haberleþirken kullandýðý iletiþim protokolü
+Port: Her programýn dýþarý ile iletiþim kurduðu kapý :)
+SQL server port: 1433
+Database e baðlanmak için ip, port, id ve þifre gerekiyor(1433 açýksa SQL sw var demektir)
+
+!!!CONNECTION STRING!!!
+String cnnstr = @"Data Source=localhost\SQLEXPRESS;initial catalog=ÝÞKUR; user id=sa; password=1234";
+Bir bilgisayara birden fazla SQL Server kurulabilir. Farklý isimlerde olmalý(SQLEXPRESS) Different instance

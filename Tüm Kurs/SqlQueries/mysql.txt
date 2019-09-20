@@ -1,0 +1,8 @@
+mysql username: mysql
+mysql password: 1234
+
+---------------------------------------------------------------------------------------------
+
+caching_sha2_password HATASI ÇÖZÜMÜ
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+
