@@ -77,9 +77,13 @@
   <ItemGroup>
     <Content Include="admin\bin\CKEditor.NET.dll" />
     <Content Include="admin\bin\CKFinder.dll" />
-    <Content Include="admin\Images\IMG-20190915-WA0002.jpg" />
+    <Content Include="admin\Images\Urun\IMG-20190915-WA0002.jpg" />
     <Content Include="admin\Kategori.aspx" />
+    <Content Include="admin\Kullanici.aspx" />
     <Content Include="admin\Marka.aspx" />
+    <Content Include="admin\Proje.aspx" />
+    <Content Include="admin\Sayfa.aspx" />
+    <Content Include="admin\Slider.aspx" />
     <Content Include="admin\Urun.aspx" />
     <Content Include="bin\CKEditor.NET.dll" />
     <Content Include="bin\CKFinder.dll" />
@@ -753,12 +757,40 @@
     <Compile Include="admin\Kategori.aspx.designer.cs">
       <DependentUpon>Kategori.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\Kullanici.aspx.cs">
+      <DependentUpon>Kullanici.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Kullanici.aspx.designer.cs">
+      <DependentUpon>Kullanici.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\Marka.aspx.cs">
       <DependentUpon>Marka.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\Marka.aspx.designer.cs">
       <DependentUpon>Marka.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Proje.aspx.cs">
+      <DependentUpon>Proje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Proje.aspx.designer.cs">
+      <DependentUpon>Proje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Sayfa.aspx.cs">
+      <DependentUpon>Sayfa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Sayfa.aspx.designer.cs">
+      <DependentUpon>Sayfa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Slider.aspx.cs">
+      <DependentUpon>Slider.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Slider.aspx.designer.cs">
+      <DependentUpon>Slider.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Urun.aspx.cs">
       <DependentUpon>Urun.aspx</DependentUpon>
@@ -852,7 +884,10 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="admin\Images\Proje\" />
+    <Folder Include="admin\Images\Slider\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
