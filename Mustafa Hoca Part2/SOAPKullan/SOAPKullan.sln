@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAPKullan", "SOAPKullan\SOAPKullan.csproj", "{E2F63DE3-AD73-4BCC-BA2F-AC7244F7066B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2F63DE3-AD73-4BCC-BA2F-AC7244F7066B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2F63DE3-AD73-4BCC-BA2F-AC7244F7066B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2F63DE3-AD73-4BCC-BA2F-AC7244F7066B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2F63DE3-AD73-4BCC-BA2F-AC7244F7066B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BC50F71-A5DA-4E87-977C-894B9F913771}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllKATEGORI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arama" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllKATEGORIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllKATEGORIResult" type="tns:ArrayOfKATEGORI" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfKATEGORI">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KATEGORI" nillable="true" type="tns:KATEGORI" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KATEGORI">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="KATEGORI_REFNO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="KATEGORI_ADI" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GirisDenetle" type="tns:GirisDenetle" />
+      <s:complexType name="GirisDenetle">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="prm1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="prm2" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetKATEGORI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKATEGORIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKATEGORIResult" type="tns:KATEGORI" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveKATEGORI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="k" type="tns:KATEGORI" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveKATEGORIResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateKATEGORI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="k" type="tns:KATEGORI" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateKATEGORIResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteKATEGORI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteKATEGORIResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllKATEGORISoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllKATEGORI" />
+  </wsdl:message>
+  <wsdl:message name="GetAllKATEGORISoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllKATEGORIResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllKATEGORIGirisDenetle">
+    <wsdl:part name="GirisDenetle" element="tns:GirisDenetle" />
+  </wsdl:message>
+  <wsdl:message name="GetKATEGORISoapIn">
+    <wsdl:part name="parameters" element="tns:GetKATEGORI" />
+  </wsdl:message>
+  <wsdl:message name="GetKATEGORISoapOut">
+    <wsdl:part name="parameters" element="tns:GetKATEGORIResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKATEGORIGirisDenetle">
+    <wsdl:part name="GirisDenetle" element="tns:GirisDenetle" />
+  </wsdl:message>
+  <wsdl:message name="SaveKATEGORISoapIn">
+    <wsdl:part name="parameters" element="tns:SaveKATEGORI" />
+  </wsdl:message>
+  <wsdl:message name="SaveKATEGORISoapOut">
+    <wsdl:part name="parameters" element="tns:SaveKATEGORIResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveKATEGORIGirisDenetle">
+    <wsdl:part name="GirisDenetle" element="tns:GirisDenetle" />
+  </wsdl:message>
+  <wsdl:message name="UpdateKATEGORISoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateKATEGORI" />
+  </wsdl:message>
+  <wsdl:message name="UpdateKATEGORISoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateKATEGORIResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateKATEGORIGirisDenetle">
+    <wsdl:part name="GirisDenetle" element="tns:GirisDenetle" />
+  </wsdl:message>
+  <wsdl:message name="DeleteKATEGORISoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteKATEGORI" />
+  </wsdl:message>
+  <wsdl:message name="DeleteKATEGORISoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteKATEGORIResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteKATEGORIGirisDenetle">
+    <wsdl:part name="GirisDenetle" element="tns:GirisDenetle" />
+  </wsdl:message>
+  <wsdl:portType name="WSKATEGORISoap">
+    <wsdl:operation name="GetAllKATEGORI">
+      <wsdl:input message="tns:GetAllKATEGORISoapIn" />
+      <wsdl:output message="tns:GetAllKATEGORISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKATEGORI">
+      <wsdl:input message="tns:GetKATEGORISoapIn" />
+      <wsdl:output message="tns:GetKATEGORISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveKATEGORI">
+      <wsdl:input message="tns:SaveKATEGORISoapIn" />
+      <wsdl:output message="tns:SaveKATEGORISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKATEGORI">
+      <wsdl:input message="tns:UpdateKATEGORISoapIn" />
+      <wsdl:output message="tns:UpdateKATEGORISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKATEGORI">
+      <wsdl:input message="tns:DeleteKATEGORISoapIn" />
+      <wsdl:output message="tns:DeleteKATEGORISoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSKATEGORISoap" type="tns:WSKATEGORISoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllKATEGORI">
+      <soap:operation soapAction="http://tempuri.org/GetAllKATEGORI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllKATEGORIGirisDenetle" part="GirisDenetle" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKATEGORI">
+      <soap:operation soapAction="http://tempuri.org/GetKATEGORI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetKATEGORIGirisDenetle" part="GirisDenetle" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveKATEGORI">
+      <soap:operation soapAction="http://tempuri.org/SaveKATEGORI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveKATEGORIGirisDenetle" part="GirisDenetle" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKATEGORI">
+      <soap:operation soapAction="http://tempuri.org/UpdateKATEGORI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateKATEGORIGirisDenetle" part="GirisDenetle" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKATEGORI">
+      <soap:operation soapAction="http://tempuri.org/DeleteKATEGORI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteKATEGORIGirisDenetle" part="GirisDenetle" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSKATEGORISoap12" type="tns:WSKATEGORISoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllKATEGORI">
+      <soap12:operation soapAction="http://tempuri.org/GetAllKATEGORI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllKATEGORIGirisDenetle" part="GirisDenetle" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKATEGORI">
+      <soap12:operation soapAction="http://tempuri.org/GetKATEGORI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetKATEGORIGirisDenetle" part="GirisDenetle" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveKATEGORI">
+      <soap12:operation soapAction="http://tempuri.org/SaveKATEGORI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveKATEGORIGirisDenetle" part="GirisDenetle" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKATEGORI">
+      <soap12:operation soapAction="http://tempuri.org/UpdateKATEGORI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateKATEGORIGirisDenetle" part="GirisDenetle" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKATEGORI">
+      <soap12:operation soapAction="http://tempuri.org/DeleteKATEGORI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteKATEGORIGirisDenetle" part="GirisDenetle" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSKATEGORI">
+    <wsdl:port name="WSKATEGORISoap" binding="tns:WSKATEGORISoap">
+      <soap:address location="http://localhost:51108/WSKATEGORI.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSKATEGORISoap12" binding="tns:WSKATEGORISoap12">
+      <soap12:address location="http://localhost:51108/WSKATEGORI.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
