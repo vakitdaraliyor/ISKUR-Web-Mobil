@@ -1,0 +1,67 @@
+﻿body {
+}
+
+#banner {
+    background-color: #159dff;
+    height: 50px;
+}
+
+#menu {
+    background-color: #7dc9ff;
+    height:20px;
+}
+
+#menu ul{
+    margin:0;
+}
+
+#menu ul li{
+    display:inline;
+    margin-right: 10px;
+}
+
+#icerik{
+    width:800px;
+    margin:50px;
+}
+
+#urunler {
+    float: left;
+    background-color: white;
+    min-height: 300px;
+    border: 1px solid #7dc9ff;
+}
+
+#urunbaslik {
+    background-color: #7dc9ff;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+#projeler {
+    background-color: white;
+    min-height: 300px;
+    border: 1px solid #7dc9ff;
+}
+
+#projebaslik {
+    background-color: #7dc9ff;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+#kategoriSol{
+    background-color:whitesmoke;
+    width:200px;
+    float:left;
+}
+
+#urunlerSag{
+    
+}
