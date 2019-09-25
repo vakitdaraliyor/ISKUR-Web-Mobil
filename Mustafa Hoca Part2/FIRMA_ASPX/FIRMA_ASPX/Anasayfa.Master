@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Anasayfa.master.cs" Inherits="FIRMA_ASPX.Anasayfa" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div id="banner">Banner</div>
+        <div id="menu">
+            <ul>
+                <li><a href="Anasayfa.aspx">Anasayfa</a></li>
+                <li><a href="Urunler.aspx">Ürünler</a></li>
+                <li><a href="Kurumsal.aspx">Kurumsal</a></li>
+                <li><a href="Iletisim.aspx">İletişim</a></li>
+            </ul>
+        </div>
+
+        <div id="slider">Slider</div>
+
+        <div id="icerik">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div id="footer">Footer</div>
+    </form>
+</body>
+</html>

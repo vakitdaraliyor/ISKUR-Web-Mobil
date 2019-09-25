@@ -737,6 +737,17 @@
     <Content Include="ckfinder\skins\v1\skin.js" />
     <Content Include="ckfinder\skins\v1\uipanel.css" />
     <Content Include="ckfinder\translations.txt" />
+    <Content Include="Home.aspx" />
+    <Content Include="images\proje\resim1.jpg" />
+    <Content Include="images\proje\resim2.jpg" />
+    <Content Include="images\proje\resim3.jpg" />
+    <Content Include="images\slider\resim1.jpg" />
+    <Content Include="images\slider\resim2.jpg" />
+    <Content Include="images\slider\resim3.jpg" />
+    <Content Include="images\slider\resim4.jpg" />
+    <Content Include="images\urun\resim1.jpg" />
+    <Content Include="images\urun\resim2.jpg" />
+    <Content Include="images\urun\resim3.jpg" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -747,6 +758,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="StyleSheet1.css" />
+    <Content Include="Urunler.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -806,6 +819,20 @@
     <Compile Include="admin\Yonetim.Master.designer.cs">
       <DependentUpon>Yonetim.Master</DependentUpon>
     </Compile>
+    <Compile Include="Anasayfa.Master.cs">
+      <DependentUpon>Anasayfa.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anasayfa.Master.designer.cs">
+      <DependentUpon>Anasayfa.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="KATEGORI.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -843,6 +870,13 @@
     <Compile Include="URUN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Urunler.aspx.cs">
+      <DependentUpon>Urunler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Urunler.aspx.designer.cs">
+      <DependentUpon>Urunler.aspx</DependentUpon>
+    </Compile>
     <Compile Include="urunler.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -873,6 +907,7 @@
     <Content Include="ckfinder\skins\kama\images\toolbar\Thumbs.db" />
     <Content Include="ckfinder\skins\v1\images\toolbar\Thumbs.db" />
     <Content Include="ckfinder\userfiles\.htaccess" />
+    <Content Include="Anasayfa.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
