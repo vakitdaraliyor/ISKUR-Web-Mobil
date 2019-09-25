@@ -14,6 +14,13 @@ namespace FIRMA_ASPX
         {
             DataList1.DataSource = db.KATEGORIs.ToList();
             DataList1.DataBind();
+
+            if (Request["kategori_id"] != null)
+            {
+                int refno = Convert.ToInt32(Request["kategori_id"]);
+                DataList2.DataSource = db.URUNs.Where(u => u.KATEGORI_REFNO == refno).ToList();
+                DataList2.DataBind();
+            }
         }
     }
 }
