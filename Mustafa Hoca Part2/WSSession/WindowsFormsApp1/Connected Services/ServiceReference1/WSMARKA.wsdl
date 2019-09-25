@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GirisYap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="kullaniciadi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parola" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GirisYapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GirisYapResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMARKA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arama" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMARKAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMARKAResult" type="tns:ArrayOfMARKA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMARKA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MARKA" nillable="true" type="tns:MARKA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MARKA">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MARKA_REFNO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MARKA_ADI" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GirisYapSoapIn">
+    <wsdl:part name="parameters" element="tns:GirisYap" />
+  </wsdl:message>
+  <wsdl:message name="GirisYapSoapOut">
+    <wsdl:part name="parameters" element="tns:GirisYapResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMARKASoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMARKA" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMARKASoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMARKAResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSMARKASoap">
+    <wsdl:operation name="GirisYap">
+      <wsdl:input message="tns:GirisYapSoapIn" />
+      <wsdl:output message="tns:GirisYapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMARKA">
+      <wsdl:input message="tns:GetAllMARKASoapIn" />
+      <wsdl:output message="tns:GetAllMARKASoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSMARKASoap" type="tns:WSMARKASoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GirisYap">
+      <soap:operation soapAction="http://tempuri.org/GirisYap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMARKA">
+      <soap:operation soapAction="http://tempuri.org/GetAllMARKA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSMARKASoap12" type="tns:WSMARKASoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GirisYap">
+      <soap12:operation soapAction="http://tempuri.org/GirisYap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMARKA">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMARKA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSMARKA">
+    <wsdl:port name="WSMARKASoap" binding="tns:WSMARKASoap">
+      <soap:address location="http://localhost:49738/WSMARKA.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSMARKASoap12" binding="tns:WSMARKASoap12">
+      <soap12:address location="http://localhost:49738/WSMARKA.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
