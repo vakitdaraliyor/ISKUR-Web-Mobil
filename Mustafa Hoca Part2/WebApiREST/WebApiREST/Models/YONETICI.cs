@@ -12,14 +12,15 @@ namespace WebApiREST.Models
         [Key]
         public int YONETICI_REFNO { get; set; }
 
-        [Required]
-        [StringLength(10)]
+        [Required(ErrorMessage = "Kullanýcý Adý giriniz")]
+        [StringLength(10, ErrorMessage = "En fazla 10 karakter girebilirsiniz")]
         public string KULLANICI_ADI { get; set; }
 
-        [Required]
-        [StringLength(10)]
+        [Required(ErrorMessage = "Þifre giriniz")]
+        [StringLength(10, ErrorMessage = "En fazla 10 karakter girebilirsiniz")]
         public string SIFRESI { get; set; }
 
+        [Required(ErrorMessage = "Þifre giriniz")]
         public bool DURUMU { get; set; }
     }
 }
