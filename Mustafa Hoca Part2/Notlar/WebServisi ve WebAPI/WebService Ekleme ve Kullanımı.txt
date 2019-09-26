@@ -1,0 +1,38 @@
+Web Servis Ekleme
+1-) ASP.NET MVC proje açıyoruz
+2-) Model klasörü oluşturuyoruz.
+3-) Model klasörüne sağ tıklayıp Ekle->Yeni Öğe diyip Veri den ADO.NET Entity Data Model den en sağdaki Code First seçiyoruz.
+4-) New Connection seçip .\SQLEXPRESS yazıp alttan kullanmak istediğimiz veri tabanını seçiyoruz.
+5-) Tekrar projeye sağ tıklayıp Ekle->Yeni Öğe diyip web hizmeti ekle diyoruz.
+6-) WebServisin bulunduğu projedeki App.config içerisine 
+<basicHttpBinding>
+    <binding name="WebService1Soap" allowCookies="true" maxBufferSize="9999999" maxReceivedMessageSize="9999999" />
+    <binding name="WSKATEGORISoap" allowCookies="true" maxBufferSize="9999999" maxReceivedMessageSize="9999999" />
+    <binding name="WSYONETICISoap" allowCookies="true" maxBufferSize="9999999" maxReceivedMessageSize="9999999" />
+</basicHttpBinding>
+------------------------------------------------------------------------------------------------------------------
+** ÖNEMLİ ** Web servislerimizin methodlarının kullanılabilmesi için başında [WebMethod] yazmalıdır. ** ÖNEMLİ **
+------------------------------------------------------------------------------------------------------------------
+
+[WebMethod]
+[SoapHeader("CheckUser")]
+public List<KATEGORI> GetAllKATEGORI(string arama)
+{
+    if (YoneticiManager.LoginKontrol(CheckUser) == false) return null;
+
+    if (String.IsNullOrEmpty(arama) == false)
+    {
+         return db.KATEGORIs.Where(k => k.KATEGORI_ADI.Contains(arama)).ToList();
+    }
+    else
+    {
+         return db.KATEGORIs.ToList();
+    }            
+}
+
+----------------------------------------------------------------------------------------------------------
+
+WebServisin diğer projede kullanımı
+1-) Açtığımız diğer projede Başvurular a sağtıklayıp Hizmet başvurusu ekle diyoruz.
+2-) Aynı projedeysek keşfet diyoruz ve WebServisi mizi seçiyoruz seçiyoruz.
+3-) Eğer Servisi kullanmada hata alırsak projeleri derliyoruz.

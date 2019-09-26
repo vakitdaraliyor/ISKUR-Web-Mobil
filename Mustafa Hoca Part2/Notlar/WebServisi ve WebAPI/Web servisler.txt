@@ -1,0 +1,61 @@
+WEB SERVISLERI
+-------------------------------------------------------
+
+Web Sitesi: Arayüz var. Http protokolü kullanılır.
+Header ve Body den oluşur.
+İstekte bulunulurken bazen sadece header kullanılır.(adress çubuğundan gönderirlir) 
+Cevap verirken body kullanılır.
+firewalllarda 80 nolu port açıktır
+Port:21 FTP = file transfer port
+
+Web Servisi: İstediğim şey neyse sadece onun sonucunu getiriyor. ARAYÜZ YOK. (Kuru bilgi). Bilgi paylaşımı için.
+
+GİRİŞ
+Bir windows servisi nasıl yazılır?
+Apllication kapandığında sunucuya kurulan windows tabanlı bir servisten sms ya da mail atılabilir. 
+Arayüz yoktur. Arkaplanda çalışır. (Will log on) Windows servisleri arka planda login olmadan çalışan hizmetlerdir. 
+Mesela web sunucusu hizmeti arka planda çalışır. Host a sunucusu, windows log on vb. arka planda çalışır. 
+Bunlar genelde bir port üzerinde çalışır. (Telekom geldi bize bir port açtı bunla KARIŞTIRILMAMALI!)
+Dışarı ile iletişim kuran programlar SERVİS adını alır. Her bir programa bir numara verilir. Bilgisayar bunları hafızasına koyar(nerde olduğunu bilir).
+Başka bir bilgisayardan geldi mesaj var dedi aldı bilgisayar bunu ör:80 numaraya gönderdi.
+80 numara bu mesaja bakar eğer http mesajıysa cevap verir. Değilse cevap vermez.
+Windows servisleri 1-65536 arasında numaralar alır(port).
+Internet Information Server.(IIS) Projeyi çalıştırmak için verilmiş.
+applicationhost.config IIS ayarları bu dosyada. Ona özel web sitesi parametresi ayarlıyor ve ayağa kaldırıyor.
+ilk 1024 tane port belirli uygulamalar için ayarlanmıştır (well know ports).
+Diğer portlar isteğe göre kullanılır.
+Bazı sonradan çıkan veritabanları (SQL 1433 Oracle 1521) 1024 dışında alışılmış bazı portları kullananır.
+----------------------------------------------------------------------------------------------------------
+
+Sunucu ve istemci ayağı vardır.
+Sunucu tarafında Internet Information Service bulunmakta. Başka sunucular da olabilir. Windows tabanlı olmalı.
+IIS in Visual Studio da kullanılan sürümüne IISExpress denir.
+Linux: NGix, Apache, Tomcat
+Eğer bir sunucu servisi yazacaksam karşı tarafla iletişim sağlayacağım bir mesajlaşma yordamım olmalı(HTTP)
+
+----------------------------------------------------------------------------------------------------------------
+
+İKİ TÜR WEB SERVİSİ VAR
+1. SOAP (XML File)
+2. REST (XML ve JSON)
+
+Web servislerinden bilgi her tür platformdan istenilebilir.
+*** Bir sunucuda web servis olduğunu nerden bileceğim? ***
+Bunların register edildiği bir merkezi bir sunucu var. (Universal Discovery And Description Integrator). 
+Eğer kurumlar isterse buraya web servislerini register ediyor.
+Bu sayede biz istediğimiz bir servis var mı diye tarama yapabiliyoruz.(TERCİH EDİLMİYOR)
+
+Web servisinin içerisinde bir WSDL dosyası var.Her Web servisinde bulunmalı.(TERCİH EDİLEN)
+Web Service Description Language
+(Kullanılan veri tipleri, fonksiyonlar vs. bulunur web servisle alakalı her şey burada bulunur.) 
+
+İstekte bulunurken karşı taraftan WSDL dosyasını istiyoruz.
+Visual Studio kendine bir Proxy class oluşturuyor.
+
+SOAP: Single Object Access Protocol
+Bütün istekler WebServisi Protokolü kullanılarak gerçekleştirilir.
+
+KİMLİK DOĞRULAMASI OLMALIDIR
+http://localhost:51108/WSKATEGORI.asmx?wsdl
+
+Burp Suite Hacker tool => Web Sitelerini hacklemek için kullanır.

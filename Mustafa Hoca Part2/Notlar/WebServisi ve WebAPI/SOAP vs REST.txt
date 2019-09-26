@@ -1,0 +1,24 @@
+************************************************************************************
+*************       SINAV SORUSU(SOAP REST arasındaki farklar)       ***************
+************************************************************************************
+
+SOAP
+WSDL gerekir
+Karmaşık
+XML bilgilerini nesnelere dönüştüren Proxy sınıflar vardır
+Proxy Nesneler oluşturur
+
+----------------------------------------------------------------------------------
+
+REST
+XML ya da JSON ya da bambaşka bir şey
+-
+Basit
+
+GET
+POST
+PUT
+DELETE methodlarını kullanır
+
+Proxy e ihtiyaç yoktur.
+

@@ -1,0 +1,11 @@
+WebServis içindeki
+methodlar public ve üzerinde [WebMethod] olmalı
+
+Serilization: Bir nesnenin o anki halini text formatına çevirilmesi(xml, json)
+Deserilization: Serilize edilmiş nesnenin tekrar nesne haline dönüştürülmesi(xml, json)
+SOAP WEB SERVICE: XML Serilization ve deserilization
+objeler web servislerde karşı tarafa gönderilmeden önce xml formatında serilize edilir.
+
+WebServislerde Güvenlik Doğrulaması Çeşitleri
+1) SoapHeader
+2) Session 

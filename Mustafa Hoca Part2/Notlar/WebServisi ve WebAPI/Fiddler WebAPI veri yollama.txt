@@ -1,0 +1,2 @@
+Fiddler dan webapi ye veri yollamak için content type belirtilmeli
+Content-Type: application-context mutlaka belirtilmeli

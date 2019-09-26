@@ -1,0 +1,2 @@
+WebAPI nin
+WebServislerden en büyük farkı methodları Get, Post, Put, Delete olarak ismiyle çağırılarak kullanılır.

@@ -1,0 +1,27 @@
+IIS Devreye Sokma
+1-) Denetim Masası
+2-) Program ve Özellikler
+3-) Windows özelliklerini aç veya kapat(sol tarafta)
+4-) Internet Ingormation Services
+	- Web Yönetimi Araçları (içerisindeki tüm kutucukları işaretle)
+	- World Wide Web Hizmetleri (içerisindeki tüm kutucukları işaretle)
+------------------------------------------------------------------------------------------------------------
+Proje Yayımlama
+1-) C:\inetpub\wwwroot içerisine bir klasör açıyoruz(ör:Firma_MVC)
+2-) Windows Aramaya => Internet Information Services yazıp açıyouz.
+3-) Default Web Site üzerine sağ tıklayıp -> Uygulama Ekle diyoruz ismini açtığımız klasörle aynı veriyoruz ve açtığımız klasörü seçiyoruz yani Firma_MVC
+4-) Şimdi herhangi bir yere mesela C:/ de Publish adında klasör açıyoruz.
+5-) Projemize gidip sağ tıklayıp Yayımla diyoruz.
+6-) Gözat a tıklayıp Publish klasörünü seçip yayımlıyoruz.
+7-) Publish klasörünün içindekileri C:\inetpub\wwwroot içine açtığımız Firma_MVC klasörünün içine atıyoruz.
+
+Hata alırsak
+Web klasöründeki connectionString in içindeki integreted security i silip onun yerine user id=sa; password=1234 yazıyoruz.
+------------------------------------------------------------------------------------------------------------
+WebApi yi kullanma
+ // Ben tıkladım baska bir iş yapmaya basladım. Daha sonra gelen veriyi kullanabilirim.
+    Task<HttpResponseMessage> response = client.GetAsync(txtADRES.Text);
+
+ // Bu şekilde göndermezsek default olarak json formatında getirir
+ // client.DefaultRequestHeaders.Add("Accept", "application/json");
+    Task<string> icerik = response.Result.Content.ReadAsStringAsync();
