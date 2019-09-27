@@ -1,0 +1,48 @@
+1-) Yeni proje oluştur (WCF Hizmet uygulaması)
+2-) [ServiceContact] IService içerisinde fonksiyonlar var. Fonksiyonların üzerinde [OperationContract] olacak
+3-) Ekle -> Yeni Öğe -> WCF Hizmeti (ServiceBlog)
+4-) App_Code klasörü yoksa ekle. (App_code içinde görmüyorsa modeli direk projeye ekle)
+5-) App_Code klasörünün üzerine sağ tık Ekle -> ADO.NET Entity Data Model -> 
+	Code First(en sağdaki) -> 
+	SQL Doğrulama olacak (id:sa password:1234 & Windows doğrulama DEĞİL)
+	BLOG databaseinin ekledik
+	namespace leri control et yoksa [projeadı].App_Code (ör: WCFSERVICE2.App_Code) 
+
+using WCFSERVISI2.App_Code; // yukarı ekle
+IServiceBlog.cs dosyası içinde
+
+[ServiceContract]
+public interface IServiceBlog
+{
+	[OperationContract]
+	public List<KATEGORI> GetAllKATEGORI();
+}
+
+[DataContract]
+public class Kategori
+{
+	[DataMember]
+	public int KATEGORI_REFNO;
+	[DataMember]
+	public string KATEGORI_ADI;
+}
+
+-------------------------------------------------------------------------------
+ServiceBlog.svc.cs dosyasında
+public class ServiceBlog:IService
+{
+	Model1 db = new Model1();
+	public List<KATEGORI> GetAllKATEGORI() // interface teki methodu implement ettik
+	{
+		var liste = db.KATEGORIs.ToList();
+		var listegonder = new List<Kategori>(); // gönderilecek liste
+		for(int i=0; i<liste.Count; i++)
+		{
+			Kategori k = new Kategori();
+			k.KATEGORI_ADI = liste[i].KATEGORI_ADI;
+			k.KATEGORI_REFNO = liste[i].KATEGORI_REFNO;
+			listegonder.Add(k);
+		}
+		return listegonder;
+	}
+}

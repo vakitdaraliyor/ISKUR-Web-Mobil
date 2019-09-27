@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1b6acd4d-8425-45f9-8f8c-3fac9a6d0a78" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51135/ServiceBlog.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceBlog.xsd" MetadataType="Schema" ID="f40ce889-6487-491e-91e5-3e0418057c7d" SourceId="1" SourceUrl="http://localhost:51135/ServiceBlog.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceBlog1.xsd" MetadataType="Schema" ID="e52d2261-22b7-45a3-9830-b424c1707a8e" SourceId="1" SourceUrl="http://localhost:51135/ServiceBlog.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceBlog.disco" MetadataType="Disco" ID="a36d6bca-34eb-4142-b716-a51a3ec65b2d" SourceId="1" SourceUrl="http://localhost:51135/ServiceBlog.svc?disco" />
+    <MetadataFile FileName="ServiceBlog2.xsd" MetadataType="Schema" ID="1787b2ed-3d0c-48b5-b6b3-082394c3805b" SourceId="1" SourceUrl="http://localhost:51135/ServiceBlog.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceBlog.wsdl" MetadataType="Wsdl" ID="6d58d4d7-c5b5-44fb-8896-c60db9eb3a43" SourceId="1" SourceUrl="http://localhost:51135/ServiceBlog.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

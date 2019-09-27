@@ -1,0 +1,31 @@
+-.Net Remoting
+-Binary veri iletişimi
+-Platforma bağımlılık
+-Kullanılan portların Fireqll ları açılması gerekirli
+
+WebServisleri
+-Http protokolu kullanılır(80 portu açık)
+-Platform bağımsız(Hangi dille ve hangi işletim sisteminde çalıştığı önemli değil)
+-XML veri transferi
+-SOAP protokolu kullanıyor
+
+WebAPI
+-Karmaşık değil
+-XML, JSON veya özel formatta veri transferi
+
+Get
+Accept:application/xml, application/json
+
+Put, Post
+Content-Type: application/xml, applicaiton/json
+
+Delete
+
+WCF Nedir?
+-Platform bağımsız
+-XML veri transferi ve binary transferi
+-Tek servis yazıp  hem TCP hem de HTTP üzerinden hizmet verebiliyoruz
+-Console uygulama ya da web uygulama ile servis edilebiliyor.
+
+Farklı servislere bağlanıp işlem yapabiliriz.
+Ör: Tc kimlik numaramıza göre SSK dökümlerine ulaşma. En büyük örnek e-devlet.
