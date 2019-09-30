@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4a6ff887-a8d1-4239-b345-dcc09eed6223" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51699/WSKategori.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WSKategori.xsd" MetadataType="Schema" ID="eb720f15-a7f9-4eda-8ef5-e9c414982213" SourceId="1" SourceUrl="http://localhost:51699/WSKategori.svc?xsd=xsd1" />
+    <MetadataFile FileName="WSKategori1.xsd" MetadataType="Schema" ID="a801e060-b7a9-4dea-b76d-a5626f656eff" SourceId="1" SourceUrl="http://localhost:51699/WSKategori.svc?xsd=xsd2" />
+    <MetadataFile FileName="WSKategori.wsdl" MetadataType="Wsdl" ID="172d04a0-5d6b-467e-b760-6b1e3320b0ae" SourceId="1" SourceUrl="http://localhost:51699/WSKategori.svc?wsdl" />
+    <MetadataFile FileName="WSKategori2.xsd" MetadataType="Schema" ID="ad4e3553-e6f4-405a-bc68-c337c68fd7a7" SourceId="1" SourceUrl="http://localhost:51699/WSKategori.svc?xsd=xsd0" />
+    <MetadataFile FileName="WSKategori.disco" MetadataType="Disco" ID="2c24db20-69fa-4b4c-9a6e-61d3eed16027" SourceId="1" SourceUrl="http://localhost:51699/WSKategori.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
