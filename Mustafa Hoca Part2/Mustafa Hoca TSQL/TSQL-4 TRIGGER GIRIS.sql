@@ -1,35 +1,43 @@
 -- Triggerlar 
 -- INSERT UPDATE DELETE Trigger lar vardýr
 
+-- INSERT TRIGGER
 CREATE TRIGGER INS_KATILIMCI ON KATILIMCI AFTER INSERT
 AS
 BEGIN
 	INSERT INTO GUNLUK(ISLEM_TIPI, TABLO_ADI, ACIKLAMA) SELECT 'INSERT', 'KATILIMCI', ADI_SOYADI + 'eklendi' FROM inserted
 END
-
 GO
 
 INSERT INTO KATILIMCI(ADI_SOYADI, TC_KIMLIK, CEP_TEL, ADRES, EMAIL, ACIKLAMA)
 VALUES('Ýsmail', '12345678905', '123345', 'Ankara', 'i@hotmail.com', 'isoaçýklama')
+GO
+-- --------------------------------------------------------------------------------------------------
 
+-- UPDATE TRIGGER
 CREATE TRIGGER UPD_KATILIMCI ON KATILIMCI AFTER UPDATE
 AS
 BEGIN
-
-
-
+	INSERT INTO GUNLUK(ISLEM_TIPI, TABLO_ADI, ACIKLAMA) SELECT 'UPDATE', 'KATILIMCI', ADI_SOYADI + 'güncellendi' FROM deleted
 END
-
 GO
 
+UPDATE KATILIMCI SET ADI_SOYADI = 'Kamil' WHERE KATILIMCI_REFNO = 4
+GO
+-- --------------------------------------------------------------------------------------------------
+
+-- DELETE TRIGGER
 CREATE TRIGGER DEL_KATILIMCI ON KATILIMCI AFTER DELETE
 AS
 BEGIN
-
-
-
+	INSERT INTO GUNLUK(ISLEM_TIPI, TABLO_ADI, ACIKLAMA) SELECT 'DELETE', 'KATILIMCI', ADI_SOYADI + 'silindi' FROM deleted
 END
+GO
 
+DELETE FROM KATILIMCI WHERE KATILIMCI_REFNO = 7
+
+-- --------------------------------------------------------------------------------------------------
+-- SINAV SORUSU
 -- Varolan bir tablodan var olan bir tabloya kayýt ekleme (TOPLU INSERT)
 
 -- INSERT INTO TABLO_ADI1 SELECT * FROM TABLO_ADI2
