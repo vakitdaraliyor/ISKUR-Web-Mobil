@@ -1,0 +1,25 @@
+1. Yanlış teknikle kod yazma (çorba kod, spagetti kod)
+2. Bakımı kolay kod yazılması lazım
+3. Yeni istekler ve hatalar giderildiğinde başka hatalara sebep olmaması lazım
+
+SOLID: KATIIIII
+
+1)Single Responsibility: Bir sınıf sadece bir şeyden sorumlu olması lazım.
+2)Open-Closed: Sınıf gelişime açık ama değişime kapalı olmalı.
+Open-Development Close-Changing (bilgisayar kasası. İçine parça takılabiliyor ama bozulmuyor)
+3)Liskov's Substition: Yer değiştirme prensibi, 
+İki farklı sınıf aynı interface'i kalıtımla uygulamaya çalıştığında kendisi üzerinde olmayan bir fonksiyon yüzünden hiç bir hata üretmemeli.
+4)Interface Segregation: Arayüz ayrıştırılması.
+Ortak fonksiyonları içeren sınıflar için, bu ortak fonksiyonlar için ortak bir arayüz veya soyut sınıf tanımlanmalı.
+Bundan türeyecek sınıflar için değişik fonksiyonlar ilgili sınıfta ayrıca tanımlanmalı
+5) Dependency Injection Prensibi: Alt sınıfta yapılan bir değişiklik üst sınıfta değişikliğe sebep olmaması lazım.
+Bir sınıf kullanıldığı sınıfta değişikliğe yol açmaması gerekiyor.Bir sınıf başka bir sınıfa bağımlı olmaması lazım.
+
+Abstract Nedir?
+Interface Nedir?
+
+SOLID ÖZET
+Gelişime açık değişime kapalı(usb portlar)
+Başka bir sınıfa bağımlılığı olmayan
+Bakımı kolay, geliştirilmesi kolay
+yazılımlar geliştirmek
