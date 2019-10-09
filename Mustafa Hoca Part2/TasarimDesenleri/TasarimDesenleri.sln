@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton", "TasarimDesenleri\Singleton.csproj", "{82514B9F-F094-45C2-8DE0-95D4AD492A2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.csproj", "{14015251-69DC-428B-A770-33FFEC1A3B78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtoType", "ProtoType\ProtoType.csproj", "{7CB71BAA-92B1-4D2C-99BA-A8FE239FBCC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82514B9F-F094-45C2-8DE0-95D4AD492A2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82514B9F-F094-45C2-8DE0-95D4AD492A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82514B9F-F094-45C2-8DE0-95D4AD492A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82514B9F-F094-45C2-8DE0-95D4AD492A2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14015251-69DC-428B-A770-33FFEC1A3B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14015251-69DC-428B-A770-33FFEC1A3B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14015251-69DC-428B-A770-33FFEC1A3B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14015251-69DC-428B-A770-33FFEC1A3B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CB71BAA-92B1-4D2C-99BA-A8FE239FBCC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB71BAA-92B1-4D2C-99BA-A8FE239FBCC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CB71BAA-92B1-4D2C-99BA-A8FE239FBCC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CB71BAA-92B1-4D2C-99BA-A8FE239FBCC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E056406-1B67-4BB7-B541-6DFE886681CF}
+	EndGlobalSection
+EndGlobal
