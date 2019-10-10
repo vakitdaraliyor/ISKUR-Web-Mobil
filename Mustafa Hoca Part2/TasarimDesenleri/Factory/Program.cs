@@ -19,12 +19,24 @@ namespace Factory
             //ICacher mem = cf.GetCacher(ECacheType.MemCache);
             //mem.CacheAl();
 
-            Rapor.RaportFactory r = new Rapor.RaportFactory();
-            IRapor rapor = r.GetRapor(ERaportType.PDF);
-            rapor.RaporAdi = "Test.text";
-            rapor.RaporYolu = "c:/RAPOR";
-            rapor.Veri = KULLANICI.GetKullanicilar();
-            rapor.Olustur();
+            //Rapor.RaportFactory r = new Rapor.RaportFactory();
+            //IRapor rapor = r.GetRapor(ERaportType.PDF);
+            //rapor.RaporAdi = "Test.text";
+            //rapor.RaporYolu = "c:/RAPOR";
+            //rapor.Veri = KULLANICI.GetKullanicilar();
+            //rapor.Olustur();
+
+            TamCache t = new TamCache();
+            t.PutCache("key1", 10);
+            t.PutCache("key2", "Amaç Yazılım");
+            t.RemoveCache("key1");
+
+            Dictionary<string, object> liste = t.GetAllCachedItem();
+
+            foreach (var item in liste)
+            {
+                Console.WriteLine(item.Key + " : " + item.Value.ToString());
+            }
 
             Console.ReadLine();
         }

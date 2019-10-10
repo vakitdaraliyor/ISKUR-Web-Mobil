@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{14015251-69DC-428B-A770-33FFEC1A3B78}</ProjectGuid>
+    <ProjectGuid>{32DC6AE1-230A-4607-9949-136F2D1B79EB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Factory</RootNamespace>
-    <AssemblyName>Factory</AssemblyName>
+    <RootNamespace>Proxy</RootNamespace>
+    <AssemblyName>Proxy</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\KULLANICI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rapor\Rapor.cs" />
-    <Compile Include="TamCache.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
