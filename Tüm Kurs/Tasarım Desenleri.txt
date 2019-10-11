@@ -1,0 +1,16 @@
+Creational
+1.Singleton: Sadece o sınıfın tek nesnesinin oluşturulmasını garantiler.
+2.Prototype: Bir nesnenin aynısını klonlamak için kullanılır.
+3.Factory: Aynı tür nesnelerin oluşturulmasını sağlayan sınıftır.
+4.AbstractFactory: Farklı tür nesneleri bir araya getirerek bir tür nesne üretme.
+5.Builder: Çeşitli işlemlerden sonra bir nesnenin oluşturulmasını sağlar.
+
+Structural
+Adapter : Dışarıdan aldığımız dll leri kendi sistemimizi bozmadan adapte etmemiz lazım.
+Facade(Dış cephe, Dış yüz) bir çok nesneyi bir araya getirerek bir nesne üretme. Abstract factory den farkı esneklik yok. 
+Abstract Factory de bir çok kombinasyondan bir nesne oluşur.
+Facade de tek bir kombinasyondan üretiliyor.
+Proxy: İlk işlemin sonucunun hafızada tutularak diğer işlemde talerp edilmesi durumunda ilk işlem sonucunun isteyen koda verilmesi
+Dekorator: Bir sınıfın yapısını bozmadan üzerine bir şeyler eklemeyi sağlar.
+Composite: Yazılımımıza hiyerarşik menü oluşturabiliriz.(Müdür - alt çalışan örneği)
+Bridge: 
