@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Layouts.GridLayoutPage2">
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout BackgroundColor="OliveDrab" HeightRequest="50">
+                <Label Text="Personel Kayıt Ekranı"
+                       HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                       FontSize="20" TextColor="WhiteSmoke"/>
+            </StackLayout>
+            <Grid Margin="0, 20, 0 , 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+            
+                <Label Grid.Row="0" Grid.Column="0" Text="Kullanıcı Adı"/>
+                <Entry Grid.Row="0" Grid.Column="1"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Telefon"/>
+                <Entry Grid.Row="1" Grid.Column="1"/>
+                <Label Grid.Row="2" Grid.Column="0" Text="Adres"/>
+                <Entry Grid.Row="2" Grid.Column="1"/>
+                <Label Grid.Row="3" Grid.Column="0" Text="Mail"/>
+                <Entry Grid.Row="3" Grid.Column="1"/>
+                <Label Grid.Row="4" Grid.Column="0" Text="Açıklama"/>
+                <Entry Grid.Row="4" Grid.Column="1"/>
+            </Grid>
+                <Button Text="Kaydet"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

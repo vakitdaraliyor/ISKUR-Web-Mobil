@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Layouts.StackLayoutPage1">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Pink">
+
+            <BoxView BackgroundColor="Red" 
+                     HeightRequest="100" WidthRequest="200" 
+                     HorizontalOptions="Fill" 
+                     VerticalOptions="Start">
+                
+            </BoxView>
+
+            <BoxView BackgroundColor="Yellow" 
+                     HeightRequest="100" WidthRequest="200" 
+                     HorizontalOptions="Center" 
+                     VerticalOptions="CenterAndExpand">
+
+            </BoxView>
+
+            <BoxView BackgroundColor="Blue" 
+                     HeightRequest="100" WidthRequest="200" 
+                     HorizontalOptions="Center" 
+                     VerticalOptions="StartAndExpand">
+
+            </BoxView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
