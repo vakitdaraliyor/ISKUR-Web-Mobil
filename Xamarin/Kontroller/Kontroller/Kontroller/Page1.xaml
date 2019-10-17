@@ -4,10 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Pages.GezinmeSayfasi" Title="Gezintiye Çıktık">
+             x:Class="Kontroller.Page1">
     <ContentPage.Content>
-        <StackLayout>
-            <Button Text="NPage1'e Git" Clicked="Button_Clicked"></Button>
+        <StackLayout>           
+            <Button Text="Tıkla" Clicked="Button_Clicked"/>
+            <Image x:Name="resim" Source="resim1.jpg"
+                   WidthRequest="100" HeightRequest="100"
+                   Aspect="Fill" BackgroundColor="Red"
+                   HorizontalOptions="Center" />
+
+            <ActivityIndicator x:Name="gosterge"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -4,10 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Pages.GezinmeSayfasi" Title="Gezintiye Çıktık">
+             x:Class="Pages.CPage.CPage3">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="NPage1'e Git" Clicked="Button_Clicked"></Button>
+            <Label Text="Carousel Page3"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

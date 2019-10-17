@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Pages
+namespace Kontroller
 {
     public partial class App : Application
     {
@@ -10,10 +10,7 @@ namespace Pages
         {
             InitializeComponent();
 
-            // MainPage = new NavigationPage(new GezinmeSayfasi());
-            // MainPage = new SekmeSayfasi();
-            // MainPage = new CarouselSayfasi();
-            MainPage = new AnaDetaySayfa();
+            MainPage = new Page2();
         }
 
         protected override void OnStart()

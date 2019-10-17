@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+            xmlns:sayfa="clr-namespace:Pages.TPage"
+            xmlns:sayfa2="clr-namespace:Pages.NPage"
+             x:Class="Pages.SekmeSayfasi">
+
+    <sayfa:TPage1 IconImageSource="home.png"></sayfa:TPage1>
+    <sayfa:TPage2 IconImageSource="settings.png"></sayfa:TPage2>
+    <sayfa:TPage1 IconImageSource="user.png"></sayfa:TPage1>
+
+    <ContentPage Title="Sayfa1" IconImageSource="home.png">
+        <StackLayout>
+            <Label Text="TPage Sayfa"/>
+        </StackLayout>
+    </ContentPage>
+
+    <NavigationPage Title="Kategoriler">
+        <x:Arguments>
+            <sayfa2:NPage1/>
+        </x:Arguments>
+    </NavigationPage>
+    
+</TabbedPage>
