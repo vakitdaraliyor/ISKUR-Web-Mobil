@@ -1,0 +1,2 @@
+Android -> Properties -> Android bildirimi
+Internet yazıp -> Internet i(Tik at Checkbox) aç

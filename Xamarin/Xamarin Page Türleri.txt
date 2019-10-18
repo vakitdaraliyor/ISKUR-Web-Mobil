@@ -1,0 +1,7 @@
+Page Türleri
+------------
+ContentPage
+NavigationPage
+MasterDetailPAge
+TabbedPAge
+CarouselPage

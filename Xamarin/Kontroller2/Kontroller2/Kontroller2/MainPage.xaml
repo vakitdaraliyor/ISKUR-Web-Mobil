@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Kontroller2.MainPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"></OnPlatform>
+    </ContentPage.Padding>
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label WidthRequest="100" HorizontalOptions="Start" Text="Adı"></Label>
+            <Entry HorizontalOptions="FillAndExpand" IsPassword="True"></Entry>
+        </StackLayout>
+        <Entry IsPassword="True"></Entry>
+        <Entry MaxLength="20"
+               Keyboard="Chat"
+               IsTextPredictionEnabled="True"
+               IsSpellCheckEnabled="True"
+               BackgroundColor="Aqua">            
+        </Entry>
+
+        <Editor HeightRequest="100" MaxLength="500">
+            
+        </Editor>
+
+        <Label x:Name="secim" Text="Seçim"/>
+        <Picker x:Name="pcListe" SelectedIndexChanged="pcListe_SelectedIndexChanged"/>
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ListViewControl.MDP">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Ana kran">
+            <Button VerticalOptions="Start" BackgroundColor="#a1a1a1" Text="Personel listesi" Clicked="Button_Clicked"></Button>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <ContentPage Title="İşlem ekranı">
+            
+        </ContentPage>
+    </MasterDetailPage.Detail>
+    
+</MasterDetailPage>

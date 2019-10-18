@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ListViewControl.PersonelListe.PKarti" Title="Personel Kartı">
+    <ContentPage.Content>
+        <StackLayout x:Name="Kart" WidthRequest="200">
+            <Label Text="Adı"/>
+            <Entry x:Name="ADI" Placeholder="Adı giriniz" Text="{Binding ADI}" ></Entry>
+            <Label Text="Soyadı"/>
+            <Entry x:Name="SOYADI" Placeholder="Soyadı giriniz" Text="{Binding SOYADI}" ></Entry>
+            <Label Text="Telefon"/>
+            <Entry x:Name="TELEFON" Placeholder="Telefon giriniz" Text="{Binding TELEFON}" ></Entry>
+            <Label Text="Mail"/>
+            <Entry x:Name="MAIL" Placeholder="Mail giriniz" Text="{Binding MAIL}" ></Entry>
+            <Label Text="Adres"/>
+            <Entry x:Name="ADRES" Placeholder="Adres giriniz" Text="{Binding ADRES}" ></Entry>
+            <Label Text="Açıklama"/>
+            <Entry x:Name="ACIKLAMA" Placeholder="Açıklama giriniz" Text="{Binding ACIKLAMA}" ></Entry>
+            <Button Text="Kaydet" Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

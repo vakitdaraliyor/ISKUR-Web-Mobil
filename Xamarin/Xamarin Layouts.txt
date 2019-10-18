@@ -1,0 +1,21 @@
+Sayfa Düzeni (Layout)
+---------------------
+1.StackLayout
+2.Grid
+3.Absolute
+4.Relative
+
+VerticalOptions
+---------------
+Start
+End
+Center
+Fill
+
+StartAndExpand
+EndAndExpand
+CenterAndExpand
+FillAndExpand
+
+HorizontalOptions
+-----------------
