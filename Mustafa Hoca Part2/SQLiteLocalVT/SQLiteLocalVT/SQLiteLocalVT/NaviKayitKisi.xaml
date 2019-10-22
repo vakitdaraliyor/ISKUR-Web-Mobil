@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SQLiteLocalVT.NaviKayitKisi">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="KisiId" Placeholder="Kisi Id" IsReadOnly="True" BackgroundColor="#e1e1e1"/>
+            <Entry x:Name="AdiSoyadi" Placeholder="Adı Soyadı"/>
+            <Entry x:Name="Resim" Placeholder="Resim"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Kaydet" x:Name="btnKayit" Clicked="btnKayit_Clicked"/>
+                <Button Text="Vazgeç" x:Name="btnVazgec" Clicked="btnVazgec_Clicked"/>
+                <Button Text="Sil" x:Name="btnSil" Clicked="btnSil_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
