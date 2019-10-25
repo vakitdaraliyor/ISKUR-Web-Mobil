@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XAMARINWEBAPI.MainPage">
+
+    <StackLayout>
+        
+        <Entry x:Name="KULLANICI_REFNO" Placeholder="Kullanıcı refno" IsReadOnly="True"/> 
+        <Entry x:Name="KULLANICI_ADI" Placeholder="Kullanıcı adı"/> 
+        <Entry x:Name="PAROLA" Placeholder="Parola"/> 
+        <Entry x:Name="DURUMU" Placeholder="Durumu"/>
+        
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Yeni" Clicked="Button_Clicked"/>
+            <Button Text="Kaydet" Clicked="Button_Clicked_1"/>
+            <Button Text="Vazgeç" Clicked="Button_Clicked_2"/>
+            <Button Text="Sil" Clicked="Button_Clicked_3"/>
+        </StackLayout>
+        
+
+        <ListView x:Name="listekullanici" ItemSelected="listekullanici_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding KULLANICI_ADI}" Detail="{Binding DURUMU}" CommandParameter="{Binding KULLANICI_REFNO}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+
+</ContentPage>

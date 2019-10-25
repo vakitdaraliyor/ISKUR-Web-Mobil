@@ -2,6 +2,6 @@ Page Türleri
 ------------
 ContentPage
 NavigationPage
-MasterDetailPAge
+MasterDetailPage
 TabbedPAge
 CarouselPage
