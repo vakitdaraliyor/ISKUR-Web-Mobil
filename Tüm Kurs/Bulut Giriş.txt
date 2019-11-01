@@ -66,3 +66,11 @@ Yazılım geliştirme için her türlü programlar yükleniyor
 3.Iass: Infrastructure as as service
 Makinalar sanallaştırılıyor ve sizin hizmetinize sunuluyor
 Sunucu ve depolar, güvenlik duvarı
+
+
+Bulut Türleri
+-------------
+1.Genel Bulut (herkes kullanılabilir)
+2.Özel Bulut (kendinize özel bulut)
+3.Topluluk Bulutu (birkaç kurum ya da firmanın ortak kullandığı bulut)
+4.Karma Bulut (özel ve genel bulut kullanılır)
