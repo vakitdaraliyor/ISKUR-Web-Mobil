@@ -1,0 +1,68 @@
+Her yerden erişim
+Hızlı ve her an erişim
+Depolama
+Yazılım Hizmetleri
+
+Bireysel
+--------
+a.Gmail
+b.Hotmail
+c.CDN: Content Delivery Network
+d.Dropbox, drive
+
+Internet alt yapısı hızlandı
+Donanımların gelişmesi ve internet hizmetinin ucuzlaması ve erişilebilir olması
+Sanallaştırmanın gelişmesi()
+
+Kurumsal, firma bazında nelere ihtiyaç duyar
+--------------------------------------------
+Yazılımlar
+Veritabanı
+Sunucular
+Ağ altyapısı(yönlendirici(router), anahtarlama elemanı(switch)
+sunucu odaları(soğutma, yangına karşı koruma, rac ünitileri)
+Bakım onarım için bilgi işlem elemanları
+Depolama üniteleri
+Yedek sunucular ve felaketten kurtarma
+Firewall: güvenlik duvarı
+
+DataCenter
+----------
+Hosting
+Veri merkezi
+Gerçek sunucuları barındırır
+(elektrik, bant genişliği, barındırma ücreti)
+
+Sanal Sunucular
+Yedekleme hizmeti
+Mail hizmeti
+Web sitesi barındırma hizmeti
+Veritabanı hizmeti
+DDos: Distributed Denial of Service Attack
+Firewall
+
+Bulut bilişim, düşük yönetim
+çabası veya servis sağlayıcı etkileşimi ile, hızlı alınıp salıverilebilen ayarlanabilir bilişim
+kaynaklarının paylaşılır havuzuna, istendiğinde ve
+uygun bir şekilde ağ erişimi sağlayan bir modeldir.
+
+Bulutun amacı bünyesindeki mevcut donanım, yazılım, işletim sistemi, ağ alt yapısı,
+depolama üniteleri havuzundan Esnek, Hızlı, Ölçeklenebilir, ihtiyaçlarınıza özgü uygun maliyetli
+internet üzerinden her an erişilebilen bilişim hizmetleri vermektir.
+
+
+Infrastructure
+Platform
+Software
+--------------------------------------------------------------------------------------------------
+Bulutla verilern 3 temel hizmet
+1.Saas: Software as a service
+Mail ya da dökümanları kullanmak
+Sadece yazılım hizmetleri(Jira, Salesforce, gmail, documents)
+
+2.Paas: Platform as a service
+Yazılım geliştirme için her türlü programlar yükleniyor
+
+3.Iass: Infrastructure as as service
+Makinalar sanallaştırılıyor ve sizin hizmetinize sunuluyor
+Sunucu ve depolar, güvenlik duvarı

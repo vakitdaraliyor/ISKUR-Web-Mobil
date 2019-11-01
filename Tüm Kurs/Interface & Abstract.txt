@@ -1,0 +1,14 @@
+Interface: Arayüz
+	Bir sınıfta neler olacağını belirtir. Nasıl yapılacağı DEĞİL.Nasıl yapılacağını class lar tarif eder.
+	Interface ler standart kod yazmamızı sağlar.
+	Kendi elimizdeki bir class ın genişletilmesini sağlar.(Dependency Injection)
+
+Class: Sınıf
+	Bir class aynı anda en fazla bir tane class tan türetilir. Ama aynı anda birden fazla interface ten türetilelir.
+
+Nesne: Object
+
+Abstract: Soyut
+
+Concreate: Somut
+	Sınıfın new lenebilir(nesne) haline denir.

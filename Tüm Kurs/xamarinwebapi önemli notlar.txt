@@ -1,0 +1,4 @@
+Xamarin webapi kullanıyorsa
+webapinin bir ip üzerinden yayınlanmıs olması lazım
+xamarin uygulamasına internet izni verilmeli
+ClearText formatındaki ack metin izni verilmesi gerekiyor

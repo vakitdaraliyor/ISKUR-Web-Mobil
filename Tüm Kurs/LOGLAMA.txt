@@ -1,0 +1,5 @@
+KURUMSAL PROJELERDE
+--------------------
+LOGLAMA
+CACHE'LEME (veritabanına yazılan parametreler(sözlük tablolar). Sabit bilgiler.)
+YETKILENDIRME

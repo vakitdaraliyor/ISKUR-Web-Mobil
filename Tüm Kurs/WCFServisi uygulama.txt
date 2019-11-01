@@ -46,3 +46,7 @@ public class ServiceBlog:IService
 		return listegonder;
 	}
 }
+
+-------------------------------------------------------------
+Yeni bir Windows form projesi oluşturduk.
+Başvurulardan hizmet ekle diyip servisi linkini yapıştırdık.

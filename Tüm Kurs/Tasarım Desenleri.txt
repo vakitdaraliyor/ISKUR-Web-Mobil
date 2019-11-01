@@ -18,3 +18,4 @@ Strategy
 
 Memento: Bir kaydın değişmeden önceki halini yedekleyip istediğimiz zaman geri alma.(Datatable da kullanılıyor)
 Multiton: Bir nesnenin farklı koşullara göre farklı instance larını getirir.
+Observer:
