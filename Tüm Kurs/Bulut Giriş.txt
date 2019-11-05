@@ -74,3 +74,13 @@ Bulut Türleri
 2.Özel Bulut (kendinize özel bulut)
 3.Topluluk Bulutu (birkaç kurum ya da firmanın ortak kullandığı bulut)
 4.Karma Bulut (özel ve genel bulut kullanılır)
+
+----------------------------------------------------------
+Soru
+Local bir sürücü olarak bağlanıp dosyalarımızı bulut üzerinden paylaşabildiğimiz? 
+Depolama alanlarından dosya paylaşımı
+
+Sanal sunucu oluşturulabilir
+Depolama alanı oluşturup dosya paylaşımı
+SQL Sever kurulabilir
+Web Sitesi yayınlanabilir
